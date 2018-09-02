@@ -20,7 +20,7 @@ import Y_functions as Y # import all the functions from Y_functions, used to com
 from twoport.utils import db as to_dB
 from twoport.utils import find_nearest
 
-msg_error = "" # display nothing if error occurs
+msg_error = "" # displays nothing if error occurs
 
 
 

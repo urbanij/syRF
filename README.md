@@ -9,11 +9,11 @@ This app is tested using Python3 and it needs PyQt5 to be run. If you haven't it
 ```sh
 pip3 install PyQt5
 ```
-It also depends on other Python libraries such has Numpy, Matplotlib, SciPy, make sure to have those installed before proceeding.
+It also depends on other Python libraries such as Numpy, Matplotlib, SciPy, make sure to have those installed before proceeding.
 
 Then type 
 ```sh
-python syRF.pyw
+python syRF.py
 ```
 to actually launch the GUI.
 

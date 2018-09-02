@@ -1,6 +1,6 @@
 all:
-	# pyuic5 -x syRF.ui -o syRF.py # create a runnable python script
-	pyuic5 syRF_ui.ui > syRF_ui.py # create a non runnable python script but makes it suitable to be embedded into *_GUI.py which is then run as usual.
+	# pyuic5 -x syRF.ui -o syRF.py # creates a runnable python script
+	pyuic5 syRF_ui.ui > syRF_ui.py # creates a non runnable python script but makes it suitable to be embedded into *_GUI.py which is then run as usual.
 
 clean:
 	rm -rf __pycache__/

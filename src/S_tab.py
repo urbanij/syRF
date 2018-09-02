@@ -22,7 +22,7 @@ from twoport.utils import db as to_dB
 from intersections import find_intersection_points as int_points
 
 
-msg_error = "" # display nothing if error occurs
+msg_error = "" # displays nothing if error occurs
 
 
 
