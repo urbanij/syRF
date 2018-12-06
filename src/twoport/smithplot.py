@@ -157,10 +157,12 @@ class SmithChart(object):
         #self.label_options = {'ha':'center', 'va':'center', 'size':'10', 'alpha':0.5}
 
         # x-axis coordinates where constant R circles will intersect
-        intercept_x_coords = arange(-0.75, 1, 0.25)
+        intercept_x_coords = arange(-1, 1, 0.1)
+
 
         # angles where constant X circles will intersect (in degrees relative
         # to positive x-axis)
+        # intercept_angles = arange(40, 360, 40)
         intercept_angles = arange(40, 360, 40)
 
         # radii for vswr circles
@@ -175,6 +177,7 @@ class SmithChart(object):
         # self.draw_admittance_circles(intercept_x_coords, intercept_angles, labels=0)
         
         # either draw_vswr_circles or draw_gamma_circles has to be commented out
+        
         # self.draw_vswr_circles(vswr_radii, labels)
         self.draw_gamma_circles(gamma_radii, labels)
 

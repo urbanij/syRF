@@ -20,6 +20,8 @@ def calculate_D(s11, s12, s21, s22):
 
 def calculate_K(s11, s12, s21, s22):
 	D = calculate_D(s11, s12, s21, s22)
+	# print ("K = ")
+	# print (1-abs(s11)**2-abs(s22)**2+abs(D)**2)/(2*abs(s12*s21))
 	return (1-abs(s11)**2-abs(s22)**2+abs(D)**2)/(2*abs(s12*s21))
 
 def calculate_gamma(zl, z0):

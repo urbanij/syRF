@@ -11,16 +11,16 @@ pip3 install PyQt5
 ```
 It also depends on other Python libraries such as Numpy, Matplotlib, SciPy, make sure to have those installed before proceeding.
 
-Then type 
+Then type:
 ```sh
 python syRF.py
 ```
-to actually launch the GUI.
+to launch the GUI.
 
 ## Contributing
 Feel free to create pull requests or fork the repository.
 
-## Aknowledgments
+## Acknowledgements
 
 - [WebPlotDigitizer](https://automeris.io/WebPlotDigitizer/): used to extract the data of the printed plots into a handy `.csv` file ready to be plotted and manipulated.
 - [PyQt5](https://pypi.python.org/pypi/PyQt5): used to create the GUI.
