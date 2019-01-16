@@ -4,7 +4,7 @@
 """
 Created on Fri May 11 17:05:54 CEST 2018
 
-@author(s)   : francescourbani
+@author(s)   : Francesco Urbani
 @file        : quarter-wave-matching.py
 @descritpion : 
 

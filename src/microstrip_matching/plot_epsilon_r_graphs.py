@@ -4,7 +4,7 @@
 """
 Created on Mon Apr 23 22:02:42 2018
 
-@author(s)   : francescourbani
+@author(s)   : Francesco Urbani
 @file        : plot_epsilon_r_graphs.py
 @descritpion : Contains the data interpolated used to plot 
                the common base parameters,

@@ -4,7 +4,7 @@
 """
 Created on Mon Mar 19 15:38:35 2018
 
-@author(s)   : francescourbani
+@author(s)   : Francesco Urbani
 @file        : LC_matching_tab.py
 @descritpion : 
 

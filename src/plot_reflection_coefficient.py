@@ -4,7 +4,7 @@
 """
 Created on Mon Apr 23 22:02:42 2018
 
-@author(s)   : francescourbani
+@author(s)   : Francesco Urbani
 @file        : plot_reflection_coefficient.py
 @descritpion : File to plot Gamma in LC_matching_tab
 

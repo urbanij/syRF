@@ -4,7 +4,7 @@
 """
 Created on Sat Apr 14 12:38:00 2018
 
-@author(s)   : francescourbani
+@author(s)   : Francesco Urbani
 @file        : S_tab.py
 @descritpion : 
 

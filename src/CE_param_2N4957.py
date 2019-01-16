@@ -4,7 +4,7 @@
 """
 Created on Mon Apr 23 22:02:42 2018
 
-@author(s)   : francescourbani
+@author(s)   : Francesco Urbani
 @file        : CE_param_2N4957.py
 @descritpion : Contains the data interpolated used to plot 
                the common emitter parameters,

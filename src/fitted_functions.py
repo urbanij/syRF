@@ -4,7 +4,7 @@
 """
 Created on Mon Apr 23 22:02:42 2018
 
-@author(s)   : francescourbani
+@author(s)   : Francesco Urbani
 @file        : fitted_functions.py
 @descritpion : This file only contains the data that has been fitted
 

@@ -4,7 +4,7 @@
 """
 Created on Tue Apr 17 08:51:12 2018
 
-@author(s)   : francescourbani
+@author(s)   : Francesco Urbani
 @file        : Y_functions.py
 @descritpion : Functions used into Y tab.
 

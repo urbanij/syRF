@@ -4,7 +4,7 @@
 """
 Created on Sat Apr 28 10:14:23 2018
 
-@author(s)   : francescourbani
+@author(s)   : Francesco Urbani
 @file        : intersections.py
 @descritpion : calculates the intersection (if exists) of two circumferences,
                given their radii and centers.

@@ -4,7 +4,7 @@
 """
 Created on Mon Mar 19 15:38:35 2018
 
-@author(s)   : francescourbani
+@author(s)   : Francesco Urbani
 @file        : csv_parser.py
 @descritpion : This file is used to get the data from MRF57/MRF571.csv used in S_tab
 

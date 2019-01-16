@@ -4,7 +4,7 @@
 """
 Created on Tue Apr 17 08:59:08 2018
 
-@author(s)   : francescourbani
+@author(s)   : Francesco Urbani
 @file        : S_functions.py
 @descritpion : Functions used into S tab
 
