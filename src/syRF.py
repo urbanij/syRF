@@ -30,7 +30,7 @@ class mainProgram(QtWidgets.QMainWindow, Ui_MainWindow):
 
 
 		
-		self.tabWidget.setCurrentIndex(1)
+		# self.tabWidget.setCurrentIndex(1)
 		self.checkBox.setChecked(True)
 		self.checkBox_2.setChecked(True)
 

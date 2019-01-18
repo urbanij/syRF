@@ -21,7 +21,7 @@
        <bool>false</bool>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="tab_5">
        <attribute name="title">
@@ -38,7 +38,7 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>681</width>
+             <width>1258</width>
              <height>691</height>
             </rect>
            </property>
@@ -935,7 +935,7 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>1243</width>
+             <width>1258</width>
              <height>861</height>
             </rect>
            </property>
@@ -2734,7 +2734,7 @@
         <item>
          <widget class="QTabWidget" name="tabWidget_3">
           <property name="currentIndex">
-           <number>1</number>
+           <number>0</number>
           </property>
           <widget class="QWidget" name="tab_4">
            <attribute name="title">
@@ -2751,8 +2751,8 @@
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>617</width>
-                 <height>611</height>
+                 <width>1212</width>
+                 <height>616</height>
                 </rect>
                </property>
                <layout class="QVBoxLayout" name="verticalLayout_12">
