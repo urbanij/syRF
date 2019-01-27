@@ -1,32 +1,58 @@
 # syRF
 
-## Features
+<!-- CAD tool to help you design RF and microwave circuits.<br> -->
+
 Check [this webpage](https://urbanij.github.io/syRF/) for an overview.
 
-## Running
+### Prerequisites
 
-This app is tested using Python3 and it needs PyQt5 to be run. If you haven't it installed yet, do that by typing:
+
+[Python](https://www.python.org/)3 installed on your machine – preferably via [Anaconda](https://www.anaconda.com/download/), to make things as smooth as possible. 
+This way other useful/mandatory packages such has Numpy, Matplotlib, [...] will be installed as well.
+
+`PyQt5` i.e. the GUI engine is also mandatory. If not already installed do that by typing
+
 ```sh
 pip3 install PyQt5
-```
-It also depends on other Python libraries such as Numpy, Matplotlib, SciPy, make sure to have those installed before proceeding.
+``` 
 
-Then type:
+### Running
+
+Clone the repository on your local machine 
 ```sh
-python syRF.py
+git clone https://github.com/urbanij/syRF.git
 ```
-to launch the GUI.
+then 
+```sh
+cd syRF/src
+```
+and finally
+```sh
+python3 syRF.py
+```
+to launch it.
+
+
 
 ## Contributing
-Feel free to create pull requests or fork the repository.
 
-## Acknowledgements
-
-- [WebPlotDigitizer](https://automeris.io/WebPlotDigitizer/): used to extract the data of the printed plots into a handy `.csv` file ready to be plotted and manipulated.
-- [PyQt5](https://pypi.python.org/pypi/PyQt5): used to create the GUI.
-- [SciPy](https://www.scipy.org/): used to interpolate the data and smooth the functions.
-- [Matplotlib](https://matplotlib.org/)
+Please read [CONTRIBUTING.md](https://github.com/urbanij/syRF/blob/master/CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests.
 
 
+## Authors
 
-/[f.u](https://github.com/urbanij)
+* **Francesco Urbani** - *Initial work* 
+
+See also the list of [contributors](https://github.com/urbanij/syRF/graphs/contributors) who participated in this project.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/urbanij/syRF/blob/master/LICENSE) file for details
+
+## Acknowledgments
+
+- [WebPlotDigitizer](https://automeris.io/WebPlotDigitizer/) used to extract the data of the printed plots into a handy `.csv` file ready to be plotted and manipulated.
+- [PyQt5](https://pypi.python.org/pypi/PyQt5) used to create the GUI.
+- [SciPy](https://www.scipy.org/) used to interpolate the data and smooth the functions.
+- [Matplotlib](https://matplotlib.org/) used to display the plots
+
