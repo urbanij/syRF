@@ -8,7 +8,7 @@ Check [this webpage](https://urbanij.github.io/syRF/) for an overview.
 
 
 [Python](https://www.python.org/)3 installed on your machine – preferably via [Anaconda](https://www.anaconda.com/download/), to make things as smooth as possible. 
-This way other useful/mandatory packages such has Numpy, Matplotlib, [...] will be installed as well.
+This way [other](https://docs.anaconda.com/anaconda/packages/old-pkg-lists/4.3.1/py35/) useful/mandatory packages such as Numpy and Matplotlib will be installed as well.
 
 `PyQt5` i.e. the GUI engine is also mandatory. If not already installed do that by typing
 
@@ -52,7 +52,7 @@ This project is licensed under the MIT License - see the [LICENSE](https://githu
 ## Acknowledgments
 
 - [WebPlotDigitizer](https://automeris.io/WebPlotDigitizer/) used to extract the data of the printed plots into a handy `.csv` file ready to be plotted and manipulated.
-- [PyQt5](https://pypi.python.org/pypi/PyQt5) used to create the GUI.
+- [PyQt5](https://pypi.python.org/pypi/PyQt5) and [Qt Designer](http://doc.qt.io/qt-5/qtdesigner-manual.html) used to create the GUI.
 - [SciPy](https://www.scipy.org/) used to interpolate the data and smooth the functions.
 - [Matplotlib](https://matplotlib.org/) used to display the plots
 
