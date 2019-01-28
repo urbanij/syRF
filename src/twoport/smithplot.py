@@ -13,8 +13,8 @@ file later in S_MRF571_tab.py"""
 # from utils import *
 
 
-from matplotlib.patches import Circle, FancyArrowPatch 	# for drawing smith chart
-from matplotlib.lines import Line2D		# for drawing smith chart
+from matplotlib.patches import Circle, FancyArrowPatch   # for drawing smith chart
+from matplotlib.lines import Line2D                      # for drawing smith chart
 from matplotlib.text import Text
 from itertools import chain
 
@@ -244,8 +244,10 @@ class SmithChart(object):
 def plot_Smith(Cs, rs, Cl, rl, gamma_in, gamma_out, GA_dB, Ca, ra, NF_dB, Cnf, rnf, GT_dB, Ct, rt, GP_dB, Cp, rp, constant_gamma_circle, ZS, ZL, Z0, gamma_S_visualized, gamma_L_visualized, label_gamma_inout, vce, ic, f, bjt):
 
     fig, ax = subplots() # note we must use plt.subplots, not plt.subplot
-    
 
+    ## rename Matplotlib window
+    fig = gcf()
+    fig.canvas.set_window_title('Smith Chart')
 
     # draws Smith Plot
     sc = SmithChart(Z0, labels=1, show_cursor=0)

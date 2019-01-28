@@ -22,65 +22,65 @@ PATH = "2N4957/Y-parameters/CE/data/"
 
 def calculate_Y_CE_parameters():
 
-	#----------------- Y_ib -----------------#
-	# read file and store into c variable
-	with open(PATH + "gie.csv", "r") as f:
-		gie=f.read()
+    #----------------- Y_ib -----------------#
+    # read file and store into c variable
+    with open(PATH + "gie.csv", "r") as f:
+        gie=f.read()
 
-	# convert c into another suitable format
-	c = StringIO(gie)
-	# load c into x and y numpy arrays
-	f1, gie = np.loadtxt(c, delimiter=',', usecols=(0, 1), unpack=True)
-
-
-	with open(PATH + "bie.csv", "r") as f:
-		bie=f.read()
-	c = StringIO(bie)
-	f2, bie = np.loadtxt(c, delimiter=',', usecols=(0, 1), unpack=True)
+    # convert c into another suitable format
+    c = StringIO(gie)
+    # load c into x and y numpy arrays
+    f1, gie = np.loadtxt(c, delimiter=',', usecols=(0, 1), unpack=True)
 
 
-	#----------------- Y_fb -----------------#
-	with open(PATH + "gfe.csv", "r") as f:
-		gfe=f.read()
-	c = StringIO(gfe)
-	f3, gfe = np.loadtxt(c, delimiter=',', usecols=(0, 1), unpack=True)
-
-	with open(PATH + "-bfe.csv", "r") as f:
-		bfe=f.read()
-	c = StringIO(bfe)
-	f4, bfe = np.loadtxt(c, delimiter=',', usecols=(0, 1), unpack=True)
+    with open(PATH + "bie.csv", "r") as f:
+        bie=f.read()
+    c = StringIO(bie)
+    f2, bie = np.loadtxt(c, delimiter=',', usecols=(0, 1), unpack=True)
 
 
-	#----------------- Y_ob -----------------#
-	with open(PATH + "goe.csv", "r") as f:
-		goe=f.read()
-	c = StringIO(goe)
-	f5, goe = np.loadtxt(c, delimiter=',', usecols=(0, 1), unpack=True)
+    #----------------- Y_fb -----------------#
+    with open(PATH + "gfe.csv", "r") as f:
+        gfe=f.read()
+    c = StringIO(gfe)
+    f3, gfe = np.loadtxt(c, delimiter=',', usecols=(0, 1), unpack=True)
 
-	with open(PATH + "boe.csv", "r") as f:
-		boe=f.read()
-	c = StringIO(boe)
-	f6, boe = np.loadtxt(c, delimiter=',', usecols=(0, 1), unpack=True)
+    with open(PATH + "-bfe.csv", "r") as f:
+        bfe=f.read()
+    c = StringIO(bfe)
+    f4, bfe = np.loadtxt(c, delimiter=',', usecols=(0, 1), unpack=True)
 
 
-	#----------------- Y_rb -----------------#
-	with open(PATH + "-gre.csv", "r") as f:
-		gre=f.read()
-	c = StringIO(gre)
-	f7, gre = np.loadtxt(c, delimiter=',', usecols=(0, 1), unpack=True)
+    #----------------- Y_ob -----------------#
+    with open(PATH + "goe.csv", "r") as f:
+        goe=f.read()
+    c = StringIO(goe)
+    f5, goe = np.loadtxt(c, delimiter=',', usecols=(0, 1), unpack=True)
 
-	with open(PATH + "-bre.csv", "r") as f:
-		bre=f.read()
-	c = StringIO(bre)
-	f8, bre = np.loadtxt(c, delimiter=',', usecols=(0, 1), unpack=True)
+    with open(PATH + "boe.csv", "r") as f:
+        boe=f.read()
+    c = StringIO(boe)
+    f6, boe = np.loadtxt(c, delimiter=',', usecols=(0, 1), unpack=True)
 
-	return (f1, gie, f2, bie, f3, gfe, f4, bfe, f5, goe, f6, boe, f7, gre, f8, bre)
+
+    #----------------- Y_rb -----------------#
+    with open(PATH + "-gre.csv", "r") as f:
+        gre=f.read()
+    c = StringIO(gre)
+    f7, gre = np.loadtxt(c, delimiter=',', usecols=(0, 1), unpack=True)
+
+    with open(PATH + "-bre.csv", "r") as f:
+        bre=f.read()
+    c = StringIO(bre)
+    f8, bre = np.loadtxt(c, delimiter=',', usecols=(0, 1), unpack=True)
+
+    return (f1, gie, f2, bie, f3, gfe, f4, bfe, f5, goe, f6, boe, f7, gre, f8, bre)
 
 
 # this function won't actually be used.
 def Y_CE_parameters():
-		
-	f1 = np.array([  44.90855075,   45.69943453,   46.62162259,   47.56913784,
+        
+    f1 = np.array([  44.90855075,   45.69943453,   46.62162259,   47.56913784,
          48.38268963,   49.28880253,   50.21027716,   51.1497544 ,
          52.10674637,   52.99922847,   54.05409873,   55.14642292,
          56.0309013 ,   57.17014965,   58.28352323,   59.32701688,
@@ -135,7 +135,7 @@ def Y_CE_parameters():
        1503.9183225 ])
 
 
-	gie = np.array([ 0.84404409,  0.93925919,  0.93391668,  0.94102103,  0.94344441,
+    gie = np.array([ 0.84404409,  0.93925919,  0.93391668,  0.94102103,  0.94344441,
         0.98241184,  0.95291408,  0.95581969,  0.95611212,  0.99700591,
         0.9966598 ,  1.00602388,  1.03161059,  1.072554  ,  1.05676124,
         0.98638145,  1.06193333,  1.06431631,  1.07401617,  1.08685185,
@@ -178,7 +178,7 @@ def Y_CE_parameters():
        24.68672211, 24.77115879, 24.82789581, 24.9010536 , 24.95729568,
        24.96674877, 24.97878853, 25.04615335, 25.03235056])
 
-	f2 = np.array([  45.76508547,   46.63524994,   47.5084372 ,   48.38423164,
+    f2 = np.array([  45.76508547,   46.63524994,   47.5084372 ,   48.38423164,
          49.22491873,   50.18615483,   50.19037959,   51.16997764,
          52.12757735,   53.06306167,   54.09863289,   55.11037958,
          56.09953742,   57.19522796,   58.28653341,   59.25996481,
@@ -233,7 +233,7 @@ def Y_CE_parameters():
        1440.32912307, 1452.76976576, 1466.94457623, 1482.15203463,
        1495.58223334, 1506.36162946])
 
-	bie = np.array([ 1.72090999,  1.78389343,  1.81388211,  1.81217412,  1.81232974,
+    bie = np.array([ 1.72090999,  1.78389343,  1.81388211,  1.81217412,  1.81232974,
         1.84698912,  1.70671623,  1.80092058,  1.81062045,  1.82908862,
         1.89953064,  1.88362139,  1.90757723,  2.01016131,  2.00518772,
         1.94624115,  2.07979624,  2.09890353,  2.16243481,  2.18624582,
@@ -277,7 +277,7 @@ def Y_CE_parameters():
         5.64003393,  5.44180434,  5.76845845,  5.21125773,  4.91518934,
         4.69350094,  4.4436034 ,  4.19398606,  4.05612472])
 
-	f3 = np.array([  46.26610331,   47.06777345,   47.94596343,   48.84053867,
+    f3 = np.array([  46.26610331,   47.06777345,   47.94596343,   48.84053867,
          49.71419441,   50.54823108,   51.45243388,   52.41243281,
          53.39034338,   54.38649981,   55.4012425 ,   56.43491826,
          57.48788032,   58.56048854,   59.65310947,   60.76611651,
@@ -334,7 +334,7 @@ def Y_CE_parameters():
        1356.86355483, 1366.92387024, 1388.83249875, 1411.87015604,
        1433.89416981, 1456.2617401 , 1479.86513179])
 
-	gfe = np.array([ 57.52712671,  57.47433405,  57.46873631,  57.4842663 ,
+    gfe = np.array([ 57.52712671,  57.47433405,  57.46873631,  57.4842663 ,
         57.73622731,  57.44564005,  57.47868536,  57.47958846,
         57.48049156,  57.48139466,  57.48229776,  57.48320086,
         57.48410396,  57.50288437,  57.31038755,  57.46731076,
@@ -391,7 +391,7 @@ def Y_CE_parameters():
        -12.14423139, -12.83342365, -13.45656475, -14.28837292,
        -15.05979079, -15.79419951, -16.21431476])
 
-	f4 = np.array([  45.66050014,   46.38521113,   47.30567206,   48.18830075,
+    f4 = np.array([  45.66050014,   46.38521113,   47.30567206,   48.18830075,
          49.12178201,   49.79362769,   50.93623007,   51.88659767,
          52.77638028,   53.91128071,   54.84542171,   55.86872696,
          56.91112504,   57.97297216,   59.05463122,   60.11716958,
@@ -442,7 +442,7 @@ def Y_CE_parameters():
        1399.76734083, 1424.28756429, 1443.02656313, 1465.72960386,
        1480.25204734, 1492.90990004])
 
-	bfe = np.array([ 7.76053929,  8.07725554,  8.276241  ,  8.2771441 ,  8.33469287,
+    bfe = np.array([ 7.76053929,  8.07725554,  8.276241  ,  8.2771441 ,  8.33469287,
         8.24299045,  8.27985341,  8.06622887,  8.14067195,  8.23694012,
         8.2119566 ,  8.23236221,  8.38928542,  8.40969103,  8.41872018,
         8.54617711,  8.76669599,  8.79035202,  8.83676099,  8.81009938,
@@ -483,7 +483,7 @@ def Y_CE_parameters():
        31.6928486 , 31.45821361, 30.92589298, 30.74694985, 29.96748789,
        29.71558462, 29.27509278, 28.93226453])
 
-	f5 = np.array([  44.96789339,   45.79008204,   46.66580884,   47.53949506,
+    f5 = np.array([  44.96789339,   45.79008204,   46.66580884,   47.53949506,
          48.42928432,   49.33616475,   50.25908722,   51.19962745,
          52.15787149,   53.13404988,   54.12849826,   55.14155857,
          56.17357917,   57.22500878,   58.29684549,   59.38809532,
@@ -533,7 +533,7 @@ def Y_CE_parameters():
        1480.27795414])
 
 
-	goe = np.array([0.18153929, 0.13007765, 0.14877952, 0.15840464, 0.16026768,
+    goe = np.array([0.18153929, 0.13007765, 0.14877952, 0.15840464, 0.16026768,
        0.17522923, 0.16253835, 0.16003522, 0.16044286, 0.16085051,
        0.16125815, 0.16166579, 0.16207344, 0.16490673, 0.18617498,
        0.19094879, 0.17437688, 0.16556705, 0.15530183, 0.15425408,
@@ -573,7 +573,7 @@ def Y_CE_parameters():
        2.06556246, 2.22503432, 2.33388601, 2.4805991 ])
 
 
-	f6 = np.array([  45.73705798,   46.59281316,   47.46542089,   48.35383959,
+    f6 = np.array([  45.73705798,   46.59281316,   47.46542089,   48.35383959,
          49.26034988,   50.18100603,   51.1200599 ,   52.07760942,
          53.05231174,   54.04544315,   55.05703032,   56.0874689 ,
          57.13745549,   58.20764276,   59.29552022,   60.38241629,
@@ -625,7 +625,7 @@ def Y_CE_parameters():
        1424.60256247, 1460.20153423, 1452.73478012, 1479.78693092,
        1502.02363664])
 
-	boe = np.array([ 0.33413968,  0.32654268,  0.34514271,  0.34749087,  0.39374332,
+    boe = np.array([ 0.33413968,  0.32654268,  0.34514271,  0.34749087,  0.39374332,
         0.35606824,  0.35283741,  0.37580361,  0.37693895,  0.38316815,
         0.38575888,  0.38616653,  0.39336599,  0.41439167,  0.3767166 ,
         0.4106587 ,  0.43945117,  0.43809567,  0.44238436,  0.45079109,
@@ -667,7 +667,7 @@ def Y_CE_parameters():
        10.62116164, 10.75851465, 10.97354898, 10.87071149, 11.12516934,
        11.18645151])
 
-	f7 = np.array([  45.73365477,   46.59103605,   47.46420094,   48.35419065,
+    f7 = np.array([  45.73365477,   46.59103605,   47.46420094,   48.35419065,
          49.26035076,   50.18344331,   51.12348397,   52.0822789 ,
          53.05925001,   54.05375489,   55.09791935,   56.09817132,
          57.14899322,   58.22053744,   59.29109355,   59.89555005,
@@ -715,7 +715,7 @@ def Y_CE_parameters():
        1356.07211823, 1381.64736011, 1407.69978624, 1434.24906581,
        1461.309778  , 1487.69112223])
 
-	gre = np.array([7.78184245e-03, 9.79104898e-03, 9.79104898e-03, 1.29254112e-02,
+    gre = np.array([7.78184245e-03, 9.79104898e-03, 9.79104898e-03, 1.29254112e-02,
        1.26039381e-02, 1.19609920e-02, 9.06773463e-03, 1.34076207e-02,
        1.89530307e-02, 1.96763451e-02, 2.05603959e-02, 1.60597733e-02,
        1.30861477e-02, 1.59794051e-02, 1.88388232e-02, 7.94257898e-03,
@@ -763,7 +763,7 @@ def Y_CE_parameters():
        5.90049893e-01, 6.28385553e-01, 6.65515690e-01, 7.03931719e-01,
        7.44758795e-01, 7.72445661e-01])
 
-	f8 = np.array([  46.28861411,   47.16040825,   48.08892787,   48.94322133,
+    f8 = np.array([  46.28861411,   47.16040825,   48.08892787,   48.94322133,
          49.86222307,   51.74656513,   52.73387567,   53.7058976 ,
          54.71245594,   55.73847849,   56.72344097,   57.93566622,
          58.93607755,   60.03841555,   61.16377778,   62.24402872,
@@ -814,7 +814,7 @@ def Y_CE_parameters():
        1440.59028433, 1450.97792945, 1463.58544746, 1470.83574796,
        1494.28276143, 1508.92667263])
 
-	bre = np.array([0.08863231, 0.09084244, 0.09778484, 0.10904585, 0.12061888,
+    bre = np.array([0.08863231, 0.09084244, 0.09778484, 0.10904585, 0.12061888,
        0.10719738, 0.11077568, 0.11692194, 0.11724341, 0.12110109,
        0.12613468, 0.1335629 , 0.14738151, 0.13540664, 0.13637106,
        0.13832528, 0.14833175, 0.14804053, 0.15652742, 0.15405208,
@@ -855,7 +855,7 @@ def Y_CE_parameters():
        3.25010873, 3.29497431, 3.33060286, 3.3729918 , 3.41561042,
        3.47407565, 3.51007757, 3.55344869])
 
-	return (f1, gie, f2, bie, f3, gfe, f4, bfe, f5, goe, f6, boe, f7, gre, f8, bre)		
+    return (f1, gie, f2, bie, f3, gfe, f4, bfe, f5, goe, f6, boe, f7, gre, f8, bre)     
 
 
 
@@ -875,58 +875,58 @@ def Y_CE_parameters_fitted():
 #---------------------------------------#
 
 def visualize_CE_plot(f1, gie, f2, bie, f3, gfe, f4, bfe, f5, goe, f6, boe, f7, gre, f8, bre):
-	# plot it
-	plt.figure(1)
+    # plot it
+    plt.figure(1)
 
-	plt.subplot(221)
-	# plt.subplot(411)
-	plt.gca().set_title("$y_{ie}$")
-	plt.plot(f1, gie, label="$g_{ie}$")
-	plt.plot(f2, bie, label="$b_{ie}$")
-	plt.grid(True, which="both",ls="-")
-	plt.xlim(45, 1500)
-	plt.xscale('log')
-	plt.legend()
-	plt.ylabel("$mS$")
-
-
-	plt.subplot(223)
-	# plt.subplot(412)
-	plt.gca().set_title("$y_{fe}$")
-	plt.plot(f3, gfe, label="$g_{fe}$")
-	plt.plot(f4, bfe, label="$-b_{fe}$")
-	plt.grid(True, which="both",ls="-")
-	plt.xlim(45, 1500)
-	plt.xscale('log')
-	plt.legend()
-	plt.xlabel("$f\ (Hz)$")
-	plt.ylabel("$mS$")
+    plt.subplot(221)
+    # plt.subplot(411)
+    plt.gca().set_title("$y_{ie}$")
+    plt.plot(f1, gie, label="$g_{ie}$")
+    plt.plot(f2, bie, label="$b_{ie}$")
+    plt.grid(True, which="both",ls="-")
+    plt.xlim(45, 1500)
+    plt.xscale('log')
+    plt.legend()
+    plt.ylabel("$mS$")
 
 
-	plt.subplot(222)
-	# plt.subplot(413)
-	plt.gca().set_title("$y_{oe}$")
-	plt.plot(f5, goe, label="$g_{oe}$")
-	plt.plot(f6, boe, label="$b_{oe}$")
-	plt.grid(True ,which="both",ls="-")
-	plt.xlim(45, 1500)
-	plt.xscale('log')
-	plt.legend()
+    plt.subplot(223)
+    # plt.subplot(412)
+    plt.gca().set_title("$y_{fe}$")
+    plt.plot(f3, gfe, label="$g_{fe}$")
+    plt.plot(f4, bfe, label="$-b_{fe}$")
+    plt.grid(True, which="both",ls="-")
+    plt.xlim(45, 1500)
+    plt.xscale('log')
+    plt.legend()
+    plt.xlabel("$f\ (Hz)$")
+    plt.ylabel("$mS$")
 
 
-	plt.subplot(224)
-	# plt.subplot(414)
-	plt.gca().set_title("$y_{re}$")
-	plt.plot(f7, gre, label="$-g_{re}$")
-	plt.plot(f8, bre, label="$-b_{re}$")
-	plt.grid(True,which="both",ls="-")
-	plt.xlim(45, 1500)
-	plt.xscale('log')
-	plt.legend()
-	plt.xlabel("$f\ (Hz)$")
+    plt.subplot(222)
+    # plt.subplot(413)
+    plt.gca().set_title("$y_{oe}$")
+    plt.plot(f5, goe, label="$g_{oe}$")
+    plt.plot(f6, boe, label="$b_{oe}$")
+    plt.grid(True ,which="both",ls="-")
+    plt.xlim(45, 1500)
+    plt.xscale('log')
+    plt.legend()
 
-	plt.suptitle("2N4957 Common emitter (C.E.) Y parameters. $y = g + j\cdot b$")
-	plt.show()
+
+    plt.subplot(224)
+    # plt.subplot(414)
+    plt.gca().set_title("$y_{re}$")
+    plt.plot(f7, gre, label="$-g_{re}$")
+    plt.plot(f8, bre, label="$-b_{re}$")
+    plt.grid(True,which="both",ls="-")
+    plt.xlim(45, 1500)
+    plt.xscale('log')
+    plt.legend()
+    plt.xlabel("$f\ (Hz)$")
+
+    plt.suptitle("2N4957 Common emitter (C.E.) Y parameters. $y = g + j\cdot b$")
+    plt.show()
 
 
 # f1, gie, f2, bie, f3, gfe, f4, bfe, f5, goe, f6, boe, f7, gre, f8, bre = calculate_Y_CE_parameters()
