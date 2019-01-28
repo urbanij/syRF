@@ -27,15 +27,15 @@ class mainProgram(QtWidgets.QMainWindow, Ui_MainWindow):
 	def __init__(self, parent=None):
 		super(mainProgram, self).__init__(parent)
 		self.setupUi(self)
-
+		
 
 		
 		# self.tabWidget.setCurrentIndex(1)
 		self.checkBox.setChecked(True)
 		self.checkBox_2.setChecked(True)
 
-		self.f0_box_2.setFocus()
-		self.vce_box.setFocus()
+		self.f0_box_2.setFocus()  # set focus on frequency of Y tab on startup
+
 		self.radioButton.setChecked(True) # Z of quarter wave impedance matching set
 
 		self.radioButton_CE.setChecked(True) # radioButton is checked on startup. Common emitter is the default config.

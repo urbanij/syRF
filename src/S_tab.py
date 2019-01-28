@@ -780,22 +780,40 @@ def open_datasheet(self):
 
 
 
+
+""" clean load and source boxes """
 def clean_S_MRF571(self):
 	self.ZS_box.setText("")
 	self.ZL_box.setText("")
+
+	# ==== gammas input box, if source and load inserted as gamma rather than as impedance 
+	#      renaming the boxes may be a good idea
+	self.ZS_box_2.setText("")
+	self.ZS_box_5.setText("")
+	self.ZS_box_4.setText("")
+	self.ZS_box_3.setText("")
+
 	self.Calculate_button_5.click()
-	self.ZS_box.setFocus()
+	# ================================================================
+
+
 
 def clean_all_S_MRF571(self):
 	self.s11_box.setText("")
 	self.s21_box.setText("")
 	self.s12_box.setText("")
 	self.s22_box.setText("")
-	self.Z0_box.setText("")
+	### self.Z0_box.setText("")
+	self.gamma_s_on_box.setText("")
+	self.NFmindb_box_2.setText("")
+	self.rn_box_2.setText("")
 
 	self.vce_box.setText("")
 	self.ic_box.setText("")
 	self.f_box.setText("")
+
+	clean_S_MRF571(self)
+
 	self.Calculate_button_5.click()
 	self.vce_box.setFocus()
 
