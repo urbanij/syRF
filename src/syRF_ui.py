@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'syRF_ui.ui'
+# Form implementation generated from reading ui file '../ui/syRF.ui'
 #
 # Created by: PyQt5 UI code generator 5.10.1
 #
