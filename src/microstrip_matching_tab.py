@@ -388,6 +388,3 @@ def clean_all_microstrip_tab(self):
     
     
     
-
-
-
