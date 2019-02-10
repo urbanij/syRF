@@ -18,10 +18,8 @@ pip3 install PyQt5
 
 ### Running
 
-Clone/dowload the repository on your local machine and `cd` into it
-```sh
-git clone https://github.com/urbanij/syRF.git
-```
+Clone/download the repository on your local machine and `cd` into it
+
 then 
 ```sh
 cd src/main/python
