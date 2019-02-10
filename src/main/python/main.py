@@ -10,6 +10,11 @@ Created on Mon Mar 19 15:38:35 2018
 
 """
 
+# ============================================================
+from fbs_runtime.application_context import ApplicationContext
+from PyQt5.QtWidgets import QMainWindow
+# ============================================================
+
 from PyQt5 import QtCore, QtGui, QtWidgets
 from syRF_ui import Ui_MainWindow
 

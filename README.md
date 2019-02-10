@@ -18,17 +18,17 @@ pip3 install PyQt5
 
 ### Running
 
-Clone the repository on your local machine 
+Clone/dowload the repository on your local machine and `cd` into it
 ```sh
 git clone https://github.com/urbanij/syRF.git
 ```
 then 
 ```sh
-cd syRF/src
+cd src/main/python
 ```
 and finally
 ```sh
-python3 syRF.py
+python3 main.py
 ```
 to launch it.
 
