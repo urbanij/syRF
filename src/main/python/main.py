@@ -72,6 +72,8 @@ class mainProgram(QtWidgets.QMainWindow, Ui_MainWindow):
         self.show_plots_button.clicked.connect(self.show_plot_Y_parameters)
         self.open_datasheet_Y_button.clicked.connect(self.open_datasheet_Y)
 
+        self.plot_C_over_f0.clicked.connect(self.plot_C_over_f)
+
         self.Clean_button_3.clicked.connect(self.clean_Y_2N4957)
         self.Clean_all_button_4.clicked.connect(self.clean_all_Y_2N4957)
         self.Fill_ys_yl_opt_button.clicked.connect(self.fill_ys_yl_opt_2N4957)
@@ -213,6 +215,10 @@ class mainProgram(QtWidgets.QMainWindow, Ui_MainWindow):
     def open_datasheet_Y(self):
         from Y_tab import open_datasheet_Y
         open_datasheet_Y(self)
+
+    def plot_C_over_f(self):
+        from Y_tab import plot_C_over_f
+        plot_C_over_f(self)
 
     def clean_Y_2N4957(self):
         from Y_tab import clean_Y_2N4957
