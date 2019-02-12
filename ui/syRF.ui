@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1357</width>
-    <height>830</height>
+    <height>853</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -897,9 +897,9 @@
            </widget>
           </item>
           <item>
-           <widget class="QPushButton" name="plot_C_over_f0">
+           <widget class="QPushButton" name="plot_C_f0_button">
             <property name="text">
-             <string>Plot C over f0</string>
+             <string>Plot C(f)</string>
             </property>
            </widget>
           </item>
@@ -942,7 +942,7 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>1285</width>
+             <width>852</width>
              <height>861</height>
             </rect>
            </property>
@@ -2758,8 +2758,8 @@
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>1239</width>
-                 <height>638</height>
+                 <width>617</width>
+                 <height>611</height>
                 </rect>
                </property>
                <layout class="QVBoxLayout" name="verticalLayout_12">

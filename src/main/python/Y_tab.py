@@ -491,6 +491,12 @@ def open_datasheet_Y(self):
 # really slow. 
 
 def plot_C_over_f(self):
+
+
+    fig, ax = plt.subplots()
+
+
+
     
     freq_list = np.linspace(45, 1500, 1000)
     yi_list = []
@@ -633,6 +639,7 @@ def plot_C_over_f(self):
             C = Y.calculate_C(yi_, yf_, yo_, yr_)
 
             C_list.append(C)
+            plt.ylim(-15, 15)
 
     # ============================================================
     #          END COPY
@@ -640,11 +647,18 @@ def plot_C_over_f(self):
 
     
 
-    plt.plot(freq_list, C_list)
+    
+    ax.plot(freq_list, C_list, label="$C(f_0)$")
+
+
+    # plot unconditionally stable area
+    ax.axhspan(0, 1, alpha=0.2, color='green')
+
     
 
     plt.grid(True,which="both",ls="-")
     plt.xlim(45, 1500)
+
     plt.xscale('log')
     plt.legend()
     plt.xlabel("$f\ (Hz)$")

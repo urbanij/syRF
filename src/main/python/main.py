@@ -72,7 +72,7 @@ class mainProgram(QtWidgets.QMainWindow, Ui_MainWindow):
         self.show_plots_button.clicked.connect(self.show_plot_Y_parameters)
         self.open_datasheet_Y_button.clicked.connect(self.open_datasheet_Y)
 
-        self.plot_C_over_f0.clicked.connect(self.plot_C_over_f)
+        self.plot_C_f0_button.clicked.connect(self.plot_C_over_f)
 
         self.Clean_button_3.clicked.connect(self.clean_Y_2N4957)
         self.Clean_all_button_4.clicked.connect(self.clean_all_Y_2N4957)
