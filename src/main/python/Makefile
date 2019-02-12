@@ -1,5 +1,5 @@
 all:
-	pyuic5 ../ui/syRF.ui > syRF_ui.py # creates a non runnable python script
+	pyuic5 ../../../ui/syRF.ui > syRF_ui.py # creates a non runnable python script
 
 clean:
 	rm -rf __pycache__/

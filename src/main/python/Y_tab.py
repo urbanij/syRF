@@ -13,6 +13,7 @@ Created on Mon Mar 19 15:38:35 2018
 import sys
 import os
 import numpy as np
+import matplotlib.pyplot as plt
 import cmath
 import math
 
@@ -481,6 +482,9 @@ def open_datasheet_Y(self):
         print ("Can't open the datasheet.")
 
 
+""" plots Linvill value C with respect to the frequency of operation f0 """
+def plot_C_over_f(self):
+    pass
 
 
 def clean_Y_2N4957(self):

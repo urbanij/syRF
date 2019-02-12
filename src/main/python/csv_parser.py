@@ -6,7 +6,7 @@ Created on Mon Mar 19 15:38:35 2018
 
 @author(s)   : Francesco Urbani
 @file        : csv_parser.py
-@descritpion : This file is used to get the data from MRF57/MRF571.csv used in S_tab
+@descritpion : This file retrieves the data from MRF57/MRF571.csv used in S_tab
 
 """
 
@@ -36,7 +36,7 @@ def get_S_parameters(Vce, Ic, f, bjt):
                 int(line[1]) == Ic  and \
                 int(line[2]) == f:
 
-                # actual form of the S parameters, those written in the datasheet
+                # actual form of the S parameters written in the datasheet
                 s11 = ( float(line[3]), float(line[4]) )
                 s21 = ( float(line[5]), float(line[6]) )
                 s12 = ( float(line[7]), float(line[8]) )

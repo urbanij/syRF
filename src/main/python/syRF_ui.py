@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file '../ui/syRF.ui'
+# Form implementation generated from reading ui file '../../../ui/syRF.ui'
 #
 # Created by: PyQt5 UI code generator 5.10.1
 #
@@ -11,7 +11,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(1330, 808)
+        MainWindow.resize(1357, 830)
         MainWindow.setWindowTitle("syRF")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
@@ -28,7 +28,7 @@ class Ui_MainWindow(object):
         self.scrollArea.setWidgetResizable(True)
         self.scrollArea.setObjectName("scrollArea")
         self.scrollAreaWidgetContents = QtWidgets.QWidget()
-        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 1258, 691))
+        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 1285, 691))
         self.scrollAreaWidgetContents.setObjectName("scrollAreaWidgetContents")
         self.verticalLayout_6 = QtWidgets.QVBoxLayout(self.scrollAreaWidgetContents)
         self.verticalLayout_6.setObjectName("verticalLayout_6")
@@ -396,6 +396,9 @@ class Ui_MainWindow(object):
         self.Clean_button_3 = QtWidgets.QPushButton(self.tab_5)
         self.Clean_button_3.setObjectName("Clean_button_3")
         self.horizontalLayout_16.addWidget(self.Clean_button_3)
+        self.plot_C_over_f0 = QtWidgets.QPushButton(self.tab_5)
+        self.plot_C_over_f0.setObjectName("plot_C_over_f0")
+        self.horizontalLayout_16.addWidget(self.plot_C_over_f0)
         self.Fill_ys_yl_opt_button = QtWidgets.QPushButton(self.tab_5)
         self.Fill_ys_yl_opt_button.setObjectName("Fill_ys_yl_opt_button")
         self.horizontalLayout_16.addWidget(self.Fill_ys_yl_opt_button)
@@ -414,7 +417,7 @@ class Ui_MainWindow(object):
         self.scrollArea_2.setWidgetResizable(True)
         self.scrollArea_2.setObjectName("scrollArea_2")
         self.scrollAreaWidgetContents_2 = QtWidgets.QWidget()
-        self.scrollAreaWidgetContents_2.setGeometry(QtCore.QRect(0, 0, 1258, 861))
+        self.scrollAreaWidgetContents_2.setGeometry(QtCore.QRect(0, 0, 1285, 861))
         self.scrollAreaWidgetContents_2.setObjectName("scrollAreaWidgetContents_2")
         self.verticalLayout_10 = QtWidgets.QVBoxLayout(self.scrollAreaWidgetContents_2)
         self.verticalLayout_10.setObjectName("verticalLayout_10")
@@ -1239,7 +1242,7 @@ class Ui_MainWindow(object):
         self.scrollArea_3.setWidgetResizable(True)
         self.scrollArea_3.setObjectName("scrollArea_3")
         self.scrollAreaWidgetContents_3 = QtWidgets.QWidget()
-        self.scrollAreaWidgetContents_3.setGeometry(QtCore.QRect(0, 0, 1212, 616))
+        self.scrollAreaWidgetContents_3.setGeometry(QtCore.QRect(0, 0, 1239, 638))
         self.scrollAreaWidgetContents_3.setObjectName("scrollAreaWidgetContents_3")
         self.verticalLayout_12 = QtWidgets.QVBoxLayout(self.scrollAreaWidgetContents_3)
         self.verticalLayout_12.setObjectName("verticalLayout_12")
@@ -2523,6 +2526,7 @@ class Ui_MainWindow(object):
         self.radioButton_CE.setText(_translate("MainWindow", "Common emitter configuration"))
         self.Clean_all_button_4.setText(_translate("MainWindow", "Clean All"))
         self.Clean_button_3.setText(_translate("MainWindow", "Clean"))
+        self.plot_C_over_f0.setText(_translate("MainWindow", "Plot C over f0"))
         self.Fill_ys_yl_opt_button.setText(_translate("MainWindow", "Fill Y_S = Y_S,opt; Y_L = Y_L,opt"))
         self.Calculate_button_4.setText(_translate("MainWindow", "Calculate"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_5), _translate("MainWindow", "Y"))

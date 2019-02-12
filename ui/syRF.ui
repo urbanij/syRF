@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1330</width>
-    <height>808</height>
+    <width>1357</width>
+    <height>830</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -38,7 +38,7 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>1258</width>
+             <width>1285</width>
              <height>691</height>
             </rect>
            </property>
@@ -897,6 +897,13 @@
            </widget>
           </item>
           <item>
+           <widget class="QPushButton" name="plot_C_over_f0">
+            <property name="text">
+             <string>Plot C over f0</string>
+            </property>
+           </widget>
+          </item>
+          <item>
            <widget class="QPushButton" name="Fill_ys_yl_opt_button">
             <property name="text">
              <string>Fill Y_S = Y_S,opt; Y_L = Y_L,opt</string>
@@ -935,7 +942,7 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>1258</width>
+             <width>1285</width>
              <height>861</height>
             </rect>
            </property>
@@ -2751,8 +2758,8 @@
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>1212</width>
-                 <height>616</height>
+                 <width>1239</width>
+                 <height>638</height>
                 </rect>
                </property>
                <layout class="QVBoxLayout" name="verticalLayout_12">

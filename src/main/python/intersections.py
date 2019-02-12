@@ -17,7 +17,9 @@ import cmath
 def find_intersection_points(c1, r1, c2, r2):
     # c1 and c2 are the coordinates of the center (complex number) and r1 r2 their radii
 
-    d = math.hypot(c2.real - c1.real, c2.imag - c1.imag)
+    d = math.hypot(c2.real - c1.real, c2.imag - c1.imag)    # hypot: return the Euclidean norm, sqrt(x*x + y*y). 
+                                                            # This is the length of the vector from the origin 
+                                                            # to point (x, y).
     if d <= r1 + r2 and d >= abs(r2 - r1):
         ex = (c2.real - c1.real) / d
         ey = (c2.imag - c1.imag) / d
