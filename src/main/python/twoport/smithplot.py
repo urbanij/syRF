@@ -241,9 +241,16 @@ class SmithChart(object):
 
 
 
-def plot_Smith(Cs, rs, Cl, rl, gamma_in, gamma_out, GA_dB, Ca, ra, NF_dB, Cnf, rnf, GT_dB, Ct, rt, GP_dB, Cp, rp, constant_gamma_circle, ZS, ZL, Z0, gamma_S_visualized, gamma_L_visualized, label_gamma_inout, vce, ic, f, bjt):
+def plot_Smith(Cs, rs, Cl, rl, gamma_in, gamma_out, gamma_L, gamma_S, GA_dB, Ca, ra, NF_dB, Cnf, rnf, GT_dB, Ct, rt, GP_dB, Cp, rp, constant_gamma_circle, ZS, ZL, Z0, gamma_S_visualized, gamma_L_visualized, label_gamma_inout, vce, ic, f, bjt):
 
     fig, ax = subplots() # note we must use plt.subplots, not plt.subplot
+
+    # subplots_adjust(top=0.915) 
+    # subplots_adjust(bottom=0.065)
+    # subplots_adjust(left=0.06) 
+    # subplots_adjust(right=0.945) 
+    # subplots_adjust(hspace=0.2)
+    # subplots_adjust(wspace=0.2) 
 
     ## rename Matplotlib window
     fig = gcf()
@@ -256,11 +263,11 @@ def plot_Smith(Cs, rs, Cl, rl, gamma_in, gamma_out, GA_dB, Ca, ra, NF_dB, Cnf, r
 
 
     # draws my circles above the preexisting smith circle.
-    circle_in  = plt.Circle((Cs.real, Cs.imag), rs, color='blue', fill=True, alpha=.15)
-    plot(Cs.real, Cs.imag, marker=None, color="#E0E2FD", label="Input stability circle") # E0E2FD is blue with alpha=0.15
+    circle_in  = plt.Circle((Cs.real, Cs.imag), rs, color='red', fill=True, alpha=.15)
+    plot(Cs.real, Cs.imag, marker=None, color="#fbe2e1", label="Input stability circle") # fbe2e1 is red with alpha=0.15
 
-    circle_out = plt.Circle((Cl.real, Cl.imag), rl, color='red' , fill=True, alpha=.15)
-    plot(Cl.real, Cl.imag, marker=None, color="#fbe2e1", label="Output stability circle") # fbe2e1 is red with alpha=0.15
+    circle_out = plt.Circle((Cl.real, Cl.imag), rl, color='green' , fill=True, alpha=.15)
+    plot(Cl.real, Cl.imag, marker=None, color="#CCFFCC", label="Output stability circle") # CCFFCC is green with 
 
     ax.add_artist(circle_in)
     ax.add_artist(circle_out)
@@ -291,19 +298,39 @@ def plot_Smith(Cs, rs, Cl, rl, gamma_in, gamma_out, GA_dB, Ca, ra, NF_dB, Cnf, r
     
 
 
-    if gamma_out != msg_error:
+    if gamma_S != msg_error:
         if label_gamma_inout: # if true shows gamma as label
-            plot(gamma_out.real, gamma_out.imag, marker="o", color="red", label="$\Gamma_{out}(\Gamma_S=" + str(gamma_S_visualized) + ")$")
+            plot(gamma_S.real, gamma_S.imag, marker="o", color="coral", label="$\Gamma_{S}$")
         else:
-            plot(gamma_out.real, gamma_out.imag, marker="o", color="red", label="$\Gamma_{out}(Z_S=" + str(ZS) + "\Omega)$")
+            plot(gamma_S.real, gamma_S.imag, marker="o", color="coral", label="$\Gamma_{S}(Z_S=" + str(ZS) + "\Omega)$")
+
             
     
     if gamma_in != msg_error:
         if label_gamma_inout: # if true shows gamma as label
-            plot(gamma_in.real, gamma_in.imag, marker="o", color="blue", label="$\Gamma_{in}(\Gamma_L=" + str(gamma_L_visualized) + ")$")
+            plot(gamma_in.real, gamma_in.imag, marker="o", color="crimson", label="$\Gamma_{in}(\Gamma_L=" + str(gamma_L_visualized) + ")$")
         else:
-            plot(gamma_in.real, gamma_in.imag, marker="o", color="blue", label="$\Gamma_{in}(Z_L=" + str(ZL) + "\Omega)$")
-            
+            plot(gamma_in.real, gamma_in.imag, marker="o", color="crimson", label="$\Gamma_{in}(Z_L=" + str(ZL) + "\Omega)$")
+         
+
+
+
+    if gamma_L != msg_error:
+        if label_gamma_inout: # if true shows gamma as label
+            plot(gamma_L.real, gamma_L.imag, marker="o", color="lime", label="$\Gamma_{L}$")
+        else:
+            plot(gamma_L.real, gamma_L.imag, marker="o", color="lime", label="$\Gamma_{L}(Z_L=" + str(ZL) + "\Omega)$")
+    
+
+    
+    if gamma_out != msg_error:
+        if label_gamma_inout: # if true shows gamma as label
+            plot(gamma_out.real, gamma_out.imag, marker="o", color="darkgreen", label="$\Gamma_{out}(\Gamma_S=" + str(gamma_S_visualized) + ")$")
+        else:
+            plot(gamma_out.real, gamma_out.imag, marker="o", color="darkgreen", label="$\Gamma_{out}(Z_S=" + str(ZS) + "\Omega)$")
+
+        
+
 
     if constant_gamma_circle != msg_error:
         Gamma = plt.Circle((0, 0), constant_gamma_circle, color='#00CCCC', fill=False)

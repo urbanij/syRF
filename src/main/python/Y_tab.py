@@ -481,16 +481,18 @@ def fill_ys_yl_opt_2N4957(self):
         pass
 
 
+
 def open_datasheet_Y(self):
+    path = "2N4957/2N4957.pdf"
     try:
         if sys.platform == "linux":
-            os.system("xdg-open 2N4957/2N4957.pdf")
+            os.system("xdg-open {}".format(path))
         elif sys.platform == "darwin":
-            os.system("open 2N4957/2N4957.pdf")
+            os.system("open {}".format(path))
         elif sys.platform[:3] == "win":
-            os.system('start "" "2N4957/2N4957.pdf"')
+            os.system('start "" {}'.format(path))
     except Exception as e:
-        print ("Can't open the datasheet.")
+        print ("Can't open the pdf {}.".format(path))
 
 
 

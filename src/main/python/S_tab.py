@@ -724,6 +724,7 @@ def compute_S_MRF571(self):
             label_gamma_inout,
             gamma_S_visualized, gamma_L_visualized,
             gamma_in, gamma_out,
+            gamma_L, gamma_S,
             Cs, rs,
             Cl, rl,
             NF_circle_dB, Cnf, rnf,
@@ -738,7 +739,7 @@ def compute_S_MRF571(self):
 
 def smith_plot_all(self):
 
-    s11, s21, s12, s22, ZS, ZL, Z0, label_gamma_inout, gamma_S_visualized, gamma_L_visualized, gamma_in, gamma_out, Cs, rs, Cl, rl, NF_dB, Cnf, rnf, GA_dB, Ca, ra, GT_dB, Ct, rt, GP_dB, Cp, rp = compute_S_MRF571(self)
+    s11, s21, s12, s22, ZS, ZL, Z0, label_gamma_inout, gamma_S_visualized, gamma_L_visualized, gamma_in, gamma_out, gamma_L, gamma_S, Cs, rs, Cl, rl, NF_dB, Cnf, rnf, GA_dB, Ca, ra, GT_dB, Ct, rt, GP_dB, Cp, rp = compute_S_MRF571(self)
     vce, ic, f, bjt = fill_S_boxes(self)
 
 
@@ -750,6 +751,7 @@ def smith_plot_all(self):
         twoport.smithplot.plot_Smith(Cs, rs, 
                                      Cl, rl,
                                      gamma_in, gamma_out, 
+                                     gamma_L, gamma_S,
                                      GA_dB, Ca, ra, 
                                      NF_dB, Cnf, rnf,
                                      GT_dB, Ct, rt, 
@@ -768,15 +770,18 @@ def smith_plot_all(self):
 
 
 def open_datasheet(self):
+    path = "MRF57/MRF57.pdf"
     try:
         if sys.platform == "linux":
-            os.system("xdg-open MRF57/MRF57.pdf")
-        elif sys.platform == "darwin": # mac
-            os.system("open MRF57/MRF57.pdf")
-        elif sys.platform[:3] == "win": # sys.platform on windows actually returns win32 
-            os.system('start "" "MRF57/MRF57.pdf"')
+            os.system("xdg-open {}".format(path))
+        elif sys.platform == "darwin":
+            os.system("open {}".format(path))
+        elif sys.platform[:3] == "win":
+            os.system('start "" {}'.format(path))
     except Exception as e:
-        print ("Can't open the datasheet.")
+        print ("Can't open the pdf {}.".format(path))
+
+
 
 
 
