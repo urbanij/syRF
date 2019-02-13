@@ -352,17 +352,18 @@ def compute_matching_microstrip(self):
 
 
 
-
 def open_plots(self):
+    path = "microstrip_matching/epsilon_r_graphs.pdf"
     try:
         if sys.platform == "linux":
-            os.system("xdg-open microstrip_matching/epsilon_r_graphs.pdf")
+            os.system("xdg-open {}".format(path))
         elif sys.platform == "darwin":
-            os.system("open microstrip_matching/epsilon_r_graphs.pdf")
+            os.system("open {}".format(path))
         elif sys.platform[:3] == "win":
-            os.system('start "" "microstrip_matching/epsilon_r_graphs.pdf"')
+            os.system('start "" {}'.format(path))
     except Exception as e:
-        print ("Can't open the plots.")
+        print ("Can't open the pdf {}.".format(path))
+
 
 
 

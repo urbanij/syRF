@@ -396,7 +396,7 @@
                 <item row="5" column="2">
                  <widget class="QLabel" name="label_174">
                   <property name="text">
-                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;|v&lt;span style=&quot; vertical-align:sub;&quot;&gt;out&lt;/span&gt;/v&lt;span style=&quot; vertical-align:sub;&quot;&gt;s&lt;/span&gt;|&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;|v&lt;span style=&quot; vertical-align:sub;&quot;&gt;out&lt;/span&gt;/v&lt;span style=&quot; vertical-align:sub;&quot;&gt;s&lt;/span&gt;|((Y&lt;span style=&quot; vertical-align:sub;&quot;&gt;S&lt;/span&gt;,Y&lt;span style=&quot; vertical-align:sub;&quot;&gt;L&lt;/span&gt;))&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                   </property>
                   <property name="alignment">
                    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -589,7 +589,7 @@
                 <item row="5" column="0">
                  <widget class="QLabel" name="label_173">
                   <property name="text">
-                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;|A&lt;span style=&quot; vertical-align:sub;&quot;&gt;V&lt;/span&gt;|&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;|A&lt;span style=&quot; vertical-align:sub;&quot;&gt;V&lt;/span&gt;|(Y&lt;span style=&quot; vertical-align:sub;&quot;&gt;L&lt;/span&gt;)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                   </property>
                   <property name="alignment">
                    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -3392,6 +3392,13 @@
                        </size>
                       </property>
                      </spacer>
+                    </item>
+                    <item>
+                     <widget class="QPushButton" name="open_pdf_sketch_button">
+                      <property name="text">
+                       <string>Open schematic</string>
+                      </property>
+                     </widget>
                     </item>
                     <item>
                      <widget class="QPushButton" name="plot">

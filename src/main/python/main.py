@@ -132,6 +132,7 @@ class mainProgram(QtWidgets.QMainWindow, Ui_MainWindow):
         self.output_box.editingFinished.connect(self.Calculate_button_3.click)
         self.comboBox.currentIndexChanged['QString'].connect(self.Calculate_button_3.click)
         self.comboBox_2.currentIndexChanged['QString'].connect(self.Calculate_button_3.click)
+        self.open_pdf_sketch_button.clicked.connect(self.open_pdf_sketch_matching)
         # self.comboBox_3.currentIndexChanged['QString'].connect(self.Calculate_button_3.click)
 
         self.Calculate_button_3.clicked.connect(self.compute_LC_matching)
@@ -314,6 +315,11 @@ class mainProgram(QtWidgets.QMainWindow, Ui_MainWindow):
         from LC_matching_tab import compute_LC_matching
         plot_gamma( compute_LC_matching(self) )
 
+    def open_pdf_sketch_matching(self):
+        from LC_matching_tab import open_pdf_sketch_matching
+        open_pdf_sketch_matching(self)
+
+
 
     def compute_matching_microstrip(self):
         from microstrip_matching_tab import compute_matching_microstrip
@@ -333,6 +339,8 @@ class mainProgram(QtWidgets.QMainWindow, Ui_MainWindow):
 
 
 
+
+
     def showSmithPlot(self):
         from quarter_wave_matching import showSmithPlot
         showSmithPlot(self)
@@ -349,6 +357,8 @@ class mainProgram(QtWidgets.QMainWindow, Ui_MainWindow):
     def clean_all_quarter_wave(self):
         from quarter_wave_matching import clean_all_quarter_wave
         clean_all_quarter_wave(self)
+
+
 
 
     
