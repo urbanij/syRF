@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# save this in a convenient location and double click this to launch syRF
+
+cd [path to folder]
+python main.py
+cd 

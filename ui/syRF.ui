@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1357</width>
-    <height>853</height>
+    <height>846</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -892,7 +892,7 @@
           <item>
            <widget class="QPushButton" name="Clean_button_3">
             <property name="text">
-             <string>Clean</string>
+             <string>Clean source and load</string>
             </property>
            </widget>
           </item>
@@ -942,7 +942,7 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>852</width>
+             <width>1285</width>
              <height>861</height>
             </rect>
            </property>
@@ -2712,7 +2712,7 @@
           <item>
            <widget class="QPushButton" name="clean_S_button">
             <property name="text">
-             <string>Clean</string>
+             <string>Clean source and load</string>
             </property>
            </widget>
           </item>
@@ -2758,8 +2758,8 @@
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>617</width>
-                 <height>611</height>
+                 <width>1239</width>
+                 <height>654</height>
                 </rect>
                </property>
                <layout class="QVBoxLayout" name="verticalLayout_12">

@@ -574,6 +574,8 @@ def plot_C_over_f(self):
             C = Y.calculate_C(yi_, yf_, yo_, yr_)
 
             C_list.append(C)
+
+            plt.ylim(0, 4.5)
         
 
     else:
@@ -639,7 +641,7 @@ def plot_C_over_f(self):
             C = Y.calculate_C(yi_, yf_, yo_, yr_)
 
             C_list.append(C)
-            plt.ylim(-15, 15)
+            plt.ylim(-8, 8)
 
     # ============================================================
     #          END COPY
@@ -648,11 +650,11 @@ def plot_C_over_f(self):
     
 
     
-    ax.plot(freq_list, C_list, label="$C(f_0)$")
+    ax.plot(freq_list, C_list, label="$C(f)$")
 
 
     # plot unconditionally stable area
-    ax.axhspan(0, 1, alpha=0.2, color='green')
+    ax.axhspan(0, 1, alpha=0.1, color='green', label="Unconditionally stable area")
 
     
 
@@ -663,7 +665,8 @@ def plot_C_over_f(self):
     plt.legend()
     plt.xlabel("$f\ (Hz)$")
 
-    plt.suptitle("$C(f_0)$")
+    plt.suptitle("$C(f)$")
+    # C(f) = \frac{|y_R y_F|}{2 \mathbb{R}e\{y_i\} \mathbb{R}e\{y_o\} - \mathbb{R}e \{y_r y_f\}}
     plt.show()
     
 

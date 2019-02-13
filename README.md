@@ -30,6 +30,9 @@ python3 main.py
 ```
 to launch it.
 
+<br>
+Alternatively save the file syRF_launch (or syRF_launch.bat if using Windows), edit the path, change its permission to executable `chmod +x syRF_launch` and use that to launch the application.
+
 
 
 ## Contributing
@@ -39,7 +42,7 @@ Please read [CONTRIBUTING.md](https://github.com/urbanij/syRF/blob/master/CONTRI
 
 ## Authors
 
-* **Francesco Urbani** - *Initial work* 
+* Francesco Urbani 
 
 See also the list of [contributors](https://github.com/urbanij/syRF/graphs/contributors) who participated in this project.
 
