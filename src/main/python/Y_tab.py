@@ -24,43 +24,7 @@ from twoport.utils import find_nearest
 msg_error = "" # displays nothing if error occurs
 
 
-
-def fill_Y_boxes(self):
-    """
-    when pressed check f0 and the configuration (whether CE or CB),
-    then retrieve the Y parameters and eventually fills the 4 y parameters boxes.
-    """
-
-    # change button text according to the selected radioButton:
-    if self.radioButton_CE.isChecked():
-        self.show_plots_button.setText("Show C.E. Y parameters plots")
-        self.label_20.setText("Y<sub>ie</sub>")
-        self.label_81.setText("Y<sub>fe</sub>")
-        self.label_79.setText("Y<sub>oe</sub>")
-        self.label_78.setText("Y<sub>re</sub>")
-        self.label_165.setText("V<sub>CE</sub>")
-    else:
-        self.show_plots_button.setText("Show C.B. Y parameters plots")
-        self.label_20.setText("Y<sub>ib</sub>")
-        self.label_81.setText("Y<sub>fb</sub>")
-        self.label_79.setText("Y<sub>ob</sub>")
-        self.label_78.setText("Y<sub>rb</sub>")
-        self.label_165.setText("V<sub>CB</sub>")
-
-
-    # read frequency and check if the range is correct.
-    # if not write a feedback into label label_21.
-
-    try:
-        f0_ = float(self.f0_box_2.text())
-        if f0_ > 1500 or f0_ < 45:
-            # frequency out of range
-            self.label_21.setText("<font color='red'>Frequency out of range. Enter a frequency within the 45 - 1500 MHz range.</font>")
-        else:
-            self.label_21.setText("")
-    except Exception as e:
-        f0_ = 0
-
+def retrieve_Y_parameters(self, f0_):
 
     # current bjt configuration CE/CB
     if self.radioButton_CE.isChecked():
@@ -163,6 +127,53 @@ def fill_Y_boxes(self):
         ind, = np.where(f8==closest_to_f0_)[0]
         brb_ = -brb[ind] # SIGN IS NEGATIVE!
         yr_ = grb_+1j*brb_
+
+    return yi_, yf_, yo_, yr_
+
+
+
+
+
+
+
+def fill_Y_boxes(self):
+    """
+    when pressed check f0 and the configuration (whether CE or CB),
+    then retrieve the Y parameters and eventually fills the 4 y parameters boxes.
+    """
+
+    # change button text according to the selected radioButton:
+    if self.radioButton_CE.isChecked():
+        self.show_plots_button.setText("Show C.E. Y parameters plots")
+        self.label_20.setText("Y<sub>ie</sub>")
+        self.label_81.setText("Y<sub>fe</sub>")
+        self.label_79.setText("Y<sub>oe</sub>")
+        self.label_78.setText("Y<sub>re</sub>")
+        self.label_165.setText("V<sub>CE</sub>")
+    else:
+        self.show_plots_button.setText("Show C.B. Y parameters plots")
+        self.label_20.setText("Y<sub>ib</sub>")
+        self.label_81.setText("Y<sub>fb</sub>")
+        self.label_79.setText("Y<sub>ob</sub>")
+        self.label_78.setText("Y<sub>rb</sub>")
+        self.label_165.setText("V<sub>CB</sub>")
+
+
+    # read frequency and check if the range is correct.
+    # if not write a feedback into label label_21.
+
+    try:
+        f0_ = float(self.f0_box_2.text())
+        if f0_ > 1500 or f0_ < 45:
+            # frequency out of range
+            self.label_21.setText("<font color='red'>Frequency out of range. Enter a frequency within the 45 - 1500 MHz range.</font>")
+        else:
+            self.label_21.setText("")
+    except Exception as e:
+        f0_ = 0
+
+
+    yi_, yf_, yo_, yr_ = retrieve_Y_parameters(self, f0_)
     
     
     if f0_ > 1500 or f0_ < 45:
@@ -485,20 +496,13 @@ def open_datasheet_Y(self):
 
 
 """ plots Linvill value C with respect to the frequency of operation f0 """
-
-# worst function ever: mostly copied the retrieval of Y parameters from
-# the function fill_Y_boxes. plus used list rather than numpy arrays which makes
-# really slow. 
-
-def plot_C_over_f(self):
+def plot_C_vs_f(self):
 
 
     fig, ax = plt.subplots()
 
-
-
     
-    freq_list = np.linspace(45, 1500, 1000)
+    freq_list = np.linspace(45, 1500, 800)
     yi_list = []
     yf_list = []
     yo_list = []
@@ -507,146 +511,21 @@ def plot_C_over_f(self):
     C_list  = []
 
 
-    # ============================================================
-    #        COPIED FROM SOME LINES ABOVE, EDIT THIS LATER
-    # ============================================================
+    for freq in freq_list:
+        yi_, yf_, yo_, yr_ = retrieve_Y_parameters(self, freq)
+        
+        C = Y.calculate_C(yi_, yf_, yo_, yr_)
+        C_list.append(C)
+
+
 
     # current bjt configuration CE/CB
     if self.radioButton_CE.isChecked():
-        self.checkBox.setText("2N4957 (Common Emitter config.)")
-        import CE_param_2N4957
-        f1, gie, f2, bie, f3, gfe, f4, bfe, f5, goe, f6, boe, f7, gre, f8, bre = CE_param_2N4957.Y_CE_parameters()
-        
-
-        # now retrieve data from CE_param_2N4957
-        # given f0_ get the closest value to f0_ from the numpy arrays called f* (* from 1 to 8). then get their indices and get
-        # eventually get the value from the corresponding numpy array (gie, gfe, etc...)
-
-        for freq in freq_list:
-
-            # retrieving y_ie
-            closest_to_f0_ = find_nearest(f1, freq)
-            ind, = np.where(f1==closest_to_f0_)[0]
-            gie_ = gie[ind]
-            closest_to_f0_ = find_nearest(f2, freq)
-            ind, = np.where(f2==closest_to_f0_)[0]
-            bie_ = bie[ind]
-            yi_ = gie_+1j*bie_
-
-            yi_list.append(yi_)
-            
-
-            # retrieving y_fe
-            closest_to_f0_ = find_nearest(f3, freq)
-            ind, = np.where(f3==closest_to_f0_)[0]
-            gfe_ = gfe[ind]
-            closest_to_f0_ = find_nearest(f4, freq)
-            ind, = np.where(f4==closest_to_f0_)[0]
-            bfe_ = -bfe[ind] # SIGN IS NEGATIVE!
-            yf_ = gfe_+1j*bfe_
-
-            yf_list.append(yf_)
-            
-
-            # retrieving y_oe
-            closest_to_f0_ = find_nearest(f5, freq)
-            ind, = np.where(f5==closest_to_f0_)[0]
-            goe_ = goe[ind]
-            closest_to_f0_ = find_nearest(f6, freq)
-            ind, = np.where(f6==closest_to_f0_)[0]
-            boe_ = boe[ind]
-            yo_ = goe_+1j*boe_
-
-            yo_list.append(yo_)
-            
-
-            # retrieving y_fe
-            closest_to_f0_ = find_nearest(f7, freq)
-            ind, = np.where(f7==closest_to_f0_)[0]
-            gre_ = -gre[ind] # SIGN IS NEGATIVE!
-            closest_to_f0_ = find_nearest(f8, freq)
-            ind, = np.where(f8==closest_to_f0_)[0]
-            bre_ = -bre[ind] # SIGN IS NEGATIVE!
-            yr_ = gre_+1j*bre_
-
-            yr_list.append(yr_)
-
-            C = Y.calculate_C(yi_, yf_, yo_, yr_)
-
-            C_list.append(C)
-
-            plt.ylim(0, 4.5)
-        
-
+        plt.ylim(0, 4.5)
     else:
-        self.checkBox.setText("2N4957 (Common Base config.)")
-        import CB_param_2N4957
-        f1, gib, f2, bib, f3, gfb, f4, bfb, f5, gob, f6, bob, f7, grb, f8, brb = CB_param_2N4957.Y_CB_parameters_fitted()
-        
+        plt.ylim(-8, 8)
 
-        # now retrieve data from CB_param_2N4957
-        # given freq get the closest value to freq from the numpy arrays called f* (* from 1 to 8). then get their indices and get
-        # eventually get the value from the corresponding numpy array (gib, gfb, etc...)
-
-        for freq in freq_list:
-
-            # retrieving y_ib
-            closest_to_f0_ = find_nearest(f1, freq)
-            ind, = np.where(f1==closest_to_f0_)[0]
-            gib_ = gib[ind]
-            closest_to_f0_ = find_nearest(f2, freq)
-            ind, = np.where(f2==closest_to_f0_)[0]
-            bib_ = -bib[ind] # SIGN IS NEGATIVE!
-            yi_ = gib_+1j*bib_
-
-            yi_list.append(yi_)
-
-            
-
-            # retrieving y_fe
-            closest_to_f0_ = find_nearest(f3, freq)
-            ind, = np.where(f3==closest_to_f0_)[0]
-            gfb_ = -gfb[ind] # SIGN IS NEGATIVE!
-            closest_to_f0_ = find_nearest(f4, freq)
-            ind, = np.where(f4==closest_to_f0_)[0]
-            bfb_ = bfb[ind]
-            yf_ = gfb_+1j*bfb_
-
-            yf_list.append(yf_)
-            
-
-            # retrieving y_oe
-            closest_to_f0_ = find_nearest(f5, freq)
-            ind, = np.where(f5==closest_to_f0_)[0]
-            gob_ = gob[ind]
-            closest_to_f0_ = find_nearest(f6, freq)
-            ind, = np.where(f6==closest_to_f0_)[0]
-            bob_ = bob[ind]
-            yo_ = gob_+1j*bob_
-            
-            yo_list.append(yo_)
-
-            # retrieving y_fe
-            closest_to_f0_ = find_nearest(f7, freq)
-            ind, = np.where(f7==closest_to_f0_)[0]
-            grb_ = -grb[ind] # SIGN IS NEGATIVE!
-            closest_to_f0_ = find_nearest(f8, freq)
-            ind, = np.where(f8==closest_to_f0_)[0]
-            brb_ = -brb[ind] # SIGN IS NEGATIVE!
-            yr_ = grb_+1j*brb_
-
-            yr_list.append(yr_)
-
-
-            C = Y.calculate_C(yi_, yf_, yo_, yr_)
-
-            C_list.append(C)
-            plt.ylim(-8, 8)
-
-    # ============================================================
-    #          END COPY
-    # ============================================================
-
+    
     
 
     
