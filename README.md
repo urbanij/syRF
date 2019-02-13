@@ -30,7 +30,8 @@ python3 main.py
 ```
 to launch it.
 
-<br>
+
+
 Alternatively save the file `syRF_launch` (or `syRF_launch.bat` if on Windows), [edit the path](https://github.com/urbanij/syRF/blob/master/syRF_launch#L5), change its permission to executable `chmod +x syRF_launch` and use that to launch the app.
 
 
