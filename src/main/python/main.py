@@ -23,7 +23,17 @@ import cmath
 import numpy as np
 import matplotlib.pyplot as plt
 
+
+# import my files
+import Y_tab
+import S_tab
+import plot_reflection_coefficient
+import LC_matching_tab
+import microstrip_matching
+import quarter_wave_matching
+import lambda4_tab
 import open_pdf
+
 
 
 msg_error = "" # display nothing if error occurs
@@ -204,17 +214,14 @@ class mainProgram(QtWidgets.QMainWindow, Ui_MainWindow):
         
     
     def fill_Y_boxes(self):
-        from Y_tab import fill_Y_boxes
-        fill_Y_boxes(self)
+        Y_tab.fill_Y_boxes(self)
 
 
     def compute_Y_2N4957(self):
-        from Y_tab import compute_Y_2N4957
-        compute_Y_2N4957(self)
+        Y_tab.compute_Y_2N4957(self)
 
     def show_plot_Y_parameters(self):
-        from Y_tab import show_plot_Y_parameters
-        show_plot_Y_parameters(self)
+        Y_tab.show_plot_Y_parameters(self)
 
     def open_datasheet_Y(self):
         open_pdf.open_pdf("2N4957/2N4957.pdf")
@@ -223,20 +230,16 @@ class mainProgram(QtWidgets.QMainWindow, Ui_MainWindow):
         open_pdf.open_pdf("../../../doc/Formulario-ETLC_Y.pdf") # from here: https://github.com/giuliof/Dispense-ETLC)
 
     def plot_C_vs_f(self):
-        from Y_tab import plot_C_vs_f
-        plot_C_vs_f(self)
+        Y_tab.plot_C_vs_f(self)
 
     def clean_Y_2N4957(self):
-        from Y_tab import clean_Y_2N4957
-        clean_Y_2N4957(self)
+        Y_tab.clean_Y_2N4957(self)
 
     def clean_all_Y_2N4957(self):
-        from Y_tab import clean_all_Y_2N4957
-        clean_all_Y_2N4957(self)
+        Y_tab.clean_all_Y_2N4957(self)
 
     def fill_ys_yl_opt_2N4957(self):
-        from Y_tab import fill_ys_yl_opt_2N4957
-        fill_ys_yl_opt_2N4957(self)
+        Y_tab.fill_ys_yl_opt_2N4957(self)
 
     def disable_2N4957(self):
         if not self.checkBox.isChecked():
@@ -264,12 +267,10 @@ class mainProgram(QtWidgets.QMainWindow, Ui_MainWindow):
 
 
     def fill_S_boxes(self):
-        from S_tab import fill_S_boxes
-        fill_S_boxes(self)
+        S_tab.fill_S_boxes(self)
 
     def compute_S_MRF571(self):
-        from S_tab import compute_S_MRF571
-        compute_S_MRF571(self)
+        S_tab.compute_S_MRF571(self)
 
 
     def open_datasheet(self):
@@ -279,89 +280,71 @@ class mainProgram(QtWidgets.QMainWindow, Ui_MainWindow):
         open_pdf.open_pdf("../../../doc/Formulario-ETLC_S.pdf") # from here: https://github.com/giuliof/Dispense-ETLC)
         
     def smith_plot_all(self):
-        from S_tab import smith_plot_all
-        smith_plot_all(self)
+        S_tab.smith_plot_all(self)
         
     def draw_equi_GA_stability_circles(self):
-        from S_tab import draw_equi_GA_stability_circles
-        draw_equi_GA_stability_circles(self)
+        S_tab.draw_equi_GA_stability_circles(self)
 
 
     def clean_S_MRF571(self):
-        from S_tab import clean_S_MRF571
-        clean_S_MRF571(self)
+        S_tab.clean_S_MRF571(self)
 
 
     def clean_all_S_MRF571(self):
-        from S_tab import clean_all_S_MRF571
-        clean_all_S_MRF571(self)
+        S_tab.clean_all_S_MRF571(self)
 
 
     def disable_MRF57(self):
-        from S_tab import disable_MRF57
-        disable_MRF57(self)
+        S_tab.disable_MRF57(self)
     
 
     def disable_enable_Z_or_gamma_input(self):
-        from S_tab import disable_enable_Z_or_gamma_input
-        disable_enable_Z_or_gamma_input(self)
+        S_tab.disable_enable_Z_or_gamma_input(self)
 
 
 
 
     def compute_LC_matching(self):
-        from LC_matching_tab import compute_LC_matching
-        compute_LC_matching(self)
+        LC_matching_tab.compute_LC_matching(self)
 
     def clean_all_LC_matching(self):
-        from LC_matching_tab import clean_all_LC_matching
-        clean_all_LC_matching(self)
+        LC_matching_tab.clean_all_LC_matching(self)
 
     def plot_reflection_coefficient(self):
-        from plot_reflection_coefficient import plot_gamma
-        from LC_matching_tab import compute_LC_matching
-        plot_gamma( compute_LC_matching(self) )
+        plot_reflection_coefficient.plot_gamma( LC_matching_tab.compute_LC_matching(self) )
 
     def open_pdf_sketch_matching(self):
         open_pdf.open_pdf("../../../aux/matching_network.pdf")
 
 
     def compute_matching_microstrip(self):
-        from microstrip_matching_tab import compute_matching_microstrip
-        compute_matching_microstrip(self)
+        microstrip_matching_tab.compute_matching_microstrip(self)
 
     def open_plots(self):
         open_pdf.open_pdf("microstrip_matching/epsilon_r_graphs.pdf")
-        
+
 
     def show_plots(self):
-        from microstrip_matching_tab import show_plots
-        show_plots(self)
+        microstrip_matching_tab.show_plots(self)
 
     def clean_all_microstrip_tab(self):
-        from microstrip_matching_tab import clean_all_microstrip_tab
-        clean_all_microstrip_tab(self)
+        microstrip_matching_tab.clean_all_microstrip_tab(self)
 
 
 
 
 
     def showSmithPlot(self):
-        from quarter_wave_matching import showSmithPlot
-        showSmithPlot(self)
-
+        quarter_wave_matching.showSmithPlot(self)
 
     def calculate_tab_quarter_wave_im(self):
-        from quarter_wave_matching import calculate_tab_quarter_wave_im
-        calculate_tab_quarter_wave_im(self)
+        quarter_wave_matching.calculate_tab_quarter_wave_im(self)
 
     def disable_boxes_quarter_wave_im(self):
-        from quarter_wave_matching import disable_boxes_quarter_wave_im
-        disable_boxes_quarter_wave_im(self)
+        quarter_wave_matching.disable_boxes_quarter_wave_im(self)
 
     def clean_all_quarter_wave(self):
-        from quarter_wave_matching import clean_all_quarter_wave
-        clean_all_quarter_wave(self)
+        quarter_wave_matching.clean_all_quarter_wave(self)
 
 
 
@@ -369,8 +352,7 @@ class mainProgram(QtWidgets.QMainWindow, Ui_MainWindow):
     
 
     def calculate_z_lambda4(self):
-        from lambda4_tab import calculate_z_lambda4
-        calculate_z_lambda4(self)
+        lambda4_tab.calculate_z_lambda4(self)
 
     def clean_lambda4(self):
         self.z1_box.setText("")
