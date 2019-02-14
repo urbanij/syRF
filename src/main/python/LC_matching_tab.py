@@ -265,18 +265,3 @@ def to_eng_form(x):
         if x >= 10**e:
             return x/10**e, si_prefixes[e]
     return x, ''
-
-
-
-def open_pdf_sketch_matching(self):
-    path = "../../../aux/matching_network.pdf"
-    try:
-        if sys.platform == "linux":
-            os.system("xdg-open {}".format(path))
-        elif sys.platform == "darwin":
-            os.system("open {}".format(path))
-        elif sys.platform[:3] == "win":
-            os.system('start "" {}'.format(path))
-    except Exception as e:
-        print ("Can't open the pdf {}.".format(path))
-

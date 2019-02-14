@@ -23,6 +23,7 @@ import cmath
 import numpy as np
 import matplotlib.pyplot as plt
 
+import open_pdf
 
 
 msg_error = "" # display nothing if error occurs
@@ -71,6 +72,7 @@ class mainProgram(QtWidgets.QMainWindow, Ui_MainWindow):
         self.Calculate_button_4.clicked.connect(self.compute_Y_2N4957)
         self.show_plots_button.clicked.connect(self.show_plot_Y_parameters)
         self.open_datasheet_Y_button.clicked.connect(self.open_datasheet_Y)
+        self.open_Y_formulas_button.clicked.connect(self.open_Y_formulas)
 
         self.plot_C_f0_button.clicked.connect(self.plot_C_vs_f)
 
@@ -121,6 +123,7 @@ class mainProgram(QtWidgets.QMainWindow, Ui_MainWindow):
 
         self.plot_isc_button_2.clicked.connect(self.smith_plot_all)
         self.open_datasheet_button.clicked.connect(self.open_datasheet)
+        self.open_S_formulas_button.clicked.connect(self.open_S_formulas)
         self.Calculate_button_5.clicked.connect(self.compute_S_MRF571)
         self.clean_S_button.clicked.connect(self.clean_S_MRF571)
         self.Clean_all_button_6.clicked.connect(self.clean_all_S_MRF571)
@@ -214,8 +217,10 @@ class mainProgram(QtWidgets.QMainWindow, Ui_MainWindow):
         show_plot_Y_parameters(self)
 
     def open_datasheet_Y(self):
-        from Y_tab import open_datasheet_Y
-        open_datasheet_Y(self)
+        open_pdf.open_pdf("2N4957/2N4957.pdf")
+
+    def open_Y_formulas(self):
+        open_pdf.open_pdf("../../../doc/Formulario-ETLC_Y.pdf") # from here: https://github.com/giuliof/Dispense-ETLC)
 
     def plot_C_vs_f(self):
         from Y_tab import plot_C_vs_f
@@ -268,8 +273,10 @@ class mainProgram(QtWidgets.QMainWindow, Ui_MainWindow):
 
 
     def open_datasheet(self):
-        from S_tab import open_datasheet
-        open_datasheet(self)
+        open_pdf.open_pdf("MRF57/MRF57.pdf")
+
+    def open_S_formulas(self):
+        open_pdf.open_pdf("../../../doc/Formulario-ETLC_S.pdf") # from here: https://github.com/giuliof/Dispense-ETLC)
         
     def smith_plot_all(self):
         from S_tab import smith_plot_all
@@ -316,9 +323,7 @@ class mainProgram(QtWidgets.QMainWindow, Ui_MainWindow):
         plot_gamma( compute_LC_matching(self) )
 
     def open_pdf_sketch_matching(self):
-        from LC_matching_tab import open_pdf_sketch_matching
-        open_pdf_sketch_matching(self)
-
+        open_pdf.open_pdf("../../../aux/matching_network.pdf")
 
 
     def compute_matching_microstrip(self):
@@ -326,8 +331,8 @@ class mainProgram(QtWidgets.QMainWindow, Ui_MainWindow):
         compute_matching_microstrip(self)
 
     def open_plots(self):
-        from microstrip_matching_tab import open_plots
-        open_plots(self)
+        open_pdf.open_pdf("microstrip_matching/epsilon_r_graphs.pdf")
+        
 
     def show_plots(self):
         from microstrip_matching_tab import show_plots

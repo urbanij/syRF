@@ -904,6 +904,13 @@
            </widget>
           </item>
           <item>
+           <widget class="QPushButton" name="open_Y_formulas_button">
+            <property name="text">
+             <string>Open formulas</string>
+            </property>
+           </widget>
+          </item>
+          <item>
            <widget class="QPushButton" name="Fill_ys_yl_opt_button">
             <property name="text">
              <string>Fill Y_S = Y_S,opt; Y_L = Y_L,opt</string>
@@ -2701,6 +2708,13 @@
              </size>
             </property>
            </spacer>
+          </item>
+          <item>
+           <widget class="QPushButton" name="open_S_formulas_button">
+            <property name="text">
+             <string>Open formulas</string>
+            </property>
+           </widget>
           </item>
           <item>
            <widget class="QPushButton" name="Clean_all_button_6">

@@ -351,22 +351,6 @@ def compute_matching_microstrip(self):
 
 
 
-
-def open_plots(self):
-    path = "microstrip_matching/epsilon_r_graphs.pdf"
-    try:
-        if sys.platform == "linux":
-            os.system("xdg-open {}".format(path))
-        elif sys.platform == "darwin":
-            os.system("open {}".format(path))
-        elif sys.platform[:3] == "win":
-            os.system('start "" {}'.format(path))
-    except Exception as e:
-        print ("Can't open the pdf {}.".format(path))
-
-
-
-
 def show_plots(self):
     import microstrip_matching.plot_epsilon_r_graphs as pl
     x1, er1, x2, er2, x4, er4, x6, er6, x8, er8, x10, er10, x12, er12, x16, er16     = pl.calculate_epsilon_r_1()
@@ -386,6 +370,5 @@ def clean_all_microstrip_tab(self):
     self.f_box_3.setText("")
     self.calculate_button_6.click()
     self.l_lambda_box.setFocus()
-    
     
     

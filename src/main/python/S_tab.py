@@ -767,25 +767,6 @@ def smith_plot_all(self):
 
 
 
-
-
-def open_datasheet(self):
-    path = "MRF57/MRF57.pdf"
-    try:
-        if sys.platform == "linux":
-            os.system("xdg-open {}".format(path))
-        elif sys.platform == "darwin":
-            os.system("open {}".format(path))
-        elif sys.platform[:3] == "win":
-            os.system('start "" {}'.format(path))
-    except Exception as e:
-        print ("Can't open the pdf {}.".format(path))
-
-
-
-
-
-
 """ clean load and source boxes """
 def clean_S_MRF571(self):
     self.ZS_box.setText("")
