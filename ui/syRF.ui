@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
+ <author>Francesco Urbani</author>
  <class>MainWindow</class>
  <widget class="QMainWindow" name="MainWindow">
   <property name="geometry">
@@ -951,7 +952,7 @@
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>852</width>
+               <width>1283</width>
                <height>861</height>
               </rect>
              </property>
@@ -2781,8 +2782,8 @@
                   <rect>
                    <x>0</x>
                    <y>0</y>
-                   <width>617</width>
-                   <height>611</height>
+                   <width>1237</width>
+                   <height>645</height>
                   </rect>
                  </property>
                  <layout class="QVBoxLayout" name="verticalLayout_12">
@@ -4865,6 +4866,13 @@
                        </spacer>
                       </item>
                       <item>
+                       <widget class="QPushButton" name="open_lambda4_button">
+                        <property name="text">
+                         <string>Open  λ/4</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
                        <widget class="QPushButton" name="Show_Smith">
                         <property name="text">
                          <string>Show Smith Chart</string>
@@ -4907,265 +4915,6 @@
                      </layout>
                     </item>
                    </layout>
-                  </item>
-                 </layout>
-                </widget>
-                <widget class="QWidget" name="tab_8">
-                 <attribute name="title">
-                  <string>λ/4</string>
-                 </attribute>
-                 <layout class="QGridLayout" name="gridLayout_21">
-                  <item row="1" column="1">
-                   <layout class="QVBoxLayout" name="verticalLayout_20">
-                    <item>
-                     <widget class="QGroupBox" name="groupBox_9">
-                      <property name="title">
-                       <string/>
-                      </property>
-                      <layout class="QHBoxLayout" name="horizontalLayout_9">
-                       <item>
-                        <layout class="QGridLayout" name="gridLayout_18">
-                         <item row="2" column="1">
-                          <widget class="QLineEdit" name="z2_box"/>
-                         </item>
-                         <item row="0" column="2">
-                          <widget class="QLabel" name="label_122">
-                           <property name="sizePolicy">
-                            <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-                             <horstretch>0</horstretch>
-                             <verstretch>0</verstretch>
-                            </sizepolicy>
-                           </property>
-                           <property name="text">
-                            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ω&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                           </property>
-                           <property name="alignment">
-                            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-                           </property>
-                          </widget>
-                         </item>
-                         <item row="0" column="1">
-                          <widget class="QLineEdit" name="Z0_box2_2">
-                           <property name="inputMask">
-                            <string/>
-                           </property>
-                           <property name="text">
-                            <string>50</string>
-                           </property>
-                          </widget>
-                         </item>
-                         <item row="1" column="1">
-                          <widget class="QLineEdit" name="z1_box"/>
-                         </item>
-                         <item row="2" column="0">
-                          <widget class="QLabel" name="label_77">
-                           <property name="sizePolicy">
-                            <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-                             <horstretch>0</horstretch>
-                             <verstretch>0</verstretch>
-                            </sizepolicy>
-                           </property>
-                           <property name="text">
-                            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Output (z&lt;span style=&quot; vertical-align:sub;&quot;&gt;L&lt;/span&gt;')&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                           </property>
-                           <property name="alignment">
-                            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                           </property>
-                          </widget>
-                         </item>
-                         <item row="0" column="0">
-                          <widget class="QLabel" name="label_105">
-                           <property name="sizePolicy">
-                            <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-                             <horstretch>0</horstretch>
-                             <verstretch>0</verstretch>
-                            </sizepolicy>
-                           </property>
-                           <property name="text">
-                            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Z&lt;span style=&quot; vertical-align:sub;&quot;&gt;0&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                           </property>
-                           <property name="alignment">
-                            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                           </property>
-                          </widget>
-                         </item>
-                         <item row="1" column="0">
-                          <widget class="QLabel" name="label_82">
-                           <property name="sizePolicy">
-                            <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-                             <horstretch>0</horstretch>
-                             <verstretch>0</verstretch>
-                            </sizepolicy>
-                           </property>
-                           <property name="text">
-                            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Input (z&lt;span style=&quot; vertical-align:sub;&quot;&gt;L&lt;/span&gt;)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                           </property>
-                           <property name="alignment">
-                            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                           </property>
-                          </widget>
-                         </item>
-                        </layout>
-                       </item>
-                      </layout>
-                     </widget>
-                    </item>
-                    <item>
-                     <layout class="QVBoxLayout" name="verticalLayout_21">
-                      <item>
-                       <layout class="QGridLayout" name="gridLayout_19">
-                        <item row="0" column="1">
-                         <widget class="QTextBrowser" name="zbox111">
-                          <property name="maximumSize">
-                           <size>
-                            <width>16777215</width>
-                            <height>21</height>
-                           </size>
-                          </property>
-                          <property name="verticalScrollBarPolicy">
-                           <enum>Qt::ScrollBarAlwaysOff</enum>
-                          </property>
-                         </widget>
-                        </item>
-                        <item row="1" column="2">
-                         <widget class="QLabel" name="label_123">
-                          <property name="sizePolicy">
-                           <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-                            <horstretch>0</horstretch>
-                            <verstretch>0</verstretch>
-                           </sizepolicy>
-                          </property>
-                          <property name="text">
-                           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ω&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                          </property>
-                          <property name="alignment">
-                           <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-                          </property>
-                         </widget>
-                        </item>
-                        <item row="1" column="1">
-                         <widget class="QTextBrowser" name="Zbox111">
-                          <property name="maximumSize">
-                           <size>
-                            <width>16777215</width>
-                            <height>21</height>
-                           </size>
-                          </property>
-                          <property name="verticalScrollBarPolicy">
-                           <enum>Qt::ScrollBarAlwaysOff</enum>
-                          </property>
-                         </widget>
-                        </item>
-                        <item row="0" column="0">
-                         <widget class="QLabel" name="label_125">
-                          <property name="sizePolicy">
-                           <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-                            <horstretch>0</horstretch>
-                            <verstretch>0</verstretch>
-                           </sizepolicy>
-                          </property>
-                          <property name="text">
-                           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;z&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                          </property>
-                          <property name="alignment">
-                           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                          </property>
-                         </widget>
-                        </item>
-                        <item row="1" column="0">
-                         <widget class="QLabel" name="label_124">
-                          <property name="sizePolicy">
-                           <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-                            <horstretch>0</horstretch>
-                            <verstretch>0</verstretch>
-                           </sizepolicy>
-                          </property>
-                          <property name="text">
-                           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Z&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                          </property>
-                          <property name="alignment">
-                           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                          </property>
-                         </widget>
-                        </item>
-                       </layout>
-                      </item>
-                      <item>
-                       <layout class="QHBoxLayout" name="horizontalLayout_12">
-                        <item>
-                         <widget class="QPushButton" name="clean_lambda4_button">
-                          <property name="text">
-                           <string>Clean All</string>
-                          </property>
-                         </widget>
-                        </item>
-                        <item>
-                         <widget class="QPushButton" name="Calculate_lambda4">
-                          <property name="text">
-                           <string>Calculate</string>
-                          </property>
-                          <property name="default">
-                           <bool>true</bool>
-                          </property>
-                         </widget>
-                        </item>
-                       </layout>
-                      </item>
-                     </layout>
-                    </item>
-                   </layout>
-                  </item>
-                  <item row="1" column="0">
-                   <spacer name="horizontalSpacer_7">
-                    <property name="orientation">
-                     <enum>Qt::Horizontal</enum>
-                    </property>
-                    <property name="sizeHint" stdset="0">
-                     <size>
-                      <width>40</width>
-                      <height>20</height>
-                     </size>
-                    </property>
-                   </spacer>
-                  </item>
-                  <item row="1" column="2">
-                   <spacer name="horizontalSpacer_11">
-                    <property name="orientation">
-                     <enum>Qt::Horizontal</enum>
-                    </property>
-                    <property name="sizeHint" stdset="0">
-                     <size>
-                      <width>40</width>
-                      <height>20</height>
-                     </size>
-                    </property>
-                   </spacer>
-                  </item>
-                  <item row="0" column="1">
-                   <spacer name="verticalSpacer_16">
-                    <property name="orientation">
-                     <enum>Qt::Vertical</enum>
-                    </property>
-                    <property name="sizeHint" stdset="0">
-                     <size>
-                      <width>20</width>
-                      <height>40</height>
-                     </size>
-                    </property>
-                   </spacer>
-                  </item>
-                  <item row="2" column="1">
-                   <spacer name="verticalSpacer_18">
-                    <property name="orientation">
-                     <enum>Qt::Vertical</enum>
-                    </property>
-                    <property name="sizeHint" stdset="0">
-                     <size>
-                      <width>20</width>
-                      <height>40</height>
-                     </size>
-                    </property>
-                   </spacer>
                   </item>
                  </layout>
                 </widget>
@@ -5276,8 +5025,6 @@
   <tabstop>ZS_box_6</tabstop>
   <tabstop>ZS_box_7</tabstop>
   <tabstop>ZS_box_8</tabstop>
-  <tabstop>z1_box</tabstop>
-  <tabstop>z2_box</tabstop>
   <tabstop>X2_box</tabstop>
   <tabstop>A_V_box</tabstop>
   <tabstop>vout_over_vs_box</tabstop>
@@ -5409,12 +5156,7 @@
   <tabstop>lambda_tick_zout_box</tabstop>
   <tabstop>clean_all_button213</tabstop>
   <tabstop>C2_box</tabstop>
-  <tabstop>Z0_box2_2</tabstop>
   <tabstop>B2_box</tabstop>
-  <tabstop>zbox111</tabstop>
-  <tabstop>Zbox111</tabstop>
-  <tabstop>clean_lambda4_button</tabstop>
-  <tabstop>Calculate_lambda4</tabstop>
  </tabstops>
  <resources/>
  <connections/>

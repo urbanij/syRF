@@ -9,12 +9,11 @@ Created on Thu Feb 14 17:06:16 CET 2019
 @descritpion : converts rectangular coordinates into 
                polar (magnitude + angle in degrees) coordinates
 
+               Can be either run as standalone app (python rect2polar.py) 
+               or withing syRF (open rect2polar button into S tab)
+               
 """
 
-# ============================================================
-##from fbs_runtime.application_context import ApplicationContext
-##from PyQt5.QtWidgets import QMainWindow
-# ============================================================
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 from rect2polar_ui import Ui_MainWindow
@@ -26,9 +25,9 @@ import cmath
 msg_error = "" # display nothing if error occurs
 
 
-class mainProgram(QtWidgets.QMainWindow, Ui_MainWindow):
+class utilProgram(QtWidgets.QMainWindow, Ui_MainWindow):
     def __init__(self, parent=None):
-        super(mainProgram, self).__init__(parent)
+        super(utilProgram, self).__init__(parent)
         self.setupUi(self)
         
 
@@ -43,7 +42,7 @@ class mainProgram(QtWidgets.QMainWindow, Ui_MainWindow):
 
     def calc_polar(self):
         
-         # read inputs
+        # read input coordinate as complex number
         try:
             P_coord = complex(self.P_coord_lineedit.text())
         except Exception as e:
@@ -66,22 +65,22 @@ class mainProgram(QtWidgets.QMainWindow, Ui_MainWindow):
         self.mag_text_browser.setText("{}".format(mag))
         self.phase_text_browser.setText("{}".format(phase))
 
+        # keep focus on input P_coord_lineedit
+        self.P_coord_lineedit.setFocus() 
 
     
+
     def clean_polar(self):
         self.P_coord_lineedit.setText("")
-
         self.calculate12_button.click()
         self.P_coord_lineedit.setFocus()
 
-    
 
 
 if __name__ == "__main__":
 
     import sys
     app = QtWidgets.QApplication(sys.argv)
-    nextGui = mainProgram()
+    nextGui = utilProgram()
     nextGui.show()
     sys.exit(app.exec_())
-
