@@ -66,7 +66,7 @@ class utilProgram(QtWidgets.QMainWindow, Ui_MainWindow):
         self.phase_text_browser.setText("{}".format(phase))
 
         # keep focus on input P_coord_lineedit
-        self.P_coord_lineedit.setFocus() 
+        # self.P_coord_lineedit.setFocus() # if on does not allow drag and drop! (wtf)
 
     
 

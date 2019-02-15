@@ -303,7 +303,9 @@ def plot_Smith(Cs, rs, Cl, rl, gamma_in, gamma_out, gamma_L, gamma_S, GA_dB, Ca,
             plot(gamma_S.real, gamma_S.imag, marker="o", color="coral", label="$\Gamma_{S}$")
         else:
             plot(gamma_S.real, gamma_S.imag, marker="o", color="coral", label="$\Gamma_{S}(Z_S=" + str(ZS) + "\Omega)$")
-
+        # draw circumference centered in the origin passing from gamma_S point
+        gamma_S_circumference = plt.Circle((0, 0), abs(gamma_S), color='coral', linewidth=.3, fill=False)
+        ax.add_artist(gamma_S_circumference)
             
     
     if gamma_in != msg_error:
@@ -320,7 +322,9 @@ def plot_Smith(Cs, rs, Cl, rl, gamma_in, gamma_out, gamma_L, gamma_S, GA_dB, Ca,
             plot(gamma_L.real, gamma_L.imag, marker="o", color="lime", label="$\Gamma_{L}$")
         else:
             plot(gamma_L.real, gamma_L.imag, marker="o", color="lime", label="$\Gamma_{L}(Z_L=" + str(ZL) + "\Omega)$")
-    
+        # draw circumference centered in the origin passing from gamma_L point
+        gamma_L_circumference = plt.Circle((0, 0), abs(gamma_L), color='lime', linewidth=.3, fill=False)
+        ax.add_artist(gamma_L_circumference)
 
     
     if gamma_out != msg_error:

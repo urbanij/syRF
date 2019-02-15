@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>343</width>
-    <height>240</height>
+    <width>320</width>
+    <height>232</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -23,13 +23,6 @@
    <layout class="QGridLayout" name="gridLayout_2">
     <item row="0" column="0">
      <layout class="QGridLayout" name="gridLayout">
-      <item row="4" column="2">
-       <widget class="QPushButton" name="clean_all12_button">
-        <property name="text">
-         <string>Clean All</string>
-        </property>
-       </widget>
-      </item>
       <item row="0" column="0">
        <widget class="QLabel" name="label_82">
         <property name="sizePolicy">
@@ -46,15 +39,21 @@
         </property>
        </widget>
       </item>
-      <item row="4" column="3">
-       <widget class="QPushButton" name="calculate12_button">
-        <property name="text">
-         <string>Calculate</string>
+      <item row="1" column="1">
+       <spacer name="verticalSpacer">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
         </property>
-        <property name="default">
-         <bool>true</bool>
+        <property name="sizeType">
+         <enum>QSizePolicy::Expanding</enum>
         </property>
-       </widget>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
       </item>
       <item row="2" column="0">
        <widget class="QLabel" name="label_83">
@@ -65,7 +64,7 @@
          </sizepolicy>
         </property>
         <property name="text">
-         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;mag&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;|P|&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -81,25 +80,29 @@
          </sizepolicy>
         </property>
         <property name="text">
-         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;phase&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;∠P&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
         </property>
        </widget>
       </item>
-      <item row="4" column="1">
-       <spacer name="horizontalSpacer">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
+      <item row="0" column="1" colspan="3">
+       <widget class="QLineEdit" name="P_coord_lineedit">
+        <property name="placeholderText">
+         <string>x+jy</string>
         </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>40</width>
-          <height>20</height>
-         </size>
+       </widget>
+      </item>
+      <item row="4" column="3">
+       <widget class="QPushButton" name="calculate12_button">
+        <property name="text">
+         <string>Calculate</string>
         </property>
-       </spacer>
+        <property name="default">
+         <bool>true</bool>
+        </property>
+       </widget>
       </item>
       <item row="3" column="1" colspan="3">
        <widget class="QTextBrowser" name="phase_text_browser">
@@ -127,28 +130,12 @@
         </property>
        </widget>
       </item>
-      <item row="0" column="1" colspan="3">
-       <widget class="QLineEdit" name="P_coord_lineedit">
-        <property name="placeholderText">
-         <string>x+jy</string>
+      <item row="4" column="2">
+       <widget class="QPushButton" name="clean_all12_button">
+        <property name="text">
+         <string>Clean All</string>
         </property>
        </widget>
-      </item>
-      <item row="1" column="1">
-       <spacer name="verticalSpacer">
-        <property name="orientation">
-         <enum>Qt::Vertical</enum>
-        </property>
-        <property name="sizeType">
-         <enum>QSizePolicy::Expanding</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>20</width>
-          <height>20</height>
-         </size>
-        </property>
-       </spacer>
       </item>
      </layout>
     </item>
