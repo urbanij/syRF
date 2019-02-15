@@ -5,13 +5,13 @@
 Created on Mon Mar 19 15:38:35 2018
 
 @author(s)   : Francesco Urbani
-@file        : syRF.py
+@file        : main.py
 @descritpion : The main file
 
 """
 
 # ============================================================
-from fbs_runtime.application_context import ApplicationContext
+##from fbs_runtime.application_context import ApplicationContext
 from PyQt5.QtWidgets import QMainWindow
 # ============================================================
 
@@ -137,6 +137,7 @@ class mainProgram(QtWidgets.QMainWindow, Ui_MainWindow):
         self.Calculate_button_5.clicked.connect(self.compute_S_MRF571)
         self.clean_S_button.clicked.connect(self.clean_S_MRF571)
         self.Clean_all_button_6.clicked.connect(self.clean_all_S_MRF571)
+        self.open_rect2polar_button.clicked.connect(self.launch_rect2polar)
 
 
         # LC_matching
@@ -227,7 +228,7 @@ class mainProgram(QtWidgets.QMainWindow, Ui_MainWindow):
         open_pdf.open_pdf("2N4957/2N4957.pdf")
 
     def open_Y_formulas(self):
-        open_pdf.open_pdf("../../../doc/Formulario-ETLC_Y.pdf") # from here: https://github.com/giuliof/Dispense-ETLC)
+        open_pdf.open_pdf("../../../doc/Formulario-ETLC_Y.pdf") # from here: https://github.com/giuliof/Dispense-ETLC
 
     def plot_C_vs_f(self):
         Y_tab.plot_C_vs_f(self)
@@ -277,13 +278,17 @@ class mainProgram(QtWidgets.QMainWindow, Ui_MainWindow):
         open_pdf.open_pdf("MRF57/MRF57.pdf")
 
     def open_S_formulas(self):
-        open_pdf.open_pdf("../../../doc/Formulario-ETLC_S.pdf") # from here: https://github.com/giuliof/Dispense-ETLC)
+        open_pdf.open_pdf("../../../doc/Formulario-ETLC_S.pdf") # from here: https://github.com/giuliof/Dispense-ETLC
         
     def smith_plot_all(self):
         S_tab.smith_plot_all(self)
         
     def draw_equi_GA_stability_circles(self):
         S_tab.draw_equi_GA_stability_circles(self)
+
+
+    def launch_rect2polar(self):
+        pass
 
 
     def clean_S_MRF571(self):

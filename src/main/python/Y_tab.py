@@ -513,22 +513,17 @@ def plot_C_vs_f(self):
 
     
     
-
-    
     ax.plot(freq_list, C_list, label="$C(f)$")
-
 
     # plot unconditionally stable area
     ax.axhspan(0, 1, alpha=0.1, color='green', label="Unconditionally stable area")
-
-    
 
     plt.grid(True,which="both",ls="-")
     plt.xlim(45, 1500)
 
     plt.xscale('log')
     plt.legend()
-    plt.xlabel("$f\ (Hz)$")
+    plt.xlabel("$f\ (MHz)$")
 
     plt.suptitle("$C(f)$")
     # C(f) = \frac{|y_R y_F|}{2 \mathbb{R}e\{y_i\} \mathbb{R}e\{y_o\} - \mathbb{R}e \{y_r y_f\}}

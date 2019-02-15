@@ -946,7 +946,7 @@ def visualize_CB_plot(f1, gib, f2, bib, f3, gfb, f4, bfb, f5, gob, f6, bob, f7, 
     plt.xlim(45, 1500)
     plt.xscale('log')
     plt.legend()
-    plt.xlabel("$f\ (Hz)$")
+    plt.xlabel("$f\ (MHz)$")
     plt.ylabel("$mS$")
 
 
@@ -970,7 +970,7 @@ def visualize_CB_plot(f1, gib, f2, bib, f3, gfb, f4, bfb, f5, gob, f6, bob, f7, 
     plt.xlim(45, 1500)
     plt.xscale('log')
     plt.legend()
-    plt.xlabel("$f\ (Hz)$")
+    plt.xlabel("$f\ (MHz)$")
 
     plt.suptitle("2N4957 Common base (C.B.) Y parameters. $y = g + j\cdot b$")
     plt.show()

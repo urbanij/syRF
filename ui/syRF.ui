@@ -2710,6 +2710,13 @@
            </spacer>
           </item>
           <item>
+           <widget class="QPushButton" name="open_rect2polar_button">
+            <property name="text">
+             <string>Open rect2polar</string>
+            </property>
+           </widget>
+          </item>
+          <item>
            <widget class="QPushButton" name="open_S_formulas_button">
             <property name="text">
              <string>Open formulas</string>
@@ -2772,8 +2779,8 @@
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>1239</width>
-                 <height>654</height>
+                 <width>617</width>
+                 <height>611</height>
                 </rect>
                </property>
                <layout class="QVBoxLayout" name="verticalLayout_12">

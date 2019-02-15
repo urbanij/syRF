@@ -82,7 +82,7 @@ def visualize_CE_plot():
 	plt.grid(True)
 	plt.xscale('log')
 	plt.legend()
-	plt.xlabel("$f\ (Hz)$")
+	plt.xlabel("$f\ (MHz)$")
 	plt.ylabel("$mS$")
 
 
@@ -104,7 +104,7 @@ def visualize_CE_plot():
 	plt.grid(True)
 	plt.xscale('log')
 	plt.legend()
-	plt.xlabel("$f\ (Hz)$")
+	plt.xlabel("$f\ (MHz)$")
 
 	plt.suptitle("2N4957 Common emitter (C.E.) Y parameters. $y = g + j\cdot b$")
 	plt.show()

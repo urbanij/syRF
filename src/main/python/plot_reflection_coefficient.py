@@ -123,7 +123,7 @@ def plot_gamma(rv):
     # plt.plot(f, VSWR2)
 
 
-    plt.xlabel("$f\ (Hz)$")
+    plt.xlabel("$f\ (MHz)$")
     # plt.suptitle('$|\Gamma(f)|$', fontsize=14)
 
     # plt.polar(f, abs(gamma2))

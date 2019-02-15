@@ -36,6 +36,10 @@ def compute_LC_matching(self):
     
     # read input impedance/admittance
     input_unit = self.comboBox.currentText()
+    # set label right
+    label_72_txt = "Input (Y<sub>L</sub>)" if input_unit == "Admittance [mS]" else "Input (Z<sub>L</sub>)"
+    self.label_72.setText(label_72_txt)
+
     try:
         input_impedance = complex(self.input_box.text())
         if input_unit == "Admittance [mS]":
@@ -51,6 +55,10 @@ def compute_LC_matching(self):
 
     # read output impedance/admittance
     output_unit = self.comboBox_2.currentText()
+    # set label right
+    label_73_txt = "Output (Y<sub>0</sub>)" if output_unit == "Admittance [mS]" else "Output (Z<sub>0</sub>)"
+    self.label_73.setText(label_73_txt)
+
     try:
         output_impedance = complex(self.output_box.text())
         if output_unit == "Admittance [mS]":
