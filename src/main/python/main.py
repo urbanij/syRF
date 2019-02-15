@@ -23,6 +23,7 @@ import cmath
 import numpy as np
 import matplotlib.pyplot as plt
 
+import requests     # to check for updates
 
 # import my files
 import Y_tab
@@ -39,13 +40,32 @@ import open_pdf
 msg_error = "" # display nothing if error occurs
 
 
+def check_updates():
+    # on startup check on remote repo whether there is a new commit and notify the user by updating the label
+    local_version_file = "../../../.version"
+    try:
+        with open(local_version_file ,  "r") as f:
+            local_version = f.read()
+    except FileNotFoundError as e:
+        print ("File {} does not exists.".format(local_version_file))
+
+    remote_version_url = 'https://raw.githubusercontent.com/urbanij/syRF/master/.version'
+    remote_version = requests.get(remote_version_url).text
+    if (remote_version != local_version):
+        return "<font color='#368E8B'>New update available (v. {})</font>".format(remote_version)
+    else:
+        return "<font color='#1A7C32'>syRF is up to date.</font>"
+
+
+
 class mainProgram(QtWidgets.QMainWindow, Ui_MainWindow):
     def __init__(self, parent=None):
         super(mainProgram, self).__init__(parent)
         self.setupUi(self)
         
 
-        
+        self.label_updates.setText(check_updates())
+
         # self.tabWidget.setCurrentIndex(1)
         self.checkBox.setChecked(True)
         self.checkBox_2.setChecked(True)
