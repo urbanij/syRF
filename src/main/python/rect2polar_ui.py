@@ -91,9 +91,9 @@ class Ui_MainWindow(object):
         self.label_82.setText(_translate("MainWindow", "<html><head/><body><p>P</p></body></html>"))
         self.label_83.setText(_translate("MainWindow", "<html><head/><body><p>|P|</p></body></html>"))
         self.label_78.setText(_translate("MainWindow", "<html><head/><body><p>∠P</p></body></html>"))
-        self.P_coord_lineedit.setPlaceholderText(_translate("MainWindow", "x+jy"))
+        self.P_coord_lineedit.setPlaceholderText(_translate("MainWindow", "x+yj"))
         self.calculate12_button.setText(_translate("MainWindow", "Calculate"))
-        self.clean_all12_button.setText(_translate("MainWindow", "Clean All"))
+        self.clean_all12_button.setText(_translate("MainWindow", "Clean"))
         self.actionAbout.setText(_translate("MainWindow", "About"))
         self.actiondsd.setText(_translate("MainWindow", "dsd"))
 

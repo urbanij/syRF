@@ -4,6 +4,12 @@
 
 Check [this webpage](https://urbanij.github.io/syRF/) for an overview.
 
+##### Demo 
+
+[![Alt Text](./doc/gif/syRF.gif)](https://youtu.be/yJPomOStffk)
+(Open full [video](https://youtu.be/yJPomOStffk)).
+
+
 ### Prerequisites
 
 
