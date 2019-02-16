@@ -7,8 +7,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1357</width>
-    <height>846</height>
+    <width>1358</width>
+    <height>834</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -41,7 +41,7 @@
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>1283</width>
+               <width>1284</width>
                <height>691</height>
               </rect>
              </property>
@@ -2765,7 +2765,7 @@
           <item>
            <widget class="QTabWidget" name="tabWidget_3">
             <property name="currentIndex">
-             <number>0</number>
+             <number>1</number>
             </property>
             <widget class="QWidget" name="tab_4">
              <attribute name="title">
@@ -4875,7 +4875,7 @@
                       <item>
                        <widget class="QPushButton" name="Show_Smith">
                         <property name="text">
-                         <string>Show Smith Chart</string>
+                         <string>Open Smith Chart</string>
                         </property>
                        </widget>
                       </item>
@@ -4973,6 +4973,22 @@
    </layout>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1358</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuAbout">
+    <property name="title">
+     <string>About</string>
+    </property>
+   </widget>
+   <addaction name="menuAbout"/>
+  </widget>
   <action name="actionAbout">
    <property name="text">
     <string>About</string>

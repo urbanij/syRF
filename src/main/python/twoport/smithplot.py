@@ -259,7 +259,7 @@ def plot_Smith(Cs, rs, Cl, rl, gamma_in, gamma_out, gamma_L, gamma_S, GA_dB, Ca,
 
     ## rename Matplotlib window
     fig = gcf()
-    fig.canvas.set_window_title('Smith Chart')
+    fig.canvas.set_window_title('Smith Chart | S tab')
 
     # draws Smith Plot
     sc = SmithChart(Z0, labels=1, show_cursor=0)
@@ -358,14 +358,15 @@ def plot_Smith(Cs, rs, Cl, rl, gamma_in, gamma_out, gamma_L, gamma_S, GA_dB, Ca,
 
 def plot_Smith_quarter_wave_matching(Z0, Z_in, Z_out, gamma_zin, gamma_zout):
 
+
     fig, ax = subplots() # note we must use plt.subplots, not plt.subplot
+    fig.canvas.set_window_title('Smith Chart')
+
     
-
-
     # draws Smith Plot
     sc = SmithChart(Z0, labels=1, show_cursor=0)
 
-
+    
 
     if gamma_zin != msg_error:
         plot(gamma_zin.real, gamma_zin.imag, marker="o", color="red", label="$\Gamma(Z_{L}=" + str(Z_in) + "\ \Omega)$")
