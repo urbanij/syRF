@@ -6,8 +6,9 @@ Check [this webpage](https://urbanij.github.io/syRF/) for an overview.
 
 ##### Demo 
 
-[![Alt Text](./doc/gif/syRF.gif)](https://youtu.be/yJPomOStffk)
-(Open full [video](https://youtu.be/yJPomOStffk)).
+[![Alt Text](./doc/demo/syRF.gif)](https://youtu.be/yJPomOStffk)
+
+Watch full video [demo](https://youtu.be/yJPomOStffk).
 
 
 ### Prerequisites

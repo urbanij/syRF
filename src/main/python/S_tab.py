@@ -376,7 +376,7 @@ def compute_S_MRF571(self):
     # if potentially unstable maximum gains are infinite and no optimum load/source is defined, so I hide those boxes.
     try:
         if abs(D) > 1 or K<1:
-            GP_max_dB = GT_max_dB = GA_max_dB = "+inf"
+            GP_max_dB = GT_max_dB = GA_max_dB = "∞"
             self.textBrowser_8.hide()
             self.label_262.hide()
             self.textBrowser_7.hide()

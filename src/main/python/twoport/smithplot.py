@@ -126,6 +126,7 @@ class SmithChart(object):
                     gamma = r
                     self.ax.text(0, r, '%.1f' % gamma, **self.label_options)
 
+
     def draw_chart_axes(self):
         # make outer circle
         self.smith_circle = Circle((0, 0), 1, transform=self.ax.transData, fc='none',
@@ -144,6 +145,7 @@ class SmithChart(object):
         line.set_clip_path(self.smith_circle)
         line.set_clip_box(self.ax.bbox)
         self.ax.add_line(line)
+        
 
     def draw_smith_chart(self, admittance, labels):
         # plot options for constant z/y circles and axes
@@ -157,7 +159,10 @@ class SmithChart(object):
         #self.label_options = {'ha':'center', 'va':'center', 'size':'10', 'alpha':0.5}
 
         # x-axis coordinates where constant R circles will intersect
-        intercept_x_coords = arange(-1, 1, 0.1)
+        
+
+        # intercept_x_coords = arange(-1, 1, 0.1) # too compact imo
+        intercept_x_coords = arange(-0.75, 1, 0.25)
 
 
         # angles where constant X circles will intersect (in degrees relative
@@ -174,7 +179,7 @@ class SmithChart(object):
         self.draw_impedance_circles(intercept_x_coords, intercept_angles, labels)
         
         # no need to draw also the admittance circle
-        # self.draw_admittance_circles(intercept_x_coords, intercept_angles, labels=0)
+        self.draw_admittance_circles(intercept_x_coords, intercept_angles, labels=0)
         
         # either draw_vswr_circles or draw_gamma_circles has to be commented out
         
