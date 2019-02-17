@@ -75,6 +75,11 @@ class utilProgram(QtWidgets.QMainWindow, Ui_MainWindow):
         self.calculate12_button.click()
         self.P_coord_lineedit.setFocus()
 
+    # A key has been pressed!
+    def keyPressEvent(self, event):
+        # Did the user press the Escape key?
+        if event.key() == QtCore.Qt.Key_Escape or event.key() == QtCore.Qt.Key_W:
+            self.close()
 
 
 if __name__ == "__main__":

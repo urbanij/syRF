@@ -952,7 +952,7 @@
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>1283</width>
+               <width>1284</width>
                <height>861</height>
               </rect>
              </property>
@@ -2713,13 +2713,6 @@
              </spacer>
             </item>
             <item>
-             <widget class="QPushButton" name="open_rect2polar_button">
-              <property name="text">
-               <string>Open rect2polar</string>
-              </property>
-             </widget>
-            </item>
-            <item>
              <widget class="QPushButton" name="open_S_formulas_button">
               <property name="text">
                <string>Open formulas</string>
@@ -2782,8 +2775,8 @@
                   <rect>
                    <x>0</x>
                    <y>0</y>
-                   <width>1237</width>
-                   <height>645</height>
+                   <width>617</width>
+                   <height>611</height>
                   </rect>
                  </property>
                  <layout class="QVBoxLayout" name="verticalLayout_12">
@@ -4866,13 +4859,6 @@
                        </spacer>
                       </item>
                       <item>
-                       <widget class="QPushButton" name="open_lambda4_button">
-                        <property name="text">
-                         <string>Open  λ/4</string>
-                        </property>
-                       </widget>
-                      </item>
-                      <item>
                        <widget class="QPushButton" name="Show_Smith">
                         <property name="text">
                          <string>Open Smith Chart</string>
@@ -4942,30 +4928,6 @@
           </property>
          </widget>
         </item>
-        <item>
-         <widget class="QLabel" name="label_11">
-          <property name="font">
-           <font>
-            <family>Courier New</family>
-            <pointsize>11</pointsize>
-            <weight>50</weight>
-            <bold>false</bold>
-            <underline>false</underline>
-            <kerning>false</kerning>
-           </font>
-          </property>
-          <property name="text">
-           <string>&lt;a href=&quot;https://urbanij.github.io/syRF/&quot;&gt;About syRF&lt;/a&gt;
-</string>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-          </property>
-          <property name="openExternalLinks">
-           <bool>true</bool>
-          </property>
-         </widget>
-        </item>
        </layout>
       </item>
      </layout>
@@ -4973,22 +4935,6 @@
    </layout>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
-  <widget class="QMenuBar" name="menuBar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>1358</width>
-     <height>22</height>
-    </rect>
-   </property>
-   <widget class="QMenu" name="menuAbout">
-    <property name="title">
-     <string>About</string>
-    </property>
-   </widget>
-   <addaction name="menuAbout"/>
-  </widget>
   <action name="actionAbout">
    <property name="text">
     <string>About</string>

@@ -84,6 +84,11 @@ class lambda4_window(QtWidgets.QMainWindow, Ui_MainWindow):
         self.Calculate_lambda4.click()
         self.z1_box.setFocus()
 
+    # A key has been pressed!
+    def keyPressEvent(self, event):
+        # Did the user press the Escape key?
+        if event.key() == QtCore.Qt.Key_Escape or event.key() == QtCore.Qt.Key_W:
+            self.close()
 
 
 
