@@ -259,7 +259,7 @@ def plot_Smith(Cs, rs, Cl, rl, gamma_in, gamma_out, gamma_L, gamma_S, GA_dB, Ca,
 
     ## rename Matplotlib window
     fig = gcf()
-    fig.canvas.set_window_title('Smith Chart | S tab')
+    fig.canvas.set_window_title('Smith Chart')
 
     # draws Smith Plot
     sc = SmithChart(Z0, labels=1, show_cursor=0)
