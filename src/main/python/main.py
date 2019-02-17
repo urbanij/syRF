@@ -94,6 +94,11 @@ class mainProgram(QtWidgets.QMainWindow, Ui_MainWindow):
         self.addToolBar(tools_toolbar)
         tools_menu = self.menuBar().addMenu("&Tools")
 
+        matching_tool = QAction("Matching", self)
+        matching_tool.setStatusTip("Open matching window")
+        matching_tool.triggered.connect(self.open_matching)
+        tools_menu.addAction(matching_tool)
+        
         rect2polar_tool = QAction("rect2polar", self)
         rect2polar_tool.setStatusTip("Open rect2polar")
         rect2polar_tool.triggered.connect(self.launch_rect2polar)
@@ -104,12 +109,21 @@ class mainProgram(QtWidgets.QMainWindow, Ui_MainWindow):
         lambda4_tool.triggered.connect(self.open_lambda4)
         tools_menu.addAction(lambda4_tool)
 
-        matching_tool = QAction("Matching", self)
-        matching_tool.setStatusTip("Open matching window")
-        matching_tool.triggered.connect(self.open_matching)
-        tools_menu.addAction(matching_tool)
 
+        # 3
+        docs_toolbar = QToolBar("Docs")
+        self.addToolBar(docs_toolbar)
+        docs_menu = self.menuBar().addMenu("&Docs")
 
+        y_formula_tool = QAction("Y formulas", self)
+        y_formula_tool.setStatusTip("Open PDF")
+        y_formula_tool.triggered.connect(self.open_Y_formulas)
+        docs_menu.addAction(y_formula_tool)
+
+        s_formula_tool = QAction("S formulas", self)
+        s_formula_tool.setStatusTip("Open PDF")
+        s_formula_tool.triggered.connect(self.open_S_formulas)
+        docs_menu.addAction(s_formula_tool)
 
 
         # self.tabWidget.setCurrentIndex(1)

@@ -7,8 +7,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1358</width>
-    <height>834</height>
+    <width>1147</width>
+    <height>855</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -41,7 +41,7 @@
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>1284</width>
+               <width>1073</width>
                <height>861</height>
               </rect>
              </property>
@@ -1802,13 +1802,6 @@
              </spacer>
             </item>
             <item>
-             <widget class="QPushButton" name="open_S_formulas_button">
-              <property name="text">
-               <string>Open formulas</string>
-              </property>
-             </widget>
-            </item>
-            <item>
              <widget class="QPushButton" name="Clean_all_button_6">
               <property name="text">
                <string>Clean All</string>
@@ -1854,7 +1847,7 @@
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>1284</width>
+               <width>1073</width>
                <height>691</height>
               </rect>
              </property>
@@ -2716,13 +2709,6 @@
              <widget class="QPushButton" name="plot_C_f0_button">
               <property name="text">
                <string>Plot C(f)</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QPushButton" name="open_Y_formulas_button">
-              <property name="text">
-               <string>Open formulas</string>
               </property>
              </widget>
             </item>
