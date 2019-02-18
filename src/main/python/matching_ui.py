@@ -944,7 +944,7 @@ class Ui_MainWindow(object):
         self.actiondsd.setObjectName("actiondsd")
 
         self.retranslateUi(MainWindow)
-        self.tabWidget_3.setCurrentIndex(0)
+        self.tabWidget_3.setCurrentIndex(1)
         self.tabWidget_2.setCurrentIndex(1)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
         MainWindow.setTabOrder(self.Z_in_box, self.Z_out_box)

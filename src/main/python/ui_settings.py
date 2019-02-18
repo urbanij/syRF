@@ -21,7 +21,7 @@ def setup_menu_bar(self):
         self.menuBar.setNativeMenuBar(False)
 
 
-        self.action_About.triggered.connect(self.open_about)
+        self.action_About.triggered.connect(self.open_about_window)
         self.action_Exit.triggered.connect(self.quit_app)
         self.actionrect2polar.triggered.connect(self.launch_rect2polar)
         self.actionMatching.triggered.connect(self.launch_matching)
@@ -42,7 +42,7 @@ def init_ui(self):
         self.label_updates.setText(check_update.check())
 
         # set window title, overwriting window title in syRF_ui.py
-        self.setWindowTitle("syRF {}".format(check_update.get_version()))
+        self.setWindowTitle("syRF")
 
 
         setup_menu_bar(self)

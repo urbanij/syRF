@@ -41,7 +41,7 @@ def check():
     remote_version = get_remote_version()
     
     if (remote_version != local_version):
-        return "<font color='#368E8B'>New update available (v. {})</font>".format(remote_version)
+        return "<font color='#368E8B'>New update available (v.{})</font>".format(remote_version)
     else:
         # return "<font color='#1A7C32'>syRF is up to date.</font>"
         return ""
