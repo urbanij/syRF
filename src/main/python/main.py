@@ -229,7 +229,7 @@ class mainProgram(QtWidgets.QMainWindow, Ui_MainWindow):
         S_tab.disable_enable_Z_or_gamma_input(self)
 
 
-    def open_lambda4(self):
+    def launch_lambda4(self):
         window = lambda4.lambda4_window(self)
         window.show()
 
@@ -256,13 +256,12 @@ class mainProgram(QtWidgets.QMainWindow, Ui_MainWindow):
             print ("Can't open the webpage {}.".format(url))
 
 
-    # A key has been pressed!
-    def keyPressEvent(self, event):
-        # Did the user press the Escape key?
-        if event.key() == QtCore.Qt.Key_W:
-            self.quit_app()
-        elif event.key() == QtCore.Qt.Key_T:
-            print ("value")
+    # # A key has been pressed!
+    # def keyPressEvent(self, event):
+    #     # Did the user press the Escape key?
+    #     if event.key() == QtCore.Qt.Key_W:
+    #         self.quit_app()
+        
 
         
 

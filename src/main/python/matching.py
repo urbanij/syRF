@@ -34,7 +34,8 @@ class mainProgram(QtWidgets.QMainWindow, Ui_MainWindow):
         super(mainProgram, self).__init__(parent)
         self.setupUi(self)
 
-
+        self.input_box.setFocus()  # set focus on frequency of Y tab on startup
+        
         self.radioButton.setChecked(True) # Z of quarter wave impedance matching set
         self.plot.setEnabled(False)
 

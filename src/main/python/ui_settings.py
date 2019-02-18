@@ -25,7 +25,7 @@ def setup_menu_bar(self):
         self.action_Exit.triggered.connect(self.quit_app)
         self.actionrect2polar.triggered.connect(self.launch_rect2polar)
         self.actionMatching.triggered.connect(self.launch_matching)
-        self.action_lambda4.triggered.connect(self.open_lambda4)
+        self.action_lambda4.triggered.connect(self.launch_lambda4)
 
         self.actionY_formulas.triggered.connect(self.open_Y_formulas)
         self.actionS_formulas.triggered.connect(self.open_S_formulas)

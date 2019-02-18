@@ -2828,25 +2828,40 @@
    <property name="toolTip">
     <string notr="true">Exit</string>
    </property>
+   <property name="shortcut">
+    <string>Ctrl+W</string>
+   </property>
   </action>
   <action name="actionMatching">
    <property name="text">
     <string>&amp;Matching</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+M</string>
    </property>
   </action>
   <action name="actionrect2polar">
    <property name="text">
     <string>&amp;rect2polar</string>
    </property>
+   <property name="shortcut">
+    <string>Ctrl+R</string>
+   </property>
   </action>
   <action name="action_lambda4">
    <property name="text">
     <string>&amp;λ/4</string>
    </property>
+   <property name="shortcut">
+    <string>Ctrl+L</string>
+   </property>
   </action>
   <action name="actionY_formulas">
    <property name="text">
     <string>&amp;Y formulas</string>
+   </property>
+   <property name="shortcut">
+    <string/>
    </property>
   </action>
   <action name="actionS_formulas">
