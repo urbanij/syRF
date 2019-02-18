@@ -20,9 +20,9 @@ from lambda4_ui import Ui_MainWindow
 msg_error = "" # display nothing if error occurs
 
 
-class lambda4_window(QtWidgets.QMainWindow, Ui_MainWindow):
+class mainProgram(QtWidgets.QMainWindow, Ui_MainWindow):
     def __init__(self, parent=None):
-        super(lambda4_window, self).__init__(parent)
+        super(mainProgram, self).__init__(parent)
         self.setupUi(self)
         
 
@@ -97,7 +97,7 @@ if __name__ == "__main__":
 
     import sys
     app = QtWidgets.QApplication(sys.argv)
-    nextGui = lambda4_window()
+    nextGui = mainProgram()
     nextGui.show()
     sys.exit(app.exec_())
 
