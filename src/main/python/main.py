@@ -37,6 +37,7 @@ import check_update
 import Y_tab
 import S_tab
 import open_pdf
+import ui_settings
 
 
 
@@ -50,106 +51,8 @@ class mainProgram(QtWidgets.QMainWindow, Ui_MainWindow):
         self.setupUi(self)
         
 
-        # on startup check on remote repo whether there is a 
-        # new commit and notify the user by updating the label
-        self.label_updates.setText(check_update.check())
+        ui_settings.init_ui(self)
 
-        # set window title, overwriting window title in syRF_ui.py
-        self.setWindowTitle("syRF {}".format(check_update.get_version()))
-
-
-        ## setup menu bar
-        
-        self.status = QStatusBar()
-        self.setStatusBar(self.status)
-
-        
-        # Uncomment to disable native menubar on Mac
-        self.menuBar().setNativeMenuBar(False)
-
-
-    
-        # 1
-        syRF_toolbar = QToolBar("syRF")
-        # syRF_toolbar.setIconSize(QSize(14, 14))
-        self.addToolBar(syRF_toolbar)
-        syRF_menu = self.menuBar().addMenu("&syRF")
-
-
-        about_action = QAction("About", self)
-        # about_action.setStatusTip("Quitting...")
-        about_action.triggered.connect(self.open_about)
-        syRF_menu.addAction(about_action)
-
-        syRF_menu.addSeparator()
-
-        quit_action = QAction("Quit", self)
-        # quit_action.setStatusTip("Quitting...")
-        quit_action.triggered.connect(self.quit_app)
-        syRF_menu.addAction(quit_action)
-
-        # 2
-        tools_toolbar = QToolBar("Tools")
-        # "<span style=' text-decoration: underline;'>T</span>ools"
-        self.addToolBar(tools_toolbar)
-        tools_menu = self.menuBar().addMenu("&Tools")
-
-        matching_tool = QAction("Matching", self)
-        matching_tool.setStatusTip("Open matching window")
-        matching_tool.triggered.connect(self.open_matching)
-        tools_menu.addAction(matching_tool)
-        
-        rect2polar_tool = QAction("rect2polar", self)
-        rect2polar_tool.setStatusTip("Open rect2polar")
-        rect2polar_tool.triggered.connect(self.launch_rect2polar)
-        tools_menu.addAction(rect2polar_tool)
-
-        lambda4_tool = QAction("λ/4", self)
-        lambda4_tool.setStatusTip("Open λ/4 calculator")
-        lambda4_tool.triggered.connect(self.open_lambda4)
-        tools_menu.addAction(lambda4_tool)
-
-
-        # 3
-        docs_toolbar = QToolBar("Docs")
-        self.addToolBar(docs_toolbar)
-        docs_menu = self.menuBar().addMenu("&Docs")
-
-        y_formula_tool = QAction("Y formulas", self)
-        y_formula_tool.triggered.connect(self.open_Y_formulas)
-        docs_menu.addAction(y_formula_tool)
-
-        s_formula_tool = QAction("S formulas", self)
-        s_formula_tool.triggered.connect(self.open_S_formulas)
-        docs_menu.addAction(s_formula_tool)
-
-        syRF_menu.addSeparator()
-
-        BJT_2N4957_datasheet_tool = QAction("2N4957 Datasheet", self)
-        BJT_2N4957_datasheet_tool.triggered.connect(self.open_datasheet_Y)
-        docs_menu.addAction(BJT_2N4957_datasheet_tool)
-
-        MRF5712_datasheet_tool = QAction("MRF571/2 Datasheet", self)
-        MRF5712_datasheet_tool.triggered.connect(self.open_datasheet_S)
-        docs_menu.addAction(MRF5712_datasheet_tool)
-
-
-
-        # self.tabWidget.setCurrentIndex(1)
-        self.checkBox.setChecked(True)
-        self.checkBox_2.setChecked(True)
-
-        self.f0_box_2.setFocus()  # set focus on frequency of Y tab on startup
-
-        
-
-        self.radioButton_CE.setChecked(True) # radioButton is checked on startup. Common emitter is the default config.
-        self.radioButton_MRF571.setChecked(True) # radioButton_MRF571 is the default
-        self.radioButton_5.setChecked(True) # insert impedance as Z is the default
-        self.Fill_ys_yl_opt_button.setEnabled(False)
-        
-        # self.Z0_box.setEnabled(False) # Z0 is disabled by default, i.e. it's fixed @ 50 ohm
-        self.plot_isc_button_2.setEnabled(False)
         
 
         # Y
@@ -330,7 +233,7 @@ class mainProgram(QtWidgets.QMainWindow, Ui_MainWindow):
         window = lambda4.lambda4_window(self)
         window.show()
 
-    def open_matching(self):
+    def launch_matching(self):
         window = matching.mainProgram(self)
         window.show()
         
@@ -344,7 +247,13 @@ class mainProgram(QtWidgets.QMainWindow, Ui_MainWindow):
 
     def open_about(self):
         url = "https://urbanij.github.io/syRF/"
-        os.system("open {}".format(url))
+        try:
+            if sys.platform[:3] == "win":
+                os.system("start /max {}".format(url))
+            else:
+                os.system("open {}".format(url))
+        except Exception as e:
+            print ("Can't open the webpage {}.".format(url))
 
 
     # A key has been pressed!

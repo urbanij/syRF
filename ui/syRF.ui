@@ -8,7 +8,7 @@
     <x>0</x>
     <y>0</y>
     <width>1147</width>
-    <height>855</height>
+    <height>797</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -2758,7 +2758,48 @@
     </item>
    </layout>
   </widget>
-  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1147</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu_File">
+    <property name="title">
+     <string>&amp;File</string>
+    </property>
+    <addaction name="action_About"/>
+    <addaction name="separator"/>
+    <addaction name="action_Exit"/>
+   </widget>
+   <widget class="QMenu" name="menu_Tools">
+    <property name="tearOffEnabled">
+     <bool>false</bool>
+    </property>
+    <property name="title">
+     <string> &amp;Tools</string>
+    </property>
+    <addaction name="actionMatching"/>
+    <addaction name="actionrect2polar"/>
+    <addaction name="action_lambda4"/>
+   </widget>
+   <widget class="QMenu" name="menuDocs">
+    <property name="title">
+     <string>Docs</string>
+    </property>
+    <addaction name="actionY_formulas"/>
+    <addaction name="actionS_formulas"/>
+    <addaction name="separator"/>
+    <addaction name="action_Datasheet_Y"/>
+    <addaction name="action_Datasheet_S"/>
+   </widget>
+   <addaction name="menu_File"/>
+   <addaction name="menu_Tools"/>
+   <addaction name="menuDocs"/>
+  </widget>
   <action name="actionAbout">
    <property name="text">
     <string>About</string>
@@ -2767,6 +2808,60 @@
   <action name="actiondsd">
    <property name="text">
     <string>dsd</string>
+   </property>
+  </action>
+  <action name="action_About">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>&amp;About</string>
+   </property>
+   <property name="toolTip">
+    <string notr="true">About</string>
+   </property>
+  </action>
+  <action name="action_Exit">
+   <property name="text">
+    <string>&amp;Exit</string>
+   </property>
+   <property name="toolTip">
+    <string notr="true">Exit</string>
+   </property>
+  </action>
+  <action name="actionMatching">
+   <property name="text">
+    <string>&amp;Matching</string>
+   </property>
+  </action>
+  <action name="actionrect2polar">
+   <property name="text">
+    <string>&amp;rect2polar</string>
+   </property>
+  </action>
+  <action name="action_lambda4">
+   <property name="text">
+    <string>&amp;λ/4</string>
+   </property>
+  </action>
+  <action name="actionY_formulas">
+   <property name="text">
+    <string>&amp;Y formulas</string>
+   </property>
+  </action>
+  <action name="actionS_formulas">
+   <property name="text">
+    <string>&amp;S formulas</string>
+   </property>
+  </action>
+  <action name="action_Datasheet_Y">
+   <property name="text">
+    <string>&amp;Datasheet 2N4957 </string>
+   </property>
+  </action>
+  <action name="action_Datasheet_S">
+   <property name="text">
+    <string>&amp;Datasheet MRF571/2</string>
    </property>
   </action>
  </widget>
