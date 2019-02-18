@@ -116,14 +116,23 @@ class mainProgram(QtWidgets.QMainWindow, Ui_MainWindow):
         docs_menu = self.menuBar().addMenu("&Docs")
 
         y_formula_tool = QAction("Y formulas", self)
-        y_formula_tool.setStatusTip("Open PDF")
         y_formula_tool.triggered.connect(self.open_Y_formulas)
         docs_menu.addAction(y_formula_tool)
 
         s_formula_tool = QAction("S formulas", self)
-        s_formula_tool.setStatusTip("Open PDF")
         s_formula_tool.triggered.connect(self.open_S_formulas)
         docs_menu.addAction(s_formula_tool)
+
+        syRF_menu.addSeparator()
+
+        BJT_2N4957_datasheet_tool = QAction("2N4957 Datasheet", self)
+        BJT_2N4957_datasheet_tool.triggered.connect(self.open_datasheet_Y)
+        docs_menu.addAction(BJT_2N4957_datasheet_tool)
+
+        MRF5712_datasheet_tool = QAction("MRF571/2 Datasheet", self)
+        MRF5712_datasheet_tool.triggered.connect(self.open_datasheet_S)
+        docs_menu.addAction(MRF5712_datasheet_tool)
+
 
 
         # self.tabWidget.setCurrentIndex(1)
@@ -162,7 +171,6 @@ class mainProgram(QtWidgets.QMainWindow, Ui_MainWindow):
         self.Calculate_button_4.clicked.connect(self.compute_Y_2N4957)
         self.show_plots_button.clicked.connect(self.show_plot_Y_parameters)
         self.open_datasheet_Y_button.clicked.connect(self.open_datasheet_Y)
-        self.open_Y_formulas_button.clicked.connect(self.open_Y_formulas)
 
         self.plot_C_f0_button.clicked.connect(self.plot_C_vs_f)
 
@@ -212,8 +220,7 @@ class mainProgram(QtWidgets.QMainWindow, Ui_MainWindow):
         self.gamma_s_on_box.editingFinished.connect(self.Calculate_button_5.click)
 
         self.plot_isc_button_2.clicked.connect(self.smith_plot_all)
-        self.open_datasheet_button.clicked.connect(self.open_datasheet)
-        self.open_S_formulas_button.clicked.connect(self.open_S_formulas)
+        self.open_datasheet_button.clicked.connect(self.open_datasheet_S)
         self.Calculate_button_5.clicked.connect(self.compute_S_MRF571)
         self.clean_S_button.clicked.connect(self.clean_S_MRF571)
         self.Clean_all_button_6.clicked.connect(self.clean_all_S_MRF571) 
@@ -285,7 +292,7 @@ class mainProgram(QtWidgets.QMainWindow, Ui_MainWindow):
         S_tab.compute_S_MRF571(self)
 
 
-    def open_datasheet(self):
+    def open_datasheet_S(self):
         open_pdf.open_pdf("MRF57/MRF57.pdf")
 
     def open_S_formulas(self):
@@ -330,7 +337,7 @@ class mainProgram(QtWidgets.QMainWindow, Ui_MainWindow):
 
 
     def quit_app(self):
-        result = QMessageBox.question(self, "Confirm delete", "Are you sure you want to quit?")
+        result = QMessageBox.question(self, "Confirm exit", "Are you sure you want to quit?", QMessageBox.No|QMessageBox.Yes)
         if result == QMessageBox.Yes:
             self.close()
 

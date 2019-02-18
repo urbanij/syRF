@@ -19,7 +19,7 @@
     <item row="0" column="0">
      <widget class="QTabWidget" name="tabWidget_3">
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="tab_4">
        <attribute name="title">
@@ -36,8 +36,8 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>617</width>
-             <height>561</height>
+             <width>1060</width>
+             <height>583</height>
             </rect>
            </property>
            <layout class="QVBoxLayout" name="verticalLayout_12">
@@ -2150,6 +2150,78 @@
    </property>
   </action>
  </widget>
+ <tabstops>
+  <tabstop>Z_in_box</tabstop>
+  <tabstop>Z_out_box</tabstop>
+  <tabstop>ZS_box_9</tabstop>
+  <tabstop>ZS_box_6</tabstop>
+  <tabstop>ZS_box_7</tabstop>
+  <tabstop>ZS_box_8</tabstop>
+  <tabstop>l_lambda_box</tabstop>
+  <tabstop>z0box</tabstop>
+  <tabstop>epsilon_r_box</tabstop>
+  <tabstop>w_box</tabstop>
+  <tabstop>h_box</tabstop>
+  <tabstop>f_box_3</tabstop>
+  <tabstop>length_box_2</tabstop>
+  <tabstop>w_box_2</tabstop>
+  <tabstop>h_box_2</tabstop>
+  <tabstop>epsilon_r_box_2</tabstop>
+  <tabstop>z0box_2</tabstop>
+  <tabstop>f_box_4</tabstop>
+  <tabstop>input_box</tabstop>
+  <tabstop>output_box</tabstop>
+  <tabstop>f0_box</tabstop>
+  <tabstop>Clean_all_button_3</tabstop>
+  <tabstop>Calculate_button_3</tabstop>
+  <tabstop>tabWidget_2</tabstop>
+  <tabstop>w_over_h_box</tabstop>
+  <tabstop>L2_box</tabstop>
+  <tabstop>lambda_over_lambda_tem_box</tabstop>
+  <tabstop>lambda_tem_box</tabstop>
+  <tabstop>length_box</tabstop>
+  <tabstop>comboBox_2</tabstop>
+  <tabstop>comboBox</tabstop>
+  <tabstop>X2_box</tabstop>
+  <tabstop>B1_box</tabstop>
+  <tabstop>lambda_box</tabstop>
+  <tabstop>C1_box</tabstop>
+  <tabstop>plot</tabstop>
+  <tabstop>imp_output_box</tabstop>
+  <tabstop>lambda_tem_box_2</tabstop>
+  <tabstop>l_lambda_box_2</tabstop>
+  <tabstop>adm_output_box</tabstop>
+  <tabstop>w_over_h_box_2</tabstop>
+  <tabstop>lambda_over_lambda_tem_box_2</tabstop>
+  <tabstop>open_pdf_sketch_button</tabstop>
+  <tabstop>adm_input_box</tabstop>
+  <tabstop>imp_input_box</tabstop>
+  <tabstop>lambda_box_2</tabstop>
+  <tabstop>open_plot_button</tabstop>
+  <tabstop>clean_all_button4</tabstop>
+  <tabstop>show_er_plots_button</tabstop>
+  <tabstop>calculate_button_6</tabstop>
+  <tabstop>Z0_box2</tabstop>
+  <tabstop>tabWidget_3</tabstop>
+  <tabstop>scrollArea_3</tabstop>
+  <tabstop>C2_box</tabstop>
+  <tabstop>X1_box</tabstop>
+  <tabstop>L1_box</tabstop>
+  <tabstop>B2_box</tabstop>
+  <tabstop>radioButton_2</tabstop>
+  <tabstop>radioButton</tabstop>
+  <tabstop>z_in_box_2</tabstop>
+  <tabstop>z_in_box_5</tabstop>
+  <tabstop>z_in_box</tabstop>
+  <tabstop>z_out_box</tabstop>
+  <tabstop>gamma_zin_box</tabstop>
+  <tabstop>gamma_zout_box</tabstop>
+  <tabstop>lambda_tick_zin_box</tabstop>
+  <tabstop>lambda_tick_zout_box</tabstop>
+  <tabstop>Show_Smith</tabstop>
+  <tabstop>clean_all_button213</tabstop>
+  <tabstop>Calculate_quarter</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>
