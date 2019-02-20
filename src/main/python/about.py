@@ -21,15 +21,16 @@ import check_update
 
 
 DESCRIPTION = """
-<br><br><br>
 <b>syRF</b> is an open source CAD tool<br> 
-to help you design RF and microwave circuits.<br>
-It runs on any OS, since it's written in<br>
-Python.<br>
-It's tailored to fully cover the class RF Electronics<br> 
-from the University of Pisa, yet it is still a <br>
-valuable tool for everyone else.
+to help you design RF and microwave<br>
+circuits.
 """
+# It runs on any OS, since it's written in<br>
+# Python.<br>
+# It's tailored to fully cover the class RF Electronics<br> 
+# from the University of Pisa, yet it is still a <br>
+# valuable tool for anyone else.
+
 
 LINKS = """
 <a href="https://urbanij.github.io/syRF/">Home Page</a><br>
