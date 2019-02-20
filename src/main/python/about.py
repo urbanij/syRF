@@ -45,6 +45,9 @@ class mainProgram(QtWidgets.QMainWindow, Ui_MainWindow):
         super(mainProgram, self).__init__(parent)
         self.setupUi(self)
 
+        flags = QtCore.Qt.Window | QtCore.Qt.CustomizeWindowHint | QtCore.Qt.WindowTitleHint | QtCore.Qt.WindowStaysOnTopHint
+        self.setWindowFlags(flags)
+
         self.label_version.setText("v.{}".format(check_update.get_version()))
 
         self.label_links.setOpenExternalLinks(True)

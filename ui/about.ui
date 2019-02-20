@@ -73,7 +73,7 @@
          </font>
         </property>
         <property name="text">
-         <string>Hope Page</string>
+         <string>Home Page</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignCenter</set>
@@ -96,7 +96,7 @@
       <item>
        <widget class="QLabel" name="label_description">
         <property name="text">
-         <string>syRF bla bla bla</string>
+         <string>syRF description</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignJustify|Qt::AlignVCenter</set>

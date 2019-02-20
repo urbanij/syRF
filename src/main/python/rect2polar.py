@@ -44,10 +44,18 @@ class mainProgram(QtWidgets.QMainWindow, Ui_MainWindow):
         
         # read input coordinate as complex number
         try:
-            P_coord = complex(self.P_coord_lineedit.text())
+            P_coord = eval(self.P_coord_lineedit.text())
         except Exception as e:
             P_coord = msg_error
         
+
+        # some fancyness... reupdates the field, in case the user writes something like 2+3+1+5+3j  ==> 11+3j
+        try:
+            self.P_coord_lineedit.setText(str(eval(self.P_coord_lineedit.text()))) # updates P_coord_lineedit
+        except SyntaxError as e:
+            pass
+
+
 
         # compute
         try:

@@ -24,7 +24,7 @@ def setup_menu_bar(self):
     self.menuBar.setNativeMenuBar(False)
 
 
-    self.action_About.triggered.connect(self.open_about_window)
+    self.action_About_2.triggered.connect(self.open_about_window)
     self.action_Exit.triggered.connect(self.quit_app)
 
     self.action_Lumped_Matching.triggered.connect(self.launch_lumped_matching)

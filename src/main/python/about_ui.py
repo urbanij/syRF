@@ -67,8 +67,8 @@ class Ui_MainWindow(object):
         _translate = QtCore.QCoreApplication.translate
         self.label.setText(_translate("MainWindow", "syRF"))
         self.label_version.setText(_translate("MainWindow", "version"))
-        self.label_links.setText(_translate("MainWindow", "Hope Page"))
-        self.label_description.setText(_translate("MainWindow", "syRF bla bla bla"))
+        self.label_links.setText(_translate("MainWindow", "Home Page"))
+        self.label_description.setText(_translate("MainWindow", "syRF description"))
         self.actionAbout.setText(_translate("MainWindow", "About"))
         self.actiondsd.setText(_translate("MainWindow", "dsd"))
 

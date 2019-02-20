@@ -41,7 +41,7 @@
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>1124</width>
+               <width>1109</width>
                <height>691</height>
               </rect>
              </property>
@@ -945,7 +945,7 @@
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>1124</width>
+               <width>849</width>
                <height>841</height>
               </rect>
              </property>
@@ -2755,7 +2755,6 @@
     <property name="title">
      <string>&amp;File</string>
     </property>
-    <addaction name="action_About"/>
     <addaction name="separator"/>
     <addaction name="action_Exit"/>
    </widget>
@@ -2784,9 +2783,16 @@
     <addaction name="action_Datasheet_Y"/>
     <addaction name="action_Datasheet_S"/>
    </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>Help</string>
+    </property>
+    <addaction name="action_About_2"/>
+   </widget>
    <addaction name="menu_File"/>
    <addaction name="menu_Tools"/>
    <addaction name="menuDocs"/>
+   <addaction name="menuHelp"/>
   </widget>
   <action name="actionAbout">
    <property name="text">
@@ -2878,6 +2884,16 @@
    </property>
    <property name="shortcut">
     <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="action_About_2">
+   <property name="text">
+    <string>&amp;About</string>
+   </property>
+  </action>
+  <action name="action_Export">
+   <property name="text">
+    <string>&amp;Export</string>
    </property>
   </action>
  </widget>
