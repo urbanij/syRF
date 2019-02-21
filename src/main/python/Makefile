@@ -7,6 +7,7 @@ all:
 	pyuic5 ../../../ui/microstrip_matching_window.ui > microstrip_matching_window_ui.py
 	pyuic5 ../../../ui/smith_chart.ui         > smith_chart_ui.py
 	pyuic5 ../../../ui/lumped_matching.ui     > lumped_matching_ui.py
+	pyuic5 ../../../ui/integrated_matching.ui     > integrated_matching_ui.py
 
 
 clean:

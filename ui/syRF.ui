@@ -41,7 +41,7 @@
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>1109</width>
+               <width>1124</width>
                <height>691</height>
               </rect>
              </property>
@@ -945,7 +945,7 @@
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>849</width>
+               <width>1124</width>
                <height>841</height>
               </rect>
              </property>
@@ -2755,6 +2755,7 @@
     <property name="title">
      <string>&amp;File</string>
     </property>
+    <addaction name="actionCheck_for_Updates"/>
     <addaction name="separator"/>
     <addaction name="action_Exit"/>
    </widget>
@@ -2767,6 +2768,7 @@
     </property>
     <addaction name="action_Lumped_Matching"/>
     <addaction name="actionMicrostrip_Matching"/>
+    <addaction name="action_Integrated_Matching"/>
     <addaction name="separator"/>
     <addaction name="action_Smith_Chart"/>
     <addaction name="separator"/>
@@ -2894,6 +2896,16 @@
   <action name="action_Export">
    <property name="text">
     <string>&amp;Export</string>
+   </property>
+  </action>
+  <action name="action_Integrated_Matching">
+   <property name="text">
+    <string>&amp;Integrated Matching</string>
+   </property>
+  </action>
+  <action name="actionCheck_for_Updates">
+   <property name="text">
+    <string>&amp;Check For Updates...</string>
    </property>
   </action>
  </widget>

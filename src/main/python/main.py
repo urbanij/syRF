@@ -25,6 +25,7 @@ import about
 
 import lumped_matching
 import microstrip_matching_window
+import integrated_matching 
 import smith_chart
 
 import rect2polar 
@@ -242,6 +243,11 @@ class mainProgram(QtWidgets.QMainWindow, Ui_MainWindow):
         window = microstrip_matching_window.mainProgram(self)
         window.show()
 
+    def launch_integrated_matching(self):
+        window = integrated_matching.mainProgram(self)
+        window.show()        
+
+
     def launch_smith_chart(self):
         window = smith_chart.mainProgram(self)
         window.show()
@@ -253,7 +259,6 @@ class mainProgram(QtWidgets.QMainWindow, Ui_MainWindow):
     def launch_lambda4(self):
         window = lambda4.mainProgram(self)
         window.show()
-
 
 
 

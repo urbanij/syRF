@@ -39,7 +39,7 @@ def setup_menu_bar(self):
     self.action_Datasheet_Y.triggered.connect(self.open_datasheet_Y)
     self.action_Datasheet_S.triggered.connect(self.open_datasheet_S)
 
-
+    self.action_Integrated_Matching.triggered.connect(self.launch_integrated_matching)
 
     
         
