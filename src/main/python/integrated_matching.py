@@ -29,6 +29,11 @@ class mainProgram(QtWidgets.QMainWindow, Ui_MainWindow):
         super(mainProgram, self).__init__(parent)
         self.setupUi(self)
 
+        self.menuBar.setNativeMenuBar(False)
+        self.action_Open_formulas.triggered.connect(self.Open_formulas_integrated_matching)
+        self.action_Quit_IM.triggered.connect(self.close)
+
+
         self.Ic_input.setFocus()  # set focus on startup
 
         self.Lb_vs_Ic_button.setEnabled(False)
@@ -126,6 +131,10 @@ class mainProgram(QtWidgets.QMainWindow, Ui_MainWindow):
 
         self.calculate_integrated_matching_button.click()
         self.Ic_input.setFocus()  # set focus on startup
+
+
+    def Open_formulas_integrated_matching(self):
+        pass
 
 
     def plot_Lb_vs_Ic(self):

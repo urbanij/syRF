@@ -48,8 +48,10 @@ def setup_menu_bar(self):
 def init_ui(self):
     # on startup check on remote repo whether there is a 
     # new commit and notify the user by updating the label
-    self.label_updates.setText(check_update.check())
-
+    
+    # self.label_updates.setText(check_update.check())
+    check_update.check(self)
+    
     # set window title, overwriting window title in syRF_ui.py
     self.setWindowTitle("syRF")
 

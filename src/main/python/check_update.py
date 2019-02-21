@@ -15,6 +15,8 @@ import requests
 LOCAL_VERSION_FILE = "../../../.version"
 REMOTE_VERSION_URL = 'https://raw.githubusercontent.com/urbanij/syRF/master/.version'
 
+import check_update_window
+import new_update
 
 
 def get_version():
@@ -36,13 +38,19 @@ def get_remote_version():
 
     
 
-def check():
+def check(self):
     local_version  = get_version()
     remote_version = get_remote_version()
     
     if (remote_version != local_version):
-        return "<font color='#BA0000'>New update available (v.{})</font>".format(remote_version)
+        # return "<font color='#BA0000'>New update available (v.{})</font>".format(remote_version)
+        window = new_update.mainProgram(self)
+        window.show()
     else:
         # return "<font color='#1A7C32'>syRF is up to date.</font>"
-        return ""
+        # return ""
+        
+        # window = check_update_window.mainProgram(self)
+        # window.show()
+        pass
 

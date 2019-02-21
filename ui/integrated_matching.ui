@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>587</width>
-    <height>416</height>
+    <height>419</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -399,10 +399,10 @@
           </item>
          </layout>
         </item>
-        <item row="3" column="1">
+        <item row="3" column="0" colspan="2">
          <widget class="QPushButton" name="Lb_vs_Ic_button">
           <property name="text">
-           <string>Lb(Ic)</string>
+           <string>Plot Lb(Ic)</string>
           </property>
          </widget>
         </item>
@@ -557,6 +557,30 @@
     </item>
    </layout>
   </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>587</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuDocs">
+    <property name="title">
+     <string>Docs</string>
+    </property>
+    <addaction name="action_Open_formulas"/>
+   </widget>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="action_Quit_IM"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuDocs"/>
+  </widget>
   <action name="actionAbout">
    <property name="text">
     <string>About</string>
@@ -565,6 +589,19 @@
   <action name="actiondsd">
    <property name="text">
     <string>dsd</string>
+   </property>
+  </action>
+  <action name="action_Open_formulas">
+   <property name="text">
+    <string>&amp;Open formulas</string>
+   </property>
+  </action>
+  <action name="action_Quit_IM">
+   <property name="text">
+    <string>&amp;Quit</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+W</string>
    </property>
   </action>
  </widget>

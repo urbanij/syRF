@@ -41,7 +41,7 @@
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>1124</width>
+               <width>1109</width>
                <height>691</height>
               </rect>
              </property>
@@ -945,7 +945,7 @@
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>1124</width>
+               <width>1109</width>
                <height>841</height>
               </rect>
              </property>
@@ -2759,22 +2759,6 @@
     <addaction name="separator"/>
     <addaction name="action_Exit"/>
    </widget>
-   <widget class="QMenu" name="menu_Tools">
-    <property name="tearOffEnabled">
-     <bool>false</bool>
-    </property>
-    <property name="title">
-     <string> &amp;Tools</string>
-    </property>
-    <addaction name="action_Lumped_Matching"/>
-    <addaction name="actionMicrostrip_Matching"/>
-    <addaction name="action_Integrated_Matching"/>
-    <addaction name="separator"/>
-    <addaction name="action_Smith_Chart"/>
-    <addaction name="separator"/>
-    <addaction name="actionrect2polar"/>
-    <addaction name="action_lambda4"/>
-   </widget>
    <widget class="QMenu" name="menuDocs">
     <property name="title">
      <string>Docs</string>
@@ -2791,8 +2775,21 @@
     </property>
     <addaction name="action_About_2"/>
    </widget>
+   <widget class="QMenu" name="menuUtilities">
+    <property name="title">
+     <string>Utilities</string>
+    </property>
+    <addaction name="action_Lumped_Matching"/>
+    <addaction name="actionMicrostrip_Matching"/>
+    <addaction name="action_Integrated_Matching"/>
+    <addaction name="separator"/>
+    <addaction name="action_Smith_Chart"/>
+    <addaction name="separator"/>
+    <addaction name="actionrect2polar"/>
+    <addaction name="action_lambda4"/>
+   </widget>
    <addaction name="menu_File"/>
-   <addaction name="menu_Tools"/>
+   <addaction name="menuUtilities"/>
    <addaction name="menuDocs"/>
    <addaction name="menuHelp"/>
   </widget>
@@ -2901,6 +2898,9 @@
   <action name="action_Integrated_Matching">
    <property name="text">
     <string>&amp;Integrated Matching</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+I</string>
    </property>
   </action>
   <action name="actionCheck_for_Updates">
