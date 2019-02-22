@@ -23,14 +23,13 @@ def setup_menu_bar(self):
     ### Uncomment to disable native menubar on Mac
     self.menuBar.setNativeMenuBar(False)
 
-
-    self.action_About_2.triggered.connect(self.open_about_window)
+    self.actionCheck_for_Updates.triggered.connect(self.check_for_updates)
     self.action_Exit.triggered.connect(self.quit_app)
 
     self.action_Lumped_Matching.triggered.connect(self.launch_lumped_matching)
     self.actionMicrostrip_Matching.triggered.connect(self.launch_microstrip_matching)
+    self.action_Integrated_Matching.triggered.connect(self.launch_integrated_matching)
     self.action_Smith_Chart.triggered.connect(self.launch_smith_chart)
-
     self.actionrect2polar.triggered.connect(self.launch_rect2polar)
     self.action_lambda4.triggered.connect(self.launch_lambda4)
 
@@ -39,18 +38,13 @@ def setup_menu_bar(self):
     self.action_Datasheet_Y.triggered.connect(self.open_datasheet_Y)
     self.action_Datasheet_S.triggered.connect(self.open_datasheet_S)
 
-    self.action_Integrated_Matching.triggered.connect(self.launch_integrated_matching)
-
+    
+    self.action_About_2.triggered.connect(self.open_about_window)
     
         
 
 
 def init_ui(self):
-    # on startup check on remote repo whether there is a 
-    # new commit and notify the user by updating the label
-    
-    # self.label_updates.setText(check_update.check())
-    check_update.check(self)
     
     # set window title, overwriting window title in syRF_ui.py
     self.setWindowTitle("syRF")
@@ -75,3 +69,14 @@ def init_ui(self):
     # self.Z0_box.setEnabled(False) # Z0 is disabled by default, i.e. it's fixed @ 50 ohm
     self.plot_isc_button_2.setEnabled(False)
 
+
+
+
+
+    # on startup check on remote repo whether there is a 
+    # new commit and notify the user by updating the label
+    
+    # self.label_updates.setText(check_update.check())
+    check_update.check(self)
+    
+    

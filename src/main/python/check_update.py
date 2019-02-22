@@ -38,7 +38,7 @@ def get_remote_version():
 
     
 
-def check(self):
+def check(self, call=False): # call is true if the function is called from "Check for updates..." in menu bar
     local_version  = get_version()
     remote_version = get_remote_version()
     
@@ -49,8 +49,8 @@ def check(self):
     else:
         # return "<font color='#1A7C32'>syRF is up to date.</font>"
         # return ""
-        
-        # window = check_update_window.mainProgram(self)
-        # window.show()
+        if call :
+            window = check_update_window.mainProgram(self)
+            window.show()
         pass
 

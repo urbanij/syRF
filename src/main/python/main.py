@@ -234,6 +234,9 @@ class mainProgram(QtWidgets.QMainWindow, Ui_MainWindow):
 
 
 
+    def check_for_updates(self):
+        check_update.check(self, True)
+    
 
     def launch_lumped_matching(self):
         window = lumped_matching.mainProgram(self)
@@ -259,6 +262,7 @@ class mainProgram(QtWidgets.QMainWindow, Ui_MainWindow):
     def launch_lambda4(self):
         window = lambda4.mainProgram(self)
         window.show()
+
 
 
 
