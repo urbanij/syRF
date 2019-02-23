@@ -44,9 +44,7 @@ class mainProgram(QtWidgets.QMainWindow, Ui_MainWindow):
     def __init__(self, parent=None):
         super(mainProgram, self).__init__(parent)
         self.setupUi(self)
-
-        flags = QtCore.Qt.Window | QtCore.Qt.CustomizeWindowHint | QtCore.Qt.WindowTitleHint | QtCore.Qt.WindowStaysOnTopHint
-        self.setWindowFlags(flags)
+        self.setWindowFlags(QtCore.Qt.Window | QtCore.Qt.CustomizeWindowHint | QtCore.Qt.WindowTitleHint | QtCore.Qt.WindowStaysOnTopHint)
 
         self.label_version.setText("v.{}".format(check_update.get_version()))
 

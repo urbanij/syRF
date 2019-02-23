@@ -116,4 +116,8 @@ venv.bak/
 src/main/icons/
 doc/demo/syRF_demo.mp4
 
-*_ui.py
+
+
+
+# python generate UIs shouldn't be under VC but offloads the need for users to `make` these themselves.
+# *_ui.py

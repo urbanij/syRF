@@ -38,6 +38,7 @@ def get_remote_version():
 
     
 
+    
 def check(self, call=False): # call is true if the function is called from "Check for updates..." in menu bar
     local_version  = get_version()
     remote_version = get_remote_version()
