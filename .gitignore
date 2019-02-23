@@ -108,7 +108,7 @@ venv.bak/
 # mypy
 .mypy_cache/
 
-*.pdf
+
 
 
 
@@ -121,3 +121,7 @@ doc/demo/syRF_demo.mp4
 
 # python generate UIs shouldn't be under VC but offloads the need for users to `make` these themselves.
 # *_ui.py
+
+# same for pdf: when button is pressed, pdfs wouldn't be found:
+# *.pdf
+
