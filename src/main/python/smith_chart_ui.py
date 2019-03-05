@@ -361,7 +361,7 @@ class Ui_MainWindow(object):
         self.label_93.setText(_translate("MainWindow", "<html><head/><body><p>Normalized impedance</p></body></html>"))
         self.label_96.setText(_translate("MainWindow", "<html><head/><body><p>Γ</p></body></html>"))
         self.label_97.setText(_translate("MainWindow", "<html><head/><body><p>corresponding λ tick</p></body></html>"))
-        self.Show_Smith.setText(_translate("MainWindow", "Open Smith Chart"))
+        self.Show_Smith.setText(_translate("MainWindow", "Plot Smith Chart"))
         self.clean_all_button213.setText(_translate("MainWindow", "Clean All"))
         self.Calculate_quarter.setText(_translate("MainWindow", "Calculate"))
         self.actionAbout.setText(_translate("MainWindow", "About"))

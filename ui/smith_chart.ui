@@ -605,7 +605,7 @@
         <item>
          <widget class="QPushButton" name="Show_Smith">
           <property name="text">
-           <string>Open Smith Chart</string>
+           <string>Plot Smith Chart</string>
           </property>
          </widget>
         </item>

@@ -11,9 +11,9 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(638, 425)
-        MainWindow.setMinimumSize(QtCore.QSize(638, 425))
-        MainWindow.setMaximumSize(QtCore.QSize(638, 425))
+        MainWindow.resize(700, 425)
+        MainWindow.setMinimumSize(QtCore.QSize(700, 425))
+        MainWindow.setMaximumSize(QtCore.QSize(700, 425))
         MainWindow.setWindowTitle("Software Update")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
