@@ -13,7 +13,7 @@ Created on Mon Feb 18 18:44:30 CET 2019
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-from lumped_matching_ui import Ui_MainWindow
+from pyui.lumped_matching_ui import Ui_MainWindow
 
 import LC_matching_tab
 import plot_reflection_coefficient

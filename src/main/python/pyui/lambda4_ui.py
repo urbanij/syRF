@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file '../../../ui/lambda4.ui'
 #
-# Created by: PyQt5 UI code generator 5.10.1
+# Created by: PyQt5 UI code generator 5.10
 #
 # WARNING! All changes made in this file will be lost!
 

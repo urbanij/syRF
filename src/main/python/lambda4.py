@@ -15,7 +15,7 @@ Created on Thu Feb 14 19:14:33 CET 2019
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-from lambda4_ui import Ui_MainWindow
+from pyui.lambda4_ui import Ui_MainWindow
 
 msg_error = "" # display nothing if error occurs
 

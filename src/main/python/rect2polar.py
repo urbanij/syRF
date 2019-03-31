@@ -16,7 +16,7 @@ Created on Thu Feb 14 17:06:16 CET 2019
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-from rect2polar_ui import Ui_MainWindow
+from pyui.rect2polar_ui import Ui_MainWindow
 
 import math
 import cmath

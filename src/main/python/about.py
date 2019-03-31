@@ -13,7 +13,7 @@ Created on Mon Feb 18 18:12:01 CET 2019
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-from about_ui import Ui_MainWindow
+from pyui.about_ui import Ui_MainWindow
 
 
 import check_update
