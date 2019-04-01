@@ -1,6 +1,6 @@
 all:
 	# creates non runnable python scripts
-	pyuic5 ../../../ui/syRF.ui                       > pyui/syRF_ui.py  
+	pyuic5 ../../../ui/syRF.ui                       > pyui/syRF_ui.py
 	pyuic5 ../../../ui/rect2polar.ui                 > pyui/rect2polar_ui.py
 	pyuic5 ../../../ui/lambda4.ui                    > pyui/lambda4_ui.py
 	pyuic5 ../../../ui/about.ui                      > pyui/about_ui.py
