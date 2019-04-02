@@ -111,11 +111,14 @@ venv.bak/
 
 
 
-
-
 src/main/icons/
 doc/demo/syRF_demo.mp4
 
+
+
+
+# Makefile generated files, i.e. python GUIs made out of XMLs (ui folder in root dir ui/*.ui)
+*_ui.py
 
 
 

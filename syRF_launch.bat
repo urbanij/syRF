@@ -4,5 +4,5 @@ rem edit [path to folder] to something like [......]/syRF/src/main/python
 
 cd [path to folder]
 rem open .
-python main.py
+python3 main.py
 cd 
