@@ -128,3 +128,10 @@ doc/demo/syRF_demo.mp4
 # same for pdf: when button is pressed, pdfs wouldn't be found:
 # *.pdf
 
+
+# LaTeX
+*.toc
+*.gz
+*.aux
+*.out
+
