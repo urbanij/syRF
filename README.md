@@ -11,26 +11,14 @@ Check [this webpage](https://urbanij.github.io/syRF/) for an overview.
 Watch full video [demo](https://youtu.be/yJPomOStffk).
 
 
-### Prerequisites
-
-
-[Python3](https://www.python.org/) is supposed to be already installed on your local machine -- if not you have two main options:
-
-- via [Anaconda](https://www.anaconda.com/download/) which usually turns to be a smooth process since it provides useful packages<sup>1</sup> together with the main Python installation;
-- from [the website](https://www.python.org/).
-
-To check whether Python is installed correctly on your computer open a shell and type `python --version`.
-
-
-<sup>1</sup> This way [other](https://docs.anaconda.com/anaconda/packages/old-pkg-lists/4.3.1/py35/) useful/mandatory packages such as Numpy and Matplotlib will be installed as well.
-
+### How to
 
 #### Prerequisites
 If not yet installed on your machine, install:
 - install [Python3.7](https://www.python.org/)
 - install [pipenv](https://github.com/pypa/pipenv)
 
-### Running
+#### Running
 
 Clone/download the repository locally
 ```sh
