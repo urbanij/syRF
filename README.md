@@ -25,13 +25,14 @@ To check whether Python is installed correctly on your computer open a shell and
 <sup>1</sup> This way [other](https://docs.anaconda.com/anaconda/packages/old-pkg-lists/4.3.1/py35/) useful/mandatory packages such as Numpy and Matplotlib will be installed as well.
 
 
+#### Prerequisites
+If not yet installed on your machine, install:
+- install [Python3.7](https://www.python.org/)
+- install [pipenv](https://github.com/pypa/pipenv)
 
 ### Running
 
-These steps are also written in the text file `./venv_steps.txt`. 
-
-
-Clone/download the repository on your local machine 
+Clone/download the repository locally
 ```sh
 git clone https://github.com/urbanij/syRF.git
 ```
@@ -39,32 +40,25 @@ and `cd` into it.
 ```sh
 cd syRF
 ```
-Then create a virtual environment and activate it
+Then activate the virtual environment
 ```sh
-python3 -m venv venv
-source venv/bin/activate
+pipenv shell
 ```
-install the required libraries (like PyQt5 for the GUI, Matplotlib for plotting, etc, which are not shipped with Python by default)
+and download the mandatory third-party library/packages:
 ```sh
-pip3 install -r requirements.txt
+pipenv sync
 ```
-then move to the folder where the main code lives 
-```sh
-cd src/main/python 
-```
-and generate the necessary Python GUI files
+If the process ends successfully it should print: "All dependencies are now up-to-date!"
+
+Now type 
 ```sh
 make
 ```
-and finally
+to generate the Python GUI files, and finally
 ```sh
-python3 main.py
+./syRF_launch
 ```
 to launch the application.
-
-
-
-Alternatively save the file `syRF_launch` (or `syRF_launch.bat` if on Windows), [edit the path](https://github.com/urbanij/syRF/blob/master/syRF_launch#L5), change its permission to executable `chmod +x syRF_launch` and use that to launch the app, the next times.
 
 
 
@@ -78,7 +72,7 @@ Please read [CONTRIBUTING.md](https://github.com/urbanij/syRF/blob/master/CONTRI
 
 ## Authors
 
-* Francesco Urbani 
+* [Francesco Urbani](https://urbanij.github.io/)
 
 See also the list of [contributors](https://github.com/urbanij/syRF/graphs/contributors) who participated in this project.
 

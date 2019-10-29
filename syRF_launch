@@ -1,13 +1,5 @@
 #!/bin/bash
 
-# save this in a convenient location and either:
-#   - make it executable ($ chmod +x syRF_launch) and double click this 
-# or
-#   - sh syRF_launch
-# 
-# to launch syRF
-
-
-cd [path to folder]
-python3 main.py
+cd src/main/python
+python main.py
 cd 
