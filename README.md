@@ -15,8 +15,8 @@ Watch full video [demo](https://youtu.be/yJPomOStffk).
 
 #### Prerequisites
 If not yet installed on your machine, install:
-- install [Python3.7](https://www.python.org/)
-- install [pipenv](https://github.com/pypa/pipenv)
+- [Python3.7](https://www.python.org/)
+- [pipenv](https://github.com/pypa/pipenv)
 
 #### Running
 
@@ -36,7 +36,7 @@ and download the mandatory third-party library/packages:
 ```sh
 pipenv sync
 ```
-If the process ends successfully it should print: "All dependencies are now up-to-date!"
+If the process finishes successfully it should print: "All dependencies are now up-to-date!"
 
 Now type 
 ```sh
