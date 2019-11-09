@@ -1,5 +1,5 @@
 #!/bin/bash
 
 cd src/main/python
-python3.7 main.py
+python3.7 smith_chart.py
 cd 

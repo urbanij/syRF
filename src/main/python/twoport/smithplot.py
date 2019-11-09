@@ -179,7 +179,7 @@ class SmithChart(object):
         self.draw_impedance_circles(intercept_x_coords, intercept_angles, labels)
         
         # no need to draw also the admittance circle
-        self.draw_admittance_circles(intercept_x_coords, intercept_angles, labels=0)
+        # self.draw_admittance_circles(intercept_x_coords, intercept_angles, labels=0)
         
         # either draw_vswr_circles or draw_gamma_circles has to be commented out
         
@@ -369,14 +369,14 @@ def plot_Smith_quarter_wave_matching(Z0, Z_in, Z_out, gamma_zin, gamma_zout):
     
 
     if gamma_zin != msg_error:
-        plot(gamma_zin.real, gamma_zin.imag, marker="o", color="red", label="$\Gamma(Z_{L}=" + str(Z_in) + "\ \Omega)$")
+        plot(gamma_zin.real, gamma_zin.imag, marker="o", color="red", label="$Z_{L}$="+f"{Z_in.real:.4g}"+"$\Omega$")
 
         # draws the circumference passing from zin centered in 0 (constant gamma)
         gamma_zin_circumference = plt.Circle((0, 0), abs(gamma_zin), color='red', linewidth=.5, fill=False)
         ax.add_artist(gamma_zin_circumference)
 
     if gamma_zout != msg_error:
-        plot(gamma_zout.real, gamma_zout.imag, marker="o", color="blue", label="$\Gamma(Z_{L}'=" + str(Z_out) + "\ \Omega)$")
+        plot(gamma_zout.real, gamma_zout.imag, marker="o", color="blue", label="$Z_{L}'$="+f"{Z_out:.4g}"+"$\Omega$")
         
         # draws the circumference passing from zout centered in 0 (constant gamma)
         gamma_zout_circumference = plt.Circle((0, 0), abs(gamma_zout), color='blue', linewidth=.5, fill=False)

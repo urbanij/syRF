@@ -24,7 +24,7 @@ msg_error = "" # display nothing if error occurs
 
 
 def normalize_impedance(z, z0):
-    return z/z0
+    return (z/z0).real if (z/z0).imag == 0 else z/z0 
 
 
 def calculate_tab_quarter_wave_im(self):
@@ -35,7 +35,7 @@ def calculate_tab_quarter_wave_im(self):
 
     try:
         Z0 = float(self.Z0_box2.text())
-    except Exception as e:
+    except ValueError:
         Z0 = msg_error
 
 
@@ -129,11 +129,13 @@ def calculate_tab_quarter_wave_im(self):
         # calculate Z from gamma
         try:
             Z_in = calculate_Z_from_gamma(gamma_zin, Z0)
+            # Z_in = Z_in.real if Z_in.imag == 0 else Z_in
         except Exception as e:
             Z_in = msg_error
 
         try:
             Z_out = calculate_Z_from_gamma(gamma_zout, Z0)
+            # Z_out = Z_out.real if Z_out.imag == 0 else Z_out
         except Exception as e:
             Z_out = msg_error
 
@@ -154,19 +156,28 @@ def calculate_tab_quarter_wave_im(self):
     # displaying
     # --------------
 
-    self.z_in_box_2.setText(str(Z_in))
-    self.z_in_box_5.setText(str(Z_out))
-
-    self.z_in_box.setText(str(z_in))
-    self.z_out_box.setText(str(z_out))
-
     try:
-        self.gamma_zin_box.setText(str(abs(gamma_zin)) + "∠" + str(math.degrees(cmath.phase(gamma_zin))) )
+        self.z_in_box_2.setText(f"{Z_in:.4g}")
+    except Exception as e: # thrown if Z_in is not a number hence the significat digits cannot be evaluated
+        self.z_in_box_2.setText(msg_error)
+    try:
+        self.z_in_box_5.setText(f"{Z_out:.4g}")
+    except Exception as e:
+        self.z_in_box_5.setText(msg_error)
+    try:
+        self.z_in_box.setText(f"{z_in:.4g}")
+    except Exception as e:
+        self.z_in_box.setText(msg_error)
+    try:
+        self.z_out_box.setText(f"{z_out:.4g}")
+    except Exception as e:
+        self.z_out_box.setText(msg_error)
+    try:
+        self.gamma_zin_box.setText(f"{abs(gamma_zin):.4g} ∠ {math.degrees(cmath.phase(gamma_zin)):.4g}")
     except Exception as e:
         self.gamma_zin_box.setText(msg_error)
-
     try:
-        self.gamma_zout_box.setText(str(abs(gamma_zout)) + "∠" + str(math.degrees(cmath.phase(gamma_zout))) )
+        self.gamma_zout_box.setText(f"{abs(gamma_zout):.4g} ∠ {math.degrees(cmath.phase(gamma_zout)):.4g}")
     except Exception as e:
         self.gamma_zout_box.setText(msg_error)
 
@@ -201,8 +212,14 @@ def calculate_tab_quarter_wave_im(self):
     
 
     # printing lambdas to the right boxes
-    self.lambda_tick_zin_box.setText(str(lambda_zin))
-    self.lambda_tick_zout_box.setText(str(lambda_zout))
+    try:
+        self.lambda_tick_zin_box.setText(f"{lambda_zin:.4g}")
+    except Exception as e:
+        self.lambda_tick_zin_box.setText(msg_error)
+    try:
+        self.lambda_tick_zout_box.setText(f"{lambda_zout:.4g}")
+    except Exception as e:
+        self.lambda_tick_zout_box.setText(msg_error)
 
     return Z0, Z_in, Z_out, gamma_zin, gamma_zout
 
@@ -218,12 +235,6 @@ def showSmithPlot(self):
     except Exception as e:
         # raise e
         pass
-
-
-
-
-
-
 
 
 def disable_boxes_quarter_wave_im(self):
