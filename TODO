@@ -1,2 +1,4 @@
 - [ ] color in orange when potentially unstable and red when unstable.
 - [ ] trim all the number representations to a reasonable number of digits
+
+- [ ] move tests folder somewhere else

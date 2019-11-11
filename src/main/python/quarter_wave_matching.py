@@ -19,12 +19,14 @@ import math
 
 from twoport.utils import find_nearest
 from S_functions import calculate_gamma, calculate_Z_from_gamma
+from ImprovedComplex import ImprovedComplex
 
 msg_error = "" # display nothing if error occurs
 
 
 def normalize_impedance(z, z0):
-    return (z/z0).real if (z/z0).imag == 0 else z/z0 
+    return z/z0 
+    # return (z/z0).real if (z/z0).imag == 0 else z/z0 
 
 
 def calculate_tab_quarter_wave_im(self):
@@ -157,10 +159,12 @@ def calculate_tab_quarter_wave_im(self):
     # --------------
 
     try:
+        # self.z_in_box_2.setText(f"{ImprovedComplex(Z_in)}")       # FIX
         self.z_in_box_2.setText(f"{Z_in:.4g}")
     except Exception as e: # thrown if Z_in is not a number hence the significat digits cannot be evaluated
         self.z_in_box_2.setText(msg_error)
     try:
+        # self.z_in_box_5.setText(f"{ImprovedComplex(Z_out)}")      # FIX
         self.z_in_box_5.setText(f"{Z_out:.4g}")
     except Exception as e:
         self.z_in_box_5.setText(msg_error)
@@ -234,7 +238,7 @@ def showSmithPlot(self):
         twoport.smithplot.plot_Smith_quarter_wave_matching(Z0, Z_in, Z_out, gamma_zin, gamma_zout)
     except Exception as e:
         # raise e
-        pass
+        print(e)
 
 
 def disable_boxes_quarter_wave_im(self):

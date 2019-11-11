@@ -3,7 +3,10 @@ from numpy import asarray, array, dot, zeros, inf, identity
 from numpy.linalg import inv
 import numpy as np
 from pylab import *
+
+
 from twoport import *
+
 
 """edit from original: commented out these following 2 lines,
 i don't know why but it caused an error when importing this
@@ -236,7 +239,49 @@ class SmithChart(object):
         self.background = self.fig.canvas.copy_from_bbox(self.ax.bbox)
 
 
-#----------------------------------------------------------------
+
+
+
+
+
+
+####---------------------------------------------------------------------------------
+#### move in a module or something later
+####---------------------------------------------------------------------------------
+_z = lambda gamma: ((1+gamma)/(1-gamma))
+_r = lambda gamma: _z(gamma).real
+_x = lambda gamma: _z(gamma).imag
+
+def equi_conductance_circle(gamma):
+    """
+    args: gamma
+    ===========
+    returns: tuple made of center (tuple) and radius (float)
+    """
+    r,x = _r(gamma), _x(gamma)
+    center = (r/(r+1) , 0)
+    radius = 1/(1+r)
+    return (center,radius)
+
+def equi_admittance_circle(gamma):
+    """
+    args: gamma
+    ===========
+    returns: tuple made of center (tuple) and radius (float)
+    """
+    r,x = _r(gamma), _x(gamma)
+    try:
+        center = (1 , 1/x)
+        radius = 1/x
+    except ZeroDivisionError:
+        center = (1 , 1e3)
+        radius = 1e3
+    return (center,radius)
+
+####---------------------------------------------------------------------------------
+
+
+
 
 
 
@@ -369,18 +414,43 @@ def plot_Smith_quarter_wave_matching(Z0, Z_in, Z_out, gamma_zin, gamma_zout):
     
 
     if gamma_zin != msg_error:
-        plot(gamma_zin.real, gamma_zin.imag, marker="o", color="red", label="$Z_{L}$="+f"{Z_in.real:.4g}"+"$\Omega$")
+        
+        """ point """
+        plot(gamma_zin.real, gamma_zin.imag, marker="o", color="red", label="$Z_{L}$="+f"{Z_in.real:.4g}"+" $\Omega$")
 
-        # draws the circumference passing from zin centered in 0 (constant gamma)
+        """ constant gamma circumference"""
         gamma_zin_circumference = plt.Circle((0, 0), abs(gamma_zin), color='red', linewidth=.5, fill=False)
         ax.add_artist(gamma_zin_circumference)
 
+        """ constant conductance arc """
+        (_cx, _cy), _r = equi_conductance_circle(gamma_zin)
+        conductance_zin_circumference = plt.Circle((_cx, _cy), _r, color='red', linestyle='--', linewidth=.5, fill=False)
+        ax.add_artist(conductance_zin_circumference)
+
+        """ constant admittance arc """
+        (_cx, _cy), _r = equi_admittance_circle(gamma_zin)
+        admittance_zin_circumference = plt.Circle((_cx, _cy), _r, color='red', linestyle='-.', linewidth=.5, fill=False)
+        ax.add_artist(admittance_zin_circumference)
+
+
     if gamma_zout != msg_error:
-        plot(gamma_zout.real, gamma_zout.imag, marker="o", color="blue", label="$Z_{L}'$="+f"{Z_out:.4g}"+"$\Omega$")
+
+        """ point """
+        plot(gamma_zout.real, gamma_zout.imag, marker="o", color="blue", label="$Z_{L}'$="+f"{Z_out:.4g}"+" $\Omega$")
         
-        # draws the circumference passing from zout centered in 0 (constant gamma)
+        """ constant gamma circumference"""
         gamma_zout_circumference = plt.Circle((0, 0), abs(gamma_zout), color='blue', linewidth=.5, fill=False)
         ax.add_artist(gamma_zout_circumference)
+
+        """ constant conductance arc """
+        (_cx, _cy), _r = equi_conductance_circle(gamma_zout)
+        conductance_zin_circumference = plt.Circle((_cx, _cy), _r, color='blue', linestyle='--', linewidth=.5, fill=False)
+        ax.add_artist(conductance_zin_circumference)
+
+        """ constant admittance arc """
+        (_cx, _cy), _r = equi_admittance_circle(gamma_zout)
+        admittance_zin_circumference = plt.Circle((_cx, _cy), _r, color='blue', linestyle='-.', linewidth=.5, fill=False)
+        ax.add_artist(admittance_zin_circumference)
     
     
     # title("Quarter-wave impedance transformer \n$Z_0 = " + str(Z0) + "\ \Omega$")

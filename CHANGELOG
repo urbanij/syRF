@@ -1,2 +1,2 @@
-- New integrated matching utility in menu bar<br>
-- Bug fix
+- Added constant conductance and constant admittance arcs when plottin the Smith Chart
+- Minor bug fixes
