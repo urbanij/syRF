@@ -18,7 +18,7 @@ import cmath
 import math
 
 from twoport.utils import find_nearest
-from S_functions import calculate_gamma, calculate_Z_from_gamma
+from S_functions import calculate_gamma, calculate_Z_from_gamma, calculate_vswr_from_gamma
 from ImprovedComplex import ImprovedComplex
 
 msg_error = "" # display nothing if error occurs
@@ -79,6 +79,16 @@ def calculate_tab_quarter_wave_im(self):
             gamma_zout_polar = cmath.polar(gamma_zout)
         except Exception as e:
             gamma_zout_polar = msg_error
+
+        try:
+            vswr_zin = calculate_vswr_from_gamma(gamma_zin)
+        except Exception as e:
+            vswr_zin = msg_error
+
+        try:
+            vswr_zout = calculate_vswr_from_gamma(gamma_zout)
+        except Exception as e:
+            vswr_zin = msg_error
 
 
 
@@ -176,15 +186,39 @@ def calculate_tab_quarter_wave_im(self):
         self.z_out_box.setText(f"{z_out:.4g}")
     except Exception as e:
         self.z_out_box.setText(msg_error)
+    
     try:
-        self.gamma_zin_box.setText(f"{abs(gamma_zin):.4g} ∠ {math.degrees(cmath.phase(gamma_zin)):.4g}")
+        self.gamma_zin_actual_box.setText(f"{gamma_zin:.4g}")
+    except Exception as e:
+        self.gamma_zin_actual_box.setText(msg_error)
+    try:
+        self.gamma_zin_box.setText(f"{abs(gamma_zin):.4g} ∠ {math.degrees(cmath.phase(gamma_zin)):.4g} deg")
     except Exception as e:
         self.gamma_zin_box.setText(msg_error)
+
     try:
-        self.gamma_zout_box.setText(f"{abs(gamma_zout):.4g} ∠ {math.degrees(cmath.phase(gamma_zout)):.4g}")
+        self.gamma_zout_actual_box.setText(f"{gamma_zout:.4g}")
+    except Exception as e:
+        self.gamma_zout_actual_box.setText(msg_error)
+    try:
+        self.gamma_zout_box.setText(f"{abs(gamma_zout):.4g} ∠ {math.degrees(cmath.phase(gamma_zout)):.4g} deg")
     except Exception as e:
         self.gamma_zout_box.setText(msg_error)
 
+    try:
+        if type(vswr_zin) == str: # inf
+            self.vswr_zin_box.setText(fvswr_zin)
+        else:
+            self.vswr_zin_box.setText(f"{vswr_zin:.4g}")
+    except Exception as e:
+        self.vswr_zin_box.setText(msg_error)
+    try:
+        if type(vswr_zout) == str: # inf
+            self.vswr_zout_box.setText(vswr_zout)
+        else:
+            self.vswr_zout_box.setText(f"{vswr_zout:.4g}")
+    except Exception as e:
+        self.vswr_zout_box.setText(msg_error)
 
 
 
