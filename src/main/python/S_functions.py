@@ -153,11 +153,13 @@ def calculate_gamma_L_opt(s11, s12, s21, s22):
 
 
 def calculate_Z_from_gamma(gamma, z0):
+    if gamma == 1:
+        return float(math.inf) 
     return z0 * ((1+gamma)/(1-gamma))
 
 def calculate_vswr_from_gamma(gamma):
     if abs(gamma) == 1:
-        return "+∞"
+        return float(math.inf)
     return (1+abs(gamma))/(1-abs(gamma))
 
 

@@ -1,10 +1,12 @@
 from __future__ import division
 import numpy as np
 
-def find_nearest(array, value): # return the index of an array where the value is the closes to the index's value
+def find_nearest(array, value): 
+    """return the index of an array where 
+    the value is the closes to the index's value
+    """
     idx = (np.abs(array-value)).argmin()
     return array[idx]
-
 
 
 def db(val):

@@ -24,10 +24,51 @@ from ImprovedComplex import ImprovedComplex
 msg_error = "" # display nothing if error occurs
 
 
+def round_of_rating(number):
+    """Round a number to the closest half integer.
+    >>> round_of_rating(1.3)
+    1.5
+    >>> round_of_rating(2.6)
+    2.5
+    >>> round_of_rating(3.0)
+    3.0
+    >>> round_of_rating(4.1)
+    4.0"""
+    return round(number * 2) / 2
+
+
 def normalize_impedance(z, z0):
     return z/z0 
     # return (z/z0).real if (z/z0).imag == 0 else z/z0 
 
+
+def lambda_tick_map():
+    # mapping the angles with the lambda scale
+    num_points = 360*2 + 1
+    angle_map  = np.linspace(180, -180, num_points)
+    lambda_map = np.linspace(0  ,0.5  , num_points)
+
+    lambda_tick_map = {}
+    for i,j in zip(angle_map, lambda_map):
+        lambda_tick_map[i]=j
+
+    """
+    print(lambda_tick_map)
+    >>> {180.0: 0.0, 
+        179.5: 0.0006944444444444445, 
+        179.0: 0.001388888888888889, 
+        178.5: 0.0020833333333333333, 
+        ...
+        -178.0: 0.49722222222222223, 
+        -178.5: 0.4979166666666667, 
+        -179.0: 0.4986111111111111, 
+        -179.5: 0.49930555555555556, 
+        -180.0: 0.5
+        }
+    """
+    return lambda_tick_map
+
+LAMBDA_TICK_MAP = lambda_tick_map()
 
 def calculate_tab_quarter_wave_im(self):
 
@@ -80,18 +121,6 @@ def calculate_tab_quarter_wave_im(self):
         except Exception as e:
             gamma_zout_polar = msg_error
 
-        try:
-            vswr_zin = calculate_vswr_from_gamma(gamma_zin)
-        except Exception as e:
-            vswr_zin = msg_error
-
-        try:
-            vswr_zout = calculate_vswr_from_gamma(gamma_zout)
-        except Exception as e:
-            vswr_zin = msg_error
-
-
-
 
 
     else: # INPUT SOURCE/LOAD AS GAMMA
@@ -141,16 +170,15 @@ def calculate_tab_quarter_wave_im(self):
         # calculate Z from gamma
         try:
             Z_in = calculate_Z_from_gamma(gamma_zin, Z0)
-            # Z_in = Z_in.real if Z_in.imag == 0 else Z_in
+            Z_in = 0 if abs(Z_in) <= 1e-4 else Z_in  # cuts some calculations
         except Exception as e:
             Z_in = msg_error
 
         try:
             Z_out = calculate_Z_from_gamma(gamma_zout, Z0)
-            # Z_out = Z_out.real if Z_out.imag == 0 else Z_out
+            Z_out = 0 if abs(Z_out) <= 1e-4 else Z_out  # cuts some calculations
         except Exception as e:
             Z_out = msg_error
-
 
 
     # common part:
@@ -164,20 +192,30 @@ def calculate_tab_quarter_wave_im(self):
     except Exception as e:
         z_out = msg_error
 
+    try:
+        vswr_zin = calculate_vswr_from_gamma(gamma_zin)
+    except Exception as e:
+        vswr_zin = msg_error
+
+    try:
+        vswr_zout = calculate_vswr_from_gamma(gamma_zout)
+    except Exception as e:
+        vswr_zout = msg_error
+
     # --------------
     # displaying
     # --------------
 
     try:
-        # self.z_in_box_2.setText(f"{ImprovedComplex(Z_in)}")       # FIX
+        # self.z_in_box_2.setText("+∞" if Z_in == math.inf else f"{Z_in:.4g}")
         self.z_in_box_2.setText(f"{Z_in:.4g}")
     except Exception as e: # thrown if Z_in is not a number hence the significat digits cannot be evaluated
         self.z_in_box_2.setText(msg_error)
     try:
-        # self.z_in_box_5.setText(f"{ImprovedComplex(Z_out)}")      # FIX
         self.z_in_box_5.setText(f"{Z_out:.4g}")
     except Exception as e:
         self.z_in_box_5.setText(msg_error)
+
     try:
         self.z_in_box.setText(f"{z_in:.4g}")
     except Exception as e:
@@ -206,48 +244,28 @@ def calculate_tab_quarter_wave_im(self):
         self.gamma_zout_box.setText(msg_error)
 
     try:
-        if type(vswr_zin) == str: # inf
-            self.vswr_zin_box.setText(fvswr_zin)
-        else:
-            self.vswr_zin_box.setText(f"{vswr_zin:.4g}")
+        self.vswr_zin_box.setText(f"{vswr_zin:.4g}")
     except Exception as e:
         self.vswr_zin_box.setText(msg_error)
     try:
-        if type(vswr_zout) == str: # inf
-            self.vswr_zout_box.setText(vswr_zout)
-        else:
-            self.vswr_zout_box.setText(f"{vswr_zout:.4g}")
+        self.vswr_zout_box.setText(f"{vswr_zout:.4g}")
     except Exception as e:
         self.vswr_zout_box.setText(msg_error)
 
 
-
-
-
-    # mapping the angles with the lambda scale
-    num_points = 10001 # 10k points + 1, if num_points is odd some relevant points such as 0.125 or 0.375 won't be screwed up
-    angle_map  = np.linspace(np.pi, -np.pi, num_points)
-    lambda_map = np.linspace(0    , 0.5   , num_points)
-
+    
     try:
-        # getting the lambda of gamma_zin
-        phase_zin = cmath.phase(gamma_zin)
-        phase_zin_approx = find_nearest(angle_map, phase_zin)
-        ind_ = np.where(angle_map==phase_zin_approx)[0][0] # get the index of that value into the array angle_map
-        lambda_zin = lambda_map[ind_] # get the value on the lambda_map array corresponding to angle
+        phase_zin = round_of_rating(math.degrees(cmath.phase(gamma_zin)))
+        lambda_zin = LAMBDA_TICK_MAP[phase_zin]
     except Exception as e:
         lambda_zin = msg_error
-    
 
     try:
-        # getting the lambda of gamma_zout
-        phase_zout = cmath.phase(gamma_zout)
-        phase_zout_approx = find_nearest(angle_map, phase_zout)
-        ind_ = np.where(angle_map==phase_zout_approx)[0][0] # get the index of that value into the array angle_map
-        lambda_zout = lambda_map[ind_] # get the value on the lambda_map array corresponding to angle   
+        phase_zout = round_of_rating(math.degrees(cmath.phase(gamma_zout)))
+        lambda_zout = LAMBDA_TICK_MAP[round_of_rating(phase_zout)]
     except Exception as e:
-        lambda_zout = msg_error
-    
+        lambda_zout = msg_error    
+
 
     # printing lambdas to the right boxes
     try:
@@ -272,7 +290,8 @@ def showSmithPlot(self):
         twoport.smithplot.plot_Smith_quarter_wave_matching(Z0, Z_in, Z_out, gamma_zin, gamma_zout)
     except Exception as e:
         # raise e
-        print(e)
+        # print(e)
+        pass
 
 
 def disable_boxes_quarter_wave_im(self):

@@ -1,2 +1,3 @@
-- Added constant conductance and constant admittance arcs when plottin the Smith Chart
+- Updates to smith chart window:
 - Minor bug fixes
+
