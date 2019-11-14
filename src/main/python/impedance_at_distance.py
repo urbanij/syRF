@@ -30,6 +30,7 @@ class mainProgram(QtWidgets.QMainWindow, Ui_MainWindow):
         
         self.zL_input.editingFinished.connect(self.calculate14_button.click)
         self.d_input.editingFinished.connect(self.calculate14_button.click)
+        self.R0input.editingFinished.connect(self.calculate14_button.click)
 
         self.calculate14_button.clicked.connect(self.compute)
         self.clean_all14_button.clicked.connect(self.clean_polar)
@@ -66,7 +67,7 @@ class mainProgram(QtWidgets.QMainWindow, Ui_MainWindow):
         # compute
         try:
             # -d because I'm moving from the load to the generator
-            zl_final = (zl_init - 1j*math.tan(2*math.pi*-d))/(1-1j*zl_init*math.tan(2*math.pi*-d))
+            zl_final = R0* (zl_init - 1j*R0*math.tan(2*math.pi*-d))/(R0-1j*zl_init*math.tan(2*math.pi*-d))
         except Exception as e:
             zl_final = msg_error
 
@@ -74,12 +75,12 @@ class mainProgram(QtWidgets.QMainWindow, Ui_MainWindow):
 
         # display
         try:
-            self.zl2_outputbox.setText(f"{zl_final:.5g}")
+            self.zl2_outputbox.setText(f"{zl_final/R0:.5g}")
         except Exception as e:
             self.zl2_outputbox.setText(msg_error)
 
         try:
-            self.zl_actual_outputbox.setText(f"{R0*zl_final:.5g}")
+            self.zl_actual_outputbox.setText(f"{zl_final:.5g}")
         except Exception as e:
             self.zl_actual_outputbox.setText(msg_error)
             

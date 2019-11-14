@@ -737,6 +737,30 @@
     </item>
    </layout>
   </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1231</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuUtilities">
+    <property name="title">
+     <string>Utilities</string>
+    </property>
+    <addaction name="actionImpedance_d"/>
+   </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>Help</string>
+    </property>
+    <addaction name="actionAbout_2"/>
+   </widget>
+   <addaction name="menuUtilities"/>
+   <addaction name="menuHelp"/>
+  </widget>
   <action name="actionAbout">
    <property name="text">
     <string>About</string>
@@ -745,6 +769,19 @@
   <action name="actiondsd">
    <property name="text">
     <string>dsd</string>
+   </property>
+  </action>
+  <action name="actionImpedance_d">
+   <property name="text">
+    <string>Impedance @ -d</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+I</string>
+   </property>
+  </action>
+  <action name="actionAbout_2">
+   <property name="text">
+    <string>About</string>
    </property>
   </action>
  </widget>
