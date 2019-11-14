@@ -11,7 +11,7 @@ all:
 	pyuic5 ui/integrated_matching.ui        > src/main/python/pyui/integrated_matching_ui.py
 	pyuic5 ui/check_update.ui               > src/main/python/pyui/check_update_ui.py
 	pyuic5 ui/new_update.ui                 > src/main/python/pyui/new_update_ui.py
-
+	pyuic5 ui/impedance_at_distance.ui      > src/main/python/pyui/impedance_at_distance_ui.py
 
 
 clean:	

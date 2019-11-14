@@ -416,20 +416,20 @@ def plot_Smith_quarter_wave_matching(Z0, Z_in, Z_out, gamma_zin, gamma_zout):
     if gamma_zin != msg_error:
         
         """ point """
-        plot(gamma_zin.real, gamma_zin.imag, marker="o", color="red", label="$Z_{L}$="+f"{Z_in.real:.4g}"+" $\Omega$")
+        plot(gamma_zin.real, gamma_zin.imag, marker="o", color="red", label="$Z_{L}$="+f"{Z_in:.4g}"+" $\Omega$")
 
         """ constant gamma circumference"""
-        gamma_zin_circumference = plt.Circle((0, 0), abs(gamma_zin), color='red', linewidth=.5, fill=False)
+        gamma_zin_circumference = plt.Circle((0, 0), abs(gamma_zin), color='red', linestyle='-', linewidth=.5, fill=False)
         ax.add_artist(gamma_zin_circumference)
 
         """ constant conductance arc """
         (_cx, _cy), _r = equi_conductance_circle(gamma_zin)
-        conductance_zin_circumference = plt.Circle((_cx, _cy), _r, color='red', linestyle='--', linewidth=.5, fill=False)
+        conductance_zin_circumference = plt.Circle((_cx, _cy), _r, color='red', linestyle='--', linewidth=1.3, fill=False)
         ax.add_artist(conductance_zin_circumference)
 
         """ constant admittance arc """
         (_cx, _cy), _r = equi_admittance_circle(gamma_zin)
-        admittance_zin_circumference = plt.Circle((_cx, _cy), _r, color='red', linestyle='-.', linewidth=.5, fill=False)
+        admittance_zin_circumference = plt.Circle((_cx, _cy), _r, color='red', linestyle='-.', linewidth=1.3, fill=False)
         ax.add_artist(admittance_zin_circumference)
 
 
@@ -439,17 +439,17 @@ def plot_Smith_quarter_wave_matching(Z0, Z_in, Z_out, gamma_zin, gamma_zout):
         plot(gamma_zout.real, gamma_zout.imag, marker="o", color="blue", label="$Z_{L}'$="+f"{Z_out:.4g}"+" $\Omega$")
         
         """ constant gamma circumference"""
-        gamma_zout_circumference = plt.Circle((0, 0), abs(gamma_zout), color='blue', linewidth=.5, fill=False)
+        gamma_zout_circumference = plt.Circle((0, 0), abs(gamma_zout), color='blue', linestyle='-', linewidth=.5, fill=False)
         ax.add_artist(gamma_zout_circumference)
 
         """ constant conductance arc """
         (_cx, _cy), _r = equi_conductance_circle(gamma_zout)
-        conductance_zin_circumference = plt.Circle((_cx, _cy), _r, color='blue', linestyle='--', linewidth=.5, fill=False)
+        conductance_zin_circumference = plt.Circle((_cx, _cy), _r, color='blue', linestyle='--', linewidth=1.3, fill=False)
         ax.add_artist(conductance_zin_circumference)
 
         """ constant admittance arc """
         (_cx, _cy), _r = equi_admittance_circle(gamma_zout)
-        admittance_zin_circumference = plt.Circle((_cx, _cy), _r, color='blue', linestyle='-.', linewidth=.5, fill=False)
+        admittance_zin_circumference = plt.Circle((_cx, _cy), _r, color='blue', linestyle='-.', linewidth=1.3, fill=False)
         ax.add_artist(admittance_zin_circumference)
     
     
