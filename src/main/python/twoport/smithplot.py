@@ -426,23 +426,35 @@ def plot_Smith_quarter_wave_matching(Z0, Z_in, Z_out, gamma_zin, gamma_zout):
     lw_constant_gamma            = 0.9
     alpha_conductance_admittance = 0.5
     lw_conductance_admittance    = 0.65
-    alpha_y_point                = 0.45
+    alpha_z_point                = 0.80
+    alpha_y_point                = 0.40
+
+
+    NORMALIZED_VALUES     = True
     
 
 
-    fig, ax = subplots(figsize=(11,8)) # note we must use plt.subplots, not plt.subplot
+    fig, ax = subplots(figsize=(13,8)) # note we must use plt.subplots, not plt.subplot
     fig.canvas.set_window_title('Smith Chart')
     
     # draws Smith Plot
     sc = SmithChart(Z0, labels=1, show_cursor=0) 
 
     if gamma_zin != msg_error:
+
+        if NORMALIZED_VALUES:
+            gamma_zin_label = "$z_{L}$="+f"{Z_in/Z0:.4g}"
+            gamma_yin_label = "$y_{L}$="+f"{(1/(Z_in/Z0)):.4g}"
+        else:
+            gamma_zin_label = "$Z_{L}$="+f"{Z_in:.4g}"+" $\Omega$"
+            gamma_yin_label = "$Y_{L}$="+f"{(1/Z_in)*1e3:.4g}"+" mS"
+
         
         """ Z point """
-        plot(gamma_zin.real, gamma_zin.imag, marker="o", color="red", label="$Z_{L}$="+f"{Z_in:.4g}"+" $\Omega$")
+        plot(gamma_zin.real, gamma_zin.imag, marker="o", color="red", alpha=alpha_z_point, label=gamma_zin_label)
 
         """ Y point """
-        plot(-gamma_zin.real, -gamma_zin.imag, marker="o", color="red", fillstyle='none', alpha=alpha_y_point, label="$Y_{L}=$"+f"{(1/Z_in)*1e3:.4g}"+" mS")
+        plot(-gamma_zin.real, -gamma_zin.imag, marker="o", color="red", fillstyle='none', alpha=alpha_y_point, label=gamma_yin_label)
 
         """ constant gamma circumference"""
         gamma_zin_circumference = plt.Circle((0, 0), abs(gamma_zin), color='red', linestyle='-', alpha=alpha_constant_gamma, linewidth=lw_constant_gamma, fill=False)
@@ -461,11 +473,18 @@ def plot_Smith_quarter_wave_matching(Z0, Z_in, Z_out, gamma_zin, gamma_zout):
 
     if gamma_zout != msg_error:
 
-        """ point """
-        plot(gamma_zout.real, gamma_zout.imag, marker="o", color="blue", label="$Z_{L}'$="+f"{Z_out:.4g}"+" $\Omega$")
+        if NORMALIZED_VALUES:
+            gamma_zout_label = "$z_{L}'$="+f"{Z_out/Z0:.4g}"
+            gamma_yout_label = "$y_{L}'=$"+f"{(1/(Z_out/Z0)):.4g}"
+        else:
+            gamma_zout_label = "$Z_{L}'$="+f"{Z_out:.4g}"+" $\Omega$"
+            gamma_yout_label = "$Y_{L}'=$"+f"{(1/Z_out)*1e3:.4g}"+" mS"
+
+        """ Z point """
+        plot(gamma_zout.real, gamma_zout.imag, marker="o", color="blue", alpha=alpha_z_point, label=gamma_zout_label)
 
         """ Y point """
-        plot(-gamma_zout.real, -gamma_zout.imag, marker="o", color="blue", fillstyle='none', alpha=alpha_y_point, label="$Y_{L}'=$"+f"{(1/Z_out)*1e3:.4g}"+" mS")
+        plot(-gamma_zout.real, -gamma_zout.imag, marker="o", color="blue", fillstyle='none', alpha=alpha_y_point, label=gamma_yout_label)
         
         """ constant gamma circumference"""
         gamma_zout_circumference = plt.Circle((0, 0), abs(gamma_zout), color='blue', linestyle='-', alpha=alpha_constant_gamma, linewidth=lw_constant_gamma, fill=False)
@@ -482,9 +501,12 @@ def plot_Smith_quarter_wave_matching(Z0, Z_in, Z_out, gamma_zin, gamma_zout):
         ax.add_artist(admittance_zin_circumference)
     
     
-    # title("Quarter-wave impedance transformer \n$Z_0 = " + str(Z0) + "\ \Omega$")
     title("Smith Chart\n$Z_0 = " + str(Z0) + "\ \Omega$")
-    legend()
+    if NORMALIZED_VALUES:
+        legend(title="Normalized values", ncol=2)
+    else:
+        legend(title="Actual values values", nocol=2)
+    
     show()
 
 
