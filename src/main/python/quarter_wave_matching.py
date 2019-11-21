@@ -19,7 +19,7 @@ import math
 
 from twoport.utils import find_nearest
 from S_functions import calculate_gamma, calculate_Z_from_gamma, calculate_vswr_from_gamma
-from ImprovedComplex import ImprovedComplex
+
 
 msg_error = "" # display nothing if error occurs
 
@@ -77,7 +77,7 @@ def calculate_tab_quarter_wave_im(self):
     # --------------
 
     try:
-        Z0 = float(self.Z0_box2.text())
+        Z0 = complex(self.Z0_box2.text())
     except ValueError:
         Z0 = msg_error
 
@@ -290,7 +290,7 @@ def showSmithPlot(self):
         twoport.smithplot.plot_Smith_quarter_wave_matching(Z0, Z_in, Z_out, gamma_zin, gamma_zout)
     except Exception as e:
         # raise e
-        # print(e)
+        print(e)
         pass
 
 

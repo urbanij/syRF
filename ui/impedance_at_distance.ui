@@ -81,7 +81,7 @@
            </sizepolicy>
           </property>
           <property name="text">
-           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;R&lt;span style=&quot; vertical-align:sub;&quot;&gt;0&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Z&lt;span style=&quot; vertical-align:sub;&quot;&gt;0&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -132,7 +132,7 @@
          </spacer>
         </item>
         <item row="2" column="1" colspan="3">
-         <widget class="QLineEdit" name="R0input">
+         <widget class="QLineEdit" name="Z0input">
           <property name="text">
            <string>50</string>
           </property>
@@ -303,7 +303,7 @@
   <tabstop>zl2_outputbox</tabstop>
   <tabstop>calculate14_button</tabstop>
   <tabstop>clean_all14_button</tabstop>
-  <tabstop>R0input</tabstop>
+  <tabstop>Z0input</tabstop>
  </tabstops>
  <resources/>
  <connections/>

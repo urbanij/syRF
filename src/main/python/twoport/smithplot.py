@@ -65,16 +65,26 @@ class SmithChart(object):
             c.set_clip_box(self.ax.bbox)
             self.ax.add_patch(c)
 
+        return 
+
         if labels:
             for x, r in zip(intercept_x_coords, rs):
-                self.ax.text(x + 0.04, 0.03, '%.0f' % round(self.z0*r), **self.label_options)
+                """ use this when z0 is float """
+                # self.ax.text(x + 0.04, 0.03, '%.0f' % round(self.z0*r), **self.label_options)
+
+                """ use this when z0 is complex """
+                self.ax.text(x + 0.04, 0.03, '%s' % str(self.z0*r), **self.label_options)
 
             for a, x in zip(intercept_angles, xs):
                 r = (a - 90) if x > 0 else (a + 90)
                 a = np.radians(a)
                 d = 1.04
 
-                self.ax.text(d*cos(a), d*sin(a), '%.0fj' % round(self.z0*x), rotation=r, **self.label_options)
+                """ use this when z0 is float """
+                # self.ax.text(d*cos(a), d*sin(a), '%.0fj' % round(self.z0*x), rotation=r, **self.label_options)
+
+                """ use this when z0 is complex """
+                self.ax.text(d*cos(a), d*sin(a), '%sj' % str(self.z0*x), rotation=r, **self.label_options)
 
     
     def draw_admittance_circles(self, intercept_x_coords, intercept_angles, labels=False):
@@ -88,6 +98,8 @@ class SmithChart(object):
             c.set_clip_path(self.smith_circle)
             c.set_clip_box(self.ax.bbox)
             self.ax.add_patch(c)
+
+        return 
 
         if labels:
             for x, r in zip(intercept_x_coords, rs):
@@ -123,6 +135,9 @@ class SmithChart(object):
             c.set_clip_box(self.ax.bbox)
             self.ax.add_patch(c)
 
+        """ comment return for printing the labels along the constant gamma circles """
+        # return 
+
         if labels:
             for r in gamma_radii:
                 if r > 0:
@@ -131,19 +146,23 @@ class SmithChart(object):
 
 
     def draw_chart_axes(self):
-        # make outer circle
-        self.smith_circle = Circle((0, 0), 1, transform=self.ax.transData, fc='none',
-                              **self.patch_options_axis)
+        """ make outer circle """
+        self.smith_circle = Circle((0, 0), 1, transform=self.ax.transData, fc='none', **self.patch_options_axis)
         self.ax.add_patch(self.smith_circle)
 
-        # make constant r=1 circle
-        z0_circle = Circle((0.5, 0), 0.5, transform=self.ax.transData, fc='none',
-                              **self.patch_options_axis)
+        """ make constant r=1 (impedance) circle """
+        z0_circle = Circle((0.5, 0), 0.5, transform=self.ax.transData, fc='none', **self.patch_options_axis)
         z0_circle.set_clip_path(self.smith_circle)
         z0_circle.set_clip_box(self.ax.bbox)
         self.ax.add_patch(z0_circle)
 
-        # make x-axis
+        """ make constant g=1 (admittance) circle """
+        y0_circle = Circle((-0.5, 0), 0.5, transform=self.ax.transData, fc='none', **self.patch_options_axis)
+        y0_circle.set_clip_path(self.smith_circle)
+        y0_circle.set_clip_box(self.ax.bbox)
+        self.ax.add_patch(y0_circle)
+
+        """ make x-axis """
         line = Line2D([-1,1],[0,0], **self.patch_options_axis)
         line.set_clip_path(self.smith_circle)
         line.set_clip_box(self.ax.bbox)
@@ -152,9 +171,9 @@ class SmithChart(object):
 
     def draw_smith_chart(self, admittance, labels):
         # plot options for constant z/y circles and axes
-        self.patch_options_light = {'fc':'none', 'color':'#474959', 'alpha':0.2, 'lw':1}
-        self.patch_options_dark = {'fc':'none', 'color':'#474959', 'alpha':0.5, 'lw':1}
-        self.patch_options_axis = {'color':'black', 'alpha':0.8, 'lw':1.5}
+        self.patch_options_light = {'fc':'none', 'color':'#474959', 'alpha':0.2, 'lw':.4}
+        self.patch_options_dark = {'fc':'none', 'color':'#474959', 'alpha':0.5, 'lw':.5}
+        self.patch_options_axis = {'color':'black', 'alpha':0.6, 'lw':.75}
 
         # options for z/y circle labels
         self.label_options = {'ha':'center', 'va':'center', 'size':'9', 'alpha':0.5}#,
@@ -182,7 +201,7 @@ class SmithChart(object):
         self.draw_impedance_circles(intercept_x_coords, intercept_angles, labels)
         
         # no need to draw also the admittance circle
-        # self.draw_admittance_circles(intercept_x_coords, intercept_angles, labels=0)
+        self.draw_admittance_circles(intercept_x_coords, intercept_angles, labels=0)
         
         # either draw_vswr_circles or draw_gamma_circles has to be commented out
         
@@ -403,33 +422,40 @@ def plot_Smith(Cs, rs, Cl, rl, gamma_in, gamma_out, gamma_L, gamma_S, GA_dB, Ca,
 
 def plot_Smith_quarter_wave_matching(Z0, Z_in, Z_out, gamma_zin, gamma_zout):
 
+    alpha_constant_gamma         = 0.78
+    lw_constant_gamma            = 0.9
+    alpha_conductance_admittance = 0.5
+    lw_conductance_admittance    = 0.65
+    alpha_y_point                = 0.45
+    
 
-    fig, ax = subplots() # note we must use plt.subplots, not plt.subplot
+
+    fig, ax = subplots(figsize=(11,8)) # note we must use plt.subplots, not plt.subplot
     fig.canvas.set_window_title('Smith Chart')
-
     
     # draws Smith Plot
-    sc = SmithChart(Z0, labels=1, show_cursor=0)
-
-    
+    sc = SmithChart(Z0, labels=1, show_cursor=0) 
 
     if gamma_zin != msg_error:
         
-        """ point """
+        """ Z point """
         plot(gamma_zin.real, gamma_zin.imag, marker="o", color="red", label="$Z_{L}$="+f"{Z_in:.4g}"+" $\Omega$")
 
+        """ Y point """
+        plot(-gamma_zin.real, -gamma_zin.imag, marker="o", color="red", fillstyle='none', alpha=alpha_y_point, label="$Y_{L}=$"+f"{(1/Z_in)*1e3:.4g}"+" mS")
+
         """ constant gamma circumference"""
-        gamma_zin_circumference = plt.Circle((0, 0), abs(gamma_zin), color='red', linestyle='-', linewidth=.5, fill=False)
+        gamma_zin_circumference = plt.Circle((0, 0), abs(gamma_zin), color='red', linestyle='-', alpha=alpha_constant_gamma, linewidth=lw_constant_gamma, fill=False)
         ax.add_artist(gamma_zin_circumference)
 
         """ constant conductance arc """
         (_cx, _cy), _r = equi_conductance_circle(gamma_zin)
-        conductance_zin_circumference = plt.Circle((_cx, _cy), _r, color='red', linestyle='--', linewidth=1.3, fill=False)
+        conductance_zin_circumference = plt.Circle((_cx, _cy), _r, color='red', linestyle='--', alpha=alpha_conductance_admittance, linewidth=lw_conductance_admittance, fill=False)
         ax.add_artist(conductance_zin_circumference)
 
         """ constant admittance arc """
         (_cx, _cy), _r = equi_admittance_circle(gamma_zin)
-        admittance_zin_circumference = plt.Circle((_cx, _cy), _r, color='red', linestyle='-.', linewidth=1.3, fill=False)
+        admittance_zin_circumference = plt.Circle((_cx, _cy), _r, color='red', linestyle='-.', alpha=alpha_conductance_admittance, linewidth=lw_conductance_admittance, fill=False)
         ax.add_artist(admittance_zin_circumference)
 
 
@@ -437,19 +463,22 @@ def plot_Smith_quarter_wave_matching(Z0, Z_in, Z_out, gamma_zin, gamma_zout):
 
         """ point """
         plot(gamma_zout.real, gamma_zout.imag, marker="o", color="blue", label="$Z_{L}'$="+f"{Z_out:.4g}"+" $\Omega$")
+
+        """ Y point """
+        plot(-gamma_zout.real, -gamma_zout.imag, marker="o", color="blue", fillstyle='none', alpha=alpha_y_point, label="$Y_{L}'=$"+f"{(1/Z_out)*1e3:.4g}"+" mS")
         
         """ constant gamma circumference"""
-        gamma_zout_circumference = plt.Circle((0, 0), abs(gamma_zout), color='blue', linestyle='-', linewidth=.5, fill=False)
+        gamma_zout_circumference = plt.Circle((0, 0), abs(gamma_zout), color='blue', linestyle='-', alpha=alpha_constant_gamma, linewidth=lw_constant_gamma, fill=False)
         ax.add_artist(gamma_zout_circumference)
 
         """ constant conductance arc """
         (_cx, _cy), _r = equi_conductance_circle(gamma_zout)
-        conductance_zin_circumference = plt.Circle((_cx, _cy), _r, color='blue', linestyle='--', linewidth=1.3, fill=False)
+        conductance_zin_circumference = plt.Circle((_cx, _cy), _r, color='blue', linestyle='--', alpha=alpha_conductance_admittance, linewidth=lw_conductance_admittance, fill=False)
         ax.add_artist(conductance_zin_circumference)
 
         """ constant admittance arc """
         (_cx, _cy), _r = equi_admittance_circle(gamma_zout)
-        admittance_zin_circumference = plt.Circle((_cx, _cy), _r, color='blue', linestyle='-.', linewidth=1.3, fill=False)
+        admittance_zin_circumference = plt.Circle((_cx, _cy), _r, color='blue', linestyle='-.', alpha=alpha_conductance_admittance, linewidth=lw_conductance_admittance, fill=False)
         ax.add_artist(admittance_zin_circumference)
     
     
