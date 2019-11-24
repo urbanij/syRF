@@ -2786,6 +2786,7 @@
     <addaction name="action_Smith_Chart"/>
     <addaction name="separator"/>
     <addaction name="actionrect2polar"/>
+    <addaction name="action_gamma2imp"/>
     <addaction name="action_lambda4"/>
    </widget>
    <addaction name="menu_File"/>
@@ -2906,6 +2907,14 @@
   <action name="actionCheck_for_Updates">
    <property name="text">
     <string>&amp;Check for Updates...</string>
+   </property>
+  </action>
+  <action name="action_gamma2imp">
+   <property name="text">
+    <string>Γ2z</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+G</string>
    </property>
   </action>
  </widget>

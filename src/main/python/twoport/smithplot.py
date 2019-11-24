@@ -2,6 +2,7 @@ from __future__ import division
 from numpy import asarray, array, dot, zeros, inf, identity
 from numpy.linalg import inv
 import numpy as np
+import ccomplex
 from pylab import *
 
 
@@ -271,7 +272,7 @@ _z = lambda gamma: ((1+gamma)/(1-gamma))
 _r = lambda gamma: _z(gamma).real
 _x = lambda gamma: _z(gamma).imag
 
-def equi_conductance_circle(gamma):
+def equi_resistance_circle(gamma):
     """
     args: gamma
     ===========
@@ -282,7 +283,7 @@ def equi_conductance_circle(gamma):
     radius = 1/(1+r)
     return (center,radius)
 
-def equi_admittance_circle(gamma):
+def equi_reactance_circle(gamma):
     """
     args: gamma
     ===========
@@ -422,15 +423,17 @@ def plot_Smith(Cs, rs, Cl, rl, gamma_in, gamma_out, gamma_L, gamma_S, GA_dB, Ca,
 
 def plot_Smith_quarter_wave_matching(Z0, Z_in, Z_out, gamma_zin, gamma_zout):
 
-    alpha_constant_gamma         = 0.78
-    lw_constant_gamma            = 0.9
-    alpha_conductance_admittance = 0.5
-    lw_conductance_admittance    = 0.65
-    alpha_z_point                = 0.80
-    alpha_y_point                = 0.40
+    alpha_constant_gamma                = 0.78
+    lw_constant_gamma                   = 0.9
+    alpha_resistance_and_reactance_arcs = 0.5
+    lw_resistance_reactance_arcs        = 0.65
+    alpha_z_point                       = 0.80
+    alpha_y_point                       = 0.40
 
+    legend_caption = "$Z_0 = {}\ \Omega$\n".format(ccomplex.ccomplex(Z0))
 
     NORMALIZED_VALUES     = True
+    
     
 
 
@@ -450,25 +453,40 @@ def plot_Smith_quarter_wave_matching(Z0, Z_in, Z_out, gamma_zin, gamma_zout):
             gamma_yin_label = "$Y_{L}$="+f"{(1/Z_in)*1e3:.4g}"+" mS"
 
         
-        """ Z point """
+        """ Z point (impedance) """
         plot(gamma_zin.real, gamma_zin.imag, marker="o", color="red", alpha=alpha_z_point, label=gamma_zin_label)
 
-        """ Y point """
+        """ constant resistance arc """
+        (_cx, _cy), _r = equi_resistance_circle(gamma_zin)
+        resistance_zin_circumference = plt.Circle((_cx, _cy), _r, color='red', linestyle='--', alpha=alpha_resistance_and_reactance_arcs, linewidth=lw_resistance_reactance_arcs, fill=False)
+        ax.add_artist(resistance_zin_circumference)
+
+        """ constant reactance arc """
+        (_cx, _cy), _r = equi_reactance_circle(gamma_zin)
+        reactance_zin_circumference = plt.Circle((_cx, _cy), _r, color='red', linestyle='-.', alpha=alpha_resistance_and_reactance_arcs, linewidth=lw_resistance_reactance_arcs, fill=False)
+        ax.add_artist(reactance_zin_circumference)
+
+
+        
+
+        """ Y point (admittance) """
         plot(-gamma_zin.real, -gamma_zin.imag, marker="o", color="red", fillstyle='none', alpha=alpha_y_point, label=gamma_yin_label)
+
+        """ constant conductance arc """
+        (_cx, _cy), _r = equi_resistance_circle(-gamma_zin)
+        reactance_zin_circumference = plt.Circle((_cx, _cy), _r, color='red', linestyle='--', alpha=alpha_resistance_and_reactance_arcs, linewidth=lw_resistance_reactance_arcs, fill=False)
+        ax.add_artist(reactance_zin_circumference)
+
+        """ constant susceptance arc """
+        (_cx, _cy), _r = equi_reactance_circle(-gamma_zin)
+        susceptance_zin_circumference = plt.Circle((_cx, _cy), _r, color='red', linestyle='-.', alpha=alpha_resistance_and_reactance_arcs, linewidth=lw_resistance_reactance_arcs, fill=False)
+        ax.add_artist(susceptance_zin_circumference)
+
 
         """ constant gamma circumference"""
         gamma_zin_circumference = plt.Circle((0, 0), abs(gamma_zin), color='red', linestyle='-', alpha=alpha_constant_gamma, linewidth=lw_constant_gamma, fill=False)
         ax.add_artist(gamma_zin_circumference)
 
-        """ constant conductance arc """
-        (_cx, _cy), _r = equi_conductance_circle(gamma_zin)
-        conductance_zin_circumference = plt.Circle((_cx, _cy), _r, color='red', linestyle='--', alpha=alpha_conductance_admittance, linewidth=lw_conductance_admittance, fill=False)
-        ax.add_artist(conductance_zin_circumference)
-
-        """ constant admittance arc """
-        (_cx, _cy), _r = equi_admittance_circle(gamma_zin)
-        admittance_zin_circumference = plt.Circle((_cx, _cy), _r, color='red', linestyle='-.', alpha=alpha_conductance_admittance, linewidth=lw_conductance_admittance, fill=False)
-        ax.add_artist(admittance_zin_circumference)
 
 
     if gamma_zout != msg_error:
@@ -480,35 +498,54 @@ def plot_Smith_quarter_wave_matching(Z0, Z_in, Z_out, gamma_zin, gamma_zout):
             gamma_zout_label = "$Z_{L}'$="+f"{Z_out:.4g}"+" $\Omega$"
             gamma_yout_label = "$Y_{L}'=$"+f"{(1/Z_out)*1e3:.4g}"+" mS"
 
-        """ Z point """
+        """ Z point (impedance) """
         plot(gamma_zout.real, gamma_zout.imag, marker="o", color="blue", alpha=alpha_z_point, label=gamma_zout_label)
+        # ax.annotate("$z_L$", (gamma_zout.real, gamma_zout.imag))
 
-        """ Y point """
+        """ constant resistance arc """
+        (_cx, _cy), _r = equi_resistance_circle(gamma_zout)
+        resistance_zout_circumference = plt.Circle((_cx, _cy), _r, color='blue', linestyle='--', alpha=alpha_resistance_and_reactance_arcs, linewidth=lw_resistance_reactance_arcs, fill=False)
+        ax.add_artist(resistance_zout_circumference)
+
+        """ constant admittance arc """
+        (_cx, _cy), _r = equi_reactance_circle(gamma_zout)
+        reactance_zout_circumference = plt.Circle((_cx, _cy), _r, color='blue', linestyle='-.', alpha=alpha_resistance_and_reactance_arcs, linewidth=lw_resistance_reactance_arcs, fill=False)
+        ax.add_artist(reactance_zout_circumference)
+
+
+
+
+
+        """ Y point (admittance) """
         plot(-gamma_zout.real, -gamma_zout.imag, marker="o", color="blue", fillstyle='none', alpha=alpha_y_point, label=gamma_yout_label)
+
+        """ constant conductance arc """
+        (_cx, _cy), _r = equi_resistance_circle(-gamma_zout)
+        reactance_zout_circumference = plt.Circle((_cx, _cy), _r, color='blue', linestyle='--', alpha=alpha_resistance_and_reactance_arcs, linewidth=lw_resistance_reactance_arcs, fill=False)
+        ax.add_artist(reactance_zout_circumference)
+
+        """ constant susceptance arc """
+        (_cx, _cy), _r = equi_reactance_circle(-gamma_zout)
+        susceptance_zout_circumference = plt.Circle((_cx, _cy), _r, color='blue', linestyle='-.', alpha=alpha_resistance_and_reactance_arcs, linewidth=lw_resistance_reactance_arcs, fill=False)
+        ax.add_artist(susceptance_zout_circumference)
+
+
         
         """ constant gamma circumference"""
         gamma_zout_circumference = plt.Circle((0, 0), abs(gamma_zout), color='blue', linestyle='-', alpha=alpha_constant_gamma, linewidth=lw_constant_gamma, fill=False)
         ax.add_artist(gamma_zout_circumference)
+    
+    
+    if gamma_zout != msg_error or gamma_zin != msg_error:
+        if NORMALIZED_VALUES:
+            legend_caption += "Normalized values"
+        else: 
+            legend_caption += "Actual values"
+    
+    legend(title=legend_caption, ncol=2)
 
-        """ constant conductance arc """
-        (_cx, _cy), _r = equi_conductance_circle(gamma_zout)
-        conductance_zin_circumference = plt.Circle((_cx, _cy), _r, color='blue', linestyle='--', alpha=alpha_conductance_admittance, linewidth=lw_conductance_admittance, fill=False)
-        ax.add_artist(conductance_zin_circumference)
-
-        """ constant admittance arc """
-        (_cx, _cy), _r = equi_admittance_circle(gamma_zout)
-        admittance_zin_circumference = plt.Circle((_cx, _cy), _r, color='blue', linestyle='-.', alpha=alpha_conductance_admittance, linewidth=lw_conductance_admittance, fill=False)
-        ax.add_artist(admittance_zin_circumference)
-    
-    
-    title("Smith Chart\n$Z_0 = " + str(Z0) + "\ \Omega$")
-    if NORMALIZED_VALUES:
-        legend(title="Normalized values", ncol=2)
-    else:
-        legend(title="Actual values values", nocol=2)
-    
+    subplots_adjust(left=-0.01, bottom=-0.01, right=1.005, top=1.005, wspace=0.45, hspace=0.2)
     show()
-
 
 
 

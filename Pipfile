@@ -11,6 +11,7 @@ numpy = "*"
 requests = "*"
 scipy = "*"
 PyQt5 = "*"
+ccomplex = "*"
 
 [requires]
 python_version = "3.7"

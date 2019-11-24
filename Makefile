@@ -12,6 +12,7 @@ all:
 	pyuic5 ui/check_update.ui               > src/main/python/pyui/check_update_ui.py
 	pyuic5 ui/new_update.ui                 > src/main/python/pyui/new_update_ui.py
 	pyuic5 ui/impedance_at_distance.ui      > src/main/python/pyui/impedance_at_distance_ui.py
+	pyuic5 ui/gamma2impedance.ui      		> src/main/python/pyui/gamma2impedance_ui.py
 
 
 clean:	

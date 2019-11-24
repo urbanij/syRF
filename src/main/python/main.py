@@ -29,6 +29,7 @@ import integrated_matching
 import smith_chart
 
 import rect2polar 
+import gamma2impedance
 import lambda4   
 
 
@@ -257,6 +258,10 @@ class mainProgram(QtWidgets.QMainWindow, Ui_MainWindow):
 
     def launch_rect2polar(self):
         window = rect2polar.mainProgram(self)
+        window.show()
+    
+    def launch_gamma2impedance(self):
+        window = gamma2impedance.mainProgram(self)
         window.show()
 
     def launch_lambda4(self):

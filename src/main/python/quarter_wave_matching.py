@@ -16,6 +16,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import cmath
 import math
+import ccomplex
 
 from twoport.utils import find_nearest
 from S_functions import calculate_gamma, calculate_Z_from_gamma, calculate_vswr_from_gamma

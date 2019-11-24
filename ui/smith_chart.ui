@@ -751,6 +751,7 @@
      <string>Utilities</string>
     </property>
     <addaction name="actionImpedance_d"/>
+    <addaction name="actionGamma2impedance"/>
    </widget>
    <widget class="QMenu" name="menuHelp">
     <property name="title">
@@ -782,6 +783,14 @@
   <action name="actionAbout_2">
    <property name="text">
     <string>About</string>
+   </property>
+  </action>
+  <action name="actionGamma2impedance">
+   <property name="text">
+    <string>Γ2z</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+G</string>
    </property>
   </action>
  </widget>
