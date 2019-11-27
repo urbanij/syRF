@@ -421,7 +421,7 @@ def plot_Smith(Cs, rs, Cl, rl, gamma_in, gamma_out, gamma_L, gamma_S, GA_dB, Ca,
 
 
 
-def plot_Smith_quarter_wave_matching(Z0, Z_in, Z_out, gamma_zin, gamma_zout):
+def plot_Smith_smith_matching(Z0, Z_in, Z_out, gamma_zin, gamma_zout):
 
     alpha_constant_gamma                = 0.78
     lw_constant_gamma                   = 0.9

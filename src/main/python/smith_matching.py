@@ -5,8 +5,9 @@
 Created on Tue May  8 14:08:45 CEST 2018
 
 @author(s)   : Francesco Urbani
-@file        : quarter_wave_matching.py
-@descritpion : 
+@file        : smith_matching.py.py
+@descritpion : Design matching network -- either w/ lumped parameter or TL -- with the aid 
+               of the Smith Chart.
 
 """
 
@@ -327,7 +328,7 @@ def showSmithPlot(self):
 
     try:
         import twoport.smithplot
-        twoport.smithplot.plot_Smith_quarter_wave_matching(Z0, Z_in, Z_out, gamma_zin, gamma_zout)
+        twoport.smithplot.plot_Smith_smith_matching(Z0, Z_in, Z_out, gamma_zin, gamma_zout)
     except Exception as e:
         # raise e
         print(e)
