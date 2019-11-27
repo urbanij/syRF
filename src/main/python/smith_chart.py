@@ -64,7 +64,6 @@ class mainProgram(QtWidgets.QMainWindow, Ui_MainWindow):
         
         self.Calculate_quarter.clicked.connect(self.calculate_tab_quarter_wave_im)
         self.Show_Smith.clicked.connect(self.showSmithPlot)
-        self.clean_all_button213.clicked.connect(self.clean_all_quarter_wave)
 
 
 
@@ -76,9 +75,6 @@ class mainProgram(QtWidgets.QMainWindow, Ui_MainWindow):
 
     def disable_boxes_quarter_wave_im(self):
         quarter_wave_matching.disable_boxes_quarter_wave_im(self)
-
-    def clean_all_quarter_wave(self):
-        quarter_wave_matching.clean_all_quarter_wave(self)
 
     def launch_impedance_at_distance(self):
         window = impedance_at_distance.mainProgram(self)

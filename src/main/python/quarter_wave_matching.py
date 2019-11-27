@@ -19,6 +19,9 @@ import math
 import ccomplex
 
 from twoport.utils import find_nearest
+import intersections
+import S_functions
+
 from S_functions import calculate_gamma, calculate_Z_from_gamma, calculate_vswr_from_gamma
 
 
@@ -203,6 +206,22 @@ def calculate_tab_quarter_wave_im(self):
     except Exception as e:
         vswr_zout = msg_error
 
+
+    try:
+        zin_constant_r_intersection = intersections.find_intersection_points(c1=0.5, r1=0.5, c2=0, r2=abs(gamma_zin))
+        zin_constant_r_intersection = S_functions.calculate_Z_from_gamma(gamma=zin_constant_r_intersection[0], z0=1)
+    except Exception as e:
+        zin_constant_r_intersection = msg_error
+
+    try:
+        zout_constant_r_intersection = intersections.find_intersection_points(c1=0.5, r1=0.5, c2=0, r2=abs(gamma_zout))
+        zout_constant_r_intersection = S_functions.calculate_Z_from_gamma(gamma=zout_constant_r_intersection[0], z0=1)
+    except Exception as e:
+        zout_constant_r_intersection = msg_error
+
+    
+
+
     # --------------
     # displaying
     # --------------
@@ -278,8 +297,28 @@ def calculate_tab_quarter_wave_im(self):
     except Exception as e:
         self.lambda_tick_zout_box.setText(msg_error)
 
-    return Z0, Z_in, Z_out, gamma_zin, gamma_zout
+    
+    try:
+        self.zin_constant_r_int1_box.setText(f"{zin_constant_r_intersection:.4g}")
+    except Exception as e:
+        self.zin_constant_r_int1_box.setText(msg_error)
+    try:
+        self.zin_constant_r_int2_box.setText(f"{zin_constant_r_intersection.conjugate():.4g}")
+    except Exception as e:
+        self.zin_constant_r_int2_box.setText(msg_error)
+    
+    try:
+        self.zout_constant_r_int1_box.setText(f"{zout_constant_r_intersection:.4g}")
+    except Exception as e:
+        self.zout_constant_r_int1_box.setText(msg_error)
+    try:
+        self.zout_constant_r_int2_box.setText(f"{zout_constant_r_intersection.conjugate():.4g}")
+    except Exception as e:
+        self.zout_constant_r_int2_box.setText(msg_error)
+    
 
+    return Z0, Z_in, Z_out, gamma_zin, gamma_zout
+    
 
 
 def showSmithPlot(self):
@@ -331,16 +370,3 @@ def disable_boxes_quarter_wave_im(self):
         self.label_92.setEnabled(False)
         self.ZS_box_9.setFocus()
 
-
-def clean_all_quarter_wave(self):
-    self.Z_in_box.setText("")
-    self.Z_out_box.setText("")
-    self.ZS_box_9.setText("")
-    self.ZS_box_6.setText("")
-    self.ZS_box_7.setText("")
-    self.ZS_box_8.setText("")
-    self.Calculate_quarter.click()
-
-
-
-    

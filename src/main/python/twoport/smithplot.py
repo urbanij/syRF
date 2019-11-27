@@ -172,9 +172,9 @@ class SmithChart(object):
 
     def draw_smith_chart(self, admittance, labels):
         # plot options for constant z/y circles and axes
-        self.patch_options_light = {'fc':'none', 'color':'#474959', 'alpha':0.2, 'lw':.4}
-        self.patch_options_dark = {'fc':'none', 'color':'#474959', 'alpha':0.5, 'lw':.5}
-        self.patch_options_axis = {'color':'black', 'alpha':0.6, 'lw':.75}
+        self.patch_options_light = {'fc':'none', 'color':'#474959', 'alpha':0.45, 'lw':.2}
+        self.patch_options_dark = {'fc':'none', 'color':'#474959', 'alpha':0.8, 'lw':.3}
+        self.patch_options_axis = {'color':'black', 'alpha':1, 'lw':.4}
 
         # options for z/y circle labels
         self.label_options = {'ha':'center', 'va':'center', 'size':'9', 'alpha':0.5}#,
@@ -437,7 +437,7 @@ def plot_Smith_quarter_wave_matching(Z0, Z_in, Z_out, gamma_zin, gamma_zout):
     
 
 
-    fig, ax = subplots(figsize=(13,8)) # note we must use plt.subplots, not plt.subplot
+    fig, ax = subplots(figsize=(10,8)) # note we must use plt.subplots, not plt.subplot
     fig.canvas.set_window_title('Smith Chart')
     
     # draws Smith Plot
