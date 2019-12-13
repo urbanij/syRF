@@ -7,8 +7,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1198</width>
-    <height>837</height>
+    <width>1300</width>
+    <height>855</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -41,7 +41,7 @@
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>1124</width>
+               <width>1226</width>
                <height>691</height>
               </rect>
              </property>
@@ -444,8 +444,17 @@
                       <height>21</height>
                      </size>
                     </property>
+                    <property name="acceptDrops">
+                     <bool>true</bool>
+                    </property>
+                    <property name="inputMethodHints">
+                     <set>Qt::ImhMultiLine</set>
+                    </property>
                     <property name="verticalScrollBarPolicy">
                      <enum>Qt::ScrollBarAlwaysOff</enum>
+                    </property>
+                    <property name="horizontalScrollBarPolicy">
+                     <enum>Qt::ScrollBarAsNeeded</enum>
                     </property>
                    </widget>
                   </item>
@@ -945,7 +954,7 @@
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>852</width>
+               <width>1226</width>
                <height>841</height>
               </rect>
              </property>
@@ -2747,7 +2756,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1198</width>
+     <width>1300</width>
      <height>22</height>
     </rect>
    </property>

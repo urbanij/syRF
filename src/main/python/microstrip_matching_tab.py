@@ -12,7 +12,6 @@ Created on Sun Apr 29 10:46:20 2018
 
 import os
 import sys
-from scipy.constants import c # speed of light
 import numpy as np
 import matplotlib.pyplot as plt
 import cmath
@@ -21,7 +20,7 @@ import microstrip_matching.er_graphs_points as epsilon_function
 
 msg_error = "" # display nothing if error occurs
 
-
+c = 299792458.0 # speed of light
 
 def get_abscissa_from_first_graph(er, z):
     if er == 2:

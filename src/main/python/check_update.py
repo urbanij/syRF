@@ -10,7 +10,10 @@ Created on Sun Feb 17 13:54:49 CET 2019
 
 """
 
-import requests
+try:
+    import requests
+except ModuleNotFoundError as e:
+    print(e)
 
 LOCAL_VERSION_FILE = "../../../.version"
 REMOTE_VERSION_URL = 'https://raw.githubusercontent.com/urbanij/syRF/master/.version'
@@ -32,6 +35,8 @@ def get_remote_version():
     try:
         remote_version = requests.get(REMOTE_VERSION_URL).text
         return remote_version
+    except NameError as e:
+        print(e)
     except Exception as e:
         print ("Remote file at {} does not exists.".format(REMOTE_VERSION_URL))
         return 

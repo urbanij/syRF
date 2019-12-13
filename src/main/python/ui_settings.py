@@ -20,8 +20,8 @@ import check_update
 
 def setup_menu_bar(self):
     ### setup menu bar
-    ### Uncomment to disable native menubar on Mac
-    self.menuBar.setNativeMenuBar(False)
+    
+    self.menuBar.setNativeMenuBar(True)
 
     self.actionCheck_for_Updates.triggered.connect(self.check_for_updates)
     self.action_Exit.triggered.connect(self.quit_app)
@@ -78,6 +78,9 @@ def init_ui(self):
     # new commit and notify the user by updating the label
     
     # self.label_updates.setText(check_update.check())
-    check_update.check(self)
     
+    #### comment this out to skip the update check on startup.
+    # check_update.check(self)
+    
+
     

@@ -11,7 +11,10 @@ Created on Mon Mar 19 15:38:35 2018
 """
 
 # ============================================================
-##from fbs_runtime.application_context import ApplicationContext
+try:
+    from fbs_runtime.application_context.PyQt5 import ApplicationContext
+except ModuleNotFoundError as e:
+    pass
 # ============================================================
 from PyQt5.QtWidgets import QMainWindow, QAction, QStatusBar, QToolBar, QMenuBar, QMessageBox
 from PyQt5.QtGui import QIcon
