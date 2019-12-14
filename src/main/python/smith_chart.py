@@ -32,7 +32,7 @@ class mainProgram(QtWidgets.QMainWindow, Ui_MainWindow):
         super(mainProgram, self).__init__(parent)
         self.setupUi(self)
 
-        self.menuBar.setNativeMenuBar(False)
+        self.menuBar.setNativeMenuBar(True)
         self.actionImpedance_d.triggered.connect(self.launch_impedance_at_distance)
         self.actionGamma2impedance.triggered.connect(self.launch_gamma2impedance)
         self.actionAbout_2.triggered.connect(self.open_about_window)

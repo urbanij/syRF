@@ -47,14 +47,215 @@
            </item>
            <item>
             <layout class="QGridLayout" name="gridLayout">
-             <item row="10" column="4">
+             <item row="5" column="3">
+              <widget class="QLabel" name="label_206">
+               <property name="text">
+                <string>MHz</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="2">
+              <widget class="QLineEdit" name="z0box">
+               <property name="enabled">
+                <bool>true</bool>
+               </property>
+               <property name="placeholderText">
+                <string>Check the plots in order to choose a plausible value</string>
+               </property>
+              </widget>
+             </item>
+             <item row="7" column="2">
+              <widget class="QLineEdit" name="lambda_over_lambda_tem_box">
+               <property name="enabled">
+                <bool>true</bool>
+               </property>
+               <property name="readOnly">
+                <bool>true</bool>
+               </property>
+               <property name="placeholderText">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item row="10" column="3">
               <widget class="QLabel" name="label_222">
                <property name="text">
                 <string>mm</string>
                </property>
               </widget>
              </item>
-             <item row="6" column="3">
+             <item row="4" column="0" colspan="2">
+              <widget class="QLabel" name="label_198">
+               <property name="text">
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;h&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item row="5" column="0" colspan="2">
+              <widget class="QLabel" name="label_199">
+               <property name="text">
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;f&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item row="4" column="2">
+              <widget class="QLineEdit" name="h_box">
+               <property name="placeholderText">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item row="8" column="3">
+              <widget class="QLabel" name="label_216">
+               <property name="text">
+                <string>cm</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="2">
+              <widget class="QLineEdit" name="epsilon_r_box">
+               <property name="enabled">
+                <bool>true</bool>
+               </property>
+               <property name="placeholderText">
+                <string>{2, 4, 6, 8, 10, 12}</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="0" colspan="2">
+              <widget class="QLabel" name="label_191">
+               <property name="text">
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;ε&lt;span style=&quot; vertical-align:sub;&quot;&gt;r&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item row="10" column="2">
+              <widget class="QLineEdit" name="length_box">
+               <property name="enabled">
+                <bool>true</bool>
+               </property>
+               <property name="readOnly">
+                <bool>true</bool>
+               </property>
+               <property name="placeholderText">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="0" colspan="2">
+              <widget class="QLabel" name="label_215">
+               <property name="text">
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;w&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item row="9" column="0" colspan="2">
+              <widget class="QLabel" name="label_220">
+               <property name="text">
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;λ&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="0" colspan="2">
+              <widget class="QLabel" name="label_203">
+               <property name="text">
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Z&lt;span style=&quot; vertical-align:sub;&quot;&gt;0&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item row="5" column="2">
+              <widget class="QLineEdit" name="f_box_3">
+               <property name="placeholderText">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item row="9" column="2">
+              <widget class="QLineEdit" name="lambda_box">
+               <property name="enabled">
+                <bool>true</bool>
+               </property>
+               <property name="readOnly">
+                <bool>true</bool>
+               </property>
+               <property name="placeholderText">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item row="10" column="0" colspan="2">
+              <widget class="QLabel" name="label_223">
+               <property name="text">
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;length&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="0" colspan="2">
+              <widget class="QLabel" name="label_209">
+               <property name="text">
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;l(λ)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item row="9" column="3">
+              <widget class="QLabel" name="label_218">
+               <property name="text">
+                <string>cm</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="3">
+              <widget class="QLabel" name="label_204">
+               <property name="text">
+                <string>Ω</string>
+               </property>
+              </widget>
+             </item>
+             <item row="7" column="0" colspan="2">
+              <widget class="QLabel" name="label_224">
+               <property name="text">
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;λ/λ&lt;span style=&quot; vertical-align:sub;&quot;&gt;TEM&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item row="8" column="0" colspan="2">
+              <widget class="QLabel" name="label_207">
+               <property name="text">
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;λ&lt;span style=&quot; vertical-align:sub;&quot;&gt;TEM &lt;/span&gt;(f,ε&lt;span style=&quot; vertical-align:sub;&quot;&gt;r&lt;/span&gt;)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item row="6" column="2">
               <widget class="QLineEdit" name="w_over_h_box">
                <property name="enabled">
                 <bool>true</bool>
@@ -70,60 +271,21 @@
                </property>
               </widget>
              </item>
+             <item row="0" column="2">
+              <widget class="QLineEdit" name="l_lambda_box">
+               <property name="placeholderText">
+                <string/>
+               </property>
+              </widget>
+             </item>
              <item row="3" column="3">
-              <widget class="QLineEdit" name="w_box">
-               <property name="enabled">
-                <bool>true</bool>
-               </property>
-               <property name="readOnly">
-                <bool>false</bool>
-               </property>
-               <property name="placeholderText">
-                <string/>
-               </property>
-              </widget>
-             </item>
-             <item row="7" column="1" colspan="2">
-              <widget class="QLabel" name="label_224">
-               <property name="text">
-                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;λ/λ&lt;span style=&quot; vertical-align:sub;&quot;&gt;TEM&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-               </property>
-               <property name="alignment">
-                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-               </property>
-              </widget>
-             </item>
-             <item row="7" column="3">
-              <widget class="QLineEdit" name="lambda_over_lambda_tem_box">
-               <property name="enabled">
-                <bool>true</bool>
-               </property>
-               <property name="readOnly">
-                <bool>true</bool>
-               </property>
-               <property name="placeholderText">
-                <string/>
-               </property>
-              </widget>
-             </item>
-             <item row="3" column="4">
               <widget class="QLabel" name="label_212">
                <property name="text">
                 <string>mm</string>
                </property>
               </widget>
              </item>
-             <item row="8" column="1" colspan="2">
-              <widget class="QLabel" name="label_207">
-               <property name="text">
-                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;λ&lt;span style=&quot; vertical-align:sub;&quot;&gt;TEM &lt;/span&gt;(f,ε&lt;span style=&quot; vertical-align:sub;&quot;&gt;r&lt;/span&gt;)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-               </property>
-               <property name="alignment">
-                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-               </property>
-              </widget>
-             </item>
-             <item row="8" column="3">
+             <item row="8" column="2">
               <widget class="QLineEdit" name="lambda_tem_box">
                <property name="enabled">
                 <bool>true</bool>
@@ -136,135 +298,7 @@
                </property>
               </widget>
              </item>
-             <item row="10" column="3">
-              <widget class="QLineEdit" name="length_box">
-               <property name="enabled">
-                <bool>true</bool>
-               </property>
-               <property name="readOnly">
-                <bool>true</bool>
-               </property>
-               <property name="placeholderText">
-                <string/>
-               </property>
-              </widget>
-             </item>
-             <item row="5" column="4">
-              <widget class="QLabel" name="label_206">
-               <property name="text">
-                <string>MHz</string>
-               </property>
-              </widget>
-             </item>
-             <item row="5" column="3">
-              <widget class="QLineEdit" name="f_box_3">
-               <property name="placeholderText">
-                <string/>
-               </property>
-              </widget>
-             </item>
-             <item row="4" column="4">
-              <widget class="QLabel" name="label_202">
-               <property name="text">
-                <string>mm</string>
-               </property>
-              </widget>
-             </item>
-             <item row="4" column="3">
-              <widget class="QLineEdit" name="h_box">
-               <property name="placeholderText">
-                <string/>
-               </property>
-              </widget>
-             </item>
-             <item row="1" column="3">
-              <widget class="QLineEdit" name="z0box">
-               <property name="enabled">
-                <bool>true</bool>
-               </property>
-               <property name="placeholderText">
-                <string>Check the plots in order to choose a plausible value</string>
-               </property>
-              </widget>
-             </item>
-             <item row="2" column="3">
-              <widget class="QLineEdit" name="epsilon_r_box">
-               <property name="enabled">
-                <bool>true</bool>
-               </property>
-               <property name="placeholderText">
-                <string>{2, 4, 6, 8, 10, 12}</string>
-               </property>
-              </widget>
-             </item>
-             <item row="10" column="1" colspan="2">
-              <widget class="QLabel" name="label_223">
-               <property name="text">
-                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;length&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-               </property>
-               <property name="alignment">
-                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-               </property>
-              </widget>
-             </item>
-             <item row="9" column="4">
-              <widget class="QLabel" name="label_218">
-               <property name="text">
-                <string>cm</string>
-               </property>
-              </widget>
-             </item>
-             <item row="9" column="3">
-              <widget class="QLineEdit" name="lambda_box">
-               <property name="enabled">
-                <bool>true</bool>
-               </property>
-               <property name="readOnly">
-                <bool>true</bool>
-               </property>
-               <property name="placeholderText">
-                <string/>
-               </property>
-              </widget>
-             </item>
-             <item row="8" column="4">
-              <widget class="QLabel" name="label_216">
-               <property name="text">
-                <string>cm</string>
-               </property>
-              </widget>
-             </item>
-             <item row="1" column="4">
-              <widget class="QLabel" name="label_204">
-               <property name="text">
-                <string>Ω</string>
-               </property>
-              </widget>
-             </item>
-             <item row="0" column="3">
-              <widget class="QLineEdit" name="l_lambda_box">
-               <property name="placeholderText">
-                <string/>
-               </property>
-              </widget>
-             </item>
-             <item row="5" column="0">
-              <spacer name="horizontalSpacer_15">
-               <property name="orientation">
-                <enum>Qt::Horizontal</enum>
-               </property>
-               <property name="sizeType">
-                <enum>QSizePolicy::Fixed</enum>
-               </property>
-               <property name="sizeHint" stdset="0">
-                <size>
-                 <width>40</width>
-                 <height>20</height>
-                </size>
-               </property>
-              </spacer>
-             </item>
-             <item row="6" column="1" colspan="2">
+             <item row="6" column="0" colspan="2">
               <widget class="QLabel" name="label_210">
                <property name="text">
                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;w/h&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -274,73 +308,23 @@
                </property>
               </widget>
              </item>
-             <item row="5" column="1" colspan="2">
-              <widget class="QLabel" name="label_199">
-               <property name="text">
-                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;f&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             <item row="3" column="2">
+              <widget class="QLineEdit" name="w_box">
+               <property name="enabled">
+                <bool>true</bool>
                </property>
-               <property name="alignment">
-                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               <property name="readOnly">
+                <bool>false</bool>
                </property>
-              </widget>
-             </item>
-             <item row="4" column="1" colspan="2">
-              <widget class="QLabel" name="label_198">
-               <property name="text">
-                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;h&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-               </property>
-               <property name="alignment">
-                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               <property name="placeholderText">
+                <string/>
                </property>
               </widget>
              </item>
-             <item row="3" column="1" colspan="2">
-              <widget class="QLabel" name="label_215">
+             <item row="4" column="3">
+              <widget class="QLabel" name="label_202">
                <property name="text">
-                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;w&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-               </property>
-               <property name="alignment">
-                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-               </property>
-              </widget>
-             </item>
-             <item row="2" column="1" colspan="2">
-              <widget class="QLabel" name="label_191">
-               <property name="text">
-                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;ε&lt;span style=&quot; vertical-align:sub;&quot;&gt;r&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-               </property>
-               <property name="alignment">
-                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-               </property>
-              </widget>
-             </item>
-             <item row="1" column="1" colspan="2">
-              <widget class="QLabel" name="label_203">
-               <property name="text">
-                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Z&lt;span style=&quot; vertical-align:sub;&quot;&gt;0&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-               </property>
-               <property name="alignment">
-                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-               </property>
-              </widget>
-             </item>
-             <item row="0" column="1" colspan="2">
-              <widget class="QLabel" name="label_209">
-               <property name="text">
-                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;l(λ)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-               </property>
-               <property name="alignment">
-                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-               </property>
-              </widget>
-             </item>
-             <item row="9" column="1" colspan="2">
-              <widget class="QLabel" name="label_220">
-               <property name="text">
-                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;λ&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-               </property>
-               <property name="alignment">
-                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                <string>mm</string>
                </property>
               </widget>
              </item>
@@ -394,39 +378,8 @@
         <layout class="QVBoxLayout" name="verticalLayout_13">
          <item>
           <layout class="QGridLayout" name="gridLayout_3">
-           <item row="10" column="0">
-            <widget class="QLabel" name="label_242">
-             <property name="text">
-              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;λ&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-             </property>
-             <property name="alignment">
-              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-             </property>
-            </widget>
-           </item>
-           <item row="1" column="2">
-            <widget class="QLabel" name="label_225">
-             <property name="text">
-              <string>mm</string>
-             </property>
-            </widget>
-           </item>
-           <item row="3" column="1">
-            <widget class="QLineEdit" name="h_box_2">
-             <property name="placeholderText">
-              <string/>
-             </property>
-            </widget>
-           </item>
-           <item row="7" column="1">
-            <widget class="QLineEdit" name="f_box_4">
-             <property name="placeholderText">
-              <string/>
-             </property>
-            </widget>
-           </item>
-           <item row="9" column="1">
-            <widget class="QLineEdit" name="lambda_tem_box_2">
+           <item row="8" column="1">
+            <widget class="QLineEdit" name="lambda_over_lambda_tem_box_2">
              <property name="enabled">
               <bool>true</bool>
              </property>
@@ -438,80 +391,23 @@
              </property>
             </widget>
            </item>
-           <item row="2" column="2">
-            <widget class="QLabel" name="label_240">
-             <property name="text">
-              <string>mm</string>
-             </property>
-            </widget>
-           </item>
-           <item row="1" column="0">
-            <widget class="QLabel" name="label_237">
-             <property name="text">
-              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;length&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-             </property>
-             <property name="alignment">
-              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-             </property>
-            </widget>
-           </item>
-           <item row="4" column="0">
-            <widget class="QLabel" name="label_235">
-             <property name="text">
-              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;ε&lt;span style=&quot; vertical-align:sub;&quot;&gt;r&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-             </property>
-             <property name="alignment">
-              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-             </property>
-            </widget>
-           </item>
-           <item row="11" column="0">
-            <widget class="QLabel" name="label_227">
-             <property name="text">
-              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;l(λ)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-             </property>
-             <property name="alignment">
-              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-             </property>
-            </widget>
-           </item>
-           <item row="11" column="1">
-            <widget class="QLineEdit" name="l_lambda_box_2">
-             <property name="readOnly">
-              <bool>true</bool>
-             </property>
+           <item row="3" column="1">
+            <widget class="QLineEdit" name="h_box_2">
              <property name="placeholderText">
               <string/>
              </property>
             </widget>
            </item>
-           <item row="7" column="0">
-            <widget class="QLabel" name="label_234">
-             <property name="text">
-              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;f&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           <item row="1" column="1">
+            <widget class="QLineEdit" name="length_box_2">
+             <property name="enabled">
+              <bool>true</bool>
              </property>
-             <property name="alignment">
-              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+             <property name="readOnly">
+              <bool>false</bool>
              </property>
-            </widget>
-           </item>
-           <item row="8" column="0">
-            <widget class="QLabel" name="label_230">
-             <property name="text">
-              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;λ/λ&lt;span style=&quot; vertical-align:sub;&quot;&gt;TEM&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-             </property>
-             <property name="alignment">
-              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-             </property>
-            </widget>
-           </item>
-           <item row="6" column="0">
-            <widget class="QLabel" name="label_228">
-             <property name="text">
-              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Z&lt;span style=&quot; vertical-align:sub;&quot;&gt;0&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-             </property>
-             <property name="alignment">
-              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+             <property name="placeholderText">
+              <string/>
              </property>
             </widget>
            </item>
@@ -528,6 +424,13 @@
              </property>
             </widget>
            </item>
+           <item row="9" column="2">
+            <widget class="QLabel" name="label_238">
+             <property name="text">
+              <string>cm</string>
+             </property>
+            </widget>
+           </item>
            <item row="2" column="0">
             <widget class="QLabel" name="label_231">
              <property name="text">
@@ -538,10 +441,60 @@
              </property>
             </widget>
            </item>
-           <item row="9" column="2">
-            <widget class="QLabel" name="label_238">
+           <item row="4" column="1">
+            <widget class="QLineEdit" name="epsilon_r_box_2">
+             <property name="enabled">
+              <bool>true</bool>
+             </property>
+             <property name="placeholderText">
+              <string>{2, 4, 6, 8, 10, 12}</string>
+             </property>
+            </widget>
+           </item>
+           <item row="11" column="1">
+            <widget class="QLineEdit" name="l_lambda_box_2">
+             <property name="readOnly">
+              <bool>true</bool>
+             </property>
+             <property name="placeholderText">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="0">
+            <widget class="QLabel" name="label_235">
              <property name="text">
-              <string>cm</string>
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;ε&lt;span style=&quot; vertical-align:sub;&quot;&gt;r&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="2">
+            <widget class="QLabel" name="label_225">
+             <property name="text">
+              <string>mm</string>
+             </property>
+            </widget>
+           </item>
+           <item row="7" column="0">
+            <widget class="QLabel" name="label_234">
+             <property name="text">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;f&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item row="10" column="0">
+            <widget class="QLabel" name="label_242">
+             <property name="text">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;λ&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
              </property>
             </widget>
            </item>
@@ -555,61 +508,40 @@
              </property>
             </widget>
            </item>
-           <item row="5" column="1">
-            <widget class="QLineEdit" name="w_over_h_box_2">
-             <property name="enabled">
-              <bool>true</bool>
+           <item row="8" column="0">
+            <widget class="QLabel" name="label_230">
+             <property name="text">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;λ/λ&lt;span style=&quot; vertical-align:sub;&quot;&gt;TEM&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
              </property>
-             <property name="autoFillBackground">
-              <bool>false</bool>
-             </property>
-             <property name="readOnly">
-              <bool>false</bool>
-             </property>
-             <property name="placeholderText">
-              <string/>
+             <property name="alignment">
+              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
              </property>
             </widget>
            </item>
-           <item row="8" column="1">
-            <widget class="QLineEdit" name="lambda_over_lambda_tem_box_2">
-             <property name="enabled">
-              <bool>true</bool>
-             </property>
-             <property name="readOnly">
-              <bool>true</bool>
-             </property>
-             <property name="placeholderText">
-              <string/>
+           <item row="10" column="2">
+            <widget class="QLabel" name="label_229">
+             <property name="text">
+              <string>cm</string>
              </property>
             </widget>
            </item>
-           <item row="8" column="3">
-            <spacer name="horizontalSpacer_12">
-             <property name="orientation">
-              <enum>Qt::Horizontal</enum>
+           <item row="6" column="0">
+            <widget class="QLabel" name="label_228">
+             <property name="text">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Z&lt;span style=&quot; vertical-align:sub;&quot;&gt;0&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
              </property>
-             <property name="sizeType">
-              <enum>QSizePolicy::Fixed</enum>
+             <property name="alignment">
+              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
              </property>
-             <property name="sizeHint" stdset="0">
-              <size>
-               <width>40</width>
-               <height>20</height>
-              </size>
-             </property>
-            </spacer>
+            </widget>
            </item>
-           <item row="1" column="1">
-            <widget class="QLineEdit" name="length_box_2">
-             <property name="enabled">
-              <bool>true</bool>
+           <item row="9" column="0">
+            <widget class="QLabel" name="label_236">
+             <property name="text">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;λ&lt;span style=&quot; vertical-align:sub;&quot;&gt;TEM &lt;/span&gt;(f,ε&lt;span style=&quot; vertical-align:sub;&quot;&gt;r&lt;/span&gt;)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
              </property>
-             <property name="readOnly">
-              <bool>false</bool>
-             </property>
-             <property name="placeholderText">
-              <string/>
+             <property name="alignment">
+              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
              </property>
             </widget>
            </item>
@@ -639,16 +571,6 @@
              </property>
             </spacer>
            </item>
-           <item row="9" column="0">
-            <widget class="QLabel" name="label_236">
-             <property name="text">
-              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;λ&lt;span style=&quot; vertical-align:sub;&quot;&gt;TEM &lt;/span&gt;(f,ε&lt;span style=&quot; vertical-align:sub;&quot;&gt;r&lt;/span&gt;)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-             </property>
-             <property name="alignment">
-              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-             </property>
-            </widget>
-           </item>
            <item row="6" column="2">
             <widget class="QLabel" name="label_233">
              <property name="text">
@@ -669,20 +591,26 @@
              </property>
             </widget>
            </item>
-           <item row="4" column="1">
-            <widget class="QLineEdit" name="epsilon_r_box_2">
+           <item row="5" column="1">
+            <widget class="QLineEdit" name="w_over_h_box_2">
              <property name="enabled">
               <bool>true</bool>
              </property>
+             <property name="autoFillBackground">
+              <bool>false</bool>
+             </property>
+             <property name="readOnly">
+              <bool>false</bool>
+             </property>
              <property name="placeholderText">
-              <string>{2, 4, 6, 8, 10, 12}</string>
+              <string/>
              </property>
             </widget>
            </item>
-           <item row="10" column="2">
-            <widget class="QLabel" name="label_229">
+           <item row="2" column="2">
+            <widget class="QLabel" name="label_240">
              <property name="text">
-              <string>cm</string>
+              <string>mm</string>
              </property>
             </widget>
            </item>
@@ -696,6 +624,46 @@
              </property>
              <property name="placeholderText">
               <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="7" column="1">
+            <widget class="QLineEdit" name="f_box_4">
+             <property name="placeholderText">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="9" column="1">
+            <widget class="QLineEdit" name="lambda_tem_box_2">
+             <property name="enabled">
+              <bool>true</bool>
+             </property>
+             <property name="readOnly">
+              <bool>true</bool>
+             </property>
+             <property name="placeholderText">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="label_237">
+             <property name="text">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;length&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item row="11" column="0">
+            <widget class="QLabel" name="label_227">
+             <property name="text">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;l(λ)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
              </property>
             </widget>
            </item>

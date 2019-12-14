@@ -29,225 +29,17 @@
        </widget>
       </item>
       <item>
-       <spacer name="verticalSpacer_4">
-        <property name="orientation">
-         <enum>Qt::Vertical</enum>
-        </property>
-        <property name="sizeType">
-         <enum>QSizePolicy::Fixed</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>20</width>
-          <height>40</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
-      <item>
        <layout class="QGridLayout" name="gridLayout_5">
         <item row="2" column="0" colspan="2">
          <layout class="QGridLayout" name="gridLayout_2">
-          <item row="1" column="6">
-           <widget class="QTextBrowser" name="L1_box">
-            <property name="maximumSize">
-             <size>
-              <width>16777215</width>
-              <height>21</height>
-             </size>
-            </property>
-            <property name="verticalScrollBarPolicy">
-             <enum>Qt::ScrollBarAlwaysOff</enum>
-            </property>
-           </widget>
-          </item>
-          <item row="2" column="8">
-           <spacer name="horizontalSpacer_5">
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>40</width>
-              <height>20</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
-          <item row="2" column="5">
-           <widget class="QLabel" name="label_83">
-            <property name="text">
-             <string>C&lt;sub&gt;1&lt;/sub&gt;</string>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-            </property>
-           </widget>
-          </item>
-          <item row="2" column="1">
-           <widget class="QLabel" name="label_24">
-            <property name="text">
-             <string>B&lt;sub&gt;1&lt;/sub&gt;</string>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-            </property>
-           </widget>
-          </item>
-          <item row="3" column="2" colspan="6">
-           <widget class="Line" name="line_2">
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="1">
-           <widget class="QLabel" name="label_23">
-            <property name="text">
-             <string>X&lt;sub&gt;1&lt;/sub&gt;</string>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-            </property>
-           </widget>
-          </item>
-          <item row="4" column="7">
-           <widget class="QLabel" name="label_116">
-            <property name="text">
-             <string/>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="3">
-           <widget class="QLabel" name="label_110">
-            <property name="text">
-             <string>Ω</string>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="2">
-           <widget class="QTextBrowser" name="X1_box">
-            <property name="maximumSize">
-             <size>
-              <width>8777215</width>
-              <height>21</height>
-             </size>
-            </property>
-            <property name="verticalScrollBarPolicy">
-             <enum>Qt::ScrollBarAlwaysOff</enum>
-            </property>
-           </widget>
-          </item>
-          <item row="5" column="2">
-           <widget class="QTextBrowser" name="B2_box">
-            <property name="maximumSize">
-             <size>
-              <width>8777215</width>
-              <height>21</height>
-             </size>
-            </property>
-            <property name="verticalScrollBarPolicy">
-             <enum>Qt::ScrollBarAlwaysOff</enum>
-            </property>
-           </widget>
-          </item>
-          <item row="5" column="6">
-           <widget class="QTextBrowser" name="C2_box">
-            <property name="maximumSize">
-             <size>
-              <width>16777215</width>
-              <height>21</height>
-             </size>
-            </property>
-            <property name="verticalScrollBarPolicy">
-             <enum>Qt::ScrollBarAlwaysOff</enum>
-            </property>
-           </widget>
-          </item>
-          <item row="5" column="7">
-           <widget class="QLabel" name="label_117">
-            <property name="text">
-             <string/>
-            </property>
-           </widget>
-          </item>
-          <item row="5" column="5">
-           <widget class="QLabel" name="label_87">
-            <property name="text">
-             <string>C&lt;sub&gt;2&lt;/sub&gt;</string>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-            </property>
-           </widget>
-          </item>
-          <item row="2" column="6">
-           <widget class="QTextBrowser" name="C1_box">
-            <property name="maximumSize">
-             <size>
-              <width>16777215</width>
-              <height>21</height>
-             </size>
-            </property>
-            <property name="verticalScrollBarPolicy">
-             <enum>Qt::ScrollBarAlwaysOff</enum>
-            </property>
-           </widget>
-          </item>
-          <item row="4" column="2">
-           <widget class="QTextBrowser" name="X2_box">
-            <property name="maximumSize">
-             <size>
-              <width>8777215</width>
-              <height>21</height>
-             </size>
-            </property>
-            <property name="verticalScrollBarPolicy">
-             <enum>Qt::ScrollBarAlwaysOff</enum>
-            </property>
-           </widget>
-          </item>
-          <item row="5" column="1">
-           <widget class="QLabel" name="label_74">
-            <property name="text">
-             <string>B&lt;sub&gt;2&lt;/sub&gt;</string>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-            </property>
-           </widget>
-          </item>
           <item row="2" column="2">
-           <widget class="QTextBrowser" name="B1_box">
-            <property name="maximumSize">
-             <size>
-              <width>8777215</width>
-              <height>21</height>
-             </size>
-            </property>
-            <property name="verticalScrollBarPolicy">
-             <enum>Qt::ScrollBarAlwaysOff</enum>
-            </property>
-           </widget>
-          </item>
-          <item row="4" column="5">
-           <widget class="QLabel" name="label_88">
-            <property name="text">
-             <string>L&lt;sub&gt;2&lt;/sub&gt;</string>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-            </property>
-           </widget>
-          </item>
-          <item row="2" column="3">
            <widget class="QLabel" name="label_111">
             <property name="text">
              <string>mS</string>
             </property>
            </widget>
           </item>
-          <item row="0" column="2">
+          <item row="0" column="1">
            <widget class="QLabel" name="label_18">
             <property name="maximumSize">
              <size>
@@ -260,28 +52,58 @@
             </property>
            </widget>
           </item>
-          <item row="1" column="7">
+          <item row="4" column="4">
+           <widget class="QLabel" name="label_88">
+            <property name="text">
+             <string>L&lt;sub&gt;2&lt;/sub&gt;</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="5">
+           <widget class="QLineEdit" name="L1_box">
+            <property name="readOnly">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="4">
+           <widget class="QLabel" name="label_83">
+            <property name="text">
+             <string>C&lt;sub&gt;1&lt;/sub&gt;</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="0">
+           <widget class="QLabel" name="label_74">
+            <property name="text">
+             <string>B&lt;sub&gt;2&lt;/sub&gt;</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="6">
+           <widget class="QLabel" name="label_116">
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="6">
            <widget class="QLabel" name="label_112">
             <property name="text">
              <string/>
             </property>
            </widget>
           </item>
-          <item row="5" column="3">
-           <widget class="QLabel" name="label_115">
-            <property name="text">
-             <string>mS</string>
-            </property>
-           </widget>
-          </item>
-          <item row="2" column="7">
-           <widget class="QLabel" name="label_113">
-            <property name="text">
-             <string/>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="5">
+          <item row="1" column="4">
            <widget class="QLabel" name="label_84">
             <property name="text">
              <string>L&lt;sub&gt;1&lt;/sub&gt;</string>
@@ -291,14 +113,86 @@
             </property>
            </widget>
           </item>
-          <item row="4" column="3">
-           <widget class="QLabel" name="label_114">
+          <item row="5" column="6">
+           <widget class="QLabel" name="label_117">
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="label_23">
+            <property name="text">
+             <string>X&lt;sub&gt;1&lt;/sub&gt;</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel" name="label_24">
+            <property name="text">
+             <string>B&lt;sub&gt;1&lt;/sub&gt;</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="1" colspan="6">
+           <widget class="Line" name="line_2">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="2">
+           <widget class="QLabel" name="label_110">
             <property name="text">
              <string>Ω</string>
             </property>
            </widget>
           </item>
-          <item row="4" column="1">
+          <item row="2" column="6">
+           <widget class="QLabel" name="label_113">
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="4">
+           <widget class="QLabel" name="label_87">
+            <property name="text">
+             <string>C&lt;sub&gt;2&lt;/sub&gt;</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="2">
+           <widget class="QLabel" name="label_115">
+            <property name="text">
+             <string>mS</string>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="5">
+           <widget class="QLineEdit" name="C2_box">
+            <property name="readOnly">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QLineEdit" name="B1_box">
+            <property name="readOnly">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="0">
            <widget class="QLabel" name="label_80">
             <property name="text">
              <string>X&lt;sub&gt;2&lt;/sub&gt;</string>
@@ -308,33 +202,27 @@
             </property>
            </widget>
           </item>
-          <item row="4" column="6">
-           <widget class="QTextBrowser" name="L2_box">
-            <property name="maximumSize">
-             <size>
-              <width>16777215</width>
-              <height>21</height>
-             </size>
-            </property>
-            <property name="verticalScrollBarPolicy">
-             <enum>Qt::ScrollBarAlwaysOff</enum>
-            </property>
-           </widget>
-          </item>
-          <item row="2" column="0">
-           <spacer name="horizontalSpacer_6">
+          <item row="6" column="4">
+           <spacer name="verticalSpacer_2">
             <property name="orientation">
-             <enum>Qt::Horizontal</enum>
+             <enum>Qt::Vertical</enum>
             </property>
             <property name="sizeHint" stdset="0">
              <size>
-              <width>40</width>
-              <height>20</height>
+              <width>20</width>
+              <height>40</height>
              </size>
             </property>
            </spacer>
           </item>
-          <item row="2" column="4">
+          <item row="4" column="1">
+           <widget class="QLineEdit" name="X2_box">
+            <property name="readOnly">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="3">
            <spacer name="horizontalSpacer_4">
             <property name="orientation">
              <enum>Qt::Horizontal</enum>
@@ -350,18 +238,40 @@
             </property>
            </spacer>
           </item>
-          <item row="6" column="5">
-           <spacer name="verticalSpacer_2">
-            <property name="orientation">
-             <enum>Qt::Vertical</enum>
+          <item row="2" column="5">
+           <widget class="QLineEdit" name="C1_box">
+            <property name="readOnly">
+             <bool>true</bool>
             </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>20</width>
-              <height>40</height>
-             </size>
+           </widget>
+          </item>
+          <item row="4" column="5">
+           <widget class="QLineEdit" name="L2_box">
+            <property name="readOnly">
+             <bool>true</bool>
             </property>
-           </spacer>
+           </widget>
+          </item>
+          <item row="4" column="2">
+           <widget class="QLabel" name="label_114">
+            <property name="text">
+             <string>Ω</string>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="1">
+           <widget class="QLineEdit" name="B2_box">
+            <property name="readOnly">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QLineEdit" name="X1_box">
+            <property name="readOnly">
+             <bool>true</bool>
+            </property>
+           </widget>
           </item>
          </layout>
         </item>
@@ -491,19 +401,6 @@
           <layout class="QVBoxLayout" name="verticalLayout_5">
            <item>
             <layout class="QGridLayout" name="gridLayout_15">
-             <item row="4" column="1">
-              <widget class="QTextBrowser" name="adm_output_box">
-               <property name="maximumSize">
-                <size>
-                 <width>16777215</width>
-                 <height>21</height>
-                </size>
-               </property>
-               <property name="verticalScrollBarPolicy">
-                <enum>Qt::ScrollBarAlwaysOff</enum>
-               </property>
-              </widget>
-             </item>
              <item row="2" column="0" colspan="3">
               <widget class="Line" name="line">
                <property name="orientation">
@@ -518,36 +415,10 @@
                </property>
               </widget>
              </item>
-             <item row="3" column="1">
-              <widget class="QTextBrowser" name="imp_output_box">
-               <property name="maximumSize">
-                <size>
-                 <width>16777215</width>
-                 <height>21</height>
-                </size>
-               </property>
-               <property name="verticalScrollBarPolicy">
-                <enum>Qt::ScrollBarAlwaysOff</enum>
-               </property>
-              </widget>
-             </item>
              <item row="1" column="2">
               <widget class="QLabel" name="label_107">
                <property name="text">
                 <string>mS</string>
-               </property>
-              </widget>
-             </item>
-             <item row="0" column="1">
-              <widget class="QTextBrowser" name="imp_input_box">
-               <property name="maximumSize">
-                <size>
-                 <width>16777215</width>
-                 <height>21</height>
-                </size>
-               </property>
-               <property name="verticalScrollBarPolicy">
-                <enum>Qt::ScrollBarAlwaysOff</enum>
                </property>
               </widget>
              </item>
@@ -578,19 +449,6 @@
                </property>
                <property name="alignment">
                 <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-               </property>
-              </widget>
-             </item>
-             <item row="1" column="1">
-              <widget class="QTextBrowser" name="adm_input_box">
-               <property name="maximumSize">
-                <size>
-                 <width>16777215</width>
-                 <height>21</height>
-                </size>
-               </property>
-               <property name="verticalScrollBarPolicy">
-                <enum>Qt::ScrollBarAlwaysOff</enum>
                </property>
               </widget>
              </item>
@@ -634,6 +492,34 @@
                </property>
               </spacer>
              </item>
+             <item row="0" column="1">
+              <widget class="QLineEdit" name="imp_input_box">
+               <property name="readOnly">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="1">
+              <widget class="QLineEdit" name="adm_input_box">
+               <property name="readOnly">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="1">
+              <widget class="QLineEdit" name="imp_output_box">
+               <property name="readOnly">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item row="4" column="1">
+              <widget class="QLineEdit" name="adm_output_box">
+               <property name="readOnly">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
             </layout>
            </item>
           </layout>
@@ -665,8 +551,20 @@
         </item>
         <item>
          <widget class="QPushButton" name="plot">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
+          <property name="autoFillBackground">
+           <bool>false</bool>
+          </property>
           <property name="text">
            <string>Show Γ Plot</string>
+          </property>
+          <property name="checkable">
+           <bool>false</bool>
+          </property>
+          <property name="autoExclusive">
+           <bool>false</bool>
           </property>
           <property name="autoDefault">
            <bool>true</bool>
@@ -738,22 +636,10 @@
   <tabstop>f0_box</tabstop>
   <tabstop>Clean_all_button_3</tabstop>
   <tabstop>Calculate_button_3</tabstop>
-  <tabstop>L2_box</tabstop>
   <tabstop>comboBox_2</tabstop>
   <tabstop>comboBox</tabstop>
-  <tabstop>X2_box</tabstop>
-  <tabstop>B1_box</tabstop>
-  <tabstop>C1_box</tabstop>
   <tabstop>plot</tabstop>
-  <tabstop>imp_output_box</tabstop>
-  <tabstop>adm_output_box</tabstop>
   <tabstop>open_pdf_sketch_button</tabstop>
-  <tabstop>adm_input_box</tabstop>
-  <tabstop>imp_input_box</tabstop>
-  <tabstop>C2_box</tabstop>
-  <tabstop>X1_box</tabstop>
-  <tabstop>L1_box</tabstop>
-  <tabstop>B2_box</tabstop>
  </tabstops>
  <resources/>
  <connections/>

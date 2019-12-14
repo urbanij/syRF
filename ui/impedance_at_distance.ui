@@ -37,6 +37,30 @@
      <layout class="QVBoxLayout" name="verticalLayout">
       <item>
        <layout class="QGridLayout" name="gridLayout">
+        <item row="2" column="1" colspan="3">
+         <widget class="QLineEdit" name="Z0input">
+          <property name="text">
+           <string>50</string>
+          </property>
+          <property name="placeholderText">
+           <string/>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1" colspan="3">
+         <widget class="QLineEdit" name="zL_input">
+          <property name="placeholderText">
+           <string>actual impedance</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1" colspan="3">
+         <widget class="QLineEdit" name="d_input">
+          <property name="placeholderText">
+           <string>distance as a fraction of lambda</string>
+          </property>
+         </widget>
+        </item>
         <item row="0" column="4">
          <widget class="QLabel" name="label_90">
           <property name="sizePolicy">
@@ -53,36 +77,6 @@
           </property>
           <property name="alignment">
            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-          </property>
-         </widget>
-        </item>
-        <item row="2" column="0">
-         <widget class="QLabel" name="label_86">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="text">
-           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Z&lt;span style=&quot; vertical-align:sub;&quot;&gt;0&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="1" colspan="3">
-         <widget class="QLineEdit" name="zL_input">
-          <property name="placeholderText">
-           <string>actual impedance</string>
-          </property>
-         </widget>
-        </item>
-        <item row="1" column="1" colspan="3">
-         <widget class="QLineEdit" name="d_input">
-          <property name="placeholderText">
-           <string>distance as a fraction of lambda</string>
           </property>
          </widget>
         </item>
@@ -118,18 +112,8 @@
           </property>
          </spacer>
         </item>
-        <item row="2" column="1" colspan="3">
-         <widget class="QLineEdit" name="Z0input">
-          <property name="text">
-           <string>50</string>
-          </property>
-          <property name="placeholderText">
-           <string/>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="0">
-         <widget class="QLabel" name="label_82">
+        <item row="2" column="0">
+         <widget class="QLabel" name="label_86">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
             <horstretch>0</horstretch>
@@ -137,7 +121,7 @@
            </sizepolicy>
           </property>
           <property name="text">
-           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Z&lt;span style=&quot; vertical-align:sub;&quot;&gt;L&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Z&lt;span style=&quot; vertical-align:sub;&quot;&gt;0&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -163,6 +147,25 @@
           </property>
          </widget>
         </item>
+        <item row="7" column="4">
+         <widget class="QLabel" name="label_89">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="layoutDirection">
+           <enum>Qt::RightToLeft</enum>
+          </property>
+          <property name="text">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ω&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+        </item>
         <item row="2" column="4">
          <widget class="QLabel" name="label_88">
           <property name="sizePolicy">
@@ -182,8 +185,8 @@
           </property>
          </widget>
         </item>
-        <item row="4" column="0">
-         <widget class="QLabel" name="label_83">
+        <item row="0" column="0">
+         <widget class="QLabel" name="label_82">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
             <horstretch>0</horstretch>
@@ -191,14 +194,28 @@
            </sizepolicy>
           </property>
           <property name="text">
-           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;z&lt;span style=&quot; vertical-align:sub;&quot;&gt;L&lt;/span&gt;'&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Z&lt;span style=&quot; vertical-align:sub;&quot;&gt;L&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
           </property>
          </widget>
         </item>
-        <item row="5" column="0">
+        <item row="6" column="1" rowspan="2" colspan="3">
+         <widget class="QLineEdit" name="zl_actual_outputbox">
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="1" rowspan="2" colspan="3">
+         <widget class="QLineEdit" name="zl2_outputbox">
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="6" column="0" rowspan="2">
          <widget class="QLabel" name="label_85">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
@@ -214,48 +231,19 @@
           </property>
          </widget>
         </item>
-        <item row="5" column="4">
-         <widget class="QLabel" name="label_89">
+        <item row="4" column="0" rowspan="2">
+         <widget class="QLabel" name="label_83">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
           </property>
-          <property name="layoutDirection">
-           <enum>Qt::RightToLeft</enum>
-          </property>
           <property name="text">
-           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ω&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;z&lt;span style=&quot; vertical-align:sub;&quot;&gt;L&lt;/span&gt;'&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
           </property>
           <property name="alignment">
-           <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-          </property>
-         </widget>
-        </item>
-        <item row="4" column="1" colspan="3">
-         <widget class="QTextBrowser" name="zl2_outputbox">
-          <property name="maximumSize">
-           <size>
-            <width>16777215</width>
-            <height>21</height>
-           </size>
-          </property>
-          <property name="verticalScrollBarPolicy">
-           <enum>Qt::ScrollBarAlwaysOff</enum>
-          </property>
-         </widget>
-        </item>
-        <item row="5" column="1" colspan="3">
-         <widget class="QTextBrowser" name="zl_actual_outputbox">
-          <property name="maximumSize">
-           <size>
-            <width>16777215</width>
-            <height>21</height>
-           </size>
-          </property>
-          <property name="verticalScrollBarPolicy">
-           <enum>Qt::ScrollBarAlwaysOff</enum>
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
           </property>
          </widget>
         </item>

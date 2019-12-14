@@ -1,3 +1,15 @@
+
+
+
+- [ ] change about window like syrf-cpp
+- [ ] fix path keepin in mind that the root is the origin not src/main/python
+- [ ] figure the way to write .plist file
+- [ ] figure how not to scroll qtextbrowser
+
+
+
+-----------
+
 - [ ] color in orange when potentially unstable and red when unstable.
 - [ ] trim all the number representations to a reasonable number of digits
 

@@ -30,7 +30,7 @@ class mainProgram(QtWidgets.QMainWindow, Ui_MainWindow):
         super(mainProgram, self).__init__(parent)
         self.setupUi(self)
 
-        self.menuBar.setNativeMenuBar(False)
+        self.menuBar.setNativeMenuBar(True)
         
         self.action_Open_formulas.triggered.connect(self.Open_formulas_integrated_matching)
         self.action_Quit_IM.triggered.connect(self.close)

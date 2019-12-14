@@ -12,13 +12,14 @@ all:
 	pyuic5 ui/check_update.ui               > src/main/python/pyui/check_update_ui.py
 	pyuic5 ui/new_update.ui                 > src/main/python/pyui/new_update_ui.py
 	pyuic5 ui/impedance_at_distance.ui      > src/main/python/pyui/impedance_at_distance_ui.py
-	pyuic5 ui/gamma2impedance.ui      		> src/main/python/pyui/gamma2impedance_ui.py
+	pyuic5 ui/gamma2impedance.ui            > src/main/python/pyui/gamma2impedance_ui.py
 
 
 clean:	
-	rm -rf __pycache__/
-	rm -rf pyui/__pycache__/
-	rm -rf twoport/__pycache__/
-	rm -rf microstrip_matching/__pycache__/
-	rm *.pyc
+	rm -rf src/main/python/__pycache__/
+	rm -rf src/main/python/pyui/__pycache__/
+	rm -rf src/main/python/twoport/__pycache__/
+	rm -rf src/main/python/microstrip_matching/__pycache__/
+	rm -rf src/main/python/pyui/*
+	rm -rf src/main/python/*.pyc
 

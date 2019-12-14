@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>587</width>
-    <height>419</height>
+    <width>691</width>
+    <height>517</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -222,33 +222,28 @@
         </item>
        </layout>
       </item>
-      <item row="0" column="1">
-       <spacer name="horizontalSpacer">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>40</width>
-          <height>20</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
       <item row="2" column="0" colspan="3">
        <layout class="QGridLayout" name="gridLayout_3">
-        <item row="2" column="2">
-         <spacer name="verticalSpacer_4">
-          <property name="orientation">
-           <enum>Qt::Vertical</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>20</width>
-            <height>40</height>
-           </size>
-          </property>
-         </spacer>
+        <item row="4" column="2">
+         <layout class="QGridLayout" name="gridLayout_4">
+          <item row="0" column="0">
+           <widget class="QPushButton" name="clean_integrated_matching_button">
+            <property name="text">
+             <string>Clean</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QPushButton" name="calculate_integrated_matching_button">
+            <property name="text">
+             <string>Calculate</string>
+            </property>
+            <property name="default">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
         </item>
         <item row="0" column="4">
          <spacer name="horizontalSpacer_3">
@@ -263,37 +258,18 @@
           </property>
          </spacer>
         </item>
-        <item row="0" column="0">
-         <spacer name="horizontalSpacer_2">
+        <item row="3" column="2">
+         <spacer name="verticalSpacer_4">
           <property name="orientation">
-           <enum>Qt::Horizontal</enum>
+           <enum>Qt::Vertical</enum>
           </property>
           <property name="sizeHint" stdset="0">
            <size>
-            <width>40</width>
-            <height>20</height>
+            <width>20</width>
+            <height>40</height>
            </size>
           </property>
          </spacer>
-        </item>
-        <item row="0" column="2">
-         <widget class="QTextBrowser" name="Le_text_browser">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="maximumSize">
-           <size>
-            <width>16777215</width>
-            <height>21</height>
-           </size>
-          </property>
-          <property name="verticalScrollBarPolicy">
-           <enum>Qt::ScrollBarAlwaysOff</enum>
-          </property>
-         </widget>
         </item>
         <item row="0" column="3">
          <widget class="QLabel" name="label_95">
@@ -305,41 +281,6 @@
           </property>
           <property name="text">
            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;pH&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-          </property>
-         </widget>
-        </item>
-        <item row="1" column="2">
-         <widget class="QTextBrowser" name="Lb_text_browser">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="maximumSize">
-           <size>
-            <width>16777215</width>
-            <height>21</height>
-           </size>
-          </property>
-          <property name="verticalScrollBarPolicy">
-           <enum>Qt::ScrollBarAlwaysOff</enum>
-          </property>
-         </widget>
-        </item>
-        <item row="1" column="3">
-         <widget class="QLabel" name="label_96">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="text">
-           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;nH&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -362,7 +303,41 @@
           </property>
          </widget>
         </item>
-        <item row="1" column="1">
+        <item row="4" column="0" colspan="2">
+         <widget class="QPushButton" name="Lb_vs_Ic_button">
+          <property name="text">
+           <string>Plot Lb(Ic)</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="0">
+         <spacer name="horizontalSpacer_2">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="0" column="2">
+         <widget class="QLineEdit" name="Le_text_browser">
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="2" rowspan="2">
+         <widget class="QLineEdit" name="Lb_text_browser">
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1" rowspan="2">
          <widget class="QLabel" name="label_83">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
@@ -378,31 +353,19 @@
           </property>
          </widget>
         </item>
-        <item row="3" column="2">
-         <layout class="QGridLayout" name="gridLayout_4">
-          <item row="0" column="0">
-           <widget class="QPushButton" name="clean_integrated_matching_button">
-            <property name="text">
-             <string>Clean</string>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="1">
-           <widget class="QPushButton" name="calculate_integrated_matching_button">
-            <property name="text">
-             <string>Calculate</string>
-            </property>
-            <property name="default">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </item>
-        <item row="3" column="0" colspan="2">
-         <widget class="QPushButton" name="Lb_vs_Ic_button">
+        <item row="1" column="3" rowspan="2">
+         <widget class="QLabel" name="label_96">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
           <property name="text">
-           <string>Plot Lb(Ic)</string>
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;nH&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
           </property>
          </widget>
         </item>
@@ -423,7 +386,14 @@
       </item>
       <item row="0" column="2">
        <layout class="QGridLayout" name="gridLayout_2">
-        <item row="2" column="0">
+        <item row="2" column="1">
+         <widget class="QLineEdit" name="gm_text_browser">
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
          <widget class="QLabel" name="label_94">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
@@ -439,7 +409,7 @@
           </property>
          </widget>
         </item>
-        <item row="2" column="2" colspan="2">
+        <item row="3" column="2" colspan="2">
          <widget class="QLabel" name="label_98">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
@@ -455,7 +425,7 @@
           </property>
          </widget>
         </item>
-        <item row="1" column="0">
+        <item row="2" column="0">
          <widget class="QLabel" name="label_93">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
@@ -471,45 +441,7 @@
           </property>
          </widget>
         </item>
-        <item row="1" column="1">
-         <widget class="QTextBrowser" name="gm_text_browser">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="maximumSize">
-           <size>
-            <width>16777215</width>
-            <height>21</height>
-           </size>
-          </property>
-          <property name="verticalScrollBarPolicy">
-           <enum>Qt::ScrollBarAlwaysOff</enum>
-          </property>
-         </widget>
-        </item>
-        <item row="2" column="1">
-         <widget class="QTextBrowser" name="c_pi_text_browser">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="maximumSize">
-           <size>
-            <width>16777215</width>
-            <height>21</height>
-           </size>
-          </property>
-          <property name="verticalScrollBarPolicy">
-           <enum>Qt::ScrollBarAlwaysOff</enum>
-          </property>
-         </widget>
-        </item>
-        <item row="1" column="2" colspan="2">
+        <item row="2" column="2" colspan="2">
          <widget class="QLabel" name="label_97">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
@@ -525,8 +457,15 @@
           </property>
          </widget>
         </item>
-        <item row="0" column="1">
-         <spacer name="verticalSpacer">
+        <item row="3" column="1">
+         <widget class="QLineEdit" name="c_pi_text_browser">
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="0" rowspan="2" colspan="4">
+         <spacer name="verticalSpacer_2">
           <property name="orientation">
            <enum>Qt::Vertical</enum>
           </property>
@@ -538,8 +477,8 @@
           </property>
          </spacer>
         </item>
-        <item row="3" column="1">
-         <spacer name="verticalSpacer_2">
+        <item row="0" column="0" rowspan="2" colspan="4">
+         <spacer name="verticalSpacer">
           <property name="orientation">
            <enum>Qt::Vertical</enum>
           </property>
@@ -553,6 +492,19 @@
         </item>
        </layout>
       </item>
+      <item row="0" column="1">
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
      </layout>
     </item>
    </layout>
@@ -562,7 +514,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>587</width>
+     <width>691</width>
      <height>22</height>
     </rect>
    </property>
@@ -612,11 +564,7 @@
   <tabstop>Rs_input</tabstop>
   <tabstop>f0_input</tabstop>
   <tabstop>clean_integrated_matching_button</tabstop>
-  <tabstop>gm_text_browser</tabstop>
-  <tabstop>c_pi_text_browser</tabstop>
-  <tabstop>Lb_text_browser</tabstop>
   <tabstop>calculate_integrated_matching_button</tabstop>
-  <tabstop>Le_text_browser</tabstop>
   <tabstop>Lb_vs_Ic_button</tabstop>
  </tabstops>
  <resources/>
