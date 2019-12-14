@@ -202,34 +202,34 @@ def compute_Y_2N4957(self):
     # read inputs
     try:
         y_i = complex(self.y_i_box_2.text())
-    except Exception as e:
+    except ValueError as e:
         y_i = msg_error
     
     try:
         y_f = complex(self.y_f_box_2.text())
-    except Exception as e:
+    except ValueError as e:
         y_f = msg_error
 
     try:
         y_r = complex(self.y_r_box_2.text())
-    except Exception as e:
+    except ValueError as e:
         y_r = msg_error
 
     try:
         y_o = complex(self.y_o_box_2.text())
-    except Exception as e:
+    except ValueError as e:
         y_o = msg_error
 
     try:
         y_s = complex(self.y_s_box_2.text())
         print ("y_s = " + str(y_s) + " ==> Z_s = " + str((y_s*1e-3)**-1) + " ohm" )
-    except Exception as e:
+    except ValueError as e:
         y_s = msg_error
     
     try:
         y_L = complex(self.y_L_box_2.text())
         print ("y_L = " + str(y_L) + " ==> Z_L = " + str((y_L*1e-3)**-1) + " ohm" )
-    except Exception as e:
+    except ValueError as e:
         y_L = msg_error
 
 
@@ -516,7 +516,7 @@ def plot_C_vs_f(self):
     ax.plot(freq_list, C_list, label="$C(f)$")
 
     # plot unconditionally stable area
-    ax.axhspan(0, 1, alpha=0.1, color='green', label="Unconditionally stable area")
+    ax.axhspan(0, 1, alpha=0.08, color='green', label="Unconditionally stable area")
 
     plt.grid(True,which="both",ls="-")
     plt.xlim(45, 1500)

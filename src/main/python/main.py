@@ -65,7 +65,6 @@ class mainProgram(QtWidgets.QMainWindow, Ui_MainWindow):
         
 
         ui_settings.init_ui(self)
-
         
 
         # Y
@@ -159,10 +158,10 @@ class mainProgram(QtWidgets.QMainWindow, Ui_MainWindow):
         Y_tab.show_plot_Y_parameters(self)
 
     def open_datasheet_Y(self):
-        open_pdf.open_pdf("2N4957/2N4957.pdf")
+        open_pdf.open_pdf("src/main/python/2N4957/2N4957.pdf")
 
     def open_Y_formulas(self):
-        open_pdf.open_pdf("../../../doc/Formulario-ETLC_Y.pdf") # from here: https://github.com/giuliof/Dispense-ETLC
+        open_pdf.open_pdf("doc/Formulario-ETLC_Y.pdf") # from here: https://github.com/giuliof/Dispense-ETLC
 
     def plot_C_vs_f(self):
         Y_tab.plot_C_vs_f(self)
@@ -209,10 +208,10 @@ class mainProgram(QtWidgets.QMainWindow, Ui_MainWindow):
 
 
     def open_datasheet_S(self):
-        open_pdf.open_pdf("MRF57/MRF57.pdf")
+        open_pdf.open_pdf("src/main/python/MRF57/MRF57.pdf")
 
     def open_S_formulas(self):
-        open_pdf.open_pdf("../../../doc/Formulario-ETLC_S.pdf") # from here: https://github.com/giuliof/Dispense-ETLC
+        open_pdf.open_pdf("doc/Formulario-ETLC_S.pdf") # from here: https://github.com/giuliof/Dispense-ETLC
         
     def smith_plot_all(self):
         S_tab.smith_plot_all(self)
@@ -277,7 +276,7 @@ class mainProgram(QtWidgets.QMainWindow, Ui_MainWindow):
 
 
     def quit_app(self):
-        result = QMessageBox.question(self, "Confirm exit", "Are you sure you want to quit?", QMessageBox.No|QMessageBox.Yes)
+        result = QMessageBox.question(self, "Confirm exit", "Are you sure you want to quit?", QMessageBox.Yes|QMessageBox.No)
         if result == QMessageBox.Yes:
             self.close()
 

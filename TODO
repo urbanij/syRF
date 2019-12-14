@@ -6,7 +6,7 @@
 - [ ] figure the way to write .plist file
 - [ ] figure how not to scroll qtextbrowser
 
-
+- [ ] change significat figits using python3.6 format :      "{:.5g}".format(a)
 
 -----------
 

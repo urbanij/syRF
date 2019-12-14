@@ -9,14 +9,15 @@ Created on Sun Feb 17 13:54:49 CET 2019
 @descritpion : 
 
 """
-
+import json
 try:
     import requests
 except ModuleNotFoundError as e:
     print(e)
 
-LOCAL_VERSION_FILE = "../../../.version"
-REMOTE_VERSION_URL = 'https://raw.githubusercontent.com/urbanij/syRF/master/.version'
+
+LOCAL_VERSION_FILE = "src/build/settings/base.json"
+REMOTE_VERSION_URL = 'https://raw.githubusercontent.com/urbanij/syRF/master/__version__.py'
 
 import check_update_window
 import new_update
@@ -25,7 +26,7 @@ import new_update
 def get_version():
     try:
         with open(LOCAL_VERSION_FILE ,  "r") as f:
-            return (f.read()) 
+            return json.load(f)["version"]
     except FileNotFoundError as e:
         print ("File {} does not exists.".format(LOCAL_VERSION_FILE))
         return 

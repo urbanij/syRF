@@ -22,7 +22,7 @@ def get_S_parameters(Vce, Ic, f, bjt):
         print ("ERROR")
         quit()
 
-    path = "MRF57/"
+    path = "src/main/python/MRF57/"
     
     with open(path + bjt.upper() +".csv", "r") as csv_file:
         csv_reader = csv.reader(csv_file)

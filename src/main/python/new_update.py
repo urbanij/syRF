@@ -41,7 +41,7 @@ def get_remote_changelog():
         else:
             return ""
     except NameError as e:
-        print(e)
+        return ""
     except Exception as e:
         print ("Remote file at {} does not exists.".format(REMOTE_CHANGELOG_URL))
         return ""

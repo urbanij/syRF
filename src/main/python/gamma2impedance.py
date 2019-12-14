@@ -41,37 +41,55 @@ class mainProgram(QtWidgets.QMainWindow, Ui_MainWindow):
         # read input coordinate as complex number
         try:
             gamma = complex(self.gamma_lineedit.text())
-        except Exception as e:
+        except ValueError as e:
             gamma = msg_error
 
         try:
             Z0 = complex(self.Z0input.text())
-        except Exception as e:
-            Z0 = msg_error
+        except ValueError as e:
+            Z0 = 0
 
         # compute
         try:
             z = (1+gamma)/(1-gamma)
-        except Exception as e:
-            z = msg_error
+            Z = z*Z0
+        except ZeroDivisionError:
+            self.norm_impedance_text_browser.setText("∞")
+            self.impedance_text_browser.setText("∞")
+        except ValueError as e:
+            z = Z = msg_error
+        except TypeError:
+            z = Z = msg_error
+        except Exception:
+            z = Z = msg_error
 
+        
         
         # display
         try:
             self.norm_impedance_text_browser.setText(f"{z:.4g}")
-        except Exception as e:
+        except ValueError:
+            self.norm_impedance_text_browser.setText(msg_error)
+        except TypeError:
+            self.norm_impedance_text_browser.setText(msg_error)
+        except UnboundLocalError:
+            pass
+        except Exception:
             self.norm_impedance_text_browser.setText(msg_error)
 
         try:
-            self.impedance_text_browser.setText(f"{z*Z0:.4g}")
-        except Exception as e:
-            self.impedance_text_browser.setText(msg_error)
+            self.impedance_text_browser.setText(f"{Z:.4g}")
+        except TypeError:
+            pass
+        except Exception:
+            self.norm_impedance_text_browser.setText(msg_error)
 
             
 
     def clean(self):
         self.gamma_lineedit.setText("")
         self.norm_impedance_text_browser.setText("")
+        self.impedance_text_browser.setText("")
         self.gamma_lineedit.setFocus()
 
     # A key has been pressed!
