@@ -25,7 +25,8 @@ class mainProgram(QtWidgets.QMainWindow, Ui_MainWindow):
         super(mainProgram, self).__init__(parent)
         self.setupUi(self)
 
-
+        self.input_box.setFocus()
+        
 
         # LC_matching
         self.f0_box.editingFinished.connect(self.Calculate_button_3.click)
