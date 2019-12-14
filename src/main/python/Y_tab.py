@@ -485,7 +485,7 @@ def fill_ys_yl_opt_2N4957(self):
 def plot_C_vs_f(self):
 
 
-    fig, ax = plt.subplots()
+    fig, ax = plt.subplots(figsize=(10,8))
 
     
     freq_list = np.linspace(45, 1500, 800)

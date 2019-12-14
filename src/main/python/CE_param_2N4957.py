@@ -876,7 +876,7 @@ def Y_CE_parameters_fitted():
 
 def visualize_CE_plot(f1, gie, f2, bie, f3, gfe, f4, bfe, f5, goe, f6, boe, f7, gre, f8, bre):
     # plot it
-    plt.figure(1)
+    plt.figure(1,figsize=(10,8))
 
     plt.subplot(221)
     # plt.subplot(411)

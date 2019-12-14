@@ -1,0 +1,6 @@
+{
+    "app_name": "syRF",
+    "author": "Francescourbani",
+    "main_module": "src/main/python/main.py",
+    "version": "1.7.8"
+}

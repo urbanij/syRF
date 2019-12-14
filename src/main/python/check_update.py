@@ -17,7 +17,7 @@ except ModuleNotFoundError as e:
 
 
 LOCAL_VERSION_FILE = "src/build/settings/base.json"
-REMOTE_VERSION_URL = 'https://raw.githubusercontent.com/urbanij/syRF/master/__version__.py'
+REMOTE_VERSION_URL = "https://raw.githubusercontent.com/urbanij/syRF/master/"+LOCAL_VERSION_FILE
 
 import check_update_window
 import new_update

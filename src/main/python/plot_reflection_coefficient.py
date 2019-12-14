@@ -92,7 +92,7 @@ def plot_gamma(rv):
     VSWR1 = (1+abs(gamma1))/(1-abs(gamma1))
     VSWR2 = (1+abs(gamma2))/(1-abs(gamma2))
 
-    plt.figure(1)
+    plt.figure(1,figsize=(10,8))
     plt.subplot(211)
     # plt.yscale('log')
     plt.xlim(F_lower, F_upper)

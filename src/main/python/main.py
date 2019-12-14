@@ -65,6 +65,7 @@ class mainProgram(QtWidgets.QMainWindow, Ui_MainWindow):
         
 
         ui_settings.init_ui(self)
+        os.system("pwd")
         
 
         # Y

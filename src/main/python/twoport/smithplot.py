@@ -313,7 +313,7 @@ def equi_reactance_circle(gamma):
 
 def plot_Smith(Cs, rs, Cl, rl, gamma_in, gamma_out, gamma_L, gamma_S, GA_dB, Ca, ra, NF_dB, Cnf, rnf, GT_dB, Ct, rt, GP_dB, Cp, rp, constant_gamma_circle, ZS, ZL, Z0, gamma_S_visualized, gamma_L_visualized, label_gamma_inout, vce, ic, f, bjt):
 
-    fig, ax = subplots() # note we must use plt.subplots, not plt.subplot
+    fig, ax = subplots(figsize=(10,8)) # note we must use plt.subplots, not plt.subplot
 
     # subplots_adjust(top=0.915) 
     # subplots_adjust(bottom=0.065)

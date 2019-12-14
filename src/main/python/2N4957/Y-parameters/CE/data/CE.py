@@ -61,7 +61,7 @@ f8, bre = np.loadtxt(c, delimiter=',', usecols=(0, 1), unpack=True)
 
 def visualize_CE_plot():
 	# plot it
-	plt.figure(1)
+	plt.figure(1,figsize=(10,8))
 
 	plt.subplot(221)
 	# plt.subplot(411)

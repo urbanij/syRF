@@ -136,7 +136,7 @@ class mainProgram(QtWidgets.QMainWindow, Ui_MainWindow):
 
 
     def Open_formulas_integrated_matching(self):
-        open_pdf.open_pdf("../../../doc/integrated_matching/integrated_matching.pdf")
+        open_pdf.open_pdf("doc/integrated_matching/integrated_matching.pdf")
 
 
     def plot_Lb_vs_Ic(self):
@@ -162,7 +162,7 @@ class mainProgram(QtWidgets.QMainWindow, Ui_MainWindow):
         
         
         try:
-            fig, ax1 = plt.subplots()
+            fig, ax1 = plt.subplots(figsize=(10,8))
 
             color = 'tab:red'
             ax1.set_xlabel('$I_C$')

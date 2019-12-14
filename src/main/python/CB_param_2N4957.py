@@ -923,7 +923,7 @@ def Y_CB_parameters_fitted():
 def visualize_CB_plot(f1, gib, f2, bib, f3, gfb, f4, bfb, f5, gob, f6, bob, f7, grb, f8, brb):
 
     # plot it
-    plt.figure(1)
+    plt.figure(1,figsize=(10,8))
 
     plt.subplot(221)
     # plt.subplot(411)
