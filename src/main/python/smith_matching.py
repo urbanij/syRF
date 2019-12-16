@@ -30,6 +30,15 @@ msg_error = "" # display nothing if error occurs
 
 
 
+"""
+
+TODO:
+
+    results can be inconsistent: distance lambda1 not referred to zL 1 and vice versa. fix that!
+
+    
+"""
+
 
 def normalize_impedance(z, z0):
     return z/z0 

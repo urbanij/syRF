@@ -500,7 +500,7 @@ def plot_C_vs_f(self):
     for freq in freq_list:
         yi_, yf_, yo_, yr_ = retrieve_Y_parameters(self, freq)
         
-        C = Y.calculate_C(y_i=y_i, y_f=y_f, y_o=y_o, y_r=y_r)
+        C = Y.calculate_C(y_i=yi_, y_f=yf_, y_o=yo_, y_r=yr_)
         C_list.append(C)
 
 
