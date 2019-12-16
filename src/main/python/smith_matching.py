@@ -5,7 +5,7 @@
 Created on Tue May  8 14:08:45 CEST 2018
 
 @author(s)   : Francesco Urbani
-@file        : smith_matching.py.py
+@file        : smith_matching.py
 @descritpion : Design matching network -- either w/ lumped parameter or TL -- with the aid 
                of the Smith Chart.
 
@@ -24,22 +24,11 @@ import intersections
 import S_functions
 
 from S_functions import calculate_gamma, calculate_Z_from_gamma, calculate_vswr_from_gamma
-
+from smith_matching_utils import round_of_rating, lambda_tick_map
 
 msg_error = "" # display nothing if error occurs
 
 
-def round_of_rating(number):
-    """Round a number to the closest half integer.
-    >>> round_of_rating(1.3)
-    1.5
-    >>> round_of_rating(2.6)
-    2.5
-    >>> round_of_rating(3.0)
-    3.0
-    >>> round_of_rating(4.1)
-    4.0"""
-    return round(number * 2) / 2
 
 
 def normalize_impedance(z, z0):
@@ -47,31 +36,6 @@ def normalize_impedance(z, z0):
     # return (z/z0).real if (z/z0).imag == 0 else z/z0 
 
 
-def lambda_tick_map():
-    # mapping the angles with the lambda scale
-    num_points = 360*2 + 1
-    angle_map  = np.linspace(180, -180, num_points)
-    lambda_map = np.linspace(0  ,0.5  , num_points)
-
-    lambda_tick_map = {}
-    for i,j in zip(angle_map, lambda_map):
-        lambda_tick_map[i]=j
-
-    """
-    print(lambda_tick_map)
-    >>> {180.0: 0.0, 
-        179.5: 0.0006944444444444445, 
-        179.0: 0.001388888888888889, 
-        178.5: 0.0020833333333333333, 
-        ...
-        -178.0: 0.49722222222222223, 
-        -178.5: 0.4979166666666667, 
-        -179.0: 0.4986111111111111, 
-        -179.5: 0.49930555555555556, 
-        -180.0: 0.5
-        }
-    """
-    return lambda_tick_map
 
 LAMBDA_TICK_MAP = lambda_tick_map()
 
@@ -277,7 +241,7 @@ def calculate_tab_quarter_wave_im(self):
     
     try:
         phase_zin = round_of_rating(math.degrees(cmath.phase(gamma_zin)))
-        lambda_zin = LAMBDA_TICK_MAP[phase_zin]
+        lambda_zin = LAMBDA_TICK_MAP[round_of_rating(phase_zin)]
     except Exception as e:
         lambda_zin = msg_error
 

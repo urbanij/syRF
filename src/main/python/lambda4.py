@@ -17,7 +17,31 @@ Created on Thu Feb 14 19:14:33 CET 2019
 from PyQt5 import QtCore, QtGui, QtWidgets
 from pyui.lambda4_ui import Ui_MainWindow
 
+import math
+import cmath
+
+from S_functions import calculate_gamma
+from smith_matching_utils import round_of_rating, lambda_tick_map
+
 msg_error = "" # display nothing if error occurs
+
+
+LAMBDA_TICK_MAP = lambda_tick_map()
+
+
+
+
+def compute_distance(lambda_tick_Zl):
+    return (0.5-lambda_tick_Zl%0.5, 0.25-lambda_tick_Zl%0.5)
+
+def compute_Z0_TL(*, Z0, gamma_l):
+    # r is the radius of the circle centered in (0,0), with radius gamma
+    r = abs(gamma_l)
+    return ( (Z0*Z0*(1+r)/(1-r))**0.5, (Z0*Z0*(1-r)/(1+r))**0.5 )
+
+
+
+
 
 
 class mainProgram(QtWidgets.QMainWindow, Ui_MainWindow):
@@ -26,15 +50,13 @@ class mainProgram(QtWidgets.QMainWindow, Ui_MainWindow):
         self.setupUi(self)
         
 
-        self.z1_box.setFocus()  # set focus on startup
+        self.zl_input.setFocus()  # set focus on startup
         
-        self.z1_box.editingFinished.connect(self.Calculate_lambda4.click)
-        self.z2_box.editingFinished.connect(self.Calculate_lambda4.click)
+        self.zl_input.editingFinished.connect(self.Calculate_lambda4.click)
+        self.Z0_input.editingFinished.connect(self.Calculate_lambda4.click)
 
         self.Calculate_lambda4.clicked.connect(self.calculate_z_lambda4)
         self.clean_lambda4_button.clicked.connect(self.clean_polar)
-
-
 
         
 
@@ -42,47 +64,64 @@ class mainProgram(QtWidgets.QMainWindow, Ui_MainWindow):
 
         # read inputs
         try:
-            z_norm_1 = float(self.z1_box.text())
+            zl = complex(self.zl_input.text())
         except Exception as e:
-            z_norm_1 = msg_error
+            zl = msg_error
 
-        try:
-            z_norm_2 = float(self.z2_box.text())
-        except Exception as e:
-            z_norm_2 = msg_error
         
         try:
-            z0 = float(self.Z0_box2_2.text())
+            z0 = complex(self.Z0_input.text())
         except Exception as e:
             z0 = msg_error
 
 
 
+        
+
+        try:
+            gamma_zl = calculate_gamma(zl, z0)
+            phase_zl = round_of_rating(math.degrees(cmath.phase(gamma_zl)))
+            lambda_zl = LAMBDA_TICK_MAP[round_of_rating(phase_zl)]
+        except Exception as e:
+            print(e)
+            pass
+
         # compute
         try:
-            z = (z_norm_1*z_norm_2)**0.5
+            d1 = compute_distance(lambda_zl)[0]
         except Exception as e:
-            z = msg_error
+            d1 = msg_error
 
         try:
-            Z = z*z0
+            d2 = compute_distance(lambda_zl)[1]
         except Exception as e:
-            Z = msg_error
+            d2 = msg_error
 
+
+        try:
+            z1_TL_out = compute_Z0_TL(Z0=z0, gamma_l=gamma_zl)[0].real
+        except Exception as e:
+            z1_TL_out = msg_error
+
+        try:
+            z2_TL_out = compute_Z0_TL(Z0=z0, gamma_l=gamma_zl)[1].real
+        except Exception as e:
+            z2_TL_out = msg_error
 
 
         # display
-        self.zbox111.setText(str(z))
-        self.Zbox111.setText(str(Z))
+        self.d1_out.setText(str(d1))
+        self.d2_out.setText(str(d2))
+        self.z1_TL_out.setText(str(z1_TL_out))
+        self.z2_TL_out.setText(str(z2_TL_out))
+
 
 
     
-
     def clean_polar(self):
-        self.z1_box.setText("")
-        self.z2_box.setText("")
+        self.zl_input.setText("")
         self.Calculate_lambda4.click()
-        self.z1_box.setFocus()
+        self.zl_input.setFocus()
 
     # A key has been pressed!
     def keyPressEvent(self, event):

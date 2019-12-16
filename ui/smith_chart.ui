@@ -654,6 +654,8 @@
     </property>
     <addaction name="actionImpedance_d"/>
     <addaction name="actionGamma2impedance"/>
+    <addaction name="separator"/>
+    <addaction name="action_lambda4"/>
    </widget>
    <widget class="QMenu" name="menuHelp">
     <property name="title">
@@ -693,6 +695,14 @@
    </property>
    <property name="shortcut">
     <string>Ctrl+G</string>
+   </property>
+  </action>
+  <action name="action_lambda4">
+   <property name="text">
+    <string>&amp;λ/4</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+L</string>
    </property>
   </action>
  </widget>
