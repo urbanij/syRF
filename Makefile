@@ -1,6 +1,6 @@
 
 all:
-	# creates non runnable python scripts
+	### creates non runnable python scripts from UI files
 	pyuic5 ui/mainwindow.ui                 > src/main/python/pyui/mainwindow_ui.py
 	pyuic5 ui/rect2polar.ui                 > src/main/python/pyui/rect2polar_ui.py
 	pyuic5 ui/lambda4.ui                    > src/main/python/pyui/lambda4_ui.py
@@ -14,6 +14,9 @@ all:
 	pyuic5 ui/impedance_at_distance.ui      > src/main/python/pyui/impedance_at_distance_ui.py
 	pyuic5 ui/gamma2impedance.ui            > src/main/python/pyui/gamma2impedance_ui.py
 
+	### resources
+	pyrcc5 src/main/resources/resources.qrc -o src/main/python/resources.py
+
 
 clean:	
 	rm -rf src/main/python/__pycache__/
@@ -22,4 +25,6 @@ clean:
 	rm -rf src/main/python/microstrip_matching/__pycache__/
 	rm -rf src/main/python/pyui/*
 	rm -rf src/main/python/*.pyc
+	rm -rf src/main/python/resources.py
+
 

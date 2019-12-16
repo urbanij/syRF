@@ -241,7 +241,7 @@ def compute_Y_2N4957(self):
     # compute C
     global C
     try:
-        C = Y.calculate_C(y_i, y_f, y_o, y_r)
+        C = Y.calculate_C(y_i=y_i, y_f=y_f, y_o=y_o, y_r=y_r)
     except Exception as e:
         C = msg_error
 
@@ -500,7 +500,7 @@ def plot_C_vs_f(self):
     for freq in freq_list:
         yi_, yf_, yo_, yr_ = retrieve_Y_parameters(self, freq)
         
-        C = Y.calculate_C(yi_, yf_, yo_, yr_)
+        C = Y.calculate_C(y_i=y_i, y_f=y_f, y_o=y_o, y_r=y_r)
         C_list.append(C)
 
 

@@ -14,7 +14,7 @@ import cmath
 import math
 
 
-def calculate_C(y_i, y_f, y_o, y_r):
+def calculate_C(*, y_i, y_f, y_o, y_r):
     return ( abs(y_r*y_f) ) / ( 2*y_i.real*y_o.real - (y_r*y_f).real )
 
 def calculate_betaA(y_i, y_f, y_o, y_r, y_s, y_L):

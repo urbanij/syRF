@@ -8,7 +8,7 @@
     <x>0</x>
     <y>0</y>
     <width>1302</width>
-    <height>898</height>
+    <height>855</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -24,816 +24,8 @@
          <bool>false</bool>
         </property>
         <property name="currentIndex">
-         <number>0</number>
+         <number>1</number>
         </property>
-        <widget class="QWidget" name="tab_5">
-         <attribute name="title">
-          <string>Y</string>
-         </attribute>
-         <layout class="QVBoxLayout" name="verticalLayout_7">
-          <item>
-           <widget class="QScrollArea" name="scrollArea">
-            <property name="widgetResizable">
-             <bool>true</bool>
-            </property>
-            <widget class="QWidget" name="scrollAreaWidgetContents">
-             <property name="geometry">
-              <rect>
-               <x>0</x>
-               <y>0</y>
-               <width>1228</width>
-               <height>715</height>
-              </rect>
-             </property>
-             <layout class="QVBoxLayout" name="verticalLayout_6">
-              <item>
-               <layout class="QGridLayout" name="gridLayout_12">
-                <item row="0" column="4">
-                 <layout class="QGridLayout" name="gridLayout_20">
-                  <item row="2" column="0">
-                   <widget class="QLabel" name="label_81">
-                    <property name="sizePolicy">
-                     <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-                      <horstretch>0</horstretch>
-                      <verstretch>0</verstretch>
-                     </sizepolicy>
-                    </property>
-                    <property name="toolTip">
-                     <string notr="true"/>
-                    </property>
-                    <property name="statusTip">
-                     <string notr="true"/>
-                    </property>
-                    <property name="whatsThis">
-                     <string notr="true"/>
-                    </property>
-                    <property name="accessibleName">
-                     <string notr="true"/>
-                    </property>
-                    <property name="accessibleDescription">
-                     <string notr="true"/>
-                    </property>
-                    <property name="text">
-                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Y&lt;span style=&quot; vertical-align:sub;&quot;&gt;fe&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                    </property>
-                    <property name="alignment">
-                     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="7" column="1">
-                   <widget class="QLineEdit" name="y_L_box_2"/>
-                  </item>
-                  <item row="7" column="2">
-                   <widget class="QLabel" name="label_10">
-                    <property name="text">
-                     <string>mS</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="1" column="1">
-                   <widget class="QLineEdit" name="y_i_box_2"/>
-                  </item>
-                  <item row="2" column="1">
-                   <widget class="QLineEdit" name="y_f_box_2"/>
-                  </item>
-                  <item row="6" column="0">
-                   <widget class="QLabel" name="label_120">
-                    <property name="sizePolicy">
-                     <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-                      <horstretch>0</horstretch>
-                      <verstretch>0</verstretch>
-                     </sizepolicy>
-                    </property>
-                    <property name="text">
-                     <string>Y&lt;sub&gt;S&lt;/sub&gt;</string>
-                    </property>
-                    <property name="alignment">
-                     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="1" column="2">
-                   <widget class="QLabel" name="label_127">
-                    <property name="text">
-                     <string>mS</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="3" column="0">
-                   <widget class="QLabel" name="label_79">
-                    <property name="sizePolicy">
-                     <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-                      <horstretch>0</horstretch>
-                      <verstretch>0</verstretch>
-                     </sizepolicy>
-                    </property>
-                    <property name="toolTip">
-                     <string notr="true"/>
-                    </property>
-                    <property name="statusTip">
-                     <string notr="true"/>
-                    </property>
-                    <property name="whatsThis">
-                     <string notr="true"/>
-                    </property>
-                    <property name="accessibleName">
-                     <string notr="true"/>
-                    </property>
-                    <property name="accessibleDescription">
-                     <string notr="true"/>
-                    </property>
-                    <property name="text">
-                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Y&lt;span style=&quot; vertical-align:sub;&quot;&gt;oe&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                    </property>
-                    <property name="alignment">
-                     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="3" column="2">
-                   <widget class="QLabel" name="label_129">
-                    <property name="text">
-                     <string>mS</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="6" column="1">
-                   <widget class="QLineEdit" name="y_s_box_2"/>
-                  </item>
-                  <item row="5" column="0" colspan="3">
-                   <widget class="Line" name="line_7">
-                    <property name="orientation">
-                     <enum>Qt::Horizontal</enum>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="6" column="2">
-                   <widget class="QLabel" name="label_9">
-                    <property name="text">
-                     <string>mS</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="3" column="1">
-                   <widget class="QLineEdit" name="y_o_box_2"/>
-                  </item>
-                  <item row="2" column="2">
-                   <widget class="QLabel" name="label_121">
-                    <property name="text">
-                     <string>mS</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="4" column="1">
-                   <widget class="QLineEdit" name="y_r_box_2"/>
-                  </item>
-                  <item row="7" column="0">
-                   <widget class="QLabel" name="label_119">
-                    <property name="sizePolicy">
-                     <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-                      <horstretch>0</horstretch>
-                      <verstretch>0</verstretch>
-                     </sizepolicy>
-                    </property>
-                    <property name="text">
-                     <string>Y&lt;sub&gt;L&lt;/sub&gt;</string>
-                    </property>
-                    <property name="alignment">
-                     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="4" column="0">
-                   <widget class="QLabel" name="label_78">
-                    <property name="sizePolicy">
-                     <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-                      <horstretch>0</horstretch>
-                      <verstretch>0</verstretch>
-                     </sizepolicy>
-                    </property>
-                    <property name="toolTip">
-                     <string notr="true"/>
-                    </property>
-                    <property name="statusTip">
-                     <string notr="true"/>
-                    </property>
-                    <property name="whatsThis">
-                     <string notr="true"/>
-                    </property>
-                    <property name="accessibleName">
-                     <string notr="true"/>
-                    </property>
-                    <property name="accessibleDescription">
-                     <string notr="true"/>
-                    </property>
-                    <property name="text">
-                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Y&lt;span style=&quot; vertical-align:sub;&quot;&gt;re&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                    </property>
-                    <property name="alignment">
-                     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="4" column="2">
-                   <widget class="QLabel" name="label_128">
-                    <property name="text">
-                     <string>mS</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="2" column="3">
-                   <spacer name="horizontalSpacer_10">
-                    <property name="orientation">
-                     <enum>Qt::Horizontal</enum>
-                    </property>
-                    <property name="sizeType">
-                     <enum>QSizePolicy::Maximum</enum>
-                    </property>
-                    <property name="sizeHint" stdset="0">
-                     <size>
-                      <width>40</width>
-                      <height>20</height>
-                     </size>
-                    </property>
-                   </spacer>
-                  </item>
-                  <item row="1" column="0">
-                   <widget class="QLabel" name="label_20">
-                    <property name="toolTip">
-                     <string notr="true"/>
-                    </property>
-                    <property name="statusTip">
-                     <string notr="true"/>
-                    </property>
-                    <property name="whatsThis">
-                     <string notr="true"/>
-                    </property>
-                    <property name="accessibleName">
-                     <string notr="true"/>
-                    </property>
-                    <property name="accessibleDescription">
-                     <string notr="true"/>
-                    </property>
-                    <property name="text">
-                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Y&lt;span style=&quot; vertical-align:sub;&quot;&gt;ie&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                    </property>
-                    <property name="alignment">
-                     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="0" column="1">
-                   <widget class="QLabel" name="label_21">
-                    <property name="text">
-                     <string/>
-                    </property>
-                   </widget>
-                  </item>
-                 </layout>
-                </item>
-                <item row="0" column="2">
-                 <widget class="Line" name="line_3">
-                  <property name="orientation">
-                   <enum>Qt::Vertical</enum>
-                  </property>
-                 </widget>
-                </item>
-                <item row="0" column="3">
-                 <spacer name="horizontalSpacer_2">
-                  <property name="orientation">
-                   <enum>Qt::Horizontal</enum>
-                  </property>
-                  <property name="sizeType">
-                   <enum>QSizePolicy::Maximum</enum>
-                  </property>
-                  <property name="sizeHint" stdset="0">
-                   <size>
-                    <width>60</width>
-                    <height>20</height>
-                   </size>
-                  </property>
-                 </spacer>
-                </item>
-                <item row="0" column="0">
-                 <widget class="QGroupBox" name="groupBox_4">
-                  <property name="title">
-                   <string/>
-                  </property>
-                  <layout class="QHBoxLayout" name="horizontalLayout_11">
-                   <item>
-                    <layout class="QGridLayout" name="gridLayout_14">
-                     <property name="sizeConstraint">
-                      <enum>QLayout::SetDefaultConstraint</enum>
-                     </property>
-                     <item row="4" column="0">
-                      <widget class="QLabel" name="label_166">
-                       <property name="text">
-                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;I&lt;span style=&quot; vertical-align:sub;&quot;&gt;C&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                       </property>
-                       <property name="alignment">
-                        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                       </property>
-                      </widget>
-                     </item>
-                     <item row="3" column="0">
-                      <widget class="QLabel" name="label_165">
-                       <property name="text">
-                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;V&lt;span style=&quot; vertical-align:sub;&quot;&gt;CE&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                       </property>
-                       <property name="alignment">
-                        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                       </property>
-                      </widget>
-                     </item>
-                     <item row="5" column="0">
-                      <widget class="QLabel" name="label_118">
-                       <property name="sizePolicy">
-                        <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-                         <horstretch>0</horstretch>
-                         <verstretch>0</verstretch>
-                        </sizepolicy>
-                       </property>
-                       <property name="text">
-                        <string>f&lt;sub&gt;0&lt;/sub&gt;</string>
-                       </property>
-                       <property name="alignment">
-                        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                       </property>
-                      </widget>
-                     </item>
-                     <item row="5" column="3">
-                      <widget class="QLabel" name="label_8">
-                       <property name="text">
-                        <string>MHz</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item row="3" column="3">
-                      <widget class="QLabel" name="label_37">
-                       <property name="text">
-                        <string>V</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item row="5" column="1" colspan="2">
-                      <widget class="QLineEdit" name="f0_box_2">
-                       <property name="placeholderText">
-                        <string>[45 – 1500]</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item row="3" column="1" colspan="2">
-                      <widget class="QLineEdit" name="vce_box_2">
-                       <property name="enabled">
-                        <bool>false</bool>
-                       </property>
-                       <property name="text">
-                        <string>-10</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item row="4" column="3">
-                      <widget class="QLabel" name="label_38">
-                       <property name="text">
-                        <string>mA</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item row="4" column="1" colspan="2">
-                      <widget class="QLineEdit" name="vce_box_3">
-                       <property name="enabled">
-                        <bool>false</bool>
-                       </property>
-                       <property name="text">
-                        <string>-2</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item row="0" column="1" colspan="2">
-                      <widget class="QCheckBox" name="checkBox">
-                       <property name="text">
-                        <string>2N4957 (Common Emitter config.)</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item row="6" column="1" colspan="2">
-                      <layout class="QHBoxLayout" name="horizontalLayout_10">
-                       <item>
-                        <widget class="QPushButton" name="open_datasheet_Y_button">
-                         <property name="text">
-                          <string>Open datasheet</string>
-                         </property>
-                        </widget>
-                       </item>
-                       <item>
-                        <widget class="QPushButton" name="show_plots_button">
-                         <property name="text">
-                          <string notr="true">Show C.E. Y parameters plots</string>
-                         </property>
-                        </widget>
-                       </item>
-                      </layout>
-                     </item>
-                     <item row="2" column="2">
-                      <widget class="QRadioButton" name="radioButton_CB">
-                       <property name="text">
-                        <string>Common base configuration</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item row="2" column="1">
-                      <widget class="QRadioButton" name="radioButton_CE">
-                       <property name="text">
-                        <string>Common emitter configuration</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item row="1" column="1">
-                      <spacer name="verticalSpacer_6">
-                       <property name="orientation">
-                        <enum>Qt::Vertical</enum>
-                       </property>
-                       <property name="sizeType">
-                        <enum>QSizePolicy::Fixed</enum>
-                       </property>
-                       <property name="sizeHint" stdset="0">
-                        <size>
-                         <width>20</width>
-                         <height>10</height>
-                        </size>
-                       </property>
-                      </spacer>
-                     </item>
-                    </layout>
-                   </item>
-                  </layout>
-                 </widget>
-                </item>
-                <item row="2" column="0" colspan="5">
-                 <widget class="Line" name="line_5">
-                  <property name="orientation">
-                   <enum>Qt::Horizontal</enum>
-                  </property>
-                 </widget>
-                </item>
-                <item row="1" column="0">
-                 <spacer name="verticalSpacer_11">
-                  <property name="orientation">
-                   <enum>Qt::Vertical</enum>
-                  </property>
-                  <property name="sizeType">
-                   <enum>QSizePolicy::Fixed</enum>
-                  </property>
-                  <property name="sizeHint" stdset="0">
-                   <size>
-                    <width>20</width>
-                    <height>40</height>
-                   </size>
-                  </property>
-                 </spacer>
-                </item>
-                <item row="3" column="0" colspan="5">
-                 <layout class="QGridLayout" name="gridLayout_13">
-                  <item row="8" column="0">
-                   <widget class="QLabel" name="label_141">
-                    <property name="text">
-                     <string>G&lt;sub&gt;T&lt;/sub&gt;(Y&lt;sub&gt;S&lt;/sub&gt;,Y&lt;sub&gt;L&lt;/sub&gt;)</string>
-                    </property>
-                    <property name="alignment">
-                     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="7" column="0">
-                   <widget class="QLabel" name="label_133">
-                    <property name="text">
-                     <string>G&lt;sub&gt;P&lt;/sub&gt;(Y&lt;sub&gt;L&lt;/sub&gt;)</string>
-                    </property>
-                    <property name="alignment">
-                     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="8" column="2">
-                   <widget class="QLabel" name="label_138">
-                    <property name="text">
-                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;G&lt;span style=&quot; vertical-align:sub;&quot;&gt;T&lt;/span&gt;(Y&lt;span style=&quot; vertical-align:sub;&quot;&gt;S&lt;/span&gt;,Y&lt;span style=&quot; vertical-align:sub;&quot;&gt;L&lt;/span&gt;)|&lt;span style=&quot; vertical-align:sub;&quot;&gt;dB&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                    </property>
-                    <property name="alignment">
-                     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="10" column="0">
-                   <widget class="QLabel" name="label_134">
-                    <property name="text">
-                     <string>Y&lt;sub&gt;S,opt&lt;/sub&gt;</string>
-                    </property>
-                    <property name="alignment">
-                     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="5" column="2">
-                   <widget class="QLabel" name="label_174">
-                    <property name="text">
-                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;|v&lt;span style=&quot; vertical-align:sub;&quot;&gt;out&lt;/span&gt;/v&lt;span style=&quot; vertical-align:sub;&quot;&gt;s&lt;/span&gt;|((Y&lt;span style=&quot; vertical-align:sub;&quot;&gt;S&lt;/span&gt;,Y&lt;span style=&quot; vertical-align:sub;&quot;&gt;L&lt;/span&gt;))&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                    </property>
-                    <property name="alignment">
-                     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="3" column="0">
-                   <widget class="QLabel" name="label_143">
-                    <property name="text">
-                     <string>βA(Y&lt;sub&gt;S&lt;/sub&gt;,Y&lt;sub&gt;L&lt;/sub&gt;)</string>
-                    </property>
-                    <property name="alignment">
-                     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="2" column="0">
-                   <widget class="QLabel" name="label_139">
-                    <property name="text">
-                     <string>C</string>
-                    </property>
-                    <property name="alignment">
-                     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="4" column="0">
-                   <widget class="QLabel" name="label_142">
-                    <property name="text">
-                     <string>Y&lt;sub&gt;in&lt;/sub&gt;(Y&lt;sub&gt;L&lt;/sub&gt;)</string>
-                    </property>
-                    <property name="alignment">
-                     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="4" column="2">
-                   <widget class="QLabel" name="label_131">
-                    <property name="text">
-                     <string>Y&lt;sub&gt;out&lt;/sub&gt;(Y&lt;sub&gt;S&lt;/sub&gt;)</string>
-                    </property>
-                    <property name="alignment">
-                     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="9" column="0">
-                   <widget class="QLabel" name="label_132">
-                    <property name="text">
-                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;K(Y&lt;span style=&quot; vertical-align:sub;&quot;&gt;S&lt;/span&gt;,Y&lt;span style=&quot; vertical-align:sub;&quot;&gt;L&lt;/span&gt;)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                    </property>
-                    <property name="alignment">
-                     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="6" column="2">
-                   <widget class="QLabel" name="label_136">
-                    <property name="text">
-                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;G&lt;span style=&quot; vertical-align:sub;&quot;&gt;A&lt;/span&gt;(Y&lt;span style=&quot; vertical-align:sub;&quot;&gt;S&lt;/span&gt;)|&lt;span style=&quot; vertical-align:sub;&quot;&gt;dB&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                    </property>
-                    <property name="alignment">
-                     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="5" column="0">
-                   <widget class="QLabel" name="label_173">
-                    <property name="text">
-                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;|A&lt;span style=&quot; vertical-align:sub;&quot;&gt;V&lt;/span&gt;|(Y&lt;span style=&quot; vertical-align:sub;&quot;&gt;L&lt;/span&gt;)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                    </property>
-                    <property name="alignment">
-                     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="11" column="0">
-                   <widget class="QLabel" name="label_140">
-                    <property name="text">
-                     <string>Y&lt;sub&gt;L,opt&lt;/sub&gt;</string>
-                    </property>
-                    <property name="alignment">
-                     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="6" column="0">
-                   <widget class="QLabel" name="label_135">
-                    <property name="text">
-                     <string>G&lt;sub&gt;A&lt;/sub&gt;(Y&lt;sub&gt;S&lt;/sub&gt;)</string>
-                    </property>
-                    <property name="alignment">
-                     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="7" column="2">
-                   <widget class="QLabel" name="label_137">
-                    <property name="text">
-                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;G&lt;span style=&quot; vertical-align:sub;&quot;&gt;P&lt;/span&gt;(Y&lt;span style=&quot; vertical-align:sub;&quot;&gt;L&lt;/span&gt;)|&lt;span style=&quot; vertical-align:sub;&quot;&gt;dB&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                    </property>
-                    <property name="alignment">
-                     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="1" column="1" colspan="3">
-                   <widget class="QLabel" name="text_2">
-                    <property name="maximumSize">
-                     <size>
-                      <width>16777215</width>
-                      <height>21</height>
-                     </size>
-                    </property>
-                    <property name="text">
-                     <string/>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="12" column="1">
-                   <spacer name="verticalSpacer_10">
-                    <property name="orientation">
-                     <enum>Qt::Vertical</enum>
-                    </property>
-                    <property name="sizeType">
-                     <enum>QSizePolicy::Fixed</enum>
-                    </property>
-                    <property name="sizeHint" stdset="0">
-                     <size>
-                      <width>20</width>
-                      <height>20</height>
-                     </size>
-                    </property>
-                   </spacer>
-                  </item>
-                  <item row="2" column="1" colspan="3">
-                   <widget class="QLineEdit" name="C_box_2">
-                    <property name="readOnly">
-                     <bool>true</bool>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="3" column="1" colspan="3">
-                   <widget class="QLineEdit" name="beta_A_box_2">
-                    <property name="readOnly">
-                     <bool>true</bool>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="4" column="1">
-                   <widget class="QLineEdit" name="y_in_box_2">
-                    <property name="readOnly">
-                     <bool>true</bool>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="5" column="1">
-                   <widget class="QLineEdit" name="A_V_box">
-                    <property name="readOnly">
-                     <bool>true</bool>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="6" column="1">
-                   <widget class="QLineEdit" name="GA_box_2">
-                    <property name="readOnly">
-                     <bool>true</bool>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="7" column="1">
-                   <widget class="QLineEdit" name="GP_box_2">
-                    <property name="readOnly">
-                     <bool>true</bool>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="8" column="1">
-                   <widget class="QLineEdit" name="GT_box_2">
-                    <property name="readOnly">
-                     <bool>true</bool>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="9" column="1" colspan="3">
-                   <widget class="QLineEdit" name="k_box_3">
-                    <property name="readOnly">
-                     <bool>true</bool>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="10" column="1" colspan="3">
-                   <widget class="QLineEdit" name="y_s_opt_box_2">
-                    <property name="readOnly">
-                     <bool>true</bool>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="11" column="1" colspan="3">
-                   <widget class="QLineEdit" name="y_L_opt_box_2">
-                    <property name="readOnly">
-                     <bool>true</bool>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="4" column="3">
-                   <widget class="QLineEdit" name="y_out_box_2">
-                    <property name="readOnly">
-                     <bool>true</bool>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="5" column="3">
-                   <widget class="QLineEdit" name="vout_over_vs_box">
-                    <property name="readOnly">
-                     <bool>true</bool>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="6" column="3">
-                   <widget class="QLineEdit" name="GA_box_dB_2">
-                    <property name="readOnly">
-                     <bool>true</bool>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="7" column="3">
-                   <widget class="QLineEdit" name="GP_box_dB_2">
-                    <property name="readOnly">
-                     <bool>true</bool>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="8" column="3">
-                   <widget class="QLineEdit" name="GT_box_dB_2">
-                    <property name="readOnly">
-                     <bool>true</bool>
-                    </property>
-                   </widget>
-                  </item>
-                 </layout>
-                </item>
-               </layout>
-              </item>
-             </layout>
-            </widget>
-           </widget>
-          </item>
-          <item>
-           <layout class="QHBoxLayout" name="horizontalLayout_16">
-            <item>
-             <widget class="QPushButton" name="Clean_all_button_4">
-              <property name="text">
-               <string>Clean All</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QPushButton" name="Clean_button_3">
-              <property name="text">
-               <string>Clean source and load</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QPushButton" name="plot_C_f0_button">
-              <property name="text">
-               <string>Plot C(f)</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QPushButton" name="Fill_ys_yl_opt_button">
-              <property name="text">
-               <string>Fill Y_S = Y_S,opt; Y_L = Y_L,opt</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QPushButton" name="Calculate_button_4">
-              <property name="text">
-               <string>Calculate</string>
-              </property>
-              <property name="autoDefault">
-               <bool>true</bool>
-              </property>
-              <property name="default">
-               <bool>true</bool>
-              </property>
-             </widget>
-            </item>
-           </layout>
-          </item>
-         </layout>
-        </widget>
         <widget class="QWidget" name="tab_2">
          <attribute name="title">
           <string>S</string>
@@ -850,7 +42,7 @@
                <x>0</x>
                <y>0</y>
                <width>1228</width>
-               <height>841</height>
+               <height>835</height>
               </rect>
              </property>
              <layout class="QVBoxLayout" name="verticalLayout_10">
@@ -864,43 +56,14 @@
                   <layout class="QVBoxLayout" name="verticalLayout_11">
                    <item>
                     <layout class="QGridLayout" name="gridLayout_16">
-                     <item row="3" column="0">
-                      <widget class="QLabel" name="label_185">
-                       <property name="text">
-                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;V&lt;span style=&quot; vertical-align:sub;&quot;&gt;CE&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                       </property>
-                       <property name="alignment">
-                        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                       </property>
-                      </widget>
-                     </item>
-                     <item row="4" column="1" colspan="3">
-                      <widget class="QLineEdit" name="ic_box">
-                       <property name="enabled">
-                        <bool>true</bool>
-                       </property>
-                       <property name="placeholderText">
-                        <string>{5, 10, 50}</string>
-                       </property>
-                      </widget>
-                     </item>
                      <item row="1" column="1" colspan="2">
-                      <spacer name="verticalSpacer_3">
-                       <property name="orientation">
-                        <enum>Qt::Vertical</enum>
+                      <widget class="QRadioButton" name="radioButton_MRF571">
+                       <property name="text">
+                        <string>MRF571</string>
                        </property>
-                       <property name="sizeType">
-                        <enum>QSizePolicy::Fixed</enum>
-                       </property>
-                       <property name="sizeHint" stdset="0">
-                        <size>
-                         <width>20</width>
-                         <height>10</height>
-                        </size>
-                       </property>
-                      </spacer>
+                      </widget>
                      </item>
-                     <item row="5" column="0">
+                     <item row="4" column="0">
                       <widget class="QLabel" name="label_189">
                        <property name="text">
                         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;f&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -910,45 +73,48 @@
                        </property>
                       </widget>
                      </item>
-                     <item row="6" column="1" colspan="3">
-                      <widget class="QPushButton" name="open_datasheet_button">
+                     <item row="2" column="0">
+                      <widget class="QLabel" name="label_185">
                        <property name="text">
-                        <string>Open datasheet</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item row="2" column="1" colspan="2">
-                      <widget class="QRadioButton" name="radioButton_MRF571">
-                       <property name="text">
-                        <string>MRF571</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item row="4" column="0">
-                      <widget class="QLabel" name="label_187">
-                       <property name="text">
-                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;I&lt;span style=&quot; vertical-align:sub;&quot;&gt;C&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;V&lt;span style=&quot; vertical-align:sub;&quot;&gt;CE&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                        </property>
                        <property name="alignment">
                         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                        </property>
                       </widget>
                      </item>
+                     <item row="3" column="1" colspan="3">
+                      <widget class="QLineEdit" name="ic_box">
+                       <property name="enabled">
+                        <bool>true</bool>
+                       </property>
+                       <property name="placeholderText">
+                        <string>{5, 10, 50}</string>
+                       </property>
+                      </widget>
+                     </item>
                      <item row="5" column="1" colspan="3">
+                      <widget class="QPushButton" name="open_datasheet_button">
+                       <property name="text">
+                        <string>Open datasheet</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="4" column="1" colspan="3">
                       <widget class="QLineEdit" name="f_box">
                        <property name="placeholderText">
                         <string>{200, 500, 1000, 1500, 2000}</string>
                        </property>
                       </widget>
                      </item>
-                     <item row="2" column="3">
+                     <item row="1" column="3">
                       <widget class="QRadioButton" name="radioButton_MRF572">
                        <property name="text">
                         <string>MRF572</string>
                        </property>
                       </widget>
                      </item>
-                     <item row="3" column="1" colspan="3">
+                     <item row="2" column="1" colspan="3">
                       <widget class="QLineEdit" name="vce_box">
                        <property name="enabled">
                         <bool>true</bool>
@@ -958,21 +124,21 @@
                        </property>
                       </widget>
                      </item>
-                     <item row="5" column="4">
+                     <item row="4" column="4">
                       <widget class="QLabel" name="label_190">
                        <property name="text">
                         <string>MHz</string>
                        </property>
                       </widget>
                      </item>
-                     <item row="4" column="4">
+                     <item row="3" column="4">
                       <widget class="QLabel" name="label_188">
                        <property name="text">
                         <string>mA</string>
                        </property>
                       </widget>
                      </item>
-                     <item row="3" column="4">
+                     <item row="2" column="4">
                       <widget class="QLabel" name="label_186">
                        <property name="text">
                         <string>V</string>
@@ -986,6 +152,16 @@
                        </property>
                        <property name="text">
                         <string>MRF571 (Common Emitter config.)</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="3" column="0">
+                      <widget class="QLabel" name="label_187">
+                       <property name="text">
+                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;I&lt;span style=&quot; vertical-align:sub;&quot;&gt;C&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                       </property>
+                       <property name="alignment">
+                        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                        </property>
                       </widget>
                      </item>
@@ -1189,7 +365,7 @@
                 </item>
                 <item row="0" column="2">
                  <layout class="QGridLayout" name="gridLayout_4">
-                  <item row="1" column="0">
+                  <item row="0" column="0">
                    <widget class="QLabel" name="label_192">
                     <property name="text">
                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;S&lt;span style=&quot; vertical-align:sub;&quot;&gt;11&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -1199,10 +375,10 @@
                     </property>
                    </widget>
                   </item>
-                  <item row="1" column="1" colspan="2">
+                  <item row="0" column="1" colspan="2">
                    <widget class="QLineEdit" name="s11_box"/>
                   </item>
-                  <item row="2" column="0">
+                  <item row="1" column="0">
                    <widget class="QLabel" name="label_194">
                     <property name="text">
                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;S&lt;span style=&quot; vertical-align:sub;&quot;&gt;21&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -1212,10 +388,10 @@
                     </property>
                    </widget>
                   </item>
-                  <item row="2" column="1" colspan="2">
+                  <item row="1" column="1" colspan="2">
                    <widget class="QLineEdit" name="s21_box"/>
                   </item>
-                  <item row="3" column="0">
+                  <item row="0" column="3">
                    <widget class="QLabel" name="label_201">
                     <property name="text">
                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;S&lt;span style=&quot; vertical-align:sub;&quot;&gt;12&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -1225,10 +401,7 @@
                     </property>
                    </widget>
                   </item>
-                  <item row="3" column="1" colspan="2">
-                   <widget class="QLineEdit" name="s12_box"/>
-                  </item>
-                  <item row="4" column="0">
+                  <item row="1" column="3">
                    <widget class="QLabel" name="label_195">
                     <property name="text">
                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;S&lt;span style=&quot; vertical-align:sub;&quot;&gt;22&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -1238,34 +411,11 @@
                     </property>
                    </widget>
                   </item>
-                  <item row="4" column="1" colspan="2">
+                  <item row="0" column="4">
+                   <widget class="QLineEdit" name="s12_box"/>
+                  </item>
+                  <item row="1" column="4">
                    <widget class="QLineEdit" name="s22_box"/>
-                  </item>
-                  <item row="5" column="1">
-                   <spacer name="verticalSpacer_19">
-                    <property name="orientation">
-                     <enum>Qt::Vertical</enum>
-                    </property>
-                    <property name="sizeHint" stdset="0">
-                     <size>
-                      <width>20</width>
-                      <height>40</height>
-                     </size>
-                    </property>
-                   </spacer>
-                  </item>
-                  <item row="0" column="1">
-                   <spacer name="verticalSpacer_20">
-                    <property name="orientation">
-                     <enum>Qt::Vertical</enum>
-                    </property>
-                    <property name="sizeHint" stdset="0">
-                     <size>
-                      <width>20</width>
-                      <height>40</height>
-                     </size>
-                    </property>
-                   </spacer>
                   </item>
                  </layout>
                 </item>
@@ -2171,6 +1321,827 @@
           </item>
          </layout>
         </widget>
+        <widget class="QWidget" name="tab_5">
+         <attribute name="title">
+          <string>Y</string>
+         </attribute>
+         <layout class="QVBoxLayout" name="verticalLayout_7">
+          <item>
+           <widget class="QScrollArea" name="scrollArea">
+            <property name="widgetResizable">
+             <bool>true</bool>
+            </property>
+            <widget class="QWidget" name="scrollAreaWidgetContents">
+             <property name="geometry">
+              <rect>
+               <x>0</x>
+               <y>0</y>
+               <width>1228</width>
+               <height>691</height>
+              </rect>
+             </property>
+             <layout class="QVBoxLayout" name="verticalLayout_6">
+              <item>
+               <layout class="QGridLayout" name="gridLayout_12">
+                <item row="0" column="4">
+                 <layout class="QGridLayout" name="gridLayout_20">
+                  <item row="2" column="0">
+                   <widget class="QLabel" name="label_81">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="toolTip">
+                     <string notr="true"/>
+                    </property>
+                    <property name="statusTip">
+                     <string notr="true"/>
+                    </property>
+                    <property name="whatsThis">
+                     <string notr="true"/>
+                    </property>
+                    <property name="accessibleName">
+                     <string notr="true"/>
+                    </property>
+                    <property name="accessibleDescription">
+                     <string notr="true"/>
+                    </property>
+                    <property name="text">
+                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Y&lt;span style=&quot; vertical-align:sub;&quot;&gt;fe&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="7" column="1">
+                   <widget class="QLineEdit" name="y_L_box_2"/>
+                  </item>
+                  <item row="7" column="2">
+                   <widget class="QLabel" name="label_10">
+                    <property name="text">
+                     <string>mS</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="1">
+                   <widget class="QLineEdit" name="y_i_box_2"/>
+                  </item>
+                  <item row="2" column="1">
+                   <widget class="QLineEdit" name="y_f_box_2"/>
+                  </item>
+                  <item row="6" column="0">
+                   <widget class="QLabel" name="label_120">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="text">
+                     <string>Y&lt;sub&gt;S&lt;/sub&gt;</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="2">
+                   <widget class="QLabel" name="label_127">
+                    <property name="text">
+                     <string>mS</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="3" column="0">
+                   <widget class="QLabel" name="label_79">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="toolTip">
+                     <string notr="true"/>
+                    </property>
+                    <property name="statusTip">
+                     <string notr="true"/>
+                    </property>
+                    <property name="whatsThis">
+                     <string notr="true"/>
+                    </property>
+                    <property name="accessibleName">
+                     <string notr="true"/>
+                    </property>
+                    <property name="accessibleDescription">
+                     <string notr="true"/>
+                    </property>
+                    <property name="text">
+                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Y&lt;span style=&quot; vertical-align:sub;&quot;&gt;oe&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="3" column="2">
+                   <widget class="QLabel" name="label_129">
+                    <property name="text">
+                     <string>mS</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="6" column="1">
+                   <widget class="QLineEdit" name="y_s_box_2"/>
+                  </item>
+                  <item row="5" column="0" colspan="3">
+                   <widget class="Line" name="line_7">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="6" column="2">
+                   <widget class="QLabel" name="label_9">
+                    <property name="text">
+                     <string>mS</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="3" column="1">
+                   <widget class="QLineEdit" name="y_o_box_2"/>
+                  </item>
+                  <item row="2" column="2">
+                   <widget class="QLabel" name="label_121">
+                    <property name="text">
+                     <string>mS</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="4" column="1">
+                   <widget class="QLineEdit" name="y_r_box_2"/>
+                  </item>
+                  <item row="7" column="0">
+                   <widget class="QLabel" name="label_119">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="text">
+                     <string>Y&lt;sub&gt;L&lt;/sub&gt;</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="4" column="0">
+                   <widget class="QLabel" name="label_78">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="toolTip">
+                     <string notr="true"/>
+                    </property>
+                    <property name="statusTip">
+                     <string notr="true"/>
+                    </property>
+                    <property name="whatsThis">
+                     <string notr="true"/>
+                    </property>
+                    <property name="accessibleName">
+                     <string notr="true"/>
+                    </property>
+                    <property name="accessibleDescription">
+                     <string notr="true"/>
+                    </property>
+                    <property name="text">
+                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Y&lt;span style=&quot; vertical-align:sub;&quot;&gt;re&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="4" column="2">
+                   <widget class="QLabel" name="label_128">
+                    <property name="text">
+                     <string>mS</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="2" column="3">
+                   <spacer name="horizontalSpacer_10">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeType">
+                     <enum>QSizePolicy::Maximum</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>40</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                  <item row="1" column="0">
+                   <widget class="QLabel" name="label_20">
+                    <property name="toolTip">
+                     <string notr="true"/>
+                    </property>
+                    <property name="statusTip">
+                     <string notr="true"/>
+                    </property>
+                    <property name="whatsThis">
+                     <string notr="true"/>
+                    </property>
+                    <property name="accessibleName">
+                     <string notr="true"/>
+                    </property>
+                    <property name="accessibleDescription">
+                     <string notr="true"/>
+                    </property>
+                    <property name="text">
+                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Y&lt;span style=&quot; vertical-align:sub;&quot;&gt;ie&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="1">
+                   <widget class="QLabel" name="label_21">
+                    <property name="text">
+                     <string/>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+                <item row="0" column="2">
+                 <widget class="Line" name="line_3">
+                  <property name="orientation">
+                   <enum>Qt::Vertical</enum>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="3">
+                 <spacer name="horizontalSpacer_2">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="sizeType">
+                   <enum>QSizePolicy::Maximum</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>60</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item row="2" column="0" colspan="5">
+                 <widget class="Line" name="line_5">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                 </widget>
+                </item>
+                <item row="3" column="0" colspan="5">
+                 <layout class="QGridLayout" name="gridLayout_13">
+                  <item row="8" column="0">
+                   <widget class="QLabel" name="label_141">
+                    <property name="text">
+                     <string>G&lt;sub&gt;T&lt;/sub&gt;(Y&lt;sub&gt;S&lt;/sub&gt;,Y&lt;sub&gt;L&lt;/sub&gt;)</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="7" column="0">
+                   <widget class="QLabel" name="label_133">
+                    <property name="text">
+                     <string>G&lt;sub&gt;P&lt;/sub&gt;(Y&lt;sub&gt;L&lt;/sub&gt;)</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="8" column="2">
+                   <widget class="QLabel" name="label_138">
+                    <property name="text">
+                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;G&lt;span style=&quot; vertical-align:sub;&quot;&gt;T&lt;/span&gt;(Y&lt;span style=&quot; vertical-align:sub;&quot;&gt;S&lt;/span&gt;,Y&lt;span style=&quot; vertical-align:sub;&quot;&gt;L&lt;/span&gt;)|&lt;span style=&quot; vertical-align:sub;&quot;&gt;dB&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="10" column="0">
+                   <widget class="QLabel" name="label_134">
+                    <property name="text">
+                     <string>Y&lt;sub&gt;S,opt&lt;/sub&gt;</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="5" column="2">
+                   <widget class="QLabel" name="label_174">
+                    <property name="text">
+                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;|v&lt;span style=&quot; vertical-align:sub;&quot;&gt;out&lt;/span&gt;/v&lt;span style=&quot; vertical-align:sub;&quot;&gt;s&lt;/span&gt;|((Y&lt;span style=&quot; vertical-align:sub;&quot;&gt;S&lt;/span&gt;,Y&lt;span style=&quot; vertical-align:sub;&quot;&gt;L&lt;/span&gt;))&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="3" column="0">
+                   <widget class="QLabel" name="label_143">
+                    <property name="text">
+                     <string>βA(Y&lt;sub&gt;S&lt;/sub&gt;,Y&lt;sub&gt;L&lt;/sub&gt;)</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="2" column="0">
+                   <widget class="QLabel" name="label_139">
+                    <property name="text">
+                     <string>C</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="4" column="0">
+                   <widget class="QLabel" name="label_142">
+                    <property name="text">
+                     <string>Y&lt;sub&gt;in&lt;/sub&gt;(Y&lt;sub&gt;L&lt;/sub&gt;)</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="4" column="2">
+                   <widget class="QLabel" name="label_131">
+                    <property name="text">
+                     <string>Y&lt;sub&gt;out&lt;/sub&gt;(Y&lt;sub&gt;S&lt;/sub&gt;)</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="9" column="0">
+                   <widget class="QLabel" name="label_132">
+                    <property name="text">
+                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;K(Y&lt;span style=&quot; vertical-align:sub;&quot;&gt;S&lt;/span&gt;,Y&lt;span style=&quot; vertical-align:sub;&quot;&gt;L&lt;/span&gt;)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="6" column="2">
+                   <widget class="QLabel" name="label_136">
+                    <property name="text">
+                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;G&lt;span style=&quot; vertical-align:sub;&quot;&gt;A&lt;/span&gt;(Y&lt;span style=&quot; vertical-align:sub;&quot;&gt;S&lt;/span&gt;)|&lt;span style=&quot; vertical-align:sub;&quot;&gt;dB&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="5" column="0">
+                   <widget class="QLabel" name="label_173">
+                    <property name="text">
+                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;|A&lt;span style=&quot; vertical-align:sub;&quot;&gt;V&lt;/span&gt;|(Y&lt;span style=&quot; vertical-align:sub;&quot;&gt;L&lt;/span&gt;)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="11" column="0">
+                   <widget class="QLabel" name="label_140">
+                    <property name="text">
+                     <string>Y&lt;sub&gt;L,opt&lt;/sub&gt;</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="6" column="0">
+                   <widget class="QLabel" name="label_135">
+                    <property name="text">
+                     <string>G&lt;sub&gt;A&lt;/sub&gt;(Y&lt;sub&gt;S&lt;/sub&gt;)</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="7" column="2">
+                   <widget class="QLabel" name="label_137">
+                    <property name="text">
+                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;G&lt;span style=&quot; vertical-align:sub;&quot;&gt;P&lt;/span&gt;(Y&lt;span style=&quot; vertical-align:sub;&quot;&gt;L&lt;/span&gt;)|&lt;span style=&quot; vertical-align:sub;&quot;&gt;dB&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="1" colspan="3">
+                   <widget class="QLabel" name="text_2">
+                    <property name="maximumSize">
+                     <size>
+                      <width>16777215</width>
+                      <height>21</height>
+                     </size>
+                    </property>
+                    <property name="text">
+                     <string/>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="12" column="1">
+                   <spacer name="verticalSpacer_10">
+                    <property name="orientation">
+                     <enum>Qt::Vertical</enum>
+                    </property>
+                    <property name="sizeType">
+                     <enum>QSizePolicy::Fixed</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>20</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                  <item row="2" column="1" colspan="3">
+                   <widget class="QLineEdit" name="C_box_2">
+                    <property name="readOnly">
+                     <bool>true</bool>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="3" column="1" colspan="3">
+                   <widget class="QLineEdit" name="beta_A_box_2">
+                    <property name="readOnly">
+                     <bool>true</bool>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="4" column="1">
+                   <widget class="QLineEdit" name="y_in_box_2">
+                    <property name="readOnly">
+                     <bool>true</bool>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="5" column="1">
+                   <widget class="QLineEdit" name="A_V_box">
+                    <property name="readOnly">
+                     <bool>true</bool>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="6" column="1">
+                   <widget class="QLineEdit" name="GA_box_2">
+                    <property name="readOnly">
+                     <bool>true</bool>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="7" column="1">
+                   <widget class="QLineEdit" name="GP_box_2">
+                    <property name="readOnly">
+                     <bool>true</bool>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="8" column="1">
+                   <widget class="QLineEdit" name="GT_box_2">
+                    <property name="readOnly">
+                     <bool>true</bool>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="9" column="1" colspan="3">
+                   <widget class="QLineEdit" name="k_box_3">
+                    <property name="readOnly">
+                     <bool>true</bool>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="10" column="1" colspan="3">
+                   <widget class="QLineEdit" name="y_s_opt_box_2">
+                    <property name="readOnly">
+                     <bool>true</bool>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="11" column="1" colspan="3">
+                   <widget class="QLineEdit" name="y_L_opt_box_2">
+                    <property name="readOnly">
+                     <bool>true</bool>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="4" column="3">
+                   <widget class="QLineEdit" name="y_out_box_2">
+                    <property name="readOnly">
+                     <bool>true</bool>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="5" column="3">
+                   <widget class="QLineEdit" name="vout_over_vs_box">
+                    <property name="readOnly">
+                     <bool>true</bool>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="6" column="3">
+                   <widget class="QLineEdit" name="GA_box_dB_2">
+                    <property name="readOnly">
+                     <bool>true</bool>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="7" column="3">
+                   <widget class="QLineEdit" name="GP_box_dB_2">
+                    <property name="readOnly">
+                     <bool>true</bool>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="8" column="3">
+                   <widget class="QLineEdit" name="GT_box_dB_2">
+                    <property name="readOnly">
+                     <bool>true</bool>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+                <item row="0" column="0" colspan="2">
+                 <widget class="QGroupBox" name="groupBox_4">
+                  <property name="title">
+                   <string/>
+                  </property>
+                  <layout class="QHBoxLayout" name="horizontalLayout_11">
+                   <item>
+                    <layout class="QGridLayout" name="gridLayout_14">
+                     <property name="sizeConstraint">
+                      <enum>QLayout::SetDefaultConstraint</enum>
+                     </property>
+                     <item row="4" column="0">
+                      <widget class="QLabel" name="label_166">
+                       <property name="text">
+                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;I&lt;span style=&quot; vertical-align:sub;&quot;&gt;C&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                       </property>
+                       <property name="alignment">
+                        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="3" column="0">
+                      <widget class="QLabel" name="label_165">
+                       <property name="text">
+                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;V&lt;span style=&quot; vertical-align:sub;&quot;&gt;CE&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                       </property>
+                       <property name="alignment">
+                        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="5" column="0">
+                      <widget class="QLabel" name="label_118">
+                       <property name="sizePolicy">
+                        <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+                         <horstretch>0</horstretch>
+                         <verstretch>0</verstretch>
+                        </sizepolicy>
+                       </property>
+                       <property name="text">
+                        <string>f&lt;sub&gt;0&lt;/sub&gt;</string>
+                       </property>
+                       <property name="alignment">
+                        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="5" column="3">
+                      <widget class="QLabel" name="label_8">
+                       <property name="text">
+                        <string>MHz</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="3" column="3">
+                      <widget class="QLabel" name="label_37">
+                       <property name="text">
+                        <string>V</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="5" column="1" colspan="2">
+                      <widget class="QLineEdit" name="f0_box_2">
+                       <property name="placeholderText">
+                        <string>[45 – 1500]</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="3" column="1" colspan="2">
+                      <widget class="QLineEdit" name="vce_box_2">
+                       <property name="enabled">
+                        <bool>false</bool>
+                       </property>
+                       <property name="text">
+                        <string>-10</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="4" column="3">
+                      <widget class="QLabel" name="label_38">
+                       <property name="text">
+                        <string>mA</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="4" column="1" colspan="2">
+                      <widget class="QLineEdit" name="vce_box_3">
+                       <property name="enabled">
+                        <bool>false</bool>
+                       </property>
+                       <property name="text">
+                        <string>-2</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="0" column="1" colspan="2">
+                      <widget class="QCheckBox" name="checkBox">
+                       <property name="text">
+                        <string>2N4957 (Common Emitter config.)</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="6" column="1" colspan="2">
+                      <layout class="QHBoxLayout" name="horizontalLayout_10">
+                       <item>
+                        <widget class="QPushButton" name="open_datasheet_Y_button">
+                         <property name="text">
+                          <string>Open datasheet</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QPushButton" name="show_plots_button">
+                         <property name="text">
+                          <string notr="true">Show C.E. Y parameters plots</string>
+                         </property>
+                        </widget>
+                       </item>
+                      </layout>
+                     </item>
+                     <item row="2" column="2">
+                      <widget class="QRadioButton" name="radioButton_CB">
+                       <property name="text">
+                        <string>Common base configuration</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="2" column="1">
+                      <widget class="QRadioButton" name="radioButton_CE">
+                       <property name="text">
+                        <string>Common emitter configuration</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="1" column="1">
+                      <spacer name="verticalSpacer_6">
+                       <property name="orientation">
+                        <enum>Qt::Vertical</enum>
+                       </property>
+                       <property name="sizeType">
+                        <enum>QSizePolicy::Fixed</enum>
+                       </property>
+                       <property name="sizeHint" stdset="0">
+                        <size>
+                         <width>20</width>
+                         <height>10</height>
+                        </size>
+                       </property>
+                      </spacer>
+                     </item>
+                    </layout>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+                <item row="1" column="3">
+                 <spacer name="verticalSpacer_11">
+                  <property name="orientation">
+                   <enum>Qt::Vertical</enum>
+                  </property>
+                  <property name="sizeType">
+                   <enum>QSizePolicy::Fixed</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>20</width>
+                    <height>40</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </widget>
+           </widget>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_16">
+            <item>
+             <spacer name="horizontalSpacer">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QPushButton" name="Clean_all_button_4">
+              <property name="text">
+               <string>Clean All</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="Clean_button_3">
+              <property name="text">
+               <string>Clean source and load</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="plot_C_f0_button">
+              <property name="text">
+               <string>Plot C(f)</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="Fill_ys_yl_opt_button">
+              <property name="text">
+               <string>Fill Y_S = Y_S,opt; Y_L = Y_L,opt</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="Calculate_button_4">
+              <property name="text">
+               <string>Calculate</string>
+              </property>
+              <property name="autoDefault">
+               <bool>true</bool>
+              </property>
+              <property name="default">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
        </widget>
       </item>
       <item>
@@ -2397,8 +2368,6 @@
   <tabstop>radioButton_MRF571</tabstop>
   <tabstop>open_datasheet_button</tabstop>
   <tabstop>s11_box</tabstop>
-  <tabstop>s12_box</tabstop>
-  <tabstop>s22_box</tabstop>
   <tabstop>s21_box</tabstop>
   <tabstop>Clean_all_button_6</tabstop>
   <tabstop>Calculate_button_5</tabstop>
