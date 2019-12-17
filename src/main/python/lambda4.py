@@ -32,11 +32,15 @@ LAMBDA_TICK_MAP = lambda_tick_map()
 
 
 def compute_distance(lambda_tick_Zl):
-    return (0.5-lambda_tick_Zl%0.5, 0.25-lambda_tick_Zl%0.5)
+
+    return (0.25-lambda_tick_Zl%0.5, 0.5-lambda_tick_Zl%0.5)
 
 def compute_Z0_TL(*, Z0, gamma_l):
-    # r is the radius of the circle centered in (0,0), with radius gamma
+    ## r is the radius of the circle centered in (0,0), with radius gamma
     r = abs(gamma_l)
+
+    ## returns - in order - the point on the right intersection with the x-axis first and then 
+    ## the left point, i.e. bigger value first and smaller after.
     return ( (Z0*Z0*(1+r)/(1-r))**0.5, (Z0*Z0*(1-r)/(1+r))**0.5 )
 
 
@@ -55,8 +59,12 @@ class mainProgram(QtWidgets.QMainWindow, Ui_MainWindow):
         self.zl_input.editingFinished.connect(self.Calculate_lambda4.click)
         self.Z0_input.editingFinished.connect(self.Calculate_lambda4.click)
 
+        self.label_125.setToolTip("Distance from load to λ/4-length TL")
+        self.label_126.setToolTip("Distance from load to λ/4-length TL")
+        self.label_127.setToolTip("Impedance value of λ/4-length TL")
+        self.label_128.setToolTip("Impedance value of λ/4-length TL")
+
         self.Calculate_lambda4.clicked.connect(self.calculate_z_lambda4)
-        self.clean_lambda4_button.clicked.connect(self.clean_polar)
 
         
 
@@ -83,7 +91,6 @@ class mainProgram(QtWidgets.QMainWindow, Ui_MainWindow):
             phase_zl = round_of_rating(math.degrees(cmath.phase(gamma_zl)))
             lambda_zl = LAMBDA_TICK_MAP[round_of_rating(phase_zl)]
         except Exception as e:
-            print(e)
             pass
 
         # compute
@@ -114,14 +121,7 @@ class mainProgram(QtWidgets.QMainWindow, Ui_MainWindow):
         self.d2_out.setText(str(d2))
         self.z1_TL_out.setText(str(z1_TL_out))
         self.z2_TL_out.setText(str(z2_TL_out))
-
-
-
-    
-    def clean_polar(self):
-        self.zl_input.setText("")
-        self.Calculate_lambda4.click()
-        self.zl_input.setFocus()
+        
 
     # A key has been pressed!
     def keyPressEvent(self, event):
