@@ -26,13 +26,13 @@ def setup_menu_bar(self):
     self.actionCheck_for_Updates.triggered.connect(self.check_for_updates)
     self.action_Exit.triggered.connect(self.quit_app)
 
-    self.action_Lumped_Matching.triggered.connect(self.launch_lumped_matching)
-    self.actionMicrostrip_Matching.triggered.connect(self.launch_microstrip_matching)
-    self.action_Integrated_Matching.triggered.connect(self.launch_integrated_matching)
+    self.action_LumpedMatching.triggered.connect(self.launch_lumped_matching)
+    self.actionMicrostripMatching.triggered.connect(self.launch_microstrip_matching)
+    self.action_IntegratedMatching.triggered.connect(self.launch_integrated_matching)
     self.action_Smith_Chart.triggered.connect(self.launch_smith_chart)
     self.actionrect2polar.triggered.connect(self.launch_rect2polar)
     self.action_gamma2imp.triggered.connect(self.launch_gamma2impedance)
-    self.action_lambda4.triggered.connect(self.launch_lambda4)
+    self.action_lambda4_transformer.triggered.connect(self.launch_lambda4)
 
     self.actionY_formulas.triggered.connect(self.open_Y_formulas)
     self.actionS_formulas.triggered.connect(self.open_S_formulas)

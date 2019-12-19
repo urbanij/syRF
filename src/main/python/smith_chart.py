@@ -36,9 +36,8 @@ class mainProgram(QtWidgets.QMainWindow, Ui_MainWindow):
         self.menuBar.setNativeMenuBar(True)
         self.actionImpedance_d.triggered.connect(self.launch_impedance_at_distance)
         self.actionGamma2impedance.triggered.connect(self.launch_gamma2impedance)
-        self.action_lambda4.triggered.connect(self.launch_lambda4)
+        self.action_lambda4_transformer.triggered.connect(self.launch_lambda4)
         self.actionAbout_2.triggered.connect(self.open_about_window)
-
 
 
 
