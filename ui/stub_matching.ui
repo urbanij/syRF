@@ -520,6 +520,25 @@
      </item>
     </layout>
    </widget>
+   <widget class="QPushButton" name="Plot_impendace_admittance_button">
+    <property name="geometry">
+     <rect>
+      <x>540</x>
+      <y>620</y>
+      <width>99</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Plot Z(z)</string>
+    </property>
+    <property name="autoDefault">
+     <bool>false</bool>
+    </property>
+    <property name="default">
+     <bool>false</bool>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">

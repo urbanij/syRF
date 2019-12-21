@@ -34,7 +34,7 @@ import smith_chart
 import rect2polar 
 import gamma2impedance
 import lambda4   
-
+import stub_matching
 
 
 
@@ -271,7 +271,9 @@ class mainProgram(QtWidgets.QMainWindow, Ui_MainWindow):
         window = lambda4.mainProgram(self)
         window.show()
 
-
+    def launch_stub_matching(self):
+        window = stub_matching.mainProgram(self)
+        window.show()
 
 
 
