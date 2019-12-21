@@ -117,10 +117,22 @@ class mainProgram(QtWidgets.QMainWindow, Ui_MainWindow):
 
 
         # display
-        self.d1_out.setText(str(d1))
-        self.d2_out.setText(str(d2))
-        self.z1_TL_out.setText(str(z1_TL_out))
-        self.z2_TL_out.setText(str(z2_TL_out))
+        try:
+            self.d1_out.setText("{:.4g}".format(d1))
+        except:
+            self.d1_out.setText(msg_error)
+        try:
+            self.d2_out.setText("{:.4g}".format(d2))
+        except:
+            self.d2_out.setText(msg_error)
+        try:
+            self.z1_TL_out.setText("{:.4g}".format(z1_TL_out))
+        except:
+            self.z1_TL_out.setText(msg_error)
+        try:
+            self.z2_TL_out.setText("{:.4g}".format(z2_TL_out))
+        except:
+            self.z2_TL_out.setText(msg_error)
         
 
     # A key has been pressed!
