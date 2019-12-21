@@ -105,11 +105,9 @@ class mainProgram(QtWidgets.QMainWindow, Ui_MainWindow):
             Z0_stub = msg_error
 
 
-        d = float(self.distance_horizontalScrollBar.value()*RANGE_SCROLLBAR/MAX_SCROLLBAR
-        )
+        d = float(self.distance_horizontalScrollBar.value()*RANGE_SCROLLBAR/MAX_SCROLLBAR)
         self.distance_lineedit.setText("{:.3f}".format(d))
-        l =float(self.length_horizontalScrollBar.value()*RANGE_SCROLLBAR/MAX_SCROLLBAR
-        )
+        l =float(self.length_horizontalScrollBar.value()*RANGE_SCROLLBAR/MAX_SCROLLBAR)
         self.length_lineedit.setText("{:.3f}".format(l))
 
 

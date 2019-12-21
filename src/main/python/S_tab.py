@@ -457,28 +457,25 @@ def compute_S_MRF571(self):
 
 
 
-
-
-
     # --------------
     # displaying
     # --------------
     try:
         if abs(D) < 1:
-            font_color = "green"
+            self.D_box_2.setStyleSheet("color: green")
         else:
-            font_color = "red"
-        self.D_box_2.setText("<font color="+font_color+">" + str(abs(D)) + "∠" + str(math.degrees(cmath.phase(D))) + "</font>")
+            self.D_box_2.setStyleSheet("color: red")
+        self.D_box_2.setText("{:.5g}∠{:.5g}".format( abs(D), math.degrees(cmath.phase(D))) )
     except Exception as e:
         self.D_box_2.setText(msg_error)
     
 
     try:
         if K < 1:
-            font_color = "red"
+            self.k_box_4.setStyleSheet("color: red")
         else:
-            font_color = "green"
-        self.k_box_4.setText("<font color="+font_color+">" + str(K) + "</font>")
+            self.k_box_4.setStyleSheet("color: green")
+        self.k_box_4.setText("{:.5g}".format(K))
     except Exception as e:
         self.k_box_4.setText(msg_error)
     
@@ -491,17 +488,25 @@ def compute_S_MRF571(self):
     except Exception as e:
         self.label_31.setText(msg_error)
 
-    self.ZS_box2.setText(str(ZS))
-    self.ZL_box2.setText(str(ZL))
+    try:
+        self.ZS_box2.setText("{:.5g}".format(ZS))
+    except Exception as e:
+        self.ZS_box2.setText(msg_error)
     
     try:
-        gamma_L_visualized = str(abs(gamma_L)) + "∠" + str(math.degrees(cmath.phase(gamma_L)))
+        self.ZL_box2.setText("{:.5g}".format(ZL))
+    except:
+        self.ZL_box2.setText(msg_error)
+
+    
+    try:
+        gamma_L_visualized = "{:.5g}∠{:.5g}".format( abs(gamma_L), math.degrees(cmath.phase(gamma_L)) ) 
     except Exception as e:
         gamma_L_visualized = msg_error
     self.gamma_L_box.setText(gamma_L_visualized)
 
     try:
-        gamma_S_visualized = str(abs(gamma_S)) + "∠" + str(math.degrees(cmath.phase(gamma_S)))
+        gamma_S_visualized = "{:.5g}∠{:.5g}".format( abs(gamma_S), math.degrees(cmath.phase(gamma_S)) ) 
     except Exception as e:
         gamma_S_visualized = msg_error
     self.gamma_S_box.setText(gamma_S_visualized)
@@ -520,136 +525,138 @@ def compute_S_MRF571(self):
 
 
     try:
-        t = str(abs(gamma_in)) + "∠" + str(math.degrees(cmath.phase(gamma_in))) 
+        t = "{:.5g}∠{:.5g}".format( abs(gamma_in), math.degrees(cmath.phase(gamma_in)) ) 
         if abs(gamma_in) > 1:
-            self.gamma_in_box_2.setText("<font color='red'>"+t+ "</font>")
+            self.gamma_in_box_2.setStyleSheet("color: red")
+            self.gamma_in_box_2.setText(t)
         else:
-            self.gamma_in_box_2.setText("<font color='green'>"+t+ "</font>")
+            self.gamma_in_box_2.setStyleSheet("color: green")
+            self.gamma_in_box_2.setText(t)
     except Exception as e:
         pass
         self.gamma_in_box_2.setText(msg_error)
     
 
     try:
-        t = str(abs(gamma_out)) + "∠" + str(math.degrees(cmath.phase(gamma_out))) 
+        t = "{:.5g}∠{:.5g}".format( abs(gamma_out), math.degrees(cmath.phase(gamma_out)) ) 
         if abs(gamma_out) > 1:
-            self.gamma_out_box_2.setText("<font color='red'>"+t+ "</font>")
+            self.gamma_out_box_2.setStyleSheet("color: red")
+            self.gamma_out_box_2.setText(t)
         else:
-            self.gamma_out_box_2.setText("<font color='green'>"+t+ "</font>")
+            self.gamma_out_box_2.setStyleSheet("color: green")
+            self.gamma_out_box_2.setText(t)
     except Exception as e:
         pass
         self.gamma_out_box_2.setText(msg_error)
     
 
     try:
-        self.C_box_13.setText(str(abs(Cs)) + "∠" + str(math.degrees(cmath.phase(Cs))) )
+        self.C_box_13.setText("{:.5g}∠{:.5g}".format( abs(Cs), math.degrees(cmath.phase(Cs)) ) )
     except Exception as e:
         self.C_box_13.setText(msg_error)
 
     try:
-        self.C_box_19.setText(str(rs))
+        self.C_box_19.setText("{:.5g}".format(rs))
     except Exception as e:
         self.C_box_19.setText(msg_error)
 
     try:
-        self.C_box_16.setText(str(abs(Cl)) + "∠" + str(math.degrees(cmath.phase(Cl))) )
+        self.C_box_16.setText("{:.5g}∠{:.5g}".format( abs(Cl), math.degrees(cmath.phase(Cl)) ) )
     except Exception as e:
         self.C_box_16.setText(msg_error)
 
     try:
-        self.C_box_32.setText(str(rl))
+        self.C_box_32.setText("{:.5g}".format(rl))
     except Exception as e:
         self.C_box_32.setText(msg_error)
 
 
 
 
-
-
     try:
-        self.GPdb_box2_8.setText(str(GP))
+        self.GPdb_box2_8.setText("{:.5g}".format(GP))
     except Exception as e:
         self.GPdb_box2_8.setText(msg_error)
 
 
     try:
-        self.GPdb_box2_7.setText(str(GP_dB))
+        self.GPdb_box2_7.setText("{:.5g}".format(GP_dB))
     except Exception as e:
         self.GPdb_box2_7.setText(msg_error)
 
 
     try:
-        self.GTdb_box2_7.setText(str(GT))
+        self.GTdb_box2_7.setText("{:.5g}".format(GT))
     except Exception as e:
         self.GTdb_box2_7.setText(msg_error)
 
 
     try:
-        self.GTdb_box2_8.setText(str(GT_dB))
+        self.GTdb_box2_8.setText("{:.5g}".format(GT_dB))
     except Exception as e:
         self.GTdb_box2_8.setText(msg_error)
 
 
     try:
-        self.GAdb_box2_7.setText(str(GA))
+        self.GAdb_box2_7.setText("{:.5g}".format(GA))
     except Exception as e:
         self.GAdb_box2_7.setText(msg_error)
 
 
     try:
-        self.GAdb_box2_8.setText(str(GA_dB))
+        self.GAdb_box2_8.setText("{:.5g}".format(GA_dB))
     except Exception as e:
         self.GAdb_box2_8.setText(msg_error)
 
 
     try:
-        self.textBrowser_4.setText(str(NF))
+        self.textBrowser_4.setText("{:.5g}".format(NF))
     except Exception as e:
         self.textBrowser_4.setText(msg_error)
 
 
     try:
-        self.textBrowser_5.setText(str(NF_dB))
+        self.textBrowser_5.setText("{:.5g}".format(NF_dB))
     except Exception as e:
         self.textBrowser_5.setText(msg_error)
 
 
     try: 
-        self.gamma_s_opt_box_5.setText(str(abs(gamma_S_opt)) + "∠" + str(math.degrees(cmath.phase(gamma_S_opt))) )
+        self.gamma_s_opt_box_5.setText("{:.5g}∠{:.5g}".format( abs(gamma_S_opt), math.degrees(cmath.phase(gamma_S_opt)) ))
     except Exception as e:
         self.gamma_s_opt_box_5.setText(msg_error)
 
 
     try: 
-        self.gamma_L_opt_box_5.setText(str(abs(gamma_L_opt)) + "∠" + str(math.degrees(cmath.phase(gamma_L_opt))) )
+        self.gamma_L_opt_box_5.setText("{:.5g}∠{:.5g}".format( abs(gamma_L_opt), math.degrees(cmath.phase(gamma_L_opt)) ))
     except Exception as e:
         self.gamma_L_opt_box_5.setText(msg_error)
 
 
     try:
-        self.textBrowser_8.setText(str(Z_S_opt))
+        self.textBrowser_8.setText("{:.5g}".format(Z_S_opt))
     except Exception as e:
         self.textBrowser_8.setText(msg_error)
 
     try:
-        self.textBrowser_7.setText(str(Z_L_opt))
+        self.textBrowser_7.setText("{:.5g}".format(Z_L_opt))
     except Exception as e:
         self.textBrowser_7.setText(msg_error)
 
 
     try:
-        self.textBrowser_2.setText(str(GA_max_dB))
+        self.textBrowser_2.setText("{:.5g}".format(GA_max_dB))
     except Exception as e:
         self.textBrowser_2.setText(msg_error)
 
 
     try:
-        self.textBrowser.setText(str(GP_max_dB))
+        self.textBrowser.setText("{:.5g}".format(GP_max_dB))
     except Exception as e:
         self.textBrowser.setText(msg_error)
 
     try:
-        self.textBrowser_3.setText(str(GT_max_dB))
+        self.textBrowser_3.setText("{:.5g}".format(GT_max_dB))
     except Exception as e:
         self.textBrowser_3.setText(msg_error)
 
@@ -658,56 +665,56 @@ def compute_S_MRF571(self):
 
 
     try:
-        self.C_box_43.setText(str(abs(Ca)) + "∠" + str(math.degrees(cmath.phase(Ca))) )
+        self.C_box_43.setText("{:.5g}∠{:.5g}".format( abs(Ca), math.degrees(cmath.phase(Ca)) ))
     except Exception as e:
         self.C_box_43.setText(msg_error)
 
     try:
-        self.C_box_42.setText(str(ra))
+        self.C_box_42.setText("{:.5g}".format(ra))
     except Exception as e:
         self.C_box_42.setText(msg_error)
 
 
     try:
-        self.C_box_37.setText(str(abs(Cnf)) + "∠" + str(math.degrees(cmath.phase(Cnf))) )
+        self.C_box_37.setText("{:.5g}∠{:.5g}".format( abs(Cnf), math.degrees(cmath.phase(Cnf)) ))
     except Exception as e:
         self.C_box_37.setText(msg_error)
 
     try:
-        self.C_box_36.setText(str(rnf))
+        self.C_box_36.setText("{:.5g}".format(rnf))
     except Exception as e:
         self.C_box_36.setText(msg_error)
 
 
     try:
-        self.C_box_39.setText(str(abs(Cp)) + "∠" + str(math.degrees(cmath.phase(Cp))) )
+        self.C_box_39.setText("{:.5g}∠{:.5g}".format( abs(Cp), math.degrees(cmath.phase(Cp)) ))
     except Exception as e:
         self.C_box_39.setText(msg_error)
 
     try:
-        self.C_box_38.setText(str(rp))
+        self.C_box_38.setText("{:.5g}".format(rp))
     except Exception as e:
         self.C_box_38.setText(msg_error)
 
 
     try:
-        self.C_box_41.setText(str(abs(Ct)) + "∠" + str(math.degrees(cmath.phase(Ct))) )
+        self.C_box_41.setText("{:.5g}∠{:.5g}".format( abs(Ct), math.degrees(cmath.phase(Ct)) ))
     except Exception as e:
         self.C_box_41.setText(msg_error)
 
     try:
-        self.C_box_40.setText(str(rt))
+        self.C_box_40.setText("{:.5g}".format(rt))
     except Exception as e:
         self.C_box_40.setText(msg_error)
 
 
     try:
-        self.Gamma_S_int1_box.setText(str(abs(gamma_intersection[0])) + "∠" + str(math.degrees(cmath.phase(gamma_intersection[0]))) )
+        self.Gamma_S_int1_box.setText("{:.5g}∠{:.5g}".format( abs(gamma_intersection[0]), math.degrees(cmath.phase(gamma_intersection[0])) ))
     except Exception as e:
         self.Gamma_S_int1_box.setText(msg_error)
 
     try:
-        self.Gamma_S_int2_box.setText(str(abs(gamma_intersection[1])) + "∠" + str(math.degrees(cmath.phase(gamma_intersection[1]))) )
+        self.Gamma_S_int2_box.setText("{:.5g}∠{:.5g}".format( abs(gamma_intersection[1]), math.degrees(cmath.phase(gamma_intersection[1])) ))
     except Exception as e:
         self.Gamma_S_int2_box.setText(msg_error)
 
@@ -868,5 +875,3 @@ def disable_MRF57(self):
         self.f_box.setEnabled(True)
         self.label_190.setEnabled(True)
         self.vce_box.setFocus()
-
-        

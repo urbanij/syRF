@@ -349,14 +349,14 @@ def compute_Y_2N4957(self):
 
     try:
         if C < 0 or C>1:
-            font_color = "red"
+            self.C_box_2.setStyleSheet("color: red")
             self.Fill_ys_yl_opt_button.setEnabled(False)
         else:
-            font_color = "green"
+            self.C_box_2.setStyleSheet("color: green")
             self.Fill_ys_yl_opt_button.setEnabled(True)
-        self.C_box_2.setText("<font color="+font_color+">"+str(C)+"</font>")
-    except Exception as e:
-        self.C_box_2.setText(str(C))
+    except:
+        pass
+    self.C_box_2.setText(str(C))
     
     
     try:
@@ -388,19 +388,25 @@ def compute_Y_2N4957(self):
     
     try:
         if k > 1:
-            font_color = "green"
+            self.k_box_3.setStyleSheet("color: green")
         else:
-            font_color = "red"
-        self.k_box_3.setText("<font color="+font_color+">"+str(k)+"</font>")
+            self.k_box_3.setStyleSheet("color: red")
+        self.k_box_3.setText(str(k))
     except Exception as e:
         self.k_box_3.setText(msg_error)
     
 
     try:
         if C < 0 or C > 1 :
-            self.y_s_opt_box_2.setText("<i><font color=#909090>Undefined, since the system is potentially unstable.</font></i>")
-            self.y_L_opt_box_2.setText("<i><font color=#909090>Undefined, since the system is potentially unstable.</font></i>")                
+            self.y_s_opt_box_2.setStyleSheet("color: #909090")
+            self.y_s_opt_box_2.setText("Undefined, since the system is potentially unstable.")
+
+            self.y_L_opt_box_2.setStyleSheet("color: #909090")
+            self.y_L_opt_box_2.setText("Undefined, since the system is potentially unstable.")
         else:
+
+            self.y_s_opt_box_2.setStyleSheet("color: black")
+            self.y_L_opt_box_2.setStyleSheet("color: black")
             self.y_s_opt_box_2.setText(str(y_s_opt))
             self.y_L_opt_box_2.setText(str(y_L_opt))
         
@@ -419,6 +425,7 @@ def compute_Y_2N4957(self):
             self.text_2.setText("<i><font color="+color+">"+status+"</font></i>")
     except Exception as e:
         pass
+    
     try:
         if (C > 0 and C<1):
             status = "Unconditionally stable system"
@@ -426,6 +433,7 @@ def compute_Y_2N4957(self):
             self.text_2.setText("<i><font color="+color+">"+status+"</font></i>")
     except Exception as e:
         pass
+    
     try:
         if C==1:
             status = "Marginally stable system"
@@ -442,6 +450,7 @@ def compute_Y_2N4957(self):
             self.text_2.setText("<font color="+color+">"+status+"</font>")
     except Exception as e:
         pass
+    
     try:
         if (C < 0 or C>=1) and k < 1:
             status = "Unstable system"
@@ -449,6 +458,7 @@ def compute_Y_2N4957(self):
             self.text_2.setText("<font color="+color+">"+status+"</font>")
     except Exception as e:
         pass
+    
     try:
         if (C > 0 and C<1) and k>0: # regardless of wheter k<1 or k>1
             status = "Stable system"
