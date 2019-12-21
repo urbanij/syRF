@@ -21,6 +21,7 @@ import smith_matching
 import impedance_at_distance
 import gamma2impedance
 import lambda4
+import stub_matching
 import about
 
 
@@ -36,7 +37,8 @@ class mainProgram(QtWidgets.QMainWindow, Ui_MainWindow):
         self.menuBar.setNativeMenuBar(True)
         self.actionImpedance_d.triggered.connect(self.launch_impedance_at_distance)
         self.actionGamma2impedance.triggered.connect(self.launch_gamma2impedance)
-        self.action_lambda4_transformer.triggered.connect(self.launch_lambda4)
+        self.action_lambda4.triggered.connect(self.launch_lambda4)
+        self.actionStub.triggered.connect(self.launch_stub_matching)
         self.actionAbout_2.triggered.connect(self.open_about_window)
 
 
@@ -87,6 +89,10 @@ class mainProgram(QtWidgets.QMainWindow, Ui_MainWindow):
 
     def launch_lambda4(self):
         window = lambda4.mainProgram(self)
+        window.show()
+
+    def launch_stub_matching(self):
+        window = stub_matching.mainProgram(self)
         window.show()
 
     

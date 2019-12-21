@@ -32,7 +32,7 @@ def setup_menu_bar(self):
     self.action_Smith_Chart.triggered.connect(self.launch_smith_chart)
     self.actionrect2polar.triggered.connect(self.launch_rect2polar)
     self.action_gamma2imp.triggered.connect(self.launch_gamma2impedance)
-    self.action_lambda4.triggered.connect(self.launch_lambda4)
+    self.action_lambda4_transformer.triggered.connect(self.launch_lambda4)
     self.actionStub.triggered.connect(self.launch_stub_matching)
 
     self.actionY_formulas.triggered.connect(self.open_Y_formulas)

@@ -41,7 +41,7 @@
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>1228</width>
+               <width>800</width>
                <height>835</height>
               </rect>
              </property>
@@ -2312,9 +2312,6 @@
    <property name="text">
     <string>&amp;Smith Chart</string>
    </property>
-   <property name="shortcut">
-    <string>Ctrl+S</string>
-   </property>
   </action>
   <action name="action_About_2">
    <property name="text">
@@ -2350,6 +2347,9 @@
   <action name="actionStub">
    <property name="text">
     <string>&amp;Stub</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
    </property>
   </action>
   <action name="action_lambda4_transformer">

@@ -652,10 +652,17 @@
     <property name="title">
      <string>Utilities</string>
     </property>
+    <widget class="QMenu" name="menuMatching_Networks">
+     <property name="title">
+      <string>&amp;Matching Networks</string>
+     </property>
+     <addaction name="action_lambda4"/>
+     <addaction name="actionStub"/>
+    </widget>
     <addaction name="actionImpedance_d"/>
     <addaction name="actionGamma2impedance"/>
     <addaction name="separator"/>
-    <addaction name="action_lambda4"/>
+    <addaction name="menuMatching_Networks"/>
    </widget>
    <widget class="QMenu" name="menuHelp">
     <property name="title">
@@ -678,7 +685,7 @@
   </action>
   <action name="actionImpedance_d">
    <property name="text">
-    <string>Impedance @ -d</string>
+    <string>&amp;Impedance @ -d</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+I</string>
@@ -691,10 +698,18 @@
   </action>
   <action name="actionGamma2impedance">
    <property name="text">
-    <string>Γ2z</string>
+    <string>&amp;Γ2z</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+G</string>
+   </property>
+  </action>
+  <action name="action_lambda4_transformer">
+   <property name="text">
+    <string>&amp;λ/4</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+L</string>
    </property>
   </action>
   <action name="action_lambda4">
@@ -703,6 +718,14 @@
    </property>
    <property name="shortcut">
     <string>Ctrl+L</string>
+   </property>
+  </action>
+  <action name="actionStub">
+   <property name="text">
+    <string>&amp;Stub</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
    </property>
   </action>
  </widget>

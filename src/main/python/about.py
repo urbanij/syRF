@@ -21,9 +21,12 @@ import check_update
 
 
 DESCRIPTION = """
-<b>syRF</b> is an open source CAD tool<br> 
+<br>
+<b>syRF</b> is a CAD tool<br> 
 to help you design RF and microwave<br>
-circuits.
+circuits.<br>
+<br>
+© 2018-2019 <a href="https://urbanij.github.io">Francesco Urbani</a><br>
 """
 # It runs on any OS, since it's written in<br>
 # Python.<br>
@@ -34,8 +37,7 @@ circuits.
 
 LINKS = """
 <a href="https://urbanij.github.io/syRF/">Home Page</a><br>
-<a href="https://github.com/urbanij/syRF/issues">Report a bug</a><br>
-<a href="https://github.com/urbanij/syRF/graphs/contributors">Credits</a><br>
+<a href="mailto:francescourbanidue@gmail.com?subject=syRF: Bug Report">Report a bug</a>  
 """
 
 
@@ -44,7 +46,12 @@ class mainProgram(QtWidgets.QMainWindow, Ui_MainWindow):
     def __init__(self, parent=None):
         super(mainProgram, self).__init__(parent)
         self.setupUi(self)
-        self.setWindowFlags(QtCore.Qt.Window | QtCore.Qt.CustomizeWindowHint | QtCore.Qt.WindowTitleHint | QtCore.Qt.WindowStaysOnTopHint)
+        self.setWindowFlags(QtCore.Qt.Window | \
+            QtCore.Qt.CustomizeWindowHint | \
+            QtCore.Qt.WindowTitleHint | \
+            QtCore.Qt.WindowStaysOnTopHint \
+        )
+
 
         self.label_version.setText("v.{}".format(check_update.get_version()))
 
