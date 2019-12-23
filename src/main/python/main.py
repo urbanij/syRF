@@ -35,6 +35,7 @@ import rect2polar
 import gamma2impedance
 import lambda4   
 import stub_matching
+import check_update
 
 
 
@@ -142,7 +143,8 @@ class mainProgram(QtWidgets.QMainWindow, Ui_MainWindow):
         self.Clean_all_button_6.clicked.connect(self.clean_all_S_MRF571) 
 
 
-        
+
+        self.setWindowTitle("syRF {}".format(check_update.get_version()))
 
 
 

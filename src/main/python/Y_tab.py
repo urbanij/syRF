@@ -166,9 +166,14 @@ def fill_Y_boxes(self):
         f0_ = float(self.f0_box_2.text())
         if f0_ > 1500 or f0_ < 45:
             # frequency out of range
-            self.label_21.setText("<font color='red'>Frequency out of range. Enter a frequency within the 45 - 1500 MHz range.</font>")
+            self.statusBar.showMessage("Frequency out of range. Enter a frequency within the 45 - 1500 MHz range.")
+            self.statusBar.setStyleSheet("background-color: red; color: white;")
+            # self.statusBar.setStyleSheet("color: red;")
         else:
-            self.label_21.setText("")
+            self.statusBar.showMessage("")
+            self.statusBar.setStyleSheet("background-color: auto;")
+            # self.statusBar.setStyleSheet("color: auto;")
+ 
     except Exception as e:
         f0_ = 0
 
@@ -399,10 +404,10 @@ def compute_Y_2N4957(self):
     try:
         if C < 0 or C > 1 :
             self.y_s_opt_box_2.setStyleSheet("color: #909090")
-            self.y_s_opt_box_2.setText("Undefined, since the system is potentially unstable.")
+            self.y_s_opt_box_2.setText("Undefined -- potentially unstable")
 
             self.y_L_opt_box_2.setStyleSheet("color: #909090")
-            self.y_L_opt_box_2.setText("Undefined, since the system is potentially unstable.")
+            self.y_L_opt_box_2.setText("Undefined -- potentially unstable")
         else:
 
             self.y_s_opt_box_2.setStyleSheet("color: black")
@@ -424,6 +429,7 @@ def compute_Y_2N4957(self):
             color  = 'red'
             self.text_2.setText("<i><font color="+color+">"+status+"</font></i>")
     except Exception as e:
+        print(e)
         pass
     
     try:

@@ -20,8 +20,24 @@ def reset(event):
     l_slider.reset()
 
 
-def Z(*,Z0, ZL):
-    return Z0 * (ZL - 1j*Z0*np.tan(2*np.pi*z))/(Z0-1j*ZL*np.tan(2*np.pi*z))
+def Zv1(Z0, ZL, d):
+    return Z0 * (ZL - 1j*Z0*np.tan(2*np.pi*d))/(Z0-1j*ZL*np.tan(2*np.pi*d))
+
+def Zstub_OC(Z0_stub=50, l=0):
+    if l%0.5 == 0.25:
+        return 0
+    elif l%0.5 == 0:
+        return np.inf
+    else:
+        return -1j*Z0_stub/np.tan(2*np.pi*l)
+
+
+def Zv2(Z0, Z0_stub, ZL, d, l):
+    return (Zv1(Z0, ZL, d)*Zstub_OC(Z0_stub, l))/(Zv1(Z0, ZL, d)+Zstub_OC(Z0_stub, l))
+
+
+def Z(Z0, Z0_stub, ZL):
+    return Z0 * (Zv2(Z0, Z0_stub, ZL) - 1j*Z0*np.tan(2*np.pi*z_plus))/(Z0-1j*Zv2(Z0, Z0_stub, ZL)*np.tan(2*np.pi*z_plus))
 
 
 d_min = -0.5
@@ -48,8 +64,16 @@ plt.axes(ax)
 # plt.title("C(L) @ $f_0$ = {0:.2f} GHz".format(f0))
 
 
-plot,   = plt.plot(z, Z(Z0=50, ZL=50+32j).real , color="blue", label="Z(z)")
-plot,   = plt.plot(z, Z(Z0=50, ZL=50+32j).imag , color="red", label="Z(z)")
+
+z_plus = np.linspace(0, 0, num_points)
+z_minus = np.linspace(-0.5, 0, num_points)
+
+plot_re, = plt.plot(-1e-3, Zv2(Z0=50, Z0_stub=50, ZL=50+32j, d=1e-3, l=1e-3).real , color="blue", label="Re Zv2(z)")
+plot_im, = plt.plot(-1e-3, Zv2(Z0=50, Z0_stub=50, ZL=50+32j, d=1e-3, l=1e-3).imag , color="blue", label="Re Zv2(z)")
+# plot_d_plus_re,  = plt.plot(z, Zv2(Z0=50, Z0_stub=50, ZL=50+32j).real , color="blue", label="Re Zv2(z)")
+# plot_d_minus_re, = plt.plot(z, Zv2(Z0=50, Z0_stub=50, ZL=50+32j).real , color="blue", label="Re Zv2(z)")
+# plot_d_plus_im,  = plt.plot(z, Zv2(Z0=50, Z0_stub=50, ZL=50+32j).imag , color="red", label="Im Zv2(z)")
+# plot_d_minus_im, = plt.plot(z, Zv2(Z0=50, Z0_stub=50, ZL=50+32j).imag , color="red", label="Im Zv2(z)")
 
 
 
@@ -62,27 +86,39 @@ plot,   = plt.plot(z, Z(Z0=50, ZL=50+32j).imag , color="red", label="Z(z)")
 plt.xlabel("z")
 plt.ylabel("Z(z)")
 plt.xlim(-0.5,0)
-plt.ylim(-5,5)
+# plt.ylim(-5,5)
 
 
 # here we create the slider
 d_slider = Slider(axfreq, '$d$ [$\lambda$]', d_min, d_max, valinit=0.5)
 l_slider = Slider(axL, '$l$ [$\lambda$]', l_min, l_max, valinit=0.5)
 
+plt.xlabel("z")
+plt.ylabel("Z(z)")
+plt.xlim(-0.5,0)
 
 
 # Next we define a function that will be executed each time the value
 # indicated by the slider changes. The variable of this function will
 # be assigned the value of the slider.
 def update(val):
+
     d     = d_slider.val
     l     = l_slider.val
     
-    plot.set_ydata( Z(Z0=50, ZL=d*23).real )
-    plot.set_ydata( Z(Z0=50, ZL=50+32j).imag )
+    z_plus = np.linspace(-d, 0, num_points)
+    z_minus = np.linspace(-0.5, -d, num_points)
 
-    # marker.set_xdata(L_val)
-    # marker.set_ydata(C(f,L_val))
+    Z0 = 50
+    Z0_stub=50
+    ZL=50+32j
+
+    plot_re, = plt.set_ydata( Zv2(Z0, Z0_stub, ZL, d, l).real , color="blue", label="Re Zv2(z)")
+    plot_im, = plt.set_ydata( Zv2(Z0, Z0_stub, ZL, d, l).imag , color="red", label="Im Zv2(z)")
+    # plot_d_plus_im,  = plt.plot(z_plus, Zv2(Z0=50, Z0_stub=50, ZL=50+32j).imag , color="red", label="Im Zv2(z)")
+    # plot_d_minus_im, = plt.plot(z_minus, Zv1(Z0=50, Z0_stub=50, ZL=50+32j).imag , color="red", label="Im Zv2(z)")
+
+
 
     fig.canvas.draw_idle()                       # redraw the plot
 
@@ -101,6 +137,8 @@ d_slider.on_changed(update)
 l_slider.on_changed(update)
 button.on_clicked(reset)
 
+
 plt.grid(True)
 plt.show()
+
 
