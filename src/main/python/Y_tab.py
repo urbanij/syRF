@@ -361,42 +361,70 @@ def compute_Y_2N4957(self):
             self.Fill_ys_yl_opt_button.setEnabled(True)
     except:
         pass
-    self.C_box_2.setText(str(C))
+    
+    try:
+        self.C_box_2.setText("{:.6g}".format(C))
+    except:
+        self.C_box_2.setText(msg_error)
+
+
     
     
     try:
-        self.beta_A_box_2.setText(str(abs(betaA)) + "∠" + str(math.degrees(cmath.phase(betaA))) + "°")
-        # print ("betaA = " + str(betaA) + " = " + str(cmath.polar(betaA)) )
+        self.beta_A_box_2.setText( "{:.6g}∠{:.6g} deg".format(abs(betaA), math.degrees(cmath.phase(betaA))))
     except Exception as e:
         self.beta_A_box_2.setText(msg_error)
     
 
-    self.GA_box_2.setText(str(G_A))
-    self.GA_box_dB_2.setText(str(G_A_dB))
-    self.GT_box_2.setText(str(G_T))
-    self.GT_box_dB_2.setText(str(G_T_dB))
-    self.GP_box_2.setText(str(G_P))
-    self.GP_box_dB_2.setText(str(G_P_dB))
-
     try:
-        self.A_V_box.setText(str(abs(A_V)))
+        self.GA_box_2.setText("{:.6g}".format(G_A))
+    except:
+        self.GA_box_2.setText(msg_error)
+    try:
+        self.GA_box_dB_2.setText("{:.6g}".format(G_A_dB))
+    except:
+        self.GA_box_dB_2.setText(msg_error)
+    try:
+        self.GT_box_2.setText("{:.6g}".format(G_T))
+    except:
+        self.GT_box_2.setText(msg_error)
+    try:
+        self.GT_box_dB_2.setText("{:.6g}".format(G_T_dB))
+    except:
+        self.GT_box_dB_2.setText(msg_error)
+    try:
+        self.GP_box_2.setText("{:.6g}".format(G_P))
+    except:
+        self.GP_box_2.setText(msg_error)
+    try:
+        self.GP_box_dB_2.setText("{:.6g}".format(G_P_dB))
+    except:
+        self.GP_box_dB_2.setText(msg_error)
+    try:
+        self.A_V_box.setText("{:.6g}".format(abs(A_V)))
     except Exception as e:
         self.A_V_box.setText(msg_error)
-
     try:
-        self.vout_over_vs_box.setText(str(abs(vout_over_vs)))
+        self.vout_over_vs_box.setText("{:.6g}".format(abs(vout_over_vs)))
     except Exception as e:
         self.vout_over_vs_box.setText(msg_error)
 
-    self.y_out_box_2.setText(str(y_out))
-    self.y_in_box_2.setText(str(y_in))
+
+    try:
+        self.y_out_box_2.setText("{:.6g}".format(y_out))
+    except:
+        self.y_out_box_2.setText(msg_error)
+    try:
+        self.y_in_box_2.setText("{:.6g}".format(y_in))
+    except:
+        self.y_in_box_2.setText(msg_error)
     
     try:
         if k > 1:
             self.k_box_3.setStyleSheet("color: green")
         else:
             self.k_box_3.setStyleSheet("color: red")
-        self.k_box_3.setText(str(k))
+        self.k_box_3.setText("{:.6g}".format(k))
     except Exception as e:
         self.k_box_3.setText(msg_error)
     
@@ -412,8 +440,8 @@ def compute_Y_2N4957(self):
 
             self.y_s_opt_box_2.setStyleSheet("color: black")
             self.y_L_opt_box_2.setStyleSheet("color: black")
-            self.y_s_opt_box_2.setText(str(y_s_opt))
-            self.y_L_opt_box_2.setText(str(y_L_opt))
+            self.y_s_opt_box_2.setText("{:.6g}".format(y_s_opt))
+            self.y_L_opt_box_2.setText("{:.6g}".format(y_L_opt))
         
     except Exception as e:
         self.y_s_opt_box_2.setText(str(y_s_opt))

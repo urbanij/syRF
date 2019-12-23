@@ -22,7 +22,7 @@
        <bool>false</bool>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="tab_2">
        <attribute name="title">
@@ -410,7 +410,7 @@
           <x>420</x>
           <y>10</y>
           <width>644</width>
-          <height>311</height>
+          <height>328</height>
          </rect>
         </property>
         <layout class="QGridLayout" name="gridLayout_7">
@@ -1296,7 +1296,7 @@
        <widget class="QGroupBox" name="groupBox_4">
         <property name="geometry">
          <rect>
-          <x>30</x>
+          <x>20</x>
           <y>120</y>
           <width>301</width>
           <height>222</height>
@@ -1322,6 +1322,15 @@
          </item>
          <item row="2" column="0">
           <widget class="QLabel" name="label_165">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="layoutDirection">
+            <enum>Qt::RightToLeft</enum>
+           </property>
            <property name="text">
             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;V&lt;span style=&quot; vertical-align:sub;&quot;&gt;CE&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
            </property>
@@ -1361,6 +1370,15 @@
          </item>
          <item row="3" column="0">
           <widget class="QLabel" name="label_166">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="layoutDirection">
+            <enum>Qt::RightToLeft</enum>
+           </property>
            <property name="text">
             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;I&lt;span style=&quot; vertical-align:sub;&quot;&gt;C&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
            </property>
@@ -1401,10 +1419,13 @@
          <item row="4" column="0">
           <widget class="QLabel" name="label_118">
            <property name="sizePolicy">
-            <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+            <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
              <horstretch>0</horstretch>
              <verstretch>0</verstretch>
             </sizepolicy>
+           </property>
+           <property name="layoutDirection">
+            <enum>Qt::RightToLeft</enum>
            </property>
            <property name="text">
             <string>f&lt;sub&gt;0&lt;/sub&gt;</string>
@@ -1471,9 +1492,9 @@
        <widget class="QGroupBox" name="groupBox">
         <property name="geometry">
          <rect>
-          <x>40</x>
-          <y>370</y>
-          <width>311</width>
+          <x>0</x>
+          <y>390</y>
+          <width>381</width>
           <height>231</height>
          </rect>
         </property>
@@ -1722,7 +1743,7 @@
          </item>
         </layout>
        </widget>
-       <widget class="QWidget" name="">
+       <widget class="QWidget" name="layoutWidget">
         <property name="geometry">
          <rect>
           <x>420</x>
@@ -1784,7 +1805,7 @@
          </item>
         </layout>
        </widget>
-       <widget class="QWidget" name="">
+       <widget class="QWidget" name="layoutWidget">
         <property name="geometry">
          <rect>
           <x>420</x>
