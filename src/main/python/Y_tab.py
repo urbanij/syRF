@@ -28,7 +28,7 @@ def retrieve_Y_parameters(self, f0_):
 
     # current bjt configuration CE/CB
     if self.radioButton_CE.isChecked():
-        self.checkBox.setText("2N4957 (Common Emitter config.)")
+        self.radiobutton_2n4957.setText("2N4957 (Common Emitter config.)")
         import CE_param_2N4957
         f1, gie, f2, bie, f3, gfe, f4, bfe, f5, goe, f6, boe, f7, gre, f8, bre = CE_param_2N4957.Y_CE_parameters()
         
@@ -79,7 +79,7 @@ def retrieve_Y_parameters(self, f0_):
         
 
     else:
-        self.checkBox.setText("2N4957 (Common Base config.)")
+        self.radiobutton_2n4957.setText("2N4957 (Common Base config.)")
         import CB_param_2N4957
         f1, gib, f2, bib, f3, gfb, f4, bfb, f5, gob, f6, bob, f7, grb, f8, brb = CB_param_2N4957.Y_CB_parameters_fitted()
         
@@ -227,13 +227,19 @@ def compute_Y_2N4957(self):
 
     try:
         y_s = complex(self.y_s_box_2.text())
-        print ("y_s = " + str(y_s) + " ==> Z_s = " + str((y_s*1e-3)**-1) + " ohm" )
+        if y_s != 0:
+            print ("y_s = " + str(y_s) + " ==> Z_s = " + str((y_s*1e-3)**-1) + " ohm" )
+        elif y_s == 0:
+            print ("y_s = " + str(y_s) + " ==> Z_s = +inf ohm" )
     except ValueError as e:
         y_s = msg_error
     
     try:
         y_L = complex(self.y_L_box_2.text())
-        print ("y_L = " + str(y_L) + " ==> Z_L = " + str((y_L*1e-3)**-1) + " ohm" )
+        if y_L != 0:
+            print ("y_L = " + str(y_L) + " ==> Z_L = " + str((y_L*1e-3)**-1) + " ohm" )
+        elif y_L == 0:
+            print ("y_L = " + str(y_s) + " ==> Z_L = +inf ohm" )
     except ValueError as e:
         y_L = msg_error
 
@@ -608,6 +614,9 @@ def clean_all_Y_2N4957(self):
     self.y_o_box_2.setText("")
     self.y_r_box_2.setText("")
     self.Calculate_button_4.click()
-    self.f0_box_2.setFocus()
+    if self.radiobutton_2n4957.isChecked():
+        self.f0_box_2.setFocus()
+    else:
+        self.y_i_box_2.setFocus()
 
 

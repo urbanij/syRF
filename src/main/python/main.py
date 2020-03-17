@@ -75,9 +75,11 @@ class mainProgram(QtWidgets.QMainWindow, Ui_MainWindow):
         self.radioButton_CE.toggled['bool'].connect(self.fill_Y_boxes)
         self.radioButton_CE.toggled['bool'].connect(self.Calculate_button_4.click)
 
-        self.checkBox.stateChanged.connect(self.disable_2N4957)
-        self.checkBox_2.stateChanged.connect(self.disable_MRF57)
+        
+        # self.radiobutton_2n4957.i.stateChanged.connect(self.disable_MRF57)
+        self.radiobutton_2n4957.toggled.connect(self.disable_2N4957)
 
+        
         self.y_i_box_2.editingFinished.connect(self.Calculate_button_4.click)
         self.y_f_box_2.editingFinished.connect(self.Calculate_button_4.click)
         self.y_o_box_2.editingFinished.connect(self.Calculate_button_4.click)
@@ -113,6 +115,8 @@ class mainProgram(QtWidgets.QMainWindow, Ui_MainWindow):
         self.s22_box.editingFinished.connect(self.Calculate_button_5.click)
 
         self.radioButton_MRF571.toggled['bool'].connect(self.fill_S_boxes)
+
+        self.radiobutton_2n4957.toggled['bool'].connect(self.Calculate_button_5.click)
         self.radioButton_MRF571.toggled['bool'].connect(self.Calculate_button_5.click)
 
         self.Z0_box.editingFinished.connect(self.Calculate_button_5.click)
@@ -179,7 +183,7 @@ class mainProgram(QtWidgets.QMainWindow, Ui_MainWindow):
         Y_tab.fill_ys_yl_opt_2N4957(self)
 
     def disable_2N4957(self):
-        if not self.checkBox.isChecked():
+        if not self.radiobutton_2n4957.isChecked():
             self.label_165.setEnabled(False)
             self.label_166.setEnabled(False)
             self.label_118.setEnabled(False)
@@ -190,6 +194,10 @@ class mainProgram(QtWidgets.QMainWindow, Ui_MainWindow):
             self.radioButton_CB.setEnabled(False)
             self.f0_box_2.setEnabled(False)
             self.y_i_box_2.setFocus()
+            self.y_i_box_2.setEnabled(True)
+            self.y_f_box_2.setEnabled(True)
+            self.y_o_box_2.setEnabled(True)
+            self.y_r_box_2.setEnabled(True)
         else:
             self.label_165.setEnabled(True)
             self.label_166.setEnabled(True)
@@ -201,6 +209,10 @@ class mainProgram(QtWidgets.QMainWindow, Ui_MainWindow):
             self.radioButton_CB.setEnabled(True)
             self.f0_box_2.setEnabled(True)
             self.f0_box_2.setFocus()
+            self.y_i_box_2.setEnabled(False)
+            self.y_f_box_2.setEnabled(False)
+            self.y_o_box_2.setEnabled(False)
+            self.y_r_box_2.setEnabled(False)
 
 
     def fill_S_boxes(self):

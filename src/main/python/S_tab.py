@@ -51,7 +51,7 @@ def fill_S_boxes(self):
         else:
             bjt = "MRF572"
     
-        self.checkBox_2.setText(bjt + " (Common Emitter config.)")
+        self.radioButton1_MRF571.setText(bjt + " (Common Emitter config.)")
         s11, s12, s21, s22, NF_opt_dB, R_n, gamma_s_on = csv_parser.get_S_parameters(vce, ic, f, bjt)   
     except Exception as e:
         bjt = msg_error
@@ -849,7 +849,7 @@ def disable_enable_Z_or_gamma_input(self):
         self.ZS_box_2.setFocus()
 
 def disable_MRF57(self):
-    if not self.checkBox_2.isChecked():
+    if not self.radioButton1_MRF571.isChecked():
         self.radioButton_MRF571.setEnabled(False)
         self.radioButton_MRF572.setEnabled(False)
         self.label_185.setEnabled(False)

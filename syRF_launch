@@ -1,5 +1,0 @@
-#!/bin/bash
-
-cd src/main/python
-python3.7 main.py
-cd 

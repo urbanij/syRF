@@ -8,7 +8,7 @@ Created on Mon Feb 18 18:12:01 CET 2019
 @file        : about.py
 @descritpion : About window
 
-               
+
 """
 
 
@@ -22,11 +22,11 @@ import check_update
 
 DESCRIPTION = """
 <br>
-<b>syRF</b> is a CAD tool<br> 
+<b>syRF</b> is a CAD tool<br>
 to help you design RF and microwave<br>
 circuits.<br>
 <br>
-© 2018-2019 <a href="https://urbanij.github.io">Francesco Urbani</a><br>
+© 2018-2020 <a href="https://urbanij.github.io">Francesco Urbani</a><br>
 """
 # It runs on any OS, since it's written in<br>
 # Python.<br>
@@ -37,7 +37,7 @@ circuits.<br>
 
 LINKS = """
 <a href="https://urbanij.github.io/syRF/">Home Page</a><br>
-<a href="mailto:francescourbanidue@gmail.com?subject=syRF: Bug Report">Report a bug</a>  
+<a href="mailto:francescourbanidue@gmail.com?subject=syRF: Bug Report">Report a bug</a>
 """
 
 

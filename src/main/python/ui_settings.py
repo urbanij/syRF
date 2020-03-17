@@ -56,8 +56,8 @@ def init_ui(self):
 
 
     # self.tabWidget.setCurrentIndex(1)
-    self.checkBox.setChecked(True)
-    self.checkBox_2.setChecked(True)
+    self.radiobutton_2n4957.setChecked(True)
+    self.radioButton1_MRF571.setChecked(True)
 
     self.f0_box_2.setFocus()  # set focus on frequency of Y tab on startup
 
