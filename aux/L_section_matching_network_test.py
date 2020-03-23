@@ -1,6 +1,6 @@
 
 
-from intermediate_calculations_matching import L_section_matching
+from L_section_matching_network import L_section_matching
 
 
 if __name__ == '__main__':

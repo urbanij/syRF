@@ -15,7 +15,7 @@ Created on Mon Feb 18 18:44:30 CET 2019
 from PyQt5 import QtCore, QtGui, QtWidgets
 from pyui.lumped_matching_ui import Ui_MainWindow
 
-import LC_matching_tab
+import L_section_matching
 import plot_reflection_coefficient
 import open_pdf
 
@@ -37,21 +37,21 @@ class mainProgram(QtWidgets.QMainWindow, Ui_MainWindow):
         self.open_pdf_sketch_button.clicked.connect(self.open_pdf_sketch_matching)
         # self.comboBox_3.currentIndexChanged['QString'].connect(self.Calculate_button_3.click)
 
-        self.Calculate_button_3.clicked.connect(self.compute_LC_matching)
+        self.Calculate_button_3.clicked.connect(self.compute_L_section_matching)
         self.Clean_all_button_3.clicked.connect(self.clean_all_LC_matching)
         self.Clean_all_button_3.clicked.connect(self.Calculate_button_3.click)
         self.plot.clicked.connect(self.plot_reflection_coefficient)
 
 
 
-    def compute_LC_matching(self):
-        LC_matching_tab.compute_LC_matching(self)
+    def compute_L_section_matching(self):
+        L_section_matching.compute_L_section_matching(self)
 
     def clean_all_LC_matching(self):
-        LC_matching_tab.clean_all_LC_matching(self)
+        L_section_matching.clean_all_LC_matching(self)
 
     def plot_reflection_coefficient(self):
-        plot_reflection_coefficient.plot_gamma( LC_matching_tab.compute_LC_matching(self) )
+        plot_reflection_coefficient.plot_gamma( L_section_matching.compute_L_section_matching(self) )
 
     def open_pdf_sketch_matching(self):
         open_pdf.open_pdf("../../../aux/matching_network.pdf")
