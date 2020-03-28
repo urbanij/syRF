@@ -15,11 +15,40 @@ import sys
 import numpy as np
 import matplotlib.pyplot as plt
 import cmath
-from L_section_matching_network import L_section_matching
+import matching_network.L_section as mn
 
 
 msg_error = "" # display nothing if error occurs
 # msg_error = "<font color='#E8E8E8'>ERR</font>"
+
+
+
+
+######################################################################
+"""
+piece of code needed to remove ascii formatting from the 
+output of `mn.L_section_matching(input_impedance, output_impedance, f0).match()`
+"""
+import re
+def plain_text(text):
+    # 7-bit C1 ANSI sequences
+    ansi_escape = re.compile(r'''
+        \x1B  # ESC
+        (?:   # 7-bit C1 Fe (except CSI)
+            [@-Z\\-_]
+        |     # or [ for CSI, followed by a control sequence
+            \[
+            [0-?]*  # Parameter bytes
+            [ -/]*  # Intermediate bytes
+            [@-~]   # Final byte
+        )
+        ''', re.VERBOSE)
+    result = ansi_escape.sub('', text)
+    return result
+######################################################################
+
+
+
 
 
 
@@ -72,10 +101,9 @@ def compute_L_section_matching(self):
 
 
     try:
-        mn = L_section_matching(input_impedance, output_impedance, f0)
-        mn.match()
-        result = str(mn)
-        # print(result)
+        mn1 = mn.L_section_matching(input_impedance, output_impedance, f0).match()
+        result = str(mn1)
+        result = plain_text(result)
     except Exception as e:
         result = "insert correct inputs"
 

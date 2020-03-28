@@ -8,6 +8,7 @@ Created on Mon Feb 18 18:44:30 CET 2019
 @file        : lumped_matching.py
 @descritpion : Lumped parameters matching network
 
+can be launched as a stand alone window: py38 lumped_matching.py
                
 """
 
