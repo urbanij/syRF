@@ -233,8 +233,6 @@ def compute_S_MRF571(self):
 
 
 
-
-
     # --------------
     # compute stuff
     # --------------
@@ -726,6 +724,15 @@ def compute_S_MRF571(self):
         label_gamma_inout = True  # gamma is checked
 
 
+    os.system("clear")
+    print("="*30)
+    print(f"{s11=}")
+    print(f"{s12=}")
+    print(f"{s21=}")
+    print(f"{s22=}")
+
+
+
     return (s11, s21, s12, s22,
             ZS, ZL, Z0,
             label_gamma_inout,
@@ -739,6 +746,7 @@ def compute_S_MRF571(self):
             Gt_circle_dB, Ct, rt,
             Gp_circle_dB, Cp, rp
         )
+
 
 
 
