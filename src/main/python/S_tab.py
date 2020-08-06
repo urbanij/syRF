@@ -6,7 +6,7 @@ Created on Sat Apr 14 12:38:00 2018
 
 @author(s)   : Francesco Urbani
 @file        : S_tab.py
-@descritpion : 
+@descritpion :
 
 """
 
@@ -29,20 +29,20 @@ msg_error = "" # displays nothing if error occurs
 def fill_S_boxes(self):
 
     try:
-        vce = float(self.vce_box.text())    
+        vce = float(self.vce_box.text())
     except Exception as e:
         vce = msg_error
-    
+
     try:
         ic  = float(self.ic_box.text())
     except Exception as e:
         ic = msg_error
-    
+
     try:
         f = float(self.f_box.text())
     except Exception as e:
         f = msg_error
-    
+
 
 
     try:
@@ -50,9 +50,9 @@ def fill_S_boxes(self):
             bjt = "MRF571"
         else:
             bjt = "MRF572"
-    
+
         self.radioButton1_MRF571.setText(bjt + " (Common Emitter config.)")
-        s11, s12, s21, s22, NF_opt_dB, R_n, gamma_s_on = csv_parser.get_S_parameters(vce, ic, f, bjt)   
+        s11, s12, s21, s22, NF_opt_dB, R_n, gamma_s_on = csv_parser.get_S_parameters(vce, ic, f, bjt)
     except Exception as e:
         bjt = msg_error
 
@@ -77,13 +77,13 @@ def fill_S_boxes(self):
         self.NFmindb_box_2.setText(str(NF_opt_dB))
         self.NFdb_box_2.setPlaceholderText("[" + str(NF_opt_dB) + ", ∞)")
         self.rn_box_2.setText(str(R_n))
-    
+
     except Exception as e:
         self.gamma_s_on_box.setText(msg_error)
         self.NFmindb_box_2.setText(msg_error)
         self.rn_box_2.setText(msg_error)
-        
-    
+
+
     try:
         # S parameters converted into rectangular form.
         s11 = cmath.rect(float(s11[0]), math.radians(float(s11[1])))
@@ -93,9 +93,9 @@ def fill_S_boxes(self):
         gamma_s_on = cmath.rect(float(gamma_s_on[0]), math.radians(float(gamma_s_on[1])))
     except Exception as e:
         pass
-        
+
     return vce, ic, f, bjt
-    
+
 
 
 
@@ -150,7 +150,7 @@ def compute_S_MRF571(self):
         except Exception as e:
             ZS = msg_error
     else:
-        # read gamma_s and gamma_l -- magnitute and phase 
+        # read gamma_s and gamma_l -- magnitute and phase
         # and convert it to rectangular form
         try:
             abs_gamma_s = float(self.ZS_box_2.text())
@@ -178,7 +178,7 @@ def compute_S_MRF571(self):
             gamma_L = cmath.rect(abs_gamma_l, math.radians(phase_gamma_l))
         except Exception as e:
             gamma_L = msg_error
-    
+
 
 
     # --------------------------------------
@@ -186,6 +186,7 @@ def compute_S_MRF571(self):
     try:
         gamma_s_on = self.gamma_s_on_box.text().split("∠")
         gamma_s_on = cmath.rect(float(gamma_s_on[0]), math.radians(float(gamma_s_on[1])))
+        print(f"{gamma_s_on=}")
     except Exception as e:
         gamma_s_on = msg_error
 
@@ -360,7 +361,7 @@ def compute_S_MRF571(self):
     except Exception as e:
         gamma_L_opt = msg_error
 
-    
+
     try:
         Z_S_opt = S.calculate_Z_from_gamma(gamma_S_opt, Z0)
     except Exception as e:
@@ -417,9 +418,9 @@ def compute_S_MRF571(self):
 
     except Exception as e:
         pass
-    
 
-    
+
+
     #----------------------------
 
     try:
@@ -439,7 +440,7 @@ def compute_S_MRF571(self):
     except Exception as e:
         Ct = rt = msg_error
 
-    
+
     try:
         Cp, rp = S.calculate_GP_circle(s11, s12, s21, s22, Gp_circle_dB)
     except Exception as e:
@@ -466,7 +467,7 @@ def compute_S_MRF571(self):
         self.D_box_2.setText("{:.5g}∠{:.5g}".format( abs(D), math.degrees(cmath.phase(D))) )
     except Exception as e:
         self.D_box_2.setText(msg_error)
-    
+
 
     try:
         if K < 1:
@@ -476,8 +477,8 @@ def compute_S_MRF571(self):
         self.k_box_4.setText("{:.5g}".format(K))
     except Exception as e:
         self.k_box_4.setText(msg_error)
-    
-    
+
+
     try:
         if abs(D) < 1 and K>1:
             self.label_31.setText("<b><font color='green'>Unconditionally stable system</font></b>")
@@ -490,21 +491,21 @@ def compute_S_MRF571(self):
         self.ZS_box2.setText("{:.5g}".format(ZS))
     except Exception as e:
         self.ZS_box2.setText(msg_error)
-    
+
     try:
         self.ZL_box2.setText("{:.5g}".format(ZL))
     except:
         self.ZL_box2.setText(msg_error)
 
-    
+
     try:
-        gamma_L_visualized = "{:.5g}∠{:.5g}".format( abs(gamma_L), math.degrees(cmath.phase(gamma_L)) ) 
+        gamma_L_visualized = "{:.5g}∠{:.5g}".format( abs(gamma_L), math.degrees(cmath.phase(gamma_L)) )
     except Exception as e:
         gamma_L_visualized = msg_error
     self.gamma_L_box.setText(gamma_L_visualized)
 
     try:
-        gamma_S_visualized = "{:.5g}∠{:.5g}".format( abs(gamma_S), math.degrees(cmath.phase(gamma_S)) ) 
+        gamma_S_visualized = "{:.5g}∠{:.5g}".format( abs(gamma_S), math.degrees(cmath.phase(gamma_S)) )
     except Exception as e:
         gamma_S_visualized = msg_error
     self.gamma_S_box.setText(gamma_S_visualized)
@@ -523,7 +524,7 @@ def compute_S_MRF571(self):
 
 
     try:
-        t = "{:.5g}∠{:.5g}".format( abs(gamma_in), math.degrees(cmath.phase(gamma_in)) ) 
+        t = "{:.5g}∠{:.5g}".format( abs(gamma_in), math.degrees(cmath.phase(gamma_in)) )
         if abs(gamma_in) > 1:
             self.gamma_in_box_2.setStyleSheet("color: red")
             self.gamma_in_box_2.setText(t)
@@ -533,10 +534,10 @@ def compute_S_MRF571(self):
     except Exception as e:
         pass
         self.gamma_in_box_2.setText(msg_error)
-    
+
 
     try:
-        t = "{:.5g}∠{:.5g}".format( abs(gamma_out), math.degrees(cmath.phase(gamma_out)) ) 
+        t = "{:.5g}∠{:.5g}".format( abs(gamma_out), math.degrees(cmath.phase(gamma_out)) )
         if abs(gamma_out) > 1:
             self.gamma_out_box_2.setStyleSheet("color: red")
             self.gamma_out_box_2.setText(t)
@@ -546,7 +547,7 @@ def compute_S_MRF571(self):
     except Exception as e:
         pass
         self.gamma_out_box_2.setText(msg_error)
-    
+
 
     try:
         self.C_box_13.setText("{:.5g}∠{:.5g}".format( abs(Cs), math.degrees(cmath.phase(Cs)) ) )
@@ -619,13 +620,13 @@ def compute_S_MRF571(self):
         self.textBrowser_5.setText(msg_error)
 
 
-    try: 
+    try:
         self.gamma_s_opt_box_5.setText("{:.5g}∠{:.5g}".format( abs(gamma_S_opt), math.degrees(cmath.phase(gamma_S_opt)) ))
     except Exception as e:
         self.gamma_s_opt_box_5.setText(msg_error)
 
 
-    try: 
+    try:
         self.gamma_L_opt_box_5.setText("{:.5g}∠{:.5g}".format( abs(gamma_L_opt), math.degrees(cmath.phase(gamma_L_opt)) ))
     except Exception as e:
         self.gamma_L_opt_box_5.setText(msg_error)
@@ -757,19 +758,85 @@ def smith_plot_all(self):
     s11, s21, s12, s22, ZS, ZL, Z0, label_gamma_inout, gamma_S_visualized, gamma_L_visualized, gamma_in, gamma_out, gamma_L, gamma_S, Cs, rs, Cl, rl, NF_dB, Cnf, rnf, GA_dB, Ca, ra, GT_dB, Ct, rt, GP_dB, Cp, rp = compute_S_MRF571(self)
     vce, ic, f, bjt = fill_S_boxes(self)
 
+    try:print("Cs = {}".format(Cs)) 
+    except: pass
+    try:print("rs = {}".format(rs))
+    except: pass
+    try:print("Cl = {}".format(Cl)) 
+    except: pass
+    try:print("rl = {}".format(rl))
+    except: pass
+    try:print("gamma_in = {}".format(gamma_in)) 
+    except: pass
+    try:print("gamma_out = {}".format(gamma_out))
+    except: pass
+    try:print("gamma_L = {}".format(gamma_L)) 
+    except: pass
+    try:print("gamma_S = {}".format(gamma_S))
+    except: pass
+    try:print("GA_dB = {}".format(GA_dB)) 
+    except: pass
+    try:print("Ca = {}".format(Ca)) 
+    except: pass
+    try:print("ra = {}".format(ra))
+    except: pass
+    try:print("NF_dB = {}".format(NF_dB)) 
+    except: pass
+    try:print("Cnf = {}".format(Cnf)) 
+    except: pass
+    try:print("rnf = {}".format(rnf))
+    except: pass
+    try:print("GT_dB = {}".format(GT_dB)) 
+    except: pass
+    try:print("Ct = {}".format(Ct)) 
+    except: pass
+    try:print("rt = {}".format(rt))
+    except: pass
+    try:print("GP_dB = {}".format(GP_dB)) 
+    except: pass
+    try:print("Cp = {}".format(Cp)) 
+    except: pass
+    try:print("rp = {}".format(rp))
+    except: pass
+    try:print("constant_gamma_circle = {}".format(constant_gamma_circle))
+    except: pass
+    try:print("ZS = {}".format(ZS)) 
+    except: pass
+    try:print("ZL = {}".format(ZL)) 
+    except: pass
+    try:print("Z0 = {}".format(Z0))
+    except: pass
+    try:print("gamma_S_visualized = {}".format(gamma_S_visualized)) 
+    except: pass
+    try:print("gamma_L_visualized = {}".format(gamma_L_visualized))
+    except: pass
+    try:print("label_gamma_inout = {}".format(label_gamma_inout))
+    except: pass
+    try:print("vce = {}".format(vce)) 
+    except: pass
+    try:print("ic = {}".format(ic)) 
+    except: pass
+    try:print("f = {}".format(f)) 
+    except: pass
+    try:print("bjt = {}".format(bjt))
+    except: pass
+
+
+
+
 
     # constant_gamma_circle = 0.6
     constant_gamma_circle = msg_error
 
     try:
         import twoport.smithplot
-        twoport.smithplot.plot_Smith(Cs, rs, 
+        twoport.smithplot.plot_Smith(Cs, rs,
                                      Cl, rl,
-                                     gamma_in, gamma_out, 
+                                     gamma_in, gamma_out,
                                      gamma_L, gamma_S,
-                                     GA_dB, Ca, ra, 
+                                     GA_dB, Ca, ra,
                                      NF_dB, Cnf, rnf,
-                                     GT_dB, Ct, rt, 
+                                     GT_dB, Ct, rt,
                                      GP_dB, Cp, rp,
                                      constant_gamma_circle,
                                      ZS, ZL, Z0,
@@ -787,7 +854,7 @@ def clean_S_MRF571(self):
     self.ZS_box.setText("")
     self.ZL_box.setText("")
 
-    # ==== gammas input box, if source and load inserted as gamma rather than as impedance 
+    # ==== gammas input box, if source and load inserted as gamma rather than as impedance
     #      renaming the boxes may be a good idea
     self.ZS_box_2.setText("")
     self.ZS_box_5.setText("")

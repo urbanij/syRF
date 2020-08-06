@@ -7,7 +7,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1319</width>
+    <width>1351</width>
     <height>795</height>
    </rect>
   </property>
@@ -1208,7 +1208,7 @@
         <item row="4" column="2">
          <layout class="QGridLayout" name="gridLayout_6">
           <item row="5" column="1">
-           <widget class="QLineEdit" name="GTdb_box_2">
+           <widget class="QLineEdit" name="GPdb_box_2">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -1237,7 +1237,7 @@
            </widget>
           </item>
           <item row="6" column="1">
-           <widget class="QLineEdit" name="GPdb_box_2">
+           <widget class="QLineEdit" name="GTdb_box_2">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -1281,7 +1281,7 @@
           <item row="5" column="0">
            <widget class="QLabel" name="label_180">
             <property name="text">
-             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;G&lt;span style=&quot; vertical-align:sub;&quot;&gt;T&lt;/span&gt;|&lt;span style=&quot; vertical-align:sub;&quot;&gt;dB &lt;/span&gt;(Z&lt;span style=&quot; vertical-align:sub;&quot;&gt;S&lt;/span&gt;)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;G&lt;span style=&quot; vertical-align:sub;&quot;&gt;P&lt;/span&gt;|&lt;span style=&quot; vertical-align:sub;&quot;&gt;dB&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
             </property>
             <property name="alignment">
              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -1291,7 +1291,7 @@
           <item row="6" column="0">
            <widget class="QLabel" name="label_183">
             <property name="text">
-             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;G&lt;span style=&quot; vertical-align:sub;&quot;&gt;P&lt;/span&gt;|&lt;span style=&quot; vertical-align:sub;&quot;&gt;dB&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;G&lt;span style=&quot; vertical-align:sub;&quot;&gt;T&lt;/span&gt;(Z&lt;span style=&quot; vertical-align:sub;&quot;&gt;S&lt;/span&gt;)|&lt;span style=&quot; vertical-align:sub;&quot;&gt;dB &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
             </property>
             <property name="alignment">
              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -1391,7 +1391,7 @@
           <item row="3" column="0">
            <widget class="QLabel" name="label_179">
             <property name="text">
-             <string>NF|&lt;sub&gt;dB&lt;/sub&gt;</string>
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;NF|&lt;span style=&quot; vertical-align:sub;&quot;&gt;dB&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
             </property>
             <property name="alignment">
              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -1401,7 +1401,7 @@
           <item row="6" column="2">
            <widget class="QLabel" name="label_211">
             <property name="text">
-             <string>Equi-G&lt;sub&gt;P&lt;/sub&gt; circle (C&lt;sub&gt;P&lt;/sub&gt;, r&lt;sub&gt;P&lt;/sub&gt;)</string>
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Equi-G&lt;span style=&quot; vertical-align:sub;&quot;&gt;T&lt;/span&gt; circle (C&lt;span style=&quot; vertical-align:sub;&quot;&gt;T&lt;/span&gt;, r&lt;span style=&quot; vertical-align:sub;&quot;&gt;T&lt;/span&gt;)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
             </property>
             <property name="alignment">
              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -1453,7 +1453,7 @@
           <item row="5" column="2">
            <widget class="QLabel" name="label_213">
             <property name="text">
-             <string>Equi-G&lt;sub&gt;T&lt;/sub&gt; circle (C&lt;sub&gt;T&lt;/sub&gt;, r&lt;sub&gt;T&lt;/sub&gt;)</string>
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Equi-G&lt;span style=&quot; vertical-align:sub;&quot;&gt;P&lt;/span&gt; circle (C&lt;span style=&quot; vertical-align:sub;&quot;&gt;P&lt;/span&gt;, r&lt;span style=&quot; vertical-align:sub;&quot;&gt;P&lt;/span&gt;)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
             </property>
             <property name="alignment">
              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -1489,14 +1489,14 @@
            </widget>
           </item>
           <item row="5" column="3">
-           <widget class="QLineEdit" name="C_box_41">
+           <widget class="QLineEdit" name="C_box_39">
             <property name="readOnly">
              <bool>true</bool>
             </property>
            </widget>
           </item>
           <item row="6" column="3">
-           <widget class="QLineEdit" name="C_box_39">
+           <widget class="QLineEdit" name="C_box_41">
             <property name="readOnly">
              <bool>true</bool>
             </property>
@@ -1531,14 +1531,14 @@
            </widget>
           </item>
           <item row="5" column="4">
-           <widget class="QLineEdit" name="C_box_40">
+           <widget class="QLineEdit" name="C_box_38">
             <property name="readOnly">
              <bool>true</bool>
             </property>
            </widget>
           </item>
           <item row="6" column="4">
-           <widget class="QLineEdit" name="C_box_38">
+           <widget class="QLineEdit" name="C_box_40">
             <property name="readOnly">
              <bool>true</bool>
             </property>
@@ -2468,7 +2468,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1319</width>
+     <width>1351</width>
      <height>22</height>
     </rect>
    </property>
@@ -2701,8 +2701,8 @@
   <tabstop>ZS_box_3</tabstop>
   <tabstop>NFdb_box_2</tabstop>
   <tabstop>GAdb_box_2</tabstop>
-  <tabstop>GTdb_box_2</tabstop>
   <tabstop>GPdb_box_2</tabstop>
+  <tabstop>GTdb_box_2</tabstop>
   <tabstop>vce_box_3</tabstop>
   <tabstop>vce_box_2</tabstop>
   <tabstop>open_datasheet_button</tabstop>

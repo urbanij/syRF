@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# or better: fbs run
+
 cd src/main/python
 python3.8 main.py
 cd 

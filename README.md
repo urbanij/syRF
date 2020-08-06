@@ -4,11 +4,16 @@ CAD tool for designing RF and microwave circuits. <br>
 
 Check [this webpage](https://urbanij.github.io/syRF/) for an overview.
 
-##### Demo 
+---
+##### Checkout the [C++ version](https://github.com/urbanij/syRF-cpp).
+
+---
+
+#### Demo 
 
 [![Alt Text](./doc/demo/syRF.gif)](https://youtu.be/yJPomOStffk)
 
-Watch full video [demo](https://youtu.be/yJPomOStffk) tutorial.
+Watch full (outdated) video [demo](https://youtu.be/yJPomOStffk) tutorial.
 
 
 
