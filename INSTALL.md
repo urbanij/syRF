@@ -26,6 +26,15 @@ to generate the Python UI files from the XMLs.
 
 and finally type `./syRF_launch` to launch the main app or one of the other launchers such as `./smith`, `./stub_matching` to launch the Smith chart tool and the stub matching tool respectively.
 
+
+
+<br><br>
+
+##### Walk-through installation:
+
+[![asciicast](https://asciinema.org/a/372060.svg)](https://asciinema.org/a/372060)
+
+
 ---
 
 
