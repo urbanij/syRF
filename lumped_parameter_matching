@@ -1,5 +1,5 @@
 #!/bin/bash
 
 cd src/main/python
-python3.8 lumped_matching.py
+python lumped_matching.py
 cd 
