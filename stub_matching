@@ -1,0 +1,5 @@
+#!/bin/bash
+
+cd src/main/python
+python stub_matching.py
+cd 

@@ -1,16 +1,17 @@
-# syRF
+# [syRF](https://urbanij.github.io/syRF/)
 
 CAD tool for designing RF and microwave circuits. <br>
 
-Check [this webpage](https://urbanij.github.io/syRF/) for an overview.
+- Check [this webpage](https://urbanij.github.io/syRF/) for an overview.
 
----
-##### Checkout the [C++ version](https://github.com/urbanij/syRF-cpp).
+- Checkout the [C++ version](https://github.com/urbanij/syRF-cpp).
 
 
-#### Installation and usage:
+##### Installation and usage:
 
 See `INSTALL.md`.
+
+
 ---
 
 #### Demo 
@@ -21,7 +22,7 @@ Watch full (outdated) video [demo](https://youtu.be/yJPomOStffk) tutorial.
 
 
 
-## Acknowledgments
+### Acknowledgments
 
 - [WebPlotDigitizer](https://automeris.io/WebPlotDigitizer/) used to extract the data of the printed plots into a handy `.csv` file ready to be plotted and manipulated.
 - [PyQt5](https://pypi.python.org/pypi/PyQt5) and [Qt Designer](http://doc.qt.io/qt-5/qtdesigner-manual.html) used to create the GUI.
