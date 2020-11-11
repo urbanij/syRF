@@ -5,29 +5,28 @@ Either clone
 git clone https://github.com/urbanij/syRF.git
 ``` 
 or download the repository locally
-and `cd` into it.
+and `cd` into it:
 ```sh
 cd syRF
 ```
-Then activate the virtual environment
+then create/activate the virtual environment
 ```sh
 pipenv shell
 ```
-and sync/download the mandatory third-party libraries/packages
+and install the dependencies
 ```sh
-pipenv sync
+pip install -r requirements.txt
 ```
-If the process finishes successfully it should print: _All dependencies are now up-to-date!_
 
-Now type 
+then
 ```sh
 make
 ```
-to generate the Python GUI files from the XMLs, and finally
-```sh
-./syRF_launch
-```
-to launch the application. (use `syRF_launch.bat` if you're on Windows)
+to generate the Python UI files from the XMLs.
+
+and finally type `./syRF_launch` to launch the main app or one of the other launchers such as `./smith`, `./stub_matching` to launch the Smith chart tool and the stub matching tool respectively.
+
+---
 
 
 
@@ -36,5 +35,4 @@ to launch the application. (use `syRF_launch.bat` if you're on Windows)
 
 `make` too may fail: if that happens just paste each command inside `all` into the terminal, separately.
 
-Get in touch if you have trouble or just use your favorite flavor of Linux.
-
+Get in touch if you have trouble or just use Linux.

@@ -7,6 +7,10 @@ Check [this webpage](https://urbanij.github.io/syRF/) for an overview.
 ---
 ##### Checkout the [C++ version](https://github.com/urbanij/syRF-cpp).
 
+
+#### Installation and usage:
+
+See `INSTALL.md`.
 ---
 
 #### Demo 
