@@ -141,6 +141,10 @@ class mainProgram(QtWidgets.QMainWindow, Ui_MainWindow):
 
 
         # displaying
+
+        THRESHOLD_OK_VAL = 0.05;
+
+
         try:
             self.Zv1_lineedit.setText("{:.4g}".format(Zv1))
         except Exception:
@@ -148,7 +152,7 @@ class mainProgram(QtWidgets.QMainWindow, Ui_MainWindow):
 
         try:
             if self.series_stub_radioButton.isChecked():
-                if abs((Zv1/Z0).real -1)< 0.05:
+                if abs((Zv1/Z0).real -1 )< THRESHOLD_OK_VAL:
                     self.zv1_lineedit.setStyleSheet("color: green")
                     self.distance_lineedit.setStyleSheet("color: green")
                 else:
@@ -170,7 +174,7 @@ class mainProgram(QtWidgets.QMainWindow, Ui_MainWindow):
         try:
             yv1 = 1/(Zv1/Z0)
             if self.parallel_stub_radioButton.isChecked():
-                if abs(yv1.real -1)< 0.05:
+                if abs(yv1.real -1 )< THRESHOLD_OK_VAL:
                     self.yv1_lineedit.setStyleSheet("color: green")
                     self.distance_lineedit.setStyleSheet("color: green")
                 else:
@@ -194,7 +198,7 @@ class mainProgram(QtWidgets.QMainWindow, Ui_MainWindow):
         try:
             zv2 = Zv2/Z0
             if self.series_stub_radioButton.isChecked():
-                if abs(zv2.real-1)<=0.05 and abs(zv2.imag) <= 0.05:
+                if abs(zv2.real-1)<=THRESHOLD_OK_VAL and abs(zv2.imag) <= THRESHOLD_OK_VAL:
                     self.zv2_lineedit.setStyleSheet("color: green")
                     self.length_lineedit.setStyleSheet("color: green")
                 else:
@@ -222,7 +226,7 @@ class mainProgram(QtWidgets.QMainWindow, Ui_MainWindow):
             else:                
                 yv2 = 1/(Zv2/Z0)
                 if self.parallel_stub_radioButton.isChecked():
-                    if abs(yv2.real-1)<=0.05 and abs(yv2.imag) <= 0.05:
+                    if abs(yv2.real-1)<=THRESHOLD_OK_VAL and abs(yv2.imag) <= THRESHOLD_OK_VAL:
                         self.yv2_lineedit.setStyleSheet("color: green")
                         self.length_lineedit.setStyleSheet("color: green")
                     else:
