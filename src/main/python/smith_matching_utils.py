@@ -18,7 +18,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 import cmath
 import math
-import ccomplex
 
 
 def round_of_rating(number):

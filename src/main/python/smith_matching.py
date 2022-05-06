@@ -17,7 +17,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 import cmath
 import math
-import ccomplex
 
 from twoport.utils import find_nearest
 import intersections

@@ -15,7 +15,7 @@ import sys
 import numpy as np
 import matplotlib.pyplot as plt
 import cmath
-import matching_network.L_section as mn
+import matching_network as mn
 
 
 msg_error = "" # display nothing if error occurs

@@ -2,7 +2,6 @@ from __future__ import division
 from numpy import asarray, array, dot, zeros, inf, identity
 from numpy.linalg import inv
 import numpy as np
-import ccomplex
 from pylab import *
 
 
@@ -436,7 +435,7 @@ def plot_Smith_smith_matching(Z0, Z_in, Z_out, gamma_zin, gamma_zout):
     alpha_z_point                       = 0.80
     alpha_y_point                       = 0.40
 
-    legend_caption = "$Z_0 = {}\ \Omega$\n".format(ccomplex.ccomplex(Z0))
+    legend_caption = "$Z_0 = {}\ \Omega$\n".format(Z0)
 
     NORMALIZED_VALUES     = True
     
