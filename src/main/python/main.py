@@ -157,7 +157,7 @@ class mainProgram(QtWidgets.QMainWindow, Ui_MainWindow):
         Y_tab.show_plot_Y_parameters(self)
 
     def open_datasheet_Y(self):
-        open_pdf.open_pdf("src/main/python/2N4957/2N4957.pdf")
+        open_pdf.open_pdf("./2N4957/2N4957.pdf")
 
     def open_Y_formulas(self):
         open_pdf.open_pdf(
@@ -215,7 +215,7 @@ class mainProgram(QtWidgets.QMainWindow, Ui_MainWindow):
         S_tab.compute_S_MRF571(self)
 
     def open_datasheet_S(self):
-        open_pdf.open_pdf("src/main/python/MRF57/MRF57.pdf")
+        open_pdf.open_pdf("./MRF57/MRF57.pdf")
 
     def open_S_formulas(self):
         open_pdf.open_pdf(
