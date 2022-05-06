@@ -16,7 +16,7 @@ from pyui.impedance_at_distance_ui import Ui_MainWindow
 
 import math
 
-msg_error = "" # display nothing if error occurs
+msg_error = ""  # display nothing if error occurs
 
 
 class mainProgram(QtWidgets.QMainWindow, Ui_MainWindow):
@@ -24,10 +24,8 @@ class mainProgram(QtWidgets.QMainWindow, Ui_MainWindow):
         super(mainProgram, self).__init__(parent)
         self.setupUi(self)
 
-        
-
         self.zL_input.setFocus()  # set focus on startup
-        
+
         self.zL_input.editingFinished.connect(self.calculate14_button.click)
         self.d_input.editingFinished.connect(self.calculate14_button.click)
         self.Z0input.editingFinished.connect(self.calculate14_button.click)
@@ -35,10 +33,8 @@ class mainProgram(QtWidgets.QMainWindow, Ui_MainWindow):
         self.calculate14_button.clicked.connect(self.compute)
         self.clean_all14_button.clicked.connect(self.clean_polar)
 
-
-
     def compute(self):
-        
+
         # read input coordinate as complex number
         try:
             zl_init = complex(self.zL_input.text())
@@ -52,25 +48,25 @@ class mainProgram(QtWidgets.QMainWindow, Ui_MainWindow):
 
         # some fancyness... reupdates the field, in case the user writes something like 2+3+1+5+3j  ==> 11+3j
         try:
-            self.d_input.setText(str(eval(self.d_input.text()))) # updates d_input
+            self.d_input.setText(str(eval(self.d_input.text())))  # updates d_input
         except SyntaxError as e:
             self.d_input.setText(msg_error)
 
         try:
             Z0 = complex(self.Z0input.text())
         except Exception as e:
-            Z0 = msg_error        
-
-
+            Z0 = msg_error
 
         # compute
         try:
             # -d because I'm moving from the load to the generator
-            zl_final = Z0* (zl_init - 1j*Z0*math.tan(2*math.pi*-d))/(Z0-1j*zl_init*math.tan(2*math.pi*-d))
+            zl_final = (
+                Z0
+                * (zl_init - 1j * Z0 * math.tan(2 * math.pi * -d))
+                / (Z0 - 1j * zl_init * math.tan(2 * math.pi * -d))
+            )
         except Exception as e:
             zl_final = msg_error
-
-        
 
         # display
         try:
@@ -82,12 +78,9 @@ class mainProgram(QtWidgets.QMainWindow, Ui_MainWindow):
             self.zl_actual_outputbox.setText(f"{zl_final:.5g}")
         except Exception as e:
             self.zl_actual_outputbox.setText(msg_error)
-            
 
         # keep focus on input P_coord_lineedit
         # self.P_coord_lineedit.setFocus() # if on does not allow drag and drop! (wtf)
-
-    
 
     def clean_polar(self):
         self.zL_input.setText("")
@@ -102,9 +95,11 @@ class mainProgram(QtWidgets.QMainWindow, Ui_MainWindow):
         if event.key() == QtCore.Qt.Key_Escape or event.key() == QtCore.Qt.Key_W:
             self.close()
 
+
 if __name__ == "__main__":
 
     import sys
+
     app = QtWidgets.QApplication(sys.argv)
     nextGui = mainProgram()
     nextGui.show()

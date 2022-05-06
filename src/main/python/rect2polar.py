@@ -22,40 +22,36 @@ import math
 import cmath
 
 
-msg_error = "" # display nothing if error occurs
+msg_error = ""  # display nothing if error occurs
 
 
 class mainProgram(QtWidgets.QMainWindow, Ui_MainWindow):
     def __init__(self, parent=None):
         super(mainProgram, self).__init__(parent)
         self.setupUi(self)
-        
 
         self.P_coord_lineedit.setFocus()  # set focus on startup
-        
+
         self.P_coord_lineedit.editingFinished.connect(self.calculate12_button.click)
 
         self.calculate12_button.clicked.connect(self.calc_polar)
         self.clean_all12_button.clicked.connect(self.clean_polar)
 
-
-
     def calc_polar(self):
-        
+
         # read input coordinate as complex number
         try:
             P_coord = eval(self.P_coord_lineedit.text())
         except Exception as e:
             P_coord = msg_error
-        
 
         # some fancyness... reupdates the field, in case the user writes something like 2+3+1+5+3j  ==> 11+3j
         try:
-            self.P_coord_lineedit.setText(str(eval(self.P_coord_lineedit.text()))) # updates P_coord_lineedit
+            self.P_coord_lineedit.setText(
+                str(eval(self.P_coord_lineedit.text()))
+            )  # updates P_coord_lineedit
         except SyntaxError as e:
             pass
-
-
 
         # compute
         try:
@@ -68,15 +64,12 @@ class mainProgram(QtWidgets.QMainWindow, Ui_MainWindow):
         except Exception as e:
             phase = msg_error
 
-
         # display
         self.mag_text_browser.setText("{}".format(mag))
         self.phase_text_browser.setText("{}".format(phase))
 
         # keep focus on input P_coord_lineedit
         # self.P_coord_lineedit.setFocus() # if on does not allow drag and drop! (wtf)
-
-    
 
     def clean_polar(self):
         self.P_coord_lineedit.setText("")
@@ -93,6 +86,7 @@ class mainProgram(QtWidgets.QMainWindow, Ui_MainWindow):
 if __name__ == "__main__":
 
     import sys
+
     app = QtWidgets.QApplication(sys.argv)
     nextGui = mainProgram()
     nextGui.show()

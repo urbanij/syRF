@@ -22,8 +22,7 @@ from twoport.utils import db as to_dB
 from intersections import find_intersection_points as int_points
 
 
-msg_error = "" # displays nothing if error occurs
-
+msg_error = ""  # displays nothing if error occurs
 
 
 def fill_S_boxes(self):
@@ -34,7 +33,7 @@ def fill_S_boxes(self):
         vce = msg_error
 
     try:
-        ic  = float(self.ic_box.text())
+        ic = float(self.ic_box.text())
     except Exception as e:
         ic = msg_error
 
@@ -43,8 +42,6 @@ def fill_S_boxes(self):
     except Exception as e:
         f = msg_error
 
-
-
     try:
         if self.radioButton_MRF571.isChecked():
             bjt = "MRF571"
@@ -52,17 +49,18 @@ def fill_S_boxes(self):
             bjt = "MRF572"
 
         self.radioButton1_MRF571.setText(bjt + " (Common Emitter config.)")
-        s11, s12, s21, s22, NF_opt_dB, R_n, gamma_s_on = csv_parser.get_S_parameters(vce, ic, f, bjt)
+        s11, s12, s21, s22, NF_opt_dB, R_n, gamma_s_on = csv_parser.get_S_parameters(
+            vce, ic, f, bjt
+        )
     except Exception as e:
         bjt = msg_error
 
-
     try:
-        # S paramters displayed in polar mode with phase in degrees
-        self.s11_box.setText( str(s11[0]) + "∠" + str(s11[1]) )
-        self.s12_box.setText( str(s12[0]) + "∠" + str(s12[1]) )
-        self.s21_box.setText( str(s21[0]) + "∠" + str(s21[1]) )
-        self.s22_box.setText( str(s22[0]) + "∠" + str(s22[1]) )
+        # S paramters displayed in polar mode with phase in degrees
+        self.s11_box.setText(str(s11[0]) + "∠" + str(s11[1]))
+        self.s12_box.setText(str(s12[0]) + "∠" + str(s12[1]))
+        self.s21_box.setText(str(s21[0]) + "∠" + str(s21[1]))
+        self.s22_box.setText(str(s22[0]) + "∠" + str(s22[1]))
         # self.Z0_box.setText("50")
     except Exception as e:
         self.s11_box.setText(msg_error)
@@ -71,9 +69,8 @@ def fill_S_boxes(self):
         self.s22_box.setText(msg_error)
         # self.Z0_box.setText(msg_error)
 
-
     try:
-        self.gamma_s_on_box.setText( str(gamma_s_on[0]) + "∠" + str(gamma_s_on[1]) )
+        self.gamma_s_on_box.setText(str(gamma_s_on[0]) + "∠" + str(gamma_s_on[1]))
         self.NFmindb_box_2.setText(str(NF_opt_dB))
         self.NFdb_box_2.setPlaceholderText("[" + str(NF_opt_dB) + ", ∞)")
         self.rn_box_2.setText(str(R_n))
@@ -83,29 +80,25 @@ def fill_S_boxes(self):
         self.NFmindb_box_2.setText(msg_error)
         self.rn_box_2.setText(msg_error)
 
-
     try:
         # S parameters converted into rectangular form.
         s11 = cmath.rect(float(s11[0]), math.radians(float(s11[1])))
         s12 = cmath.rect(float(s12[0]), math.radians(float(s12[1])))
         s21 = cmath.rect(float(s21[0]), math.radians(float(s21[1])))
         s22 = cmath.rect(float(s22[0]), math.radians(float(s22[1])))
-        gamma_s_on = cmath.rect(float(gamma_s_on[0]), math.radians(float(gamma_s_on[1])))
+        gamma_s_on = cmath.rect(
+            float(gamma_s_on[0]), math.radians(float(gamma_s_on[1]))
+        )
     except Exception as e:
         pass
 
     return vce, ic, f, bjt
 
 
-
-
-
-
-
 def compute_S_MRF571(self):
 
     # --------------
-    # read inputs
+    # read inputs
     # --------------
 
     try:
@@ -133,10 +126,9 @@ def compute_S_MRF571(self):
         s22 = msg_error
 
     try:
-        Z0 = float(self.Z0_box.text()) # Z0 is not complex
+        Z0 = float(self.Z0_box.text())  # Z0 is not complex
     except Exception as e:
         Z0 = msg_error
-
 
     # READ Z IF Z INSERTION IS SELECTED, OTHERWISE READ GAMMA
     if self.radioButton_5.isChecked():
@@ -179,13 +171,13 @@ def compute_S_MRF571(self):
         except Exception as e:
             gamma_L = msg_error
 
-
-
     # --------------------------------------
     # NOISE PARAMETERS
     try:
         gamma_s_on = self.gamma_s_on_box.text().split("∠")
-        gamma_s_on = cmath.rect(float(gamma_s_on[0]), math.radians(float(gamma_s_on[1])))
+        gamma_s_on = cmath.rect(
+            float(gamma_s_on[0]), math.radians(float(gamma_s_on[1]))
+        )
         print(f"{gamma_s_on=}")
     except Exception as e:
         gamma_s_on = msg_error
@@ -201,41 +193,28 @@ def compute_S_MRF571(self):
         R_n = msg_error
     # --------------------------------------
 
-
-
     try:
         NF_circle_dB = float(self.NFdb_box_2.text())
     except Exception as e:
         NF_circle_dB = msg_error
-
 
     try:
         Ga_circle_dB = float(self.GAdb_box_2.text())
     except Exception as e:
         Ga_circle_dB = msg_error
 
-
     try:
         Gt_circle_dB = float(self.GTdb_box_2.text())
     except Exception as e:
         Gt_circle_dB = msg_error
-
 
     try:
         Gp_circle_dB = float(self.GPdb_box_2.text())
     except Exception as e:
         Gp_circle_dB = msg_error
 
-
-
-
-
-
-
-
-
     # --------------
-    # compute stuff
+    # compute stuff
     # --------------
 
     try:
@@ -249,7 +228,6 @@ def compute_S_MRF571(self):
     except Exception as e:
         K = msg_error
         self.plot_isc_button_2.setEnabled(False)
-
 
     # COMPUTE GAMMA IF Z WAS INSERTED OTHERISE COMPUTE R IF GAMMA WAS INSERTED
     if self.radioButton_5.isChecked():
@@ -274,8 +252,6 @@ def compute_S_MRF571(self):
         except Exception as e:
             ZS = msg_error
 
-
-
     try:
         gamma_in = S.calculate_gamma_in(s11, s12, s21, s22, ZL, Z0)
     except Exception as e:
@@ -286,19 +262,15 @@ def compute_S_MRF571(self):
     except Exception as e:
         gamma_out = msg_error
 
-
     try:
         Cs, rs = S.calculate_ISC(s11, s12, s21, s22)
     except Exception as e:
         Cs = rs = msg_error
 
-
     try:
         Cl, rl = S.calculate_OSC(s11, s12, s21, s22)
     except Exception as e:
         Cl = rl = msg_error
-
-
 
     try:
         GP = S.calculate_GP(s11, s12, s21, s22, ZL, Z0)
@@ -310,31 +282,25 @@ def compute_S_MRF571(self):
     except Exception as e:
         GP_dB = msg_error
 
-
-
     try:
         GT = S.calculate_GT(s11, s12, s21, s22, ZS, ZL, Z0)
     except Exception as e:
         GT = msg_error
-
 
     try:
         GT_dB = to_dB(GT)
     except Exception as e:
         GT_dB = msg_error
 
-
     try:
         GA = S.calculate_GA(s11, s12, s21, s22, ZS, Z0)
     except Exception as e:
         GA = msg_error
 
-
     try:
         GA_dB = to_dB(GA)
     except Exception as e:
         GA_dB = msg_error
-
 
     try:
         NF = S.calculate_NF(NF_opt_dB, R_n, gamma_s_on, ZS, Z0)
@@ -349,18 +315,15 @@ def compute_S_MRF571(self):
     except Exception as e:
         NF_dB = msg_error
 
-
     try:
         gamma_S_opt = S.calculate_gamma_S_opt(s11, s12, s21, s22)
     except Exception as e:
         gamma_S_opt = msg_error
 
-
     try:
         gamma_L_opt = S.calculate_gamma_L_opt(s11, s12, s21, s22)
     except Exception as e:
         gamma_L_opt = msg_error
-
 
     try:
         Z_S_opt = S.calculate_Z_from_gamma(gamma_S_opt, Z0)
@@ -374,7 +337,7 @@ def compute_S_MRF571(self):
 
     # if potentially unstable maximum gains are infinite and no optimum load/source is defined, so I hide those boxes.
     try:
-        if abs(D) > 1 or K<1:
+        if abs(D) > 1 or K < 1:
             GP_max_dB = GT_max_dB = GA_max_dB = "∞"
             self.textBrowser_8.hide()
             self.label_262.hide()
@@ -389,19 +352,21 @@ def compute_S_MRF571(self):
             self.GPdb_box_2.setPlaceholderText("(-∞, ∞)")
         else:
             try:
-                GP_max_dB = to_dB( S.calculate_GP(s11, s12, s21, s22, Z_L_opt, Z0) )
+                GP_max_dB = to_dB(S.calculate_GP(s11, s12, s21, s22, Z_L_opt, Z0))
                 self.GPdb_box_2.setPlaceholderText("(-∞, " + str(GP_max_dB) + ")")
             except Exception as e:
                 self.GPdb_box_2.setPlaceholderText("")
                 GP_max_dB = msg_error
 
             try:
-                GT_max_dB = to_dB( S.calculate_GT(s11, s12, s21, s22, Z_S_opt, Z_L_opt, Z0) )
+                GT_max_dB = to_dB(
+                    S.calculate_GT(s11, s12, s21, s22, Z_S_opt, Z_L_opt, Z0)
+                )
             except Exception as e:
                 GT_max_dB = msg_error
 
             try:
-                GA_max_dB = to_dB( S.calculate_GA(s11, s12, s21, s22, Z_S_opt, Z0) )
+                GA_max_dB = to_dB(S.calculate_GA(s11, s12, s21, s22, Z_S_opt, Z0))
                 self.GAdb_box_2.setPlaceholderText("(-∞, " + str(GA_max_dB) + ")")
             except Exception as e:
                 self.GAdb_box_2.setPlaceholderText("")
@@ -419,55 +384,48 @@ def compute_S_MRF571(self):
     except Exception as e:
         pass
 
-
-
-    #----------------------------
+    # ----------------------------
 
     try:
-        Cnf, rnf = S.calculate_NF_circle(s11, s12, s21, s22, Z0, NF_circle_dB, gamma_s_on, NF_opt_dB, R_n)
+        Cnf, rnf = S.calculate_NF_circle(
+            s11, s12, s21, s22, Z0, NF_circle_dB, gamma_s_on, NF_opt_dB, R_n
+        )
     except Exception as e:
         Cnf = rnf = msg_error
-
 
     try:
         Ca, ra = S.calculate_GA_circle(s11, s12, s21, s22, Ga_circle_dB)
     except Exception as e:
         Ca = ra = msg_error
 
-
     try:
         Ct, rt = S.calculate_GT_circle(s11, s12, s21, s22, ZS, ZL, Z0, Gt_circle_dB)
     except Exception as e:
         Ct = rt = msg_error
-
 
     try:
         Cp, rp = S.calculate_GP_circle(s11, s12, s21, s22, Gp_circle_dB)
     except Exception as e:
         Cp = rp = msg_error
 
-
     try:
         gamma_intersection = int_points(Ca, ra, Cnf, rnf)
     except Exception as e:
         gamma_intersection = msg_error
 
-
-
-
-
     # --------------
-    # displaying
+    # displaying
     # --------------
     try:
         if abs(D) < 1:
             self.D_box_2.setStyleSheet("color: green")
         else:
             self.D_box_2.setStyleSheet("color: red")
-        self.D_box_2.setText("{:.5g}∠{:.5g}".format( abs(D), math.degrees(cmath.phase(D))) )
+        self.D_box_2.setText(
+            "{:.5g}∠{:.5g}".format(abs(D), math.degrees(cmath.phase(D)))
+        )
     except Exception as e:
         self.D_box_2.setText(msg_error)
-
 
     try:
         if K < 1:
@@ -478,10 +436,11 @@ def compute_S_MRF571(self):
     except Exception as e:
         self.k_box_4.setText(msg_error)
 
-
     try:
-        if abs(D) < 1 and K>1:
-            self.label_31.setText("<b><font color='green'>Unconditionally stable system</font></b>")
+        if abs(D) < 1 and K > 1:
+            self.label_31.setText(
+                "<b><font color='green'>Unconditionally stable system</font></b>"
+            )
         else:
             self.label_31.setText("<i>Potentially unstable system</i>")
     except Exception as e:
@@ -497,34 +456,42 @@ def compute_S_MRF571(self):
     except:
         self.ZL_box2.setText(msg_error)
 
-
     try:
-        gamma_L_visualized = "{:.5g}∠{:.5g}".format( abs(gamma_L), math.degrees(cmath.phase(gamma_L)) )
+        gamma_L_visualized = "{:.5g}∠{:.5g}".format(
+            abs(gamma_L), math.degrees(cmath.phase(gamma_L))
+        )
     except Exception as e:
         gamma_L_visualized = msg_error
     self.gamma_L_box.setText(gamma_L_visualized)
 
     try:
-        gamma_S_visualized = "{:.5g}∠{:.5g}".format( abs(gamma_S), math.degrees(cmath.phase(gamma_S)) )
+        gamma_S_visualized = "{:.5g}∠{:.5g}".format(
+            abs(gamma_S), math.degrees(cmath.phase(gamma_S))
+        )
     except Exception as e:
         gamma_S_visualized = msg_error
     self.gamma_S_box.setText(gamma_S_visualized)
 
     try:
         if abs(gamma_in) > 1 and abs(gamma_out) > 1:
-            self.label_31.setText("<b><font color='red'>Unstable system.</b> |Γ<sub>in</sub>| &gt; 1 and |Γ<sub>out</sub>| &gt; 1</font>")
+            self.label_31.setText(
+                "<b><font color='red'>Unstable system.</b> |Γ<sub>in</sub>| &gt; 1 and |Γ<sub>out</sub>| &gt; 1</font>"
+            )
         elif abs(gamma_in) > 1:
-            self.label_31.setText("<b><font color='red'>Unstable system.</b> |Γ<sub>in</sub>| &gt; 1</font>")
+            self.label_31.setText(
+                "<b><font color='red'>Unstable system.</b> |Γ<sub>in</sub>| &gt; 1</font>"
+            )
         elif abs(gamma_out) > 1:
-            self.label_31.setText("<b><font color='red'>Unstable system.</b> |Γ<sub>out</sub>| &gt; 1</font>")
+            self.label_31.setText(
+                "<b><font color='red'>Unstable system.</b> |Γ<sub>out</sub>| &gt; 1</font>"
+            )
         else:
             self.label_31.setText("<b><font color='green'>Stable system</font></b>")
     except Exception as e:
         pass
 
-
     try:
-        t = "{:.5g}∠{:.5g}".format( abs(gamma_in), math.degrees(cmath.phase(gamma_in)) )
+        t = "{:.5g}∠{:.5g}".format(abs(gamma_in), math.degrees(cmath.phase(gamma_in)))
         if abs(gamma_in) > 1:
             self.gamma_in_box_2.setStyleSheet("color: red")
             self.gamma_in_box_2.setText(t)
@@ -535,9 +502,8 @@ def compute_S_MRF571(self):
         pass
         self.gamma_in_box_2.setText(msg_error)
 
-
     try:
-        t = "{:.5g}∠{:.5g}".format( abs(gamma_out), math.degrees(cmath.phase(gamma_out)) )
+        t = "{:.5g}∠{:.5g}".format(abs(gamma_out), math.degrees(cmath.phase(gamma_out)))
         if abs(gamma_out) > 1:
             self.gamma_out_box_2.setStyleSheet("color: red")
             self.gamma_out_box_2.setText(t)
@@ -548,9 +514,10 @@ def compute_S_MRF571(self):
         pass
         self.gamma_out_box_2.setText(msg_error)
 
-
     try:
-        self.C_box_13.setText("{:.5g}∠{:.5g}".format( abs(Cs), math.degrees(cmath.phase(Cs)) ) )
+        self.C_box_13.setText(
+            "{:.5g}∠{:.5g}".format(abs(Cs), math.degrees(cmath.phase(Cs)))
+        )
     except Exception as e:
         self.C_box_13.setText(msg_error)
 
@@ -560,7 +527,9 @@ def compute_S_MRF571(self):
         self.C_box_19.setText(msg_error)
 
     try:
-        self.C_box_16.setText("{:.5g}∠{:.5g}".format( abs(Cl), math.degrees(cmath.phase(Cl)) ) )
+        self.C_box_16.setText(
+            "{:.5g}∠{:.5g}".format(abs(Cl), math.degrees(cmath.phase(Cl)))
+        )
     except Exception as e:
         self.C_box_16.setText(msg_error)
 
@@ -569,68 +538,63 @@ def compute_S_MRF571(self):
     except Exception as e:
         self.C_box_32.setText(msg_error)
 
-
-
-
     try:
         self.GPdb_box2_8.setText("{:.5g}".format(GP))
     except Exception as e:
         self.GPdb_box2_8.setText(msg_error)
-
 
     try:
         self.GPdb_box2_7.setText("{:.5g}".format(GP_dB))
     except Exception as e:
         self.GPdb_box2_7.setText(msg_error)
 
-
     try:
         self.GTdb_box2_7.setText("{:.5g}".format(GT))
     except Exception as e:
         self.GTdb_box2_7.setText(msg_error)
-
 
     try:
         self.GTdb_box2_8.setText("{:.5g}".format(GT_dB))
     except Exception as e:
         self.GTdb_box2_8.setText(msg_error)
 
-
     try:
         self.GAdb_box2_7.setText("{:.5g}".format(GA))
     except Exception as e:
         self.GAdb_box2_7.setText(msg_error)
-
 
     try:
         self.GAdb_box2_8.setText("{:.5g}".format(GA_dB))
     except Exception as e:
         self.GAdb_box2_8.setText(msg_error)
 
-
     try:
         self.textBrowser_4.setText("{:.5g}".format(NF))
     except Exception as e:
         self.textBrowser_4.setText(msg_error)
-
 
     try:
         self.textBrowser_5.setText("{:.5g}".format(NF_dB))
     except Exception as e:
         self.textBrowser_5.setText(msg_error)
 
-
     try:
-        self.gamma_s_opt_box_5.setText("{:.5g}∠{:.5g}".format( abs(gamma_S_opt), math.degrees(cmath.phase(gamma_S_opt)) ))
+        self.gamma_s_opt_box_5.setText(
+            "{:.5g}∠{:.5g}".format(
+                abs(gamma_S_opt), math.degrees(cmath.phase(gamma_S_opt))
+            )
+        )
     except Exception as e:
         self.gamma_s_opt_box_5.setText(msg_error)
 
-
     try:
-        self.gamma_L_opt_box_5.setText("{:.5g}∠{:.5g}".format( abs(gamma_L_opt), math.degrees(cmath.phase(gamma_L_opt)) ))
+        self.gamma_L_opt_box_5.setText(
+            "{:.5g}∠{:.5g}".format(
+                abs(gamma_L_opt), math.degrees(cmath.phase(gamma_L_opt))
+            )
+        )
     except Exception as e:
         self.gamma_L_opt_box_5.setText(msg_error)
-
 
     try:
         self.textBrowser_8.setText("{:.5g}".format(Z_S_opt))
@@ -642,12 +606,10 @@ def compute_S_MRF571(self):
     except Exception as e:
         self.textBrowser_7.setText(msg_error)
 
-
     try:
         self.textBrowser_2.setText("{:.5g}".format(GA_max_dB))
     except Exception as e:
         self.textBrowser_2.setText(msg_error)
-
 
     try:
         self.textBrowser.setText("{:.5g}".format(GP_max_dB))
@@ -659,12 +621,10 @@ def compute_S_MRF571(self):
     except Exception as e:
         self.textBrowser_3.setText(msg_error)
 
-
-
-
-
     try:
-        self.C_box_43.setText("{:.5g}∠{:.5g}".format( abs(Ca), math.degrees(cmath.phase(Ca)) ))
+        self.C_box_43.setText(
+            "{:.5g}∠{:.5g}".format(abs(Ca), math.degrees(cmath.phase(Ca)))
+        )
     except Exception as e:
         self.C_box_43.setText(msg_error)
 
@@ -673,9 +633,10 @@ def compute_S_MRF571(self):
     except Exception as e:
         self.C_box_42.setText(msg_error)
 
-
     try:
-        self.C_box_37.setText("{:.5g}∠{:.5g}".format( abs(Cnf), math.degrees(cmath.phase(Cnf)) ))
+        self.C_box_37.setText(
+            "{:.5g}∠{:.5g}".format(abs(Cnf), math.degrees(cmath.phase(Cnf)))
+        )
     except Exception as e:
         self.C_box_37.setText(msg_error)
 
@@ -684,9 +645,10 @@ def compute_S_MRF571(self):
     except Exception as e:
         self.C_box_36.setText(msg_error)
 
-
     try:
-        self.C_box_39.setText("{:.5g}∠{:.5g}".format( abs(Cp), math.degrees(cmath.phase(Cp)) ))
+        self.C_box_39.setText(
+            "{:.5g}∠{:.5g}".format(abs(Cp), math.degrees(cmath.phase(Cp)))
+        )
     except Exception as e:
         self.C_box_39.setText(msg_error)
 
@@ -695,9 +657,10 @@ def compute_S_MRF571(self):
     except Exception as e:
         self.C_box_38.setText(msg_error)
 
-
     try:
-        self.C_box_41.setText("{:.5g}∠{:.5g}".format( abs(Ct), math.degrees(cmath.phase(Ct)) ))
+        self.C_box_41.setText(
+            "{:.5g}∠{:.5g}".format(abs(Ct), math.degrees(cmath.phase(Ct)))
+        )
     except Exception as e:
         self.C_box_41.setText(msg_error)
 
@@ -706,150 +669,279 @@ def compute_S_MRF571(self):
     except Exception as e:
         self.C_box_40.setText(msg_error)
 
-
     try:
-        self.Gamma_S_int1_box.setText("{:.5g}∠{:.5g}".format( abs(gamma_intersection[0]), math.degrees(cmath.phase(gamma_intersection[0])) ))
+        self.Gamma_S_int1_box.setText(
+            "{:.5g}∠{:.5g}".format(
+                abs(gamma_intersection[0]),
+                math.degrees(cmath.phase(gamma_intersection[0])),
+            )
+        )
     except Exception as e:
         self.Gamma_S_int1_box.setText(msg_error)
 
     try:
-        self.Gamma_S_int2_box.setText("{:.5g}∠{:.5g}".format( abs(gamma_intersection[1]), math.degrees(cmath.phase(gamma_intersection[1])) ))
+        self.Gamma_S_int2_box.setText(
+            "{:.5g}∠{:.5g}".format(
+                abs(gamma_intersection[1]),
+                math.degrees(cmath.phase(gamma_intersection[1])),
+            )
+        )
     except Exception as e:
         self.Gamma_S_int2_box.setText(msg_error)
 
-
-
     if self.radioButton_5.isChecked():
-        label_gamma_inout = False # z is checked
+        label_gamma_inout = False  # z is checked
     else:
         label_gamma_inout = True  # gamma is checked
 
-
     os.system("clear")
-    print("="*30)
+    print("=" * 30)
     print(f"{s11=}")
     print(f"{s12=}")
     print(f"{s21=}")
     print(f"{s22=}")
 
-
-
-    return (s11, s21, s12, s22,
-            ZS, ZL, Z0,
-            label_gamma_inout,
-            gamma_S_visualized, gamma_L_visualized,
-            gamma_in, gamma_out,
-            gamma_L, gamma_S,
-            Cs, rs,
-            Cl, rl,
-            NF_circle_dB, Cnf, rnf,
-            Ga_circle_dB, Ca, ra,
-            Gt_circle_dB, Ct, rt,
-            Gp_circle_dB, Cp, rp
-        )
-
-
-
-
+    return (
+        s11,
+        s21,
+        s12,
+        s22,
+        ZS,
+        ZL,
+        Z0,
+        label_gamma_inout,
+        gamma_S_visualized,
+        gamma_L_visualized,
+        gamma_in,
+        gamma_out,
+        gamma_L,
+        gamma_S,
+        Cs,
+        rs,
+        Cl,
+        rl,
+        NF_circle_dB,
+        Cnf,
+        rnf,
+        Ga_circle_dB,
+        Ca,
+        ra,
+        Gt_circle_dB,
+        Ct,
+        rt,
+        Gp_circle_dB,
+        Cp,
+        rp,
+    )
 
 
 def smith_plot_all(self):
 
-    s11, s21, s12, s22, ZS, ZL, Z0, label_gamma_inout, gamma_S_visualized, gamma_L_visualized, gamma_in, gamma_out, gamma_L, gamma_S, Cs, rs, Cl, rl, NF_dB, Cnf, rnf, GA_dB, Ca, ra, GT_dB, Ct, rt, GP_dB, Cp, rp = compute_S_MRF571(self)
+    (
+        s11,
+        s21,
+        s12,
+        s22,
+        ZS,
+        ZL,
+        Z0,
+        label_gamma_inout,
+        gamma_S_visualized,
+        gamma_L_visualized,
+        gamma_in,
+        gamma_out,
+        gamma_L,
+        gamma_S,
+        Cs,
+        rs,
+        Cl,
+        rl,
+        NF_dB,
+        Cnf,
+        rnf,
+        GA_dB,
+        Ca,
+        ra,
+        GT_dB,
+        Ct,
+        rt,
+        GP_dB,
+        Cp,
+        rp,
+    ) = compute_S_MRF571(self)
     vce, ic, f, bjt = fill_S_boxes(self)
 
-    try:print("Cs = {}".format(Cs)) 
-    except: pass
-    try:print("rs = {}".format(rs))
-    except: pass
-    try:print("Cl = {}".format(Cl)) 
-    except: pass
-    try:print("rl = {}".format(rl))
-    except: pass
-    try:print("gamma_in = {}".format(gamma_in)) 
-    except: pass
-    try:print("gamma_out = {}".format(gamma_out))
-    except: pass
-    try:print("gamma_L = {}".format(gamma_L)) 
-    except: pass
-    try:print("gamma_S = {}".format(gamma_S))
-    except: pass
-    try:print("GA_dB = {}".format(GA_dB)) 
-    except: pass
-    try:print("Ca = {}".format(Ca)) 
-    except: pass
-    try:print("ra = {}".format(ra))
-    except: pass
-    try:print("NF_dB = {}".format(NF_dB)) 
-    except: pass
-    try:print("Cnf = {}".format(Cnf)) 
-    except: pass
-    try:print("rnf = {}".format(rnf))
-    except: pass
-    try:print("GT_dB = {}".format(GT_dB)) 
-    except: pass
-    try:print("Ct = {}".format(Ct)) 
-    except: pass
-    try:print("rt = {}".format(rt))
-    except: pass
-    try:print("GP_dB = {}".format(GP_dB)) 
-    except: pass
-    try:print("Cp = {}".format(Cp)) 
-    except: pass
-    try:print("rp = {}".format(rp))
-    except: pass
-    try:print("constant_gamma_circle = {}".format(constant_gamma_circle))
-    except: pass
-    try:print("ZS = {}".format(ZS)) 
-    except: pass
-    try:print("ZL = {}".format(ZL)) 
-    except: pass
-    try:print("Z0 = {}".format(Z0))
-    except: pass
-    try:print("gamma_S_visualized = {}".format(gamma_S_visualized)) 
-    except: pass
-    try:print("gamma_L_visualized = {}".format(gamma_L_visualized))
-    except: pass
-    try:print("label_gamma_inout = {}".format(label_gamma_inout))
-    except: pass
-    try:print("vce = {}".format(vce)) 
-    except: pass
-    try:print("ic = {}".format(ic)) 
-    except: pass
-    try:print("f = {}".format(f)) 
-    except: pass
-    try:print("bjt = {}".format(bjt))
-    except: pass
-
-
-
-
+    try:
+        print("Cs = {}".format(Cs))
+    except:
+        pass
+    try:
+        print("rs = {}".format(rs))
+    except:
+        pass
+    try:
+        print("Cl = {}".format(Cl))
+    except:
+        pass
+    try:
+        print("rl = {}".format(rl))
+    except:
+        pass
+    try:
+        print("gamma_in = {}".format(gamma_in))
+    except:
+        pass
+    try:
+        print("gamma_out = {}".format(gamma_out))
+    except:
+        pass
+    try:
+        print("gamma_L = {}".format(gamma_L))
+    except:
+        pass
+    try:
+        print("gamma_S = {}".format(gamma_S))
+    except:
+        pass
+    try:
+        print("GA_dB = {}".format(GA_dB))
+    except:
+        pass
+    try:
+        print("Ca = {}".format(Ca))
+    except:
+        pass
+    try:
+        print("ra = {}".format(ra))
+    except:
+        pass
+    try:
+        print("NF_dB = {}".format(NF_dB))
+    except:
+        pass
+    try:
+        print("Cnf = {}".format(Cnf))
+    except:
+        pass
+    try:
+        print("rnf = {}".format(rnf))
+    except:
+        pass
+    try:
+        print("GT_dB = {}".format(GT_dB))
+    except:
+        pass
+    try:
+        print("Ct = {}".format(Ct))
+    except:
+        pass
+    try:
+        print("rt = {}".format(rt))
+    except:
+        pass
+    try:
+        print("GP_dB = {}".format(GP_dB))
+    except:
+        pass
+    try:
+        print("Cp = {}".format(Cp))
+    except:
+        pass
+    try:
+        print("rp = {}".format(rp))
+    except:
+        pass
+    try:
+        print("constant_gamma_circle = {}".format(constant_gamma_circle))
+    except:
+        pass
+    try:
+        print("ZS = {}".format(ZS))
+    except:
+        pass
+    try:
+        print("ZL = {}".format(ZL))
+    except:
+        pass
+    try:
+        print("Z0 = {}".format(Z0))
+    except:
+        pass
+    try:
+        print("gamma_S_visualized = {}".format(gamma_S_visualized))
+    except:
+        pass
+    try:
+        print("gamma_L_visualized = {}".format(gamma_L_visualized))
+    except:
+        pass
+    try:
+        print("label_gamma_inout = {}".format(label_gamma_inout))
+    except:
+        pass
+    try:
+        print("vce = {}".format(vce))
+    except:
+        pass
+    try:
+        print("ic = {}".format(ic))
+    except:
+        pass
+    try:
+        print("f = {}".format(f))
+    except:
+        pass
+    try:
+        print("bjt = {}".format(bjt))
+    except:
+        pass
 
     # constant_gamma_circle = 0.6
     constant_gamma_circle = msg_error
 
     try:
         import twoport.smithplot
-        twoport.smithplot.plot_Smith(Cs, rs,
-                                     Cl, rl,
-                                     gamma_in, gamma_out,
-                                     gamma_L, gamma_S,
-                                     GA_dB, Ca, ra,
-                                     NF_dB, Cnf, rnf,
-                                     GT_dB, Ct, rt,
-                                     GP_dB, Cp, rp,
-                                     constant_gamma_circle,
-                                     ZS, ZL, Z0,
-                                     gamma_S_visualized, gamma_L_visualized,
-                                     label_gamma_inout,
-                                     vce, ic, f, bjt
-                                )
+
+        twoport.smithplot.plot_Smith(
+            Cs,
+            rs,
+            Cl,
+            rl,
+            gamma_in,
+            gamma_out,
+            gamma_L,
+            gamma_S,
+            GA_dB,
+            Ca,
+            ra,
+            NF_dB,
+            Cnf,
+            rnf,
+            GT_dB,
+            Ct,
+            rt,
+            GP_dB,
+            Cp,
+            rp,
+            constant_gamma_circle,
+            ZS,
+            ZL,
+            Z0,
+            gamma_S_visualized,
+            gamma_L_visualized,
+            label_gamma_inout,
+            vce,
+            ic,
+            f,
+            bjt,
+        )
     except Exception as e:
         raise e
 
 
-
 """ clean load and source boxes """
+
+
 def clean_S_MRF571(self):
     self.ZS_box.setText("")
     self.ZL_box.setText("")
@@ -863,7 +955,6 @@ def clean_S_MRF571(self):
 
     self.Calculate_button_5.click()
     # ================================================================
-
 
 
 def clean_all_S_MRF571(self):
@@ -884,7 +975,6 @@ def clean_all_S_MRF571(self):
 
     self.Calculate_button_5.click()
     self.vce_box.setFocus()
-
 
 
 def disable_enable_Z_or_gamma_input(self):
@@ -922,6 +1012,7 @@ def disable_enable_Z_or_gamma_input(self):
         self.label_265.setEnabled(True)
         self.ZS_box_3.setEnabled(True)
         self.ZS_box_2.setFocus()
+
 
 def disable_MRF57(self):
     if not self.radioButton1_MRF571.isChecked():

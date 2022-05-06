@@ -16,7 +16,7 @@ from pyui.gamma2impedance_ui import Ui_MainWindow
 
 import math
 
-msg_error = "" # display nothing if error occurs
+msg_error = ""  # display nothing if error occurs
 
 
 class mainProgram(QtWidgets.QMainWindow, Ui_MainWindow):
@@ -24,20 +24,16 @@ class mainProgram(QtWidgets.QMainWindow, Ui_MainWindow):
         super(mainProgram, self).__init__(parent)
         self.setupUi(self)
 
-        
-
         self.gamma_lineedit.setFocus()  # set focus on startup
-        
+
         self.gamma_lineedit.editingFinished.connect(self.calculate65_button.click)
         self.Z0input.editingFinished.connect(self.calculate65_button.click)
-        
+
         self.calculate65_button.clicked.connect(self.compute)
         self.clean_all65_button.clicked.connect(self.clean)
 
-
-
     def compute(self):
-        
+
         # read input coordinate as complex number
         try:
             gamma = complex(self.gamma_lineedit.text())
@@ -51,8 +47,8 @@ class mainProgram(QtWidgets.QMainWindow, Ui_MainWindow):
 
         # compute
         try:
-            z = (1+gamma)/(1-gamma)
-            Z = z*Z0
+            z = (1 + gamma) / (1 - gamma)
+            Z = z * Z0
         except ZeroDivisionError:
             self.norm_impedance_text_browser.setText("∞")
             self.impedance_text_browser.setText("∞")
@@ -63,8 +59,6 @@ class mainProgram(QtWidgets.QMainWindow, Ui_MainWindow):
         except Exception:
             z = Z = msg_error
 
-        
-        
         # display
         try:
             self.norm_impedance_text_browser.setText(f"{z:.4g}")
@@ -84,8 +78,6 @@ class mainProgram(QtWidgets.QMainWindow, Ui_MainWindow):
         except Exception:
             self.norm_impedance_text_browser.setText(msg_error)
 
-            
-
     def clean(self):
         self.gamma_lineedit.setText("")
         self.norm_impedance_text_browser.setText("")
@@ -98,9 +90,11 @@ class mainProgram(QtWidgets.QMainWindow, Ui_MainWindow):
         if event.key() == QtCore.Qt.Key_Escape or event.key() == QtCore.Qt.Key_W:
             self.close()
 
+
 if __name__ == "__main__":
 
     import sys
+
     app = QtWidgets.QApplication(sys.argv)
     nextGui = mainProgram()
     nextGui.show()

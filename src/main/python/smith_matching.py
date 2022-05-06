@@ -12,7 +12,6 @@ Created on Tue May  8 14:08:45 CEST 2018
 """
 
 
-
 import numpy as np
 import matplotlib.pyplot as plt
 import cmath
@@ -22,11 +21,14 @@ from twoport.utils import find_nearest
 import intersections
 import S_functions
 
-from S_functions import calculate_gamma, calculate_Z_from_gamma, calculate_vswr_from_gamma
+from S_functions import (
+    calculate_gamma,
+    calculate_Z_from_gamma,
+    calculate_vswr_from_gamma,
+)
 from smith_matching_utils import round_of_rating, lambda_tick_map
 
-msg_error = "" # display nothing if error occurs
-
+msg_error = ""  # display nothing if error occurs
 
 
 """
@@ -40,17 +42,17 @@ TODO:
 
 
 def normalize_impedance(z, z0):
-    return z/z0 
-    # return (z/z0).real if (z/z0).imag == 0 else z/z0 
-
+    return z / z0
+    # return (z/z0).real if (z/z0).imag == 0 else z/z0
 
 
 LAMBDA_TICK_MAP = lambda_tick_map()
 
+
 def calculate_tab_quarter_wave_im(self):
 
     # --------------
-    # read inputs
+    # read inputs
     # --------------
 
     try:
@@ -58,9 +60,7 @@ def calculate_tab_quarter_wave_im(self):
     except ValueError:
         Z0 = msg_error
 
-
-
-    if self.radioButton.isChecked(): # INPUT SOURCE/LOAD AS Z
+    if self.radioButton.isChecked():  # INPUT SOURCE/LOAD AS Z
 
         try:
             Z_in = complex(self.Z_in_box.text())
@@ -73,7 +73,7 @@ def calculate_tab_quarter_wave_im(self):
             Z_out = msg_error
 
         # --------------
-        # calculate
+        # calculate
         # --------------
 
         try:
@@ -98,10 +98,8 @@ def calculate_tab_quarter_wave_im(self):
         except Exception as e:
             gamma_zout_polar = msg_error
 
+    else:  # INPUT SOURCE/LOAD AS GAMMA
 
-
-    else: # INPUT SOURCE/LOAD AS GAMMA
-        
         # read inputs
 
         # gamma_zin
@@ -126,10 +124,8 @@ def calculate_tab_quarter_wave_im(self):
         except Exception as e:
             arg_gamma_zout = msg_error
 
-        
-
         # --------------
-        # calculate
+        # calculate
         # --------------
 
         # convert gamma_zin and gamma_zout to rectangular form
@@ -157,7 +153,6 @@ def calculate_tab_quarter_wave_im(self):
         except Exception as e:
             Z_out = msg_error
 
-
     # common part:
     try:
         z_in = normalize_impedance(Z_in, Z0)
@@ -179,30 +174,34 @@ def calculate_tab_quarter_wave_im(self):
     except Exception as e:
         vswr_zout = msg_error
 
-
     try:
-        zin_constant_r_intersection = intersections.find_intersection_points(c1=0.5, r1=0.5, c2=0, r2=abs(gamma_zin))
-        zin_constant_r_intersection = S_functions.calculate_Z_from_gamma(gamma=zin_constant_r_intersection[0], z0=1)
+        zin_constant_r_intersection = intersections.find_intersection_points(
+            c1=0.5, r1=0.5, c2=0, r2=abs(gamma_zin)
+        )
+        zin_constant_r_intersection = S_functions.calculate_Z_from_gamma(
+            gamma=zin_constant_r_intersection[0], z0=1
+        )
     except Exception as e:
         zin_constant_r_intersection = msg_error
 
     try:
-        zout_constant_r_intersection = intersections.find_intersection_points(c1=0.5, r1=0.5, c2=0, r2=abs(gamma_zout))
-        zout_constant_r_intersection = S_functions.calculate_Z_from_gamma(gamma=zout_constant_r_intersection[0], z0=1)
+        zout_constant_r_intersection = intersections.find_intersection_points(
+            c1=0.5, r1=0.5, c2=0, r2=abs(gamma_zout)
+        )
+        zout_constant_r_intersection = S_functions.calculate_Z_from_gamma(
+            gamma=zout_constant_r_intersection[0], z0=1
+        )
     except Exception as e:
         zout_constant_r_intersection = msg_error
 
-    
-
-
     # --------------
-    # displaying
+    # displaying
     # --------------
 
     try:
         # self.z_in_box_2.setText("+∞" if Z_in == math.inf else f"{Z_in:.4g}")
         self.z_in_box_2.setText(f"{Z_in:.4g}")
-    except Exception as e: # thrown if Z_in is not a number hence the significat digits cannot be evaluated
+    except Exception as e:  # thrown if Z_in is not a number hence the significat digits cannot be evaluated
         self.z_in_box_2.setText(msg_error)
     try:
         self.z_in_box_5.setText(f"{Z_out:.4g}")
@@ -217,13 +216,15 @@ def calculate_tab_quarter_wave_im(self):
         self.z_out_box.setText(f"{z_out:.4g}")
     except Exception as e:
         self.z_out_box.setText(msg_error)
-    
+
     try:
         self.gamma_zin_actual_box.setText(f"{gamma_zin:.4g}")
     except Exception as e:
         self.gamma_zin_actual_box.setText(msg_error)
     try:
-        self.gamma_zin_box.setText(f"{abs(gamma_zin):.4g} ∠ {math.degrees(cmath.phase(gamma_zin)):.4g} deg")
+        self.gamma_zin_box.setText(
+            f"{abs(gamma_zin):.4g} ∠ {math.degrees(cmath.phase(gamma_zin)):.4g} deg"
+        )
     except Exception as e:
         self.gamma_zin_box.setText(msg_error)
 
@@ -232,7 +233,9 @@ def calculate_tab_quarter_wave_im(self):
     except Exception as e:
         self.gamma_zout_actual_box.setText(msg_error)
     try:
-        self.gamma_zout_box.setText(f"{abs(gamma_zout):.4g} ∠ {math.degrees(cmath.phase(gamma_zout)):.4g} deg")
+        self.gamma_zout_box.setText(
+            f"{abs(gamma_zout):.4g} ∠ {math.degrees(cmath.phase(gamma_zout)):.4g} deg"
+        )
     except Exception as e:
         self.gamma_zout_box.setText(msg_error)
 
@@ -245,8 +248,6 @@ def calculate_tab_quarter_wave_im(self):
     except Exception as e:
         self.vswr_zout_box.setText(msg_error)
 
-
-    
     try:
         phase_zin = round_of_rating(math.degrees(cmath.phase(gamma_zin)))
         lambda_zin = LAMBDA_TICK_MAP[round_of_rating(phase_zin)]
@@ -257,8 +258,7 @@ def calculate_tab_quarter_wave_im(self):
         phase_zout = round_of_rating(math.degrees(cmath.phase(gamma_zout)))
         lambda_zout = LAMBDA_TICK_MAP[round_of_rating(phase_zout)]
     except Exception as e:
-        lambda_zout = msg_error    
-
+        lambda_zout = msg_error
 
     # printing lambdas to the right boxes
     try:
@@ -270,37 +270,40 @@ def calculate_tab_quarter_wave_im(self):
     except Exception as e:
         self.lambda_tick_zout_box.setText(msg_error)
 
-    
     try:
         self.zin_constant_r_int1_box.setText(f"{zin_constant_r_intersection:.4g}")
     except Exception as e:
         self.zin_constant_r_int1_box.setText(msg_error)
     try:
-        self.zin_constant_r_int2_box.setText(f"{zin_constant_r_intersection.conjugate():.4g}")
+        self.zin_constant_r_int2_box.setText(
+            f"{zin_constant_r_intersection.conjugate():.4g}"
+        )
     except Exception as e:
         self.zin_constant_r_int2_box.setText(msg_error)
-    
+
     try:
         self.zout_constant_r_int1_box.setText(f"{zout_constant_r_intersection:.4g}")
     except Exception as e:
         self.zout_constant_r_int1_box.setText(msg_error)
     try:
-        self.zout_constant_r_int2_box.setText(f"{zout_constant_r_intersection.conjugate():.4g}")
+        self.zout_constant_r_int2_box.setText(
+            f"{zout_constant_r_intersection.conjugate():.4g}"
+        )
     except Exception as e:
         self.zout_constant_r_int2_box.setText(msg_error)
-    
 
     return Z0, Z_in, Z_out, gamma_zin, gamma_zout
-    
 
 
 def showSmithPlot(self):
     Z0, Z_in, Z_out, gamma_zin, gamma_zout = calculate_tab_quarter_wave_im(self)
 
-
     try:
         import twoport.smithplot
-        twoport.smithplot.plot_Smith_smith_matching(Z0, Z_in, Z_out, gamma_zin, gamma_zout)
+
+        twoport.smithplot.plot_Smith_smith_matching(
+            Z0, Z_in, Z_out, gamma_zin, gamma_zout
+        )
     except Exception as e:
         # raise e
         print(e)
@@ -342,4 +345,3 @@ def disable_boxes_quarter_wave_im(self):
         self.Z_out_box.setEnabled(False)
         self.label_92.setEnabled(False)
         self.ZS_box_9.setFocus()
-

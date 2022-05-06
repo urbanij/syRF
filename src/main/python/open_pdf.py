@@ -12,6 +12,7 @@ Created on Thu Feb 14 12:58:33 CET 2019
 import os
 import sys
 
+
 def open_pdf(file_path):
     try:
         if sys.platform == "linux":
@@ -21,4 +22,4 @@ def open_pdf(file_path):
         elif sys.platform[:3] == "win":
             os.system('start "" {}'.format(file_path))
     except Exception as e:
-        print ("Can't open the pdf {}.".format(file_path))
+        print("Can't open the pdf {}.".format(file_path))

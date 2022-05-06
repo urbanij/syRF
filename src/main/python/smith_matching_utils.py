@@ -13,7 +13,6 @@ Created on Mon Dec 16 13:26:46 CET 2019
 """
 
 
-
 import numpy as np
 import matplotlib.pyplot as plt
 import cmath
@@ -35,13 +34,13 @@ def round_of_rating(number):
 
 def lambda_tick_map():
     # mapping the angles with the lambda scale
-    num_points = 360*2 + 1
-    angle_map  = np.linspace(180, -180, num_points)
-    lambda_map = np.linspace(0  ,0.5  , num_points)
+    num_points = 360 * 2 + 1
+    angle_map = np.linspace(180, -180, num_points)
+    lambda_map = np.linspace(0, 0.5, num_points)
 
     lambda_tick_map = {}
-    for i,j in zip(angle_map, lambda_map):
-        lambda_tick_map[i]=j
+    for i, j in zip(angle_map, lambda_map):
+        lambda_tick_map[i] = j
 
     """
     print(lambda_tick_map)
@@ -58,5 +57,3 @@ def lambda_tick_map():
         }
     """
     return lambda_tick_map
-
-

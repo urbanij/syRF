@@ -27,14 +27,17 @@ class mainProgram(QtWidgets.QMainWindow, Ui_MainWindow):
         self.setupUi(self)
 
         self.input_box.setFocus()
-        
 
         # LC_matching
         self.f0_box.editingFinished.connect(self.Calculate_button_3.click)
         self.input_box.editingFinished.connect(self.Calculate_button_3.click)
         self.output_box.editingFinished.connect(self.Calculate_button_3.click)
-        self.comboBox.currentIndexChanged['QString'].connect(self.Calculate_button_3.click)
-        self.comboBox_2.currentIndexChanged['QString'].connect(self.Calculate_button_3.click)
+        self.comboBox.currentIndexChanged["QString"].connect(
+            self.Calculate_button_3.click
+        )
+        self.comboBox_2.currentIndexChanged["QString"].connect(
+            self.Calculate_button_3.click
+        )
         self.open_pdf_sketch_button.clicked.connect(self.open_pdf_sketch_matching)
         # self.comboBox_3.currentIndexChanged['QString'].connect(self.Calculate_button_3.click)
 
@@ -43,8 +46,6 @@ class mainProgram(QtWidgets.QMainWindow, Ui_MainWindow):
         self.Clean_all_button_3.clicked.connect(self.Calculate_button_3.click)
         self.plot.clicked.connect(self.plot_reflection_coefficient)
 
-
-
     def compute_L_section_matching(self):
         L_section_matching.compute_L_section_matching(self)
 
@@ -52,22 +53,23 @@ class mainProgram(QtWidgets.QMainWindow, Ui_MainWindow):
         L_section_matching.clean_all_LC_matching(self)
 
     def plot_reflection_coefficient(self):
-        plot_reflection_coefficient.plot_gamma( L_section_matching.compute_L_section_matching(self) )
+        plot_reflection_coefficient.plot_gamma(
+            L_section_matching.compute_L_section_matching(self)
+        )
 
     def open_pdf_sketch_matching(self):
         open_pdf.open_pdf("../../../aux/matching_network.pdf")
-
 
     def keyPressEvent(self, event):
         if event.key() == QtCore.Qt.Key_W:
             self.close()
 
 
-
 # can run stand alone
 if __name__ == "__main__":
 
     import sys
+
     app = QtWidgets.QApplication(sys.argv)
     nextGui = mainProgram()
     nextGui.show()
