@@ -5,11 +5,11 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
-    "matching-network>=0.1.6",
-    "matplotlib>=3.10.8",
-    "numpy>=2.4.2",
-    "pandas>=3.0.0",
-    "pyqt5>=5.15.11",
-    "requests>=2.32.5",
-    "scipy>=1.17.0",
+  "matching-network>=0.1.6",
+  "matplotlib",
+  "numpy",
+  "pandas",
+  "pyqt5",
+  "requests",
+  "scipy",
 ]
